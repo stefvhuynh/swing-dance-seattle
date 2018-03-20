@@ -11,9 +11,5 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["public"]),
     new HtmlWebpackPlugin({ template: "./src/index.html" })
-  ],
-  devServer: {
-    contentBase: "./public"
-  },
-  mode: "development"
+  ]
 };
