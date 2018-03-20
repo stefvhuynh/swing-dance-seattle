@@ -11,5 +11,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["public"]),
     new HtmlWebpackPlugin({ template: "./src/index.html" })
-  ]
+  ],
+  module: {
+    rules: [
+      { test: /\.js$/, use: "babel-loader" }
+    ]
+  }
 };
