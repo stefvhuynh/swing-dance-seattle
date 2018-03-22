@@ -1,4 +1,6 @@
 {
   "extends": ["formidable/configurations/es6-react"],
-  "rules": {}
+  "rules": {
+    "max-len": ["error", { "code": 80 }]
+  }
 }

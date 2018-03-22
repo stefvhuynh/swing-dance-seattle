@@ -1,5 +1,3 @@
-import { combineReducers } from "redux";
-
 const initialState = {
   events: {
     data: [],
@@ -15,20 +13,14 @@ const initialState = {
   }
 };
 
-const events = (state = initialState.events) => {
+export const events = (state = initialState.events) => {
   return state;
 };
 
-const users = (state = initialState.users) => {
+export const users = (state = initialState.users) => {
   return state;
 };
 
-const ui = (state = initialState.ui) => {
+export const ui = (state = initialState.ui) => {
   return state;
 };
-
-export default combineReducers({
-  events,
-  users,
-  ui
-});
