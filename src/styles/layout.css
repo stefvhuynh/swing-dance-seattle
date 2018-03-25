@@ -1,0 +1,11 @@
+.fixed {
+  position: fixed;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}

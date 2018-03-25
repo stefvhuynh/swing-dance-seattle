@@ -7,11 +7,13 @@ const iconMap = {
   bars
 };
 
-const Icon = ({ name, onClick }) => (
-  <FontAwesomeIcon icon={iconMap[name]} onClick={onClick}/>
-);
+const Icon = (props) => {
+  const { name, ...iconProps } = props;
+  return <FontAwesomeIcon icon={iconMap[name]} {...iconProps}/>;
+};
 
 Icon.propTypes = {
+  className: PropTypes.string,
   name: PropTypes.oneOf(Object.keys(iconMap)),
   onClick: PropTypes.func
 };

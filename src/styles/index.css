@@ -1,8 +1,7 @@
 @import "../../node_modules/normalize.css/normalize.css";
+@import "./layout.css";
 @import "./typography.css";
 
 html, body {
   font-family: sans-serif;
-  font-weight: bold;
-  color: red;
 }
