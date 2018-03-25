@@ -11,15 +11,15 @@ export default () => {
     enhancer: routerEnhancer
   } = routerForBrowser({ routes });
 
+  const middleware = applyMiddleware(routerMiddleware);
+
   const devtoolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__
     && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-  const middleware = applyMiddleware(routerMiddleware);
-
   const enhancer = compose(
-    devtoolsEnhancer,
+    middleware,
     routerEnhancer,
-    middleware
+    devtoolsEnhancer
   );
 
   const rootReducer = combineReducers({
