@@ -1,13 +1,17 @@
+import { WINDOW_RESIZED } from "./actions";
+import { isMobile } from "../utils";
+
 const initialState = {
   events: {
     data: [],
-    fetching: false
+    isFetching: false
   },
   users: {
     data: [],
-    fetching: false
+    isFetching: false
   },
   ui: {
+    isMobile: false,
     filter: "",
     page: 1
   }
@@ -21,6 +25,17 @@ export const users = (state = initialState.users) => {
   return state;
 };
 
-export const ui = (state = initialState.ui) => {
-  return state;
+export const ui = (state = initialState.ui, action) => {
+  const { payload, type } = action;
+
+  switch (type) {
+    case WINDOW_RESIZED: {
+      const { width } = payload;
+      return { ...state, isMobile: isMobile(width) };
+    }
+
+    default: {
+      return state;
+    }
+  }
 };
