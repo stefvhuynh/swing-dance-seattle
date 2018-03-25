@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "redux-little-router";
 
+import Icon from "./icon";
+
 const linksPropType = PropTypes.arrayOf(
   PropTypes.shape({
     content: PropTypes.string,
@@ -9,31 +11,30 @@ const linksPropType = PropTypes.arrayOf(
   })
 );
 
-const DesktopNavBar = ({ links }) => {
-  return (
-    <ul>
-      {links.map(({ content, href }) => (
-        <li key={href}><Link href={href}>{content}</Link></li>
-      ))}
-    </ul>
-  );
-};
+const DesktopNavBar = ({ links }) => (
+  <ul>
+    {links.map(({ content, href }) => (
+      <li key={href}><Link href={href}>{content}</Link></li>
+    ))}
+  </ul>
+);
 
 DesktopNavBar.propTypes = {
   links: linksPropType
 };
 
-const MobileNavBar = ({ links }) => {
-  return (
-    <div>
+const MobileNavBar = ({ isOpen, links, onToggle }) => (
+  <div>
+    <Icon name="bars" onClick={onToggle}/>
+    {isOpen && (
       <ul>
         {links.map(({ content, href }) => (
           <li key={href}><Link href={href}>{content}</Link></li>
         ))}
       </ul>
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 MobileNavBar.propTypes = {
   isOpen: PropTypes.bool,

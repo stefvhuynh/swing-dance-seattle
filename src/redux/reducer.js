@@ -1,5 +1,5 @@
 import { NAV_BAR_TOGGLED, WINDOW_RESIZED } from "./actions";
-import { isMobile } from "../utils";
+import { MOBILE_BREAKPOINT } from "../constants";
 
 const initialState = {
   events: {
@@ -32,7 +32,7 @@ export const ui = (state = initialState.ui, action) => {
   switch (type) {
     case WINDOW_RESIZED: {
       const { width } = payload;
-      return { ...state, isMobile: isMobile(width) };
+      return { ...state, isMobile: width < MOBILE_BREAKPOINT };
     }
 
     case NAV_BAR_TOGGLED: {
@@ -45,4 +45,5 @@ export const ui = (state = initialState.ui, action) => {
   }
 };
 
+export const isMobile = (state) => state.ui.isMobile;
 export const isNavBarOpen = (state) => state.ui.isNavBarOpen;

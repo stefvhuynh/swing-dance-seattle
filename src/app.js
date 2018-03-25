@@ -15,6 +15,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const { onWindowResize } = this.props;
+    if (onWindowResize) {
+      onWindowResize(window.innerWidth);
+    }
+
     window.addEventListener("resize", this.handleWindowResize);
   }
 

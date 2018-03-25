@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
 
 import NavBar from "../components/nav-bar";
-import { isNavBarOpen } from "../redux/reducer";
+import { isMobile, isNavBarOpen } from "../redux/reducer";
 import { navBarToggled } from "../redux/actions";
 
 const mapStateToProps = (state) => ({
+  isMobile: isMobile(state),
   isOpen: isNavBarOpen(state)
 });
 
