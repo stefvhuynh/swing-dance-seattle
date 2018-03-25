@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Fragment, Link } from "redux-little-router";
+import { Fragment } from "redux-little-router";
 import debounce from "debounce";
 
 import { ROUTE_CONTACT, ROUTE_HOME } from "./routes";
-import { windowResized } from "./redux/actions";
 import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
+import { windowResized } from "./redux/actions";
+import NavBar from "./containers/nav-bar";
 
 class App extends React.Component {
   static propTypes = {
@@ -33,14 +34,16 @@ class App extends React.Component {
   );
 
   render() {
+    const links = [
+      { content: "Home", href: ROUTE_HOME },
+      { content: "Contact", href: ROUTE_CONTACT }
+    ];
+
     return (
       <div>
         <Fragment forRoute={ROUTE_HOME}>
           <div>
-            <div>
-              <Link href={ROUTE_HOME}>Home</Link>
-              <Link href={ROUTE_CONTACT}>Contact</Link>
-            </div>
+            <NavBar links={links}/>
 
             <Fragment forRoute={ROUTE_HOME}>
               <div>at home</div>

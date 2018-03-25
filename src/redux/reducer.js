@@ -1,4 +1,4 @@
-import { WINDOW_RESIZED } from "./actions";
+import { NAV_BAR_TOGGLED, WINDOW_RESIZED } from "./actions";
 import { isMobile } from "../utils";
 
 const initialState = {
@@ -11,8 +11,9 @@ const initialState = {
     isFetching: false
   },
   ui: {
-    isMobile: false,
     filter: "",
+    isMobile: false,
+    isNavBarOpen: false,
     page: 1
   }
 };
@@ -34,8 +35,14 @@ export const ui = (state = initialState.ui, action) => {
       return { ...state, isMobile: isMobile(width) };
     }
 
+    case NAV_BAR_TOGGLED: {
+      return { ...state, isNavBarOpen: !state.isNavBarOpen };
+    }
+
     default: {
       return state;
     }
   }
 };
+
+export const isNavBarOpen = (state) => state.ui.isNavBarOpen;
