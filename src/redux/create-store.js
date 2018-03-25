@@ -20,8 +20,11 @@ export default () => {
 
   const middleware = applyMiddleware(routerMiddleware);
 
-  return createStore(
-    rootReducer,
-    compose(routerEnhancer, middleware)
+  const enhancer = compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    routerEnhancer,
+    middleware
   );
+
+  return createStore(rootReducer, enhancer);
 };
