@@ -10,11 +10,15 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(["public"]),
-    new HtmlWebpackPlugin({ template: "./src/index.html" })
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
   ],
   module: {
     rules: [
-      { test: /\.js$/, use: ["babel-loader", "eslint-loader"], exclude: /node_modules/ }
+      {
+        test: /\.js$/,
+        use: ["babel-loader", "eslint-loader"],
+        exclude: /node_modules/
+      }
     ]
   }
 };
