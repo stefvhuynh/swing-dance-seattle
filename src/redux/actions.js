@@ -7,6 +7,9 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 export const LOGOUT_SUBMITTED = "LOGOUT_SUBMITTED";
 export const LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
+export const EVENT_SUBMITTED = "EVENT_SUBMITTED";
+export const EVENT_SUBMISSION_SUCCEEDED = "EVENT_SUBMISSION_SUCCEEDED";
+export const EVENT_SUBMISSION_FAILED = "EVENT_SUBMISSION_FAILED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
@@ -62,6 +65,39 @@ export const logoutSubmitted = () => {
       dispatch(logoutSucceeded());
     }).catch((error) => {
       dispatch(logoutFailed(error.message));
+    });
+  };
+};
+
+const eventSubmissionSucceeded = () => ({
+  type: EVENT_SUBMISSION_SUCCEEDED
+});
+
+const eventSubmissionFailed = () => ({
+  type: EVENT_SUBMISSION_FAILED
+});
+
+export const eventSubmitted = ({
+  name,
+  date,
+  link,
+  category,
+  neighborhood
+}) => {
+  return (dispatch, getState, firebase) => {
+    dispatch({ type: EVENT_SUBMITTED });
+
+    firebase.database().ref("/events").push().set({
+      name,
+      date,
+      link,
+      category,
+      neighborhood,
+      approved: false
+    }).then(() => {
+      dispatch(eventSubmissionSucceeded());
+    }).catch(() => {
+      dispatch(eventSubmissionFailed());
     });
   };
 };

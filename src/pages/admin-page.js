@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { logoutSubmitted } from "../redux/actions";
 import { selectIsLoggedIn } from "../redux/reducer";
 import Login from "../containers/login";
-import AddEvent from "../components/add-event";
+import AddEvent from "../containers/add-event";
 
 const AdminPage = ({ isLoggedIn, onLogOutClick }) => {
   return (

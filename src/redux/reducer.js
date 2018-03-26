@@ -1,5 +1,7 @@
 import {
   APP_INITIALIZED,
+  EVENT_SUBMITTED,
+  EVENT_SUBMISSION_SUCCEEDED,
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
   LOGIN_SUCCEEDED,
@@ -21,7 +23,9 @@ const initialState = {
   },
   events: {
     data: [],
-    isFetching: false
+    isFetching: false,
+    isSubmitting: false,
+    submissionSucceeded: false
   },
   ui: {
     filter: "",
@@ -31,8 +35,22 @@ const initialState = {
   }
 };
 
-export const events = (state = initialState.events) => {
-  return state;
+export const events = (state = initialState.events, action) => {
+  const { type } = action;
+
+  switch (type) {
+    case EVENT_SUBMITTED: {
+      return { ...state, isSubmitting: true };
+    }
+
+    case EVENT_SUBMISSION_SUCCEEDED: {
+      return { ...state, isSubmitting: false, submissionSucceeded: true };
+    }
+
+    default: {
+      return state;
+    }
+  }
 };
 
 export const auth = (state = initialState.auth, action) => {
@@ -103,3 +121,6 @@ export const selectIsMobile = (state) => state.ui.isMobile;
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
+export const selectEventSubmissionSucceeded = (state) => {
+  return state.events.submissionSucceeded;
+};
