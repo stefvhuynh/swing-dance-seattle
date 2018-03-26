@@ -56,7 +56,7 @@ const logoutFailed = (errorMessage) => ({
 
 export const logoutSubmitted = () => {
   return (dispatch, getState, firebase) => {
-    dispatch({ type: LOGIN_SUBMITTED });
+    dispatch({ type: LOGOUT_SUBMITTED });
 
     firebase.auth().signOut().then(() => {
       dispatch(logoutSucceeded());
