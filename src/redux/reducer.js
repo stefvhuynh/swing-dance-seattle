@@ -1,4 +1,5 @@
 import {
+  APP_INITIALIZED,
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
   LOGIN_SUCCEEDED,
@@ -8,14 +9,14 @@ import {
 import { MOBILE_BREAKPOINT } from "../constants";
 
 const initialState = {
-  events: {
-    data: [],
-    isFetching: false
-  },
   auth: {
     errorMessage: "",
     isAuthenticating: false,
     isAuthenticated: false
+  },
+  events: {
+    data: [],
+    isFetching: false
   },
   ui: {
     filter: "",
@@ -33,6 +34,10 @@ export const auth = (state = initialState.auth, action) => {
   const { payload, type } = action;
 
   switch (type) {
+    case APP_INITIALIZED: {
+      return { ...state, isAuthenticated: true };
+    }
+
     case LOGIN_SUBMITTED: {
       return { ...state, isAuthenticating: true };
     }
