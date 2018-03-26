@@ -1,9 +1,11 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { routerForBrowser } from "redux-little-router";
-import thunkMiddleware from "redux-thunk";
+import thunk from "redux-thunk";
+import firebase from "firebase";
 
 import { auth, events, ui } from "./reducer";
 import routes from "../routes";
+import firebaseConfig from "../../firebase.config";
 
 export default () => {
   const {
@@ -11,6 +13,9 @@ export default () => {
     middleware: routerMiddleware,
     enhancer: routerEnhancer
   } = routerForBrowser({ routes });
+
+  const firebaseInstance = firebase.initializeApp(firebaseConfig);
+  const thunkMiddleware = thunk.withExtraArgument(firebaseInstance);
 
   const middleware = applyMiddleware(routerMiddleware, thunkMiddleware);
 
