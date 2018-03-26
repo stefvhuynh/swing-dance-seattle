@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import { Fragment } from "redux-little-router";
 import debounce from "debounce";
 
-import { ROUTE_CONTACT, ROUTE_HOME } from "./routes";
+import { ROUTE_ADMIN, ROUTE_CONTACT, ROUTE_HOME } from "./routes";
 import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
 import { windowResized } from "./redux/actions";
 import NavBar from "./containers/nav-bar";
+import AdminPage from "./pages/admin-page";
 
 class App extends React.Component {
   static propTypes = {
@@ -56,6 +57,10 @@ class App extends React.Component {
 
             <Fragment forRoute={ROUTE_CONTACT}>
               <div>contacting</div>
+            </Fragment>
+
+            <Fragment forRoute={ROUTE_ADMIN}>
+              <AdminPage/>
             </Fragment>
           </div>
         </Fragment>

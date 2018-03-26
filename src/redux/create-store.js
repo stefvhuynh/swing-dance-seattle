@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { routerForBrowser } from "redux-little-router";
 
-import { events, ui, users } from "./reducer";
+import { auth, events, ui } from "./reducer";
 import routes from "../routes";
 
 export default () => {
@@ -23,10 +23,10 @@ export default () => {
   );
 
   const rootReducer = combineReducers({
+    auth,
     events,
     router,
-    ui,
-    users
+    ui
   });
 
   return createStore(rootReducer, enhancer);

@@ -6,9 +6,8 @@ const initialState = {
     data: [],
     isFetching: false
   },
-  users: {
-    data: [],
-    isFetching: false
+  auth: {
+    isAuthenticated: false
   },
   ui: {
     filter: "",
@@ -22,7 +21,7 @@ export const events = (state = initialState.events) => {
   return state;
 };
 
-export const users = (state = initialState.users) => {
+export const auth = (state = initialState.auth) => {
   return state;
 };
 
@@ -47,3 +46,4 @@ export const ui = (state = initialState.ui, action) => {
 
 export const isMobile = (state) => state.ui.isMobile;
 export const isNavBarOpen = (state) => state.ui.isNavBarOpen;
+export const isAuthenticated = (state) => state.auth.isAuthenticated;
