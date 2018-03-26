@@ -1,4 +1,10 @@
-import { NAV_BAR_TOGGLED, WINDOW_RESIZED } from "./actions";
+import {
+  LOGIN_FAILED,
+  LOGIN_SUBMITTED,
+  LOGIN_SUCCEEDED,
+  NAV_BAR_TOGGLED,
+  WINDOW_RESIZED
+} from "./actions";
 import { MOBILE_BREAKPOINT } from "../constants";
 
 const initialState = {
@@ -7,6 +13,8 @@ const initialState = {
     isFetching: false
   },
   auth: {
+    errorMessage: "",
+    isAuthenticating: false,
     isAuthenticated: false
   },
   ui: {
@@ -21,8 +29,30 @@ export const events = (state = initialState.events) => {
   return state;
 };
 
-export const auth = (state = initialState.auth) => {
-  return state;
+export const auth = (state = initialState.auth, action) => {
+  const { payload, type } = action;
+
+  switch (type) {
+    case LOGIN_SUBMITTED: {
+      return { ...state, isAuthenticating: true };
+    }
+
+    case LOGIN_SUCCEEDED: {
+      return { ...state, isAuthenticating: false, isAuthenticated: true };
+    }
+
+    case LOGIN_FAILED: {
+      return {
+        ...state,
+        isAuthenticating: false,
+        errorMessage: payload.errorMessage
+      };
+    }
+
+    default: {
+      return state;
+    }
+  }
 };
 
 export const ui = (state = initialState.ui, action) => {
@@ -30,8 +60,7 @@ export const ui = (state = initialState.ui, action) => {
 
   switch (type) {
     case WINDOW_RESIZED: {
-      const { width } = payload;
-      return { ...state, isMobile: width < MOBILE_BREAKPOINT };
+      return { ...state, isMobile: payload.width < MOBILE_BREAKPOINT };
     }
 
     case NAV_BAR_TOGGLED: {
@@ -47,3 +76,4 @@ export const ui = (state = initialState.ui, action) => {
 export const isMobile = (state) => state.ui.isMobile;
 export const isNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const isAuthenticated = (state) => state.auth.isAuthenticated;
+export const getAuthenticationError = (state) => state.auth.errorMessage;

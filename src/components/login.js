@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Login extends React.Component {
   static propTypes = {
+    loginError: PropTypes.string,
     onSubmit: PropTypes.func
   };
 
@@ -25,14 +26,15 @@ export default class Login extends React.Component {
   };
 
   render() {
+    const { loginError } = this.props;
     const { password, username } = this.state;
 
     return (
-      <form>
+      <div>
         <div>
           <label htmlFor="username">Username</label>
           <input
-            name="username"
+            id="username"
             type="text"
             value={username}
             onChange={this.handleInputChange.bind(this, "username")}
@@ -42,15 +44,17 @@ export default class Login extends React.Component {
         <div>
           <label htmlFor="password">Password</label>
           <input
-            name="password"
-            type="text"
+            id="password"
+            type="password"
             value={password}
             onChange={this.handleInputChange.bind(this, "password")}
           />
         </div>
 
         <button onClick={this.handleSubmitClick}>Log In</button>
-      </form>
+
+        {loginError && <div>{loginError}</div>}
+      </div>
     );
   }
 }
