@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 
 import { loginSubmitted } from "../redux/actions";
-import { getAuthenticationError } from "../redux/reducer";
+import { selectLoginError } from "../redux/reducer";
 import Login from "../components/login";
 
 const mapStateToProps = (state) => ({
-  loginError: getAuthenticationError(state)
+  loginError: selectLoginError(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

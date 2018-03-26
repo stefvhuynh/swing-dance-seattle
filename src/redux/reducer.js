@@ -3,6 +3,9 @@ import {
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
   LOGIN_SUCCEEDED,
+  LOGOUT_FAILED,
+  LOGOUT_SUBMITTED,
+  LOGOUT_SUCCEEDED,
   NAV_BAR_TOGGLED,
   WINDOW_RESIZED
 } from "./actions";
@@ -10,9 +13,11 @@ import { MOBILE_BREAKPOINT } from "../constants";
 
 const initialState = {
   auth: {
-    errorMessage: "",
-    isAuthenticating: false,
-    isAuthenticated: false
+    isLoggedIn: false,
+    isLoggingIn: false,
+    isLoggingOut: false,
+    loginErrorMessage: "",
+    logoutErrorMessage: ""
   },
   events: {
     data: [],
@@ -35,22 +40,38 @@ export const auth = (state = initialState.auth, action) => {
 
   switch (type) {
     case APP_INITIALIZED: {
-      return { ...state, isAuthenticated: true };
+      return { ...state, isLoggedIn: payload.isLoggedIn };
     }
 
     case LOGIN_SUBMITTED: {
-      return { ...state, isAuthenticating: true };
+      return { ...state, isLoggingIn: true };
     }
 
     case LOGIN_SUCCEEDED: {
-      return { ...state, isAuthenticating: false, isAuthenticated: true };
+      return { ...state, isLoggingIn: false, isLoggedIn: true };
     }
 
     case LOGIN_FAILED: {
       return {
         ...state,
-        isAuthenticating: false,
-        errorMessage: payload.errorMessage
+        isLoggingIn: false,
+        loginErrorMessage: payload.errorMessage
+      };
+    }
+
+    case LOGOUT_SUBMITTED: {
+      return { ...state, isLoggingOut: true };
+    }
+
+    case LOGOUT_SUCCEEDED: {
+      return { ...state, isLoggingOut: false, isLoggedIn: false };
+    }
+
+    case LOGOUT_FAILED: {
+      return {
+        ...state,
+        isLoggingOut: false,
+        logoutErrorMessage: payload.errorMessage
       };
     }
 
@@ -78,7 +99,7 @@ export const ui = (state = initialState.ui, action) => {
   }
 };
 
-export const isMobile = (state) => state.ui.isMobile;
-export const isNavBarOpen = (state) => state.ui.isNavBarOpen;
-export const isAuthenticated = (state) => state.auth.isAuthenticated;
-export const getAuthenticationError = (state) => state.auth.errorMessage;
+export const selectIsMobile = (state) => state.ui.isMobile;
+export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
+export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
+export const selectLoginError = (state) => state.auth.loginErrorMessage;
