@@ -7,7 +7,12 @@ import {
   RECURRENCE_DAY_LIST,
   RECURRENCE_TIME_LIST
 } from "../constants";
-import { isValidDate } from "../utils";
+import {
+  isDateStartBeforeDateEnd,
+  isRecurringCategory,
+  isValidDate,
+  isValidTime
+} from "../utils";
 import Select from "./select";
 
 export default class AddEvent extends React.Component {
@@ -18,14 +23,16 @@ export default class AddEvent extends React.Component {
 
   state = {
     category: EMPTY_TYPE,
-    date: "",
-    isRecurring: false,
+    dateEnd: "",
+    dateStart: "",
     isInvalid: false,
     link: "",
     name: "",
     neighborhood: "",
     recurrenceDay: EMPTY_TYPE,
-    recurrenceTime: EMPTY_TYPE
+    recurrenceTime: EMPTY_TYPE,
+    time: "",
+    venue: ""
   };
 
   handleInputChange = (event) => {
@@ -49,22 +56,33 @@ export default class AddEvent extends React.Component {
   areDetailsValid() {
     const {
       category,
-      date,
-      isRecurring,
+      dateEnd,
+      dateStart,
       link,
       name,
       neighborhood,
       recurrenceDay,
-      recurrenceTime
+      recurrenceTime,
+      time,
+      venue
     } = this.state;
 
+    const isRecurring = isRecurringCategory(category);
+
     return category !== EMPTY_TYPE
-      && (!isRecurring ? isValidDate(date) : true)
+      && (
+        !isRecurring
+          ? isValidDate(dateEnd) && isDateStartBeforeDateEnd(dateStart, dateEnd)
+          : true
+      )
+      && (!isRecurring ? isValidDate(dateStart) : true)
       && link
       && name
       && neighborhood
       && (isRecurring ? recurrenceDay !== EMPTY_TYPE : true)
-      && (isRecurring ? recurrenceTime !== EMPTY_TYPE : true);
+      && (isRecurring ? recurrenceTime !== EMPTY_TYPE : true)
+      && (time ? isValidTime(time) : true)
+      && venue;
   }
 
   renderMessage() {
@@ -78,28 +96,22 @@ export default class AddEvent extends React.Component {
   render() {
     const {
       category,
-      date,
-      isRecurring,
+      dateEnd,
+      dateStart,
       link,
       name,
       neighborhood,
       recurrenceDay,
-      recurrenceTime
+      recurrenceTime,
+      time,
+      venue
     } = this.state;
+
+    const isRecurring = isRecurringCategory(category);
 
     return (
       <div className="flex-column">
         Add an Event
-
-        <label>
-          Event Name
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleInputChange}
-          />
-        </label>
 
         <label>
           Category
@@ -112,11 +124,21 @@ export default class AddEvent extends React.Component {
         </label>
 
         <label>
-          Link
+          Event Name
           <input
             type="text"
-            name="link"
-            value={link}
+            name="name"
+            value={name}
+            onChange={this.handleInputChange}
+          />
+        </label>
+
+        <label>
+          Venue
+          <input
+            type="text"
+            name="venue"
+            value={venue}
             onChange={this.handleInputChange}
           />
         </label>
@@ -132,18 +154,18 @@ export default class AddEvent extends React.Component {
         </label>
 
         <label>
-          Recurring
+          Link
           <input
-            type="checkbox"
-            name="isRecurring"
-            checked={isRecurring}
+            type="text"
+            name="link"
+            value={link}
             onChange={this.handleInputChange}
           />
         </label>
 
         {isRecurring ? (
           <label>
-            Date
+            Recurrence
             <Select
               name="recurrenceTime"
               onChange={this.handleInputChange}
@@ -158,17 +180,38 @@ export default class AddEvent extends React.Component {
             />
           </label>
         ) : (
-          <label>
-            Date
-            <span className="italic">(Format: mm/dd/yyyy)</span>
-            <input
-              type="text"
-              name="date"
-              value={date}
-              onChange={this.handleInputChange}
-            />
-          </label>
+          <div>
+            Date Range <span className="italic">Format: MM/DD/YYYY</span>
+            <label>
+              Start
+              <input
+                type="text"
+                name="dateStart"
+                value={dateStart}
+                onChange={this.handleInputChange}
+              />
+            </label>
+            <label>
+              End
+              <input
+                type="text"
+                name="dateEnd"
+                value={dateEnd}
+                onChange={this.handleInputChange}
+              />
+            </label>
+          </div>
         )}
+
+        <label>
+          Time <span className="italic">Format: HH:MM(a/p)m</span>
+          <input
+            type="text"
+            name="time"
+            value={time}
+            onChange={this.handleInputChange}
+          />
+        </label>
 
         <button onClick={this.handleSubmit}>Submit</button>
 
