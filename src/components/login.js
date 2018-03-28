@@ -12,8 +12,9 @@ export default class Login extends React.Component {
     password: ""
   };
 
-  handleInputChange = (stateKey, event) => {
-    this.setState({ [stateKey]: event.target.value });
+  handleInputChange = (event) => {
+    const target = event.target;
+    this.setState({ [target.name]: target.value });
   };
 
   handleSubmitClick = () => {
@@ -30,26 +31,26 @@ export default class Login extends React.Component {
     const { password, username } = this.state;
 
     return (
-      <div>
-        <div>
-          <label htmlFor="username">Username</label>
+      <div className="flex-column">
+        <label>
+          Username
           <input
-            id="username"
             type="text"
+            name="username"
             value={username}
-            onChange={this.handleInputChange.bind(this, "username")}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="password">Password</label>
+        <label>
+          Password
           <input
-            id="password"
             type="password"
+            name="password"
             value={password}
-            onChange={this.handleInputChange.bind(this, "password")}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
 
         <button onClick={this.handleSubmitClick}>Log In</button>
 
