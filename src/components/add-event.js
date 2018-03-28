@@ -11,98 +11,116 @@ export default class AddEvent extends React.Component {
   };
 
   state = {
+    category: "",
     date: "",
+    isRecurring: false,
     link: "",
     name: "",
-    neighborhood: "",
-    selectedCategory: ""
+    neighborhood: ""
   };
 
-  handleInputChange = (stateKey, event) => {
-    this.setState({ [stateKey]: event.target.value });
-  }
-
-  handleCategoryChange = (event) => {
-    this.setState({ selectedCategory: event.target.value });
-  }
+  handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    this.setState({ [target.name]: value });
+  };
 
   handleSubmit = () => {
     const { onEventSubmit } = this.props;
-    const { date, link, name, neighborhood, selectedCategory } = this.state;
+    const { category, date, link, name, neighborhood } = this.state;
 
     if (onEventSubmit) {
       onEventSubmit({
+        category,
         date,
         link,
         name,
-        neighborhood,
-        category: selectedCategory
+        neighborhood
       });
     }
-  }
+  };
 
   render() {
     const { submissionSucceeded } = this.props;
-    const { date, link, name, neighborhood, selectedCategory } = this.state;
+    const {
+      category,
+      date,
+      isRecurring,
+      link,
+      name,
+      neighborhood
+    } = this.state;
 
     return (
-      <div>
+      <div className="flex-column">
         Add an Event
 
-        <div>
-          <label htmlFor="eventName">Event Name</label>
+        <label>
+          Event Name
           <input
-            id="eventName"
             type="text"
+            name="name"
             value={name}
-            onChange={this.handleInputChange.bind(this, "name")}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="eventCategory">Category</label>
-          <select onChange={this.handleCategoryChange} value={selectedCategory}>
-            {CATEGORIES.map((category) => (
-              <option
-                key={category}
-                value={category}
-              >
-                {capitalize(category)}
+        <label>
+          Category
+          <select
+            id="event-category"
+            name="category"
+            onChange={this.handleInputChange}
+            value={category}
+          >
+            {CATEGORIES.map((eventCategory) => (
+              <option key={eventCategory} value={eventCategory}>
+                {capitalize(eventCategory)}
               </option>
             ))}
           </select>
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="eventLink">Link</label>
+        <label>
+          Link
           <input
-            id="eventLink"
             type="text"
+            name="link"
             value={link}
-            onChange={this.handleInputChange.bind(this, "link")}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="eventLink">Neighborhood</label>
+        <label>
+          Neighborhood
           <input
-            id="eventNeighborhood"
             type="text"
+            name="neighborhood"
             value={neighborhood}
-            onChange={this.handleInputChange.bind(this, "neighborhood")}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
 
-        <div>
-          <label htmlFor="eventDate">Date</label>
-          <div className="italic">(Format: mm/dd/yyyy)</div>
+        <label>
+          Recurring
           <input
-            id="eventDate"
-            type="text"
-            value={date}
-            onChange={this.handleInputChange.bind(this, "date")}
+            type="checkbox"
+            name="isRecurring"
+            checked={isRecurring}
+            onChange={this.handleInputChange}
           />
-        </div>
+        </label>
+
+        <label>
+          Date
+          <span className="italic">(Format: mm/dd/yyyy)</span>
+          <input
+            type="text"
+            name="date"
+            value={date}
+            onChange={this.handleInputChange}
+          />
+        </label>
 
         <button onClick={this.handleSubmit}>Submit</button>
 

@@ -24,7 +24,7 @@ DesktopNavBar.propTypes = {
 };
 
 const MobileNavBar = ({ isOpen, links, onToggle }) => (
-  <div className="fixed flex flex-row">
+  <div className="fixed flex-row">
     {isOpen && (
       <ul className="inline-block">
         {links.map(({ content, href }) => (
