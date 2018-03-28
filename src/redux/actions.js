@@ -77,22 +77,12 @@ const eventSubmissionFailed = () => ({
   type: EVENT_SUBMISSION_FAILED
 });
 
-export const eventSubmitted = ({
-  name,
-  date,
-  link,
-  category,
-  neighborhood
-}) => {
+export const eventSubmitted = (details) => {
   return (dispatch, getState, firebase) => {
     dispatch({ type: EVENT_SUBMITTED });
 
     firebase.database().ref("/events").push().set({
-      name,
-      date,
-      link,
-      category,
-      neighborhood,
+      ...details,
       approved: false
     }).then(() => {
       dispatch(eventSubmissionSucceeded());

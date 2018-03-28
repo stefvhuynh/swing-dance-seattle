@@ -9,7 +9,17 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onEventSubmit: (details) => dispatch(eventSubmitted(details))
+  onEventSubmit: (details) => {
+    const { isRecurring } = details;
+    const trimmedDetails = {
+      ...details,
+      date: isRecurring ? null : details.date,
+      recurrenceDay: isRecurring ? details.recurrenceDay : null,
+      recurrenceTime: isRecurring ? details.recurrenceTime : null
+    };
+
+    dispatch(eventSubmitted(trimmedDetails));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddEvent);

@@ -24,8 +24,10 @@ export const RECURRENCE_TIME_FIRST = 1;
 export const RECURRENCE_TIME_SECOND = 2;
 export const RECURRENCE_TIME_THIRD = 3;
 export const RECURRENCE_TIME_FOURTH = 4;
+export const RECURRENCE_TIME_EVERY = 5;
 
 export const RECURRENCE_TIME_MAP = {
+  [RECURRENCE_TIME_EVERY]: "Every",
   [RECURRENCE_TIME_FIRST]: "Every first",
   [RECURRENCE_TIME_SECOND]: "Every second",
   [RECURRENCE_TIME_THIRD]: "Every third",

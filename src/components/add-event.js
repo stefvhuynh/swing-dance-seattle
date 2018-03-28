@@ -33,16 +33,9 @@ export default class AddEvent extends React.Component {
 
   handleSubmit = () => {
     const { onEventSubmit } = this.props;
-    const { category, date, link, name, neighborhood } = this.state;
 
     if (onEventSubmit) {
-      onEventSubmit({
-        category,
-        date,
-        link,
-        name,
-        neighborhood
-      });
+      onEventSubmit({ ...this.state });
     }
   };
 
