@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CATEGORIES } from "../constants";
-import { capitalize } from "../utils";
+import {
+  CATEGORY_LIST,
+  RECURRENCE_DAY_LIST,
+  RECURRENCE_TIME_LIST
+} from "../constants";
+import Select from "./select";
 
 export default class AddEvent extends React.Component {
   static propTypes = {
@@ -11,12 +15,14 @@ export default class AddEvent extends React.Component {
   };
 
   state = {
-    category: "",
+    category: 1,
     date: "",
     isRecurring: false,
     link: "",
     name: "",
-    neighborhood: ""
+    neighborhood: "",
+    recurrenceDay: 1,
+    recurrenceTime: 1
   };
 
   handleInputChange = (event) => {
@@ -48,7 +54,9 @@ export default class AddEvent extends React.Component {
       isRecurring,
       link,
       name,
-      neighborhood
+      neighborhood,
+      recurrenceDay,
+      recurrenceTime
     } = this.state;
 
     return (
@@ -67,18 +75,12 @@ export default class AddEvent extends React.Component {
 
         <label>
           Category
-          <select
-            id="event-category"
+          <Select
             name="category"
             onChange={this.handleInputChange}
             value={category}
-          >
-            {CATEGORIES.map((eventCategory) => (
-              <option key={eventCategory} value={eventCategory}>
-                {capitalize(eventCategory)}
-              </option>
-            ))}
-          </select>
+            options={CATEGORY_LIST}
+          />
         </label>
 
         <label>
@@ -111,16 +113,34 @@ export default class AddEvent extends React.Component {
           />
         </label>
 
-        <label>
-          Date
-          <span className="italic">(Format: mm/dd/yyyy)</span>
-          <input
-            type="text"
-            name="date"
-            value={date}
-            onChange={this.handleInputChange}
-          />
-        </label>
+        {isRecurring ? (
+          <label>
+            Date
+            <Select
+              name="recurrenceTime"
+              onChange={this.handleInputChange}
+              value={recurrenceTime}
+              options={RECURRENCE_TIME_LIST}
+            />
+            <Select
+              name="recurrenceDay"
+              onChange={this.handleInputChange}
+              value={recurrenceDay}
+              options={RECURRENCE_DAY_LIST}
+            />
+          </label>
+        ) : (
+          <label>
+            Date
+            <span className="italic">(Format: mm/dd/yyyy)</span>
+            <input
+              type="text"
+              name="date"
+              value={date}
+              onChange={this.handleInputChange}
+            />
+          </label>
+        )}
 
         <button onClick={this.handleSubmit}>Submit</button>
 
