@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import {
   CATEGORY_LIST,
+  EMPTY_TYPE,
   RECURRENCE_DAY_LIST,
   RECURRENCE_TIME_LIST
 } from "../constants";
@@ -15,14 +16,14 @@ export default class AddEvent extends React.Component {
   };
 
   state = {
-    category: 1,
+    category: EMPTY_TYPE,
     date: "",
     isRecurring: false,
     link: "",
     name: "",
     neighborhood: "",
-    recurrenceDay: 1,
-    recurrenceTime: 1
+    recurrenceDay: EMPTY_TYPE,
+    recurrenceTime: EMPTY_TYPE
   };
 
   handleInputChange = (event) => {

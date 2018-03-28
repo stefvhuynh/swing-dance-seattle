@@ -6,12 +6,15 @@ const generateValueDisplayList = (map) => Object.keys(map).map((key) => ({
   display: map[key]
 }));
 
+export const EMPTY_TYPE = 0;
+
 export const CATEGORY_DANCE = 1;
 export const CATEGORY_CLASS = 2;
 export const CATEGORY_EVENT = 3;
 export const CATEGORY_WORKSHOP = 4;
 
 export const CATEGORY_MAP = {
+  [EMPTY_TYPE]: "",
   [CATEGORY_DANCE]: "Dance",
   [CATEGORY_CLASS]: "Class",
   [CATEGORY_EVENT]: "Event",
@@ -27,6 +30,7 @@ export const RECURRENCE_TIME_FOURTH = 4;
 export const RECURRENCE_TIME_EVERY = 5;
 
 export const RECURRENCE_TIME_MAP = {
+  [EMPTY_TYPE]: "",
   [RECURRENCE_TIME_EVERY]: "Every",
   [RECURRENCE_TIME_FIRST]: "Every first",
   [RECURRENCE_TIME_SECOND]: "Every second",
@@ -47,6 +51,7 @@ export const RECURRENCE_DAY_FRIDAY = 6;
 export const RECURRENCE_DAY_SATURDAY = 7;
 
 export const RECURRENCE_DAY_MAP = {
+  [EMPTY_TYPE]: "",
   [RECURRENCE_DAY_SUNDAY]: "Sunday",
   [RECURRENCE_DAY_MONDAY]: "Monday",
   [RECURRENCE_DAY_TUESDAY]: "Tuesday",
