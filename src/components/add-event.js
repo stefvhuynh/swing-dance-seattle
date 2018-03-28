@@ -7,6 +7,7 @@ import {
   RECURRENCE_DAY_LIST,
   RECURRENCE_TIME_LIST
 } from "../constants";
+import { isValidDate } from "../utils";
 import Select from "./select";
 
 export default class AddEvent extends React.Component {
@@ -19,6 +20,7 @@ export default class AddEvent extends React.Component {
     category: EMPTY_TYPE,
     date: "",
     isRecurring: false,
+    isInvalid: false,
     link: "",
     name: "",
     neighborhood: "",
@@ -34,14 +36,46 @@ export default class AddEvent extends React.Component {
 
   handleSubmit = () => {
     const { onEventSubmit } = this.props;
+    const isValid = this.areDetailsValid();
 
-    if (onEventSubmit) {
-      onEventSubmit({ ...this.state });
+    if (isValid && onEventSubmit) {
+      const { isInvalid, ...details } = this.state;
+      onEventSubmit(details);
     }
+
+    this.setState({ isInvalid: !isValid });
   };
 
+  areDetailsValid() {
+    const {
+      category,
+      date,
+      isRecurring,
+      link,
+      name,
+      neighborhood,
+      recurrenceDay,
+      recurrenceTime
+    } = this.state;
+
+    return category !== EMPTY_TYPE
+      && (!isRecurring ? isValidDate(date) : true)
+      && link
+      && name
+      && neighborhood
+      && (isRecurring ? recurrenceDay !== EMPTY_TYPE : true)
+      && (isRecurring ? recurrenceTime !== EMPTY_TYPE : true);
+  }
+
+  renderMessage() {
+    if (this.state.isInvalid) {
+      return <div>Details are invalid!</div>;
+    } else if (this.props.submissionSucceeded) {
+      return <div>Submission succeeded!</div>;
+    }
+  }
+
   render() {
-    const { submissionSucceeded } = this.props;
     const {
       category,
       date,
@@ -138,7 +172,7 @@ export default class AddEvent extends React.Component {
 
         <button onClick={this.handleSubmit}>Submit</button>
 
-        {submissionSucceeded && <div>Event successfully submitted!</div>}
+        {this.renderMessage()}
       </div>
     );
   }

@@ -6,12 +6,12 @@ const generateValueDisplayList = (map) => Object.keys(map).map((key) => ({
   display: map[key]
 }));
 
-export const EMPTY_TYPE = 0;
+export const EMPTY_TYPE = "0";
 
-export const CATEGORY_DANCE = 1;
-export const CATEGORY_CLASS = 2;
-export const CATEGORY_EVENT = 3;
-export const CATEGORY_WORKSHOP = 4;
+export const CATEGORY_DANCE = "1";
+export const CATEGORY_CLASS = "2";
+export const CATEGORY_EVENT = "3";
+export const CATEGORY_WORKSHOP = "4";
 
 export const CATEGORY_MAP = {
   [EMPTY_TYPE]: "",
@@ -23,11 +23,11 @@ export const CATEGORY_MAP = {
 
 export const CATEGORY_LIST = generateValueDisplayList(CATEGORY_MAP);
 
-export const RECURRENCE_TIME_FIRST = 1;
-export const RECURRENCE_TIME_SECOND = 2;
-export const RECURRENCE_TIME_THIRD = 3;
-export const RECURRENCE_TIME_FOURTH = 4;
-export const RECURRENCE_TIME_EVERY = 5;
+export const RECURRENCE_TIME_FIRST = "1";
+export const RECURRENCE_TIME_SECOND = "2";
+export const RECURRENCE_TIME_THIRD = "3";
+export const RECURRENCE_TIME_FOURTH = "4";
+export const RECURRENCE_TIME_EVERY = "5";
 
 export const RECURRENCE_TIME_MAP = {
   [EMPTY_TYPE]: "",
@@ -42,13 +42,13 @@ export const RECURRENCE_TIME_LIST = generateValueDisplayList(
   RECURRENCE_TIME_MAP
 );
 
-export const RECURRENCE_DAY_SUNDAY = 1;
-export const RECURRENCE_DAY_MONDAY = 2;
-export const RECURRENCE_DAY_TUESDAY = 3;
-export const RECURRENCE_DAY_WEDNESDAY = 4;
-export const RECURRENCE_DAY_THURSDAY = 5;
-export const RECURRENCE_DAY_FRIDAY = 6;
-export const RECURRENCE_DAY_SATURDAY = 7;
+export const RECURRENCE_DAY_SUNDAY = "1";
+export const RECURRENCE_DAY_MONDAY = "2";
+export const RECURRENCE_DAY_TUESDAY = "3";
+export const RECURRENCE_DAY_WEDNESDAY = "4";
+export const RECURRENCE_DAY_THURSDAY = "5";
+export const RECURRENCE_DAY_FRIDAY = "6";
+export const RECURRENCE_DAY_SATURDAY = "7";
 
 export const RECURRENCE_DAY_MAP = {
   [EMPTY_TYPE]: "",
