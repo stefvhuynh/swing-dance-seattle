@@ -8,7 +8,7 @@
     "build:qa": "webpack --config webpack.qa.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
     "deploy:qa": "npm install && npm run lint && npm run build:qa && firebase use qa && firebase deploy",
-    "deploy:prod": "npm install && npm run lint && npm run build:prod && firebase use prod && firebase deploy",
+    "deploy:prod": "npm install && npm run lint && npm run build:prod && firebase use production && firebase deploy",
     "lint": "eslint src/",
     "precommit": "npm run lint"
   },
