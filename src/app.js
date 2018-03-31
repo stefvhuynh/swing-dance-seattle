@@ -9,12 +9,13 @@ import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
 import { appInitialized, windowResized } from "./redux/actions";
 import NavBar from "./containers/nav-bar";
 import AdminPage from "./pages/admin-page";
+import HomePage from "./pages/home-page";
 
 class App extends React.Component {
   static propTypes = {
     onAppMount: PropTypes.func,
     onWindowResize: PropTypes.func
-  }
+  };
 
   componentDidMount() {
     const { onAppMount, onWindowResize } = this.props;
@@ -58,7 +59,7 @@ class App extends React.Component {
             <NavBar links={links}/>
 
             <Fragment forRoute={ROUTE_HOME}>
-              <div>at home</div>
+              <HomePage/>
             </Fragment>
 
             <Fragment forRoute={ROUTE_CONTACT}>
