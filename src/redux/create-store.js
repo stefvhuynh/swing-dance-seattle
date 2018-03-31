@@ -14,19 +14,22 @@ export default () => {
     enhancer: routerEnhancer
   } = routerForBrowser({ routes });
 
-  const firebaseInstance = firebase.initializeApp(firebaseConfig);
+  const firebaseInstance = firebase.initializeApp(
+    firebaseConfig.config,
+    firebaseConfig.key
+  );
+
   const thunkMiddleware = thunk.withExtraArgument(firebaseInstance);
 
   const middleware = applyMiddleware(routerMiddleware, thunkMiddleware);
 
-  const devtoolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__
+  const devtoolsEnhancer = process.env.NODE_ENV !== "production"
+    && window.__REDUX_DEVTOOLS_EXTENSION__
     && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-  const enhancer = compose(
-    middleware,
-    routerEnhancer,
-    devtoolsEnhancer
-  );
+  const enhancer = devtoolsEnhancer
+    ? compose(middleware, routerEnhancer, devtoolsEnhancer)
+    : compose(middleware, routerEnhancer);
 
   const rootReducer = combineReducers({
     auth,

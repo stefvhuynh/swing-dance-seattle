@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "swing-dance-seattle"
+    "production": "swing-dance-seattle",
+    "qa": "swing-dance-seattle-qa"
   }
 }

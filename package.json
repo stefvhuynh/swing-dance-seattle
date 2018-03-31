@@ -5,9 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js",
-    "build": "webpack --config webpack.prod.config.js",
+    "build:qa": "webpack --config webpack.qa.config.js",
+    "build:prod": "webpack --config webpack.prod.config.js",
+    "deploy:qa": "npm install && npm run lint && npm run build:qa && firebase use qa && firebase deploy",
+    "deploy:prod": "npm install && npm run lint && npm run build:prod && firebase use prod && firebase deploy",
     "lint": "eslint src/",
-    "deploy": "npm install && npm run lint && npm run build && firebase deploy",
     "precommit": "npm run lint"
   },
   "author": "Stefan Huynh",
@@ -32,7 +34,8 @@
     "style-loader": "^0.20.3",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
