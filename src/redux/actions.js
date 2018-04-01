@@ -10,6 +10,8 @@ export const LOGOUT_FAILED = "LOGOUT_FAILED";
 export const EVENT_SUBMITTED = "EVENT_SUBMITTED";
 export const EVENT_SUBMISSION_SUCCEEDED = "EVENT_SUBMISSION_SUCCEEDED";
 export const EVENT_SUBMISSION_FAILED = "EVENT_SUBMISSION_FAILED";
+export const FILTER_SELECTED = "FILTER_SELECTED";
+export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
@@ -91,3 +93,13 @@ export const eventSubmitted = (details) => {
     });
   };
 };
+
+export const filterSelected = (filter) => ({
+  type: FILTER_SELECTED,
+  payload: { filter }
+});
+
+export const subfilterSelected = (subfilter) => ({
+  type: SUBFILTER_SELECTED,
+  payload: { subfilter }
+});

@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-  CATEGORY_LIST,
+  CATEGORY_MAP,
   EMPTY_TYPE,
-  RECURRENCE_DAY_LIST,
-  RECURRENCE_TIME_LIST
+  RECURRENCE_DAY_MAP,
+  RECURRENCE_TIME_MAP
 } from "../constants";
 import {
+  generateValueDisplayList,
   isDateStartBeforeDateEnd,
   isRecurringCategory,
   isValidDate,
@@ -119,7 +120,7 @@ export default class AddEvent extends React.Component {
             name="category"
             onChange={this.handleInputChange}
             value={category}
-            options={CATEGORY_LIST}
+            options={generateValueDisplayList(CATEGORY_MAP)}
           />
         </label>
 
@@ -170,13 +171,13 @@ export default class AddEvent extends React.Component {
               name="recurrenceTime"
               onChange={this.handleInputChange}
               value={recurrenceTime}
-              options={RECURRENCE_TIME_LIST}
+              options={generateValueDisplayList(RECURRENCE_TIME_MAP)}
             />
             <Select
               name="recurrenceDay"
               onChange={this.handleInputChange}
               value={recurrenceDay}
-              options={RECURRENCE_DAY_LIST}
+              options={generateValueDisplayList(RECURRENCE_DAY_MAP)}
             />
           </label>
         ) : (

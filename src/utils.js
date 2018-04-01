@@ -1,5 +1,12 @@
 import { CATEGORY_CLASS, CATEGORY_DANCE } from "./constants";
 
+export const generateValueDisplayList = (map) => {
+  return Object.keys(map).map((key) => ({
+    value: key,
+    display: map[key]
+  }));
+};
+
 export const isValidDate = (date) => {
   const dateObj = new Date(date);
   return dateObj !== "Invalid Date" && dateObj > Date.now();

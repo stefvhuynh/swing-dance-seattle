@@ -2,6 +2,7 @@ import {
   APP_INITIALIZED,
   EVENT_SUBMITTED,
   EVENT_SUBMISSION_SUCCEEDED,
+  FILTER_SELECTED,
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
   LOGIN_SUCCEEDED,
@@ -9,9 +10,15 @@ import {
   LOGOUT_SUBMITTED,
   LOGOUT_SUCCEEDED,
   NAV_BAR_TOGGLED,
+  SUBFILTER_SELECTED,
   WINDOW_RESIZED
 } from "./actions";
-import { MOBILE_BREAKPOINT } from "../constants";
+
+import {
+  FILTER_LEARN,
+  MOBILE_BREAKPOINT,
+  SUBFILTER_DEFAULT
+} from "../constants";
 
 const initialState = {
   auth: {
@@ -28,28 +35,11 @@ const initialState = {
     submissionSucceeded: false
   },
   ui: {
-    filter: "",
+    filter: FILTER_LEARN,
     isMobile: false,
     isNavBarOpen: false,
-    page: 1
-  }
-};
-
-export const events = (state = initialState.events, action) => {
-  const { type } = action;
-
-  switch (type) {
-    case EVENT_SUBMITTED: {
-      return { ...state, isSubmitting: true };
-    }
-
-    case EVENT_SUBMISSION_SUCCEEDED: {
-      return { ...state, isSubmitting: false, submissionSucceeded: true };
-    }
-
-    default: {
-      return state;
-    }
+    page: 1,
+    subfilter: SUBFILTER_DEFAULT
   }
 };
 
@@ -99,6 +89,24 @@ export const auth = (state = initialState.auth, action) => {
   }
 };
 
+export const events = (state = initialState.events, action) => {
+  const { type } = action;
+
+  switch (type) {
+    case EVENT_SUBMITTED: {
+      return { ...state, isSubmitting: true };
+    }
+
+    case EVENT_SUBMISSION_SUCCEEDED: {
+      return { ...state, isSubmitting: false, submissionSucceeded: true };
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
 export const ui = (state = initialState.ui, action) => {
   const { payload, type } = action;
 
@@ -111,16 +119,28 @@ export const ui = (state = initialState.ui, action) => {
       return { ...state, isNavBarOpen: !state.isNavBarOpen };
     }
 
+    case FILTER_SELECTED: {
+      return { ...state, filter: payload.filter, subfilter: SUBFILTER_DEFAULT };
+    }
+
+    case SUBFILTER_SELECTED: {
+      return { ...state, subfilter: payload.subfilter };
+    }
+
     default: {
       return state;
     }
   }
 };
 
-export const selectIsMobile = (state) => state.ui.isMobile;
-export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
+
 export const selectEventSubmissionSucceeded = (state) => {
   return state.events.submissionSucceeded;
 };
+
+export const selectIsMobile = (state) => state.ui.isMobile;
+export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
+export const selectFilter = (state) => state.ui.filter;
+export const selectSubfilter = (state) => state.ui.subfilter;

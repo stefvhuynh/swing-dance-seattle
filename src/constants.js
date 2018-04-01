@@ -1,11 +1,6 @@
 export const MOBILE_BREAKPOINT = 768;
 export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
 
-const generateValueDisplayList = (map) => Object.keys(map).map((key) => ({
-  value: key,
-  display: map[key]
-}));
-
 export const EMPTY_TYPE = "0";
 
 export const CATEGORY_DANCE = "1";
@@ -21,8 +16,6 @@ export const CATEGORY_MAP = {
   [CATEGORY_WORKSHOP]: "Workshop"
 };
 
-export const CATEGORY_LIST = generateValueDisplayList(CATEGORY_MAP);
-
 export const RECURRENCE_TIME_FIRST = "1";
 export const RECURRENCE_TIME_SECOND = "2";
 export const RECURRENCE_TIME_THIRD = "3";
@@ -37,10 +30,6 @@ export const RECURRENCE_TIME_MAP = {
   [RECURRENCE_TIME_THIRD]: "Every third",
   [RECURRENCE_TIME_FOURTH]: "Every fourth"
 };
-
-export const RECURRENCE_TIME_LIST = generateValueDisplayList(
-  RECURRENCE_TIME_MAP
-);
 
 export const RECURRENCE_DAY_SUNDAY = "1";
 export const RECURRENCE_DAY_MONDAY = "2";
@@ -61,6 +50,35 @@ export const RECURRENCE_DAY_MAP = {
   [RECURRENCE_DAY_SATURDAY]: "Saturday"
 };
 
-export const RECURRENCE_DAY_LIST = generateValueDisplayList(
-  RECURRENCE_DAY_MAP
-);
+export const FILTER_LEARN = "1";
+export const FILTER_DANCE = "2";
+
+export const FILTER_MAP = {
+  [FILTER_LEARN]: "Learn",
+  [FILTER_DANCE]: "Dance"
+};
+
+export const SUBFILTER_DEFAULT = "1";
+
+export const SUBFILTER_LEARN_CLASSES = "1";
+export const SUBFILTER_LEARN_WORKSHOPS = "2";
+
+export const SUBFILTER_LEARN_MAP = {
+  [SUBFILTER_LEARN_CLASSES]: "Classes",
+  [SUBFILTER_LEARN_WORKSHOPS]: "Workshops"
+};
+
+export const SUBFILTER_DANCE_WEEKLY = "1";
+export const SUBFILTER_DANCE_MONTHLY = "2";
+export const SUBFILTER_DANCE_EVENTS = "3";
+
+export const SUBFILTER_DANCE_MAP = {
+  [SUBFILTER_DANCE_WEEKLY]: "Weekly",
+  [SUBFILTER_DANCE_MONTHLY]: "Monthly",
+  [SUBFILTER_DANCE_EVENTS]: "Events"
+};
+
+export const SUBFILTER_MAP = {
+  [FILTER_LEARN]: SUBFILTER_LEARN_MAP,
+  [FILTER_DANCE]: SUBFILTER_DANCE_MAP
+};

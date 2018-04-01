@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Filter from "../components/filter";
+import Filter from "../containers/filter";
 
 class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <Filter filters={[{ display: "filter", value: "1" }]}/>
+        <div>
+          welcome message
+        </div>
+        <Filter/>
       </div>
     );
   }
