@@ -48,8 +48,9 @@ export default class AddEvent extends React.Component {
 
     if (isValid && onEventSubmit) {
       const { isInvalid, ...details } = this.state;
-      details.dateStart = new Date(details.dateStart).toISOString();
-      details.dateEnd = new Date(details.dateEnd).toISOString();
+      const { dateEnd, dateStart } = details;
+      details.dateStart = dateStart ? new Date(dateStart).toISOString() : "";
+      details.dateEnd = dateEnd ? new Date(dateEnd).toISOString() : "";
       onEventSubmit(details);
     }
 

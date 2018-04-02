@@ -94,7 +94,7 @@ export const events = (state = initialState.events, action) => {
 
   switch (type) {
     case APP_INITIALIZED: {
-      return { ...state, events: payload.events };
+      return { ...state, data: payload.events };
     }
 
     case EVENT_SUBMITTED: {
