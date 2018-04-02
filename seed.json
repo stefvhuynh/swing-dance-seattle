@@ -1,5 +1,53 @@
 {
-  "nonrecurring-events": {
+  "classes": {
+    "1": {
+      "approved": true,
+      "category": "3",
+      "link": "cool.com",
+      "name": "cool",
+      "neighborhood": "cool hood",
+      "recurrenceDay": "1",
+      "recurrenceTime": "1",
+      "time": "7:00pm",
+      "venue": "cool venue"
+    },
+    "2": {
+      "approved": true,
+      "category": "4",
+      "link": "cool.com",
+      "name": "cool",
+      "neighborhood": "cool hood",
+      "recurrenceDay": "1",
+      "recurrenceTime": "1",
+      "time": "7:00pm",
+      "venue": "cool venue"
+    }
+  },
+  "dances": {
+    "1": {
+      "approved": true,
+      "category": "3",
+      "link": "cool.com",
+      "name": "cool",
+      "neighborhood": "cool hood",
+      "recurrenceDay": "1",
+      "recurrenceTime": "1",
+      "time": "7:00pm",
+      "venue": "cool venue"
+    },
+    "2": {
+      "approved": true,
+      "category": "4",
+      "link": "cool.com",
+      "name": "cool",
+      "neighborhood": "cool hood",
+      "recurrenceDay": "1",
+      "recurrenceTime": "1",
+      "time": "7:00pm",
+      "venue": "cool venue"
+    }
+  },
+  "events": {
     "1": {
       "approved": true,
       "category": "1",
@@ -23,26 +71,26 @@
       "venue": "cool venue"
     }
   },
-  "recurring-events": {
+  "workshops": {
     "1": {
       "approved": true,
-      "category": "3",
+      "category": "1",
+      "dateEnd": "2018-04-07T07:00:00.000Z",
+      "dateStart": "2018-04-04T07:00:00.000Z",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
-      "recurrenceDay": "1",
-      "recurrenceTime": "1",
       "time": "7:00pm",
       "venue": "cool venue"
     },
     "2": {
       "approved": true,
-      "category": "4",
+      "category": "2",
+      "dateEnd": "2018-04-15T07:00:00.000Z",
+      "dateStart": "2018-04-12T07:00:00.000Z",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
-      "recurrenceDay": "1",
-      "recurrenceTime": "1",
       "time": "7:00pm",
       "venue": "cool venue"
     }
