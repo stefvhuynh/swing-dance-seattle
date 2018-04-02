@@ -7,13 +7,7 @@ import {
   RECURRENCE_DAY_MAP,
   RECURRENCE_TIME_MAP
 } from "../constants";
-import {
-  getValueDisplayList,
-  isDateStartBeforeDateEnd,
-  isRecurringCategory,
-  isValidDate,
-  isValidTime
-} from "../utils";
+import { getValueDisplayList, isRecurringCategory } from "../utils";
 import Select from "./select";
 
 export default class AddEvent extends React.Component {
@@ -26,7 +20,6 @@ export default class AddEvent extends React.Component {
     category: EMPTY_TYPE,
     dateEnd: "",
     dateStart: "",
-    isInvalid: false,
     link: "",
     name: "",
     neighborhood: "",
@@ -44,58 +37,14 @@ export default class AddEvent extends React.Component {
 
   handleSubmit = () => {
     const { onEventSubmit } = this.props;
-    const isValid = this.areDetailsValid();
 
-    if (isValid && onEventSubmit) {
-      const { isInvalid, ...details } = this.state;
-      const { dateEnd, dateStart } = details;
-      details.dateStart = dateStart ? new Date(dateStart).toISOString() : "";
-      details.dateEnd = dateEnd ? new Date(dateEnd).toISOString() : "";
-      onEventSubmit(details);
+    if (onEventSubmit) {
+      onEventSubmit({ ...this.state });
     }
-
-    this.setState({ isInvalid: !isValid });
   };
 
-  areDetailsValid() {
-    const {
-      category,
-      dateEnd,
-      dateStart,
-      link,
-      name,
-      neighborhood,
-      recurrenceDay,
-      recurrenceTime,
-      time
-    } = this.state;
-
-    const isRecurring = isRecurringCategory(category);
-
-    return category !== EMPTY_TYPE
-      && (
-        !isRecurring
-          ? isValidDate(dateEnd) && isDateStartBeforeDateEnd(dateStart, dateEnd)
-          : true
-      )
-      && (!isRecurring ? isValidDate(dateStart) : true)
-      && link
-      && name
-      && neighborhood
-      && (isRecurring ? recurrenceDay !== EMPTY_TYPE : true)
-      && (isRecurring ? recurrenceTime !== EMPTY_TYPE : true)
-      && (time ? isValidTime(time) : true);
-  }
-
-  renderMessage() {
-    if (this.state.isInvalid) {
-      return <div>Details are invalid!</div>;
-    } else if (this.props.submissionSucceeded) {
-      return <div>Submission succeeded!</div>;
-    }
-  }
-
   render() {
+    const { submissionSucceeded } = this.props;
     const {
       category,
       dateEnd,
@@ -217,7 +166,7 @@ export default class AddEvent extends React.Component {
 
         <button onClick={this.handleSubmit}>Submit</button>
 
-        {this.renderMessage()}
+        {submissionSucceeded && <div>Submission succeeded!</div>}
       </div>
     );
   }

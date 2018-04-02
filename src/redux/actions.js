@@ -3,7 +3,8 @@ import {
   getEvents,
   logIn,
   logOut,
-  postEvent
+  postNonrecurringEvent,
+  postRecurringEvent
 } from "../utils";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
@@ -86,11 +87,15 @@ const eventSubmissionFailed = () => ({
   type: EVENT_SUBMISSION_FAILED
 });
 
-export const eventSubmitted = (details) => {
+export const eventSubmitted = (details, recurring) => {
   return (dispatch, getState, firebase) => {
     dispatch({ type: EVENT_SUBMITTED });
 
-    postEvent(firebase, { ...details, approved: false })
+    const postEvent = recurring
+      ? postRecurringEvent(firebase, details)
+      : postNonrecurringEvent(firebase, details);
+
+    postEvent
       .then(() => dispatch(eventSubmissionSucceeded()))
       .catch(() => dispatch(eventSubmissionFailed()));
   };

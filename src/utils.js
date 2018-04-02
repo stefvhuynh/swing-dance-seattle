@@ -19,9 +19,7 @@ export const getAuthorizedUser = (firebase) => {
 
 export const getRecurringEvents = (firebase) => {
   return firebase.database()
-    .ref("/events")
-    .orderByChild("dateStart")
-    .equalTo(null)
+    .ref("/events/recurring")
     .once("value")
     .then((snapshot) => snapshot.val());
 };
@@ -31,7 +29,7 @@ export const getNonrecurringEvents = (firebase) => {
   const twoWeeksLater = (new Date(Date.now() + TWO_WEEKS)).toISOString();
 
   return firebase.database()
-    .ref("/events")
+    .ref("/events/nonrecurring")
     .orderByChild("dateStart")
     .startAt(now)
     .endAt(twoWeeksLater)
@@ -49,8 +47,15 @@ export const getEvents = (firebase) => {
   });
 };
 
-export const postEvent = (firebase, eventDetails) => {
-  return firebase.database().ref("/events").push().set(eventDetails);
+export const postRecurringEvent = (firebase, eventDetails) => {
+  return firebase.database().ref("/events/recurring").push().set(eventDetails);
+};
+
+export const postNonrecurringEvent = (firebase, eventDetails) => {
+  return firebase.database()
+    .ref("/events/nonrecurring")
+    .push()
+    .set(eventDetails);
 };
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {
@@ -64,15 +69,7 @@ export const getValueDisplayList = (map) => {
   return convertMapToList(map, "value", "display");
 };
 
-export const trimMap = (map) => {
-  return Object.keys(map).reduce((trimmedMap, key) => {
-    const value = map[key];
-    if (value !== "" && value !== undefined && value !== null) {
-      trimmedMap[key] = value;
-    }
-    return trimmedMap;
-  }, {});
-};
+export const getDateString = (date) => (new Date(date)).toISOString();
 
 export const isValidDate = (date) => {
   const dateObj = new Date(date);
@@ -90,4 +87,37 @@ export const isValidTime = (time) => {
 
 export const isRecurringCategory = (category) => {
   return category === CATEGORY_CLASS || category === CATEGORY_DANCE;
+};
+
+export const serializeEvent = ({
+  category,
+  dateEnd,
+  dateStart,
+  link,
+  name,
+  neighborhood,
+  recurrenceDay,
+  recurrenceTime,
+  time,
+  venue
+}) => {
+  const commonDetails = {
+    approved: false,
+    category,
+    name,
+    link,
+    neighborhood,
+    time,
+    venue
+  };
+
+  return isRecurringCategory(category) ? {
+    ...commonDetails,
+    recurrenceDay,
+    recurrenceTime
+  } : {
+    ...commonDetails,
+    dateEnd: getDateString(dateEnd),
+    dateStart: getDateString(dateStart)
+  };
 };

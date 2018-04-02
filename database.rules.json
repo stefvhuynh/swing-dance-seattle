@@ -1,9 +1,15 @@
 {
   "rules": {
-    "events": {
+    "recurring-events": {
       ".read": true,
       ".write": "auth != null",
-      ".indexOn": ["dateStart"]
+      ".validate": "newDate.hasChildren(['category', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
+    },
+    "nonrecurring-events": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["dateStart"],
+      ".validate": "newDate.hasChildren(['category', 'dateEnd', 'dateStart', 'link', 'name', 'neighborhood', 'time', 'venue'])"
     }
   }
 }

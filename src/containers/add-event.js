@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { eventSubmitted } from "../redux/actions";
 import { selectEventSubmissionSucceeded } from "../redux/selectors";
 import AddEvent from "../components/add-event";
-import { trimMap } from "../utils";
+import { isRecurringCategory, serializeEvent } from "../utils";
 
 const mapStateToProps = (state) => ({
   submissionSucceeded: selectEventSubmissionSucceeded(state)
@@ -11,8 +11,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onEventSubmit: (details) => {
-    const trimmedDetails = trimMap(details);
-    dispatch(eventSubmitted(trimmedDetails));
+    const serializedDetails = serializeEvent(details);
+    dispatch(eventSubmitted(
+      serializedDetails,
+      isRecurringCategory(details.category)
+    ));
   }
 });
 
