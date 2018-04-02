@@ -69,13 +69,11 @@ export const SUBFILTER_LEARN_MAP = {
   [SUBFILTER_LEARN_WORKSHOPS]: "Workshops"
 };
 
-export const SUBFILTER_DANCE_WEEKLY = "1";
-export const SUBFILTER_DANCE_MONTHLY = "2";
-export const SUBFILTER_DANCE_EVENTS = "3";
+export const SUBFILTER_DANCE_DANCES = "1";
+export const SUBFILTER_DANCE_EVENTS = "2";
 
 export const SUBFILTER_DANCE_MAP = {
-  [SUBFILTER_DANCE_WEEKLY]: "Weekly",
-  [SUBFILTER_DANCE_MONTHLY]: "Monthly",
+  [SUBFILTER_DANCE_DANCES]: "Dances",
   [SUBFILTER_DANCE_EVENTS]: "Events"
 };
 

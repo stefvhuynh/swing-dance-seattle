@@ -28,3 +28,12 @@ export const isValidTime = (time) => {
 export const isRecurringCategory = (category) => {
   return category === CATEGORY_CLASS || category === CATEGORY_DANCE;
 };
+
+export const getExperiencesByDay = (experiences) => {
+  return Object.keys(experiences).reduce((experiencesByDay, key) => {
+    const recurrenceDay = experiences[key].recurrenceDay;
+    experiencesByDay[recurrenceDay] = (experiencesByDay[recurrenceDay] || [])
+      .concat([experiences[key]]);
+    return experiencesByDay;
+  }, {});
+};

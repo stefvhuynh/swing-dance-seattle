@@ -1,5 +1,7 @@
 import { createSelector } from "reselect";
 
+import { getExperiencesByDay } from "../utils";
+
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
 
@@ -8,21 +10,24 @@ export const selectExperienceSubmissionSucceeded = (state) => {
 };
 
 export const selectExperiences = (state) => state.experiences.data;
+
 export const selectClasses = createSelector(
   selectExperiences,
   (experiences) => experiences.classes || {}
 );
+export const selectDances = createSelector(
+  selectExperiences,
+  (experiences) => experiences.dances || {}
+);
 
 export const selectClassesByDay = createSelector(
   selectClasses,
-  (classes) => {
-    return Object.keys(classes).reduce((classesByDay, key) => {
-      const recurrenceDay = classes[key].recurrenceDay;
-      classesByDay[recurrenceDay] = (classesByDay[recurrenceDay] || [])
-        .concat([classes[key]]);
-      return classesByDay;
-    }, {});
-  }
+  (classes) => getExperiencesByDay(classes)
+);
+
+export const selectDancesByDay = createSelector(
+  selectDances,
+  (dances) => getExperiencesByDay(dances)
 );
 
 export const selectIsMobile = (state) => state.ui.isMobile;
