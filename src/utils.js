@@ -1,5 +1,22 @@
 import { CATEGORY_CLASS, CATEGORY_DANCE, TWO_WEEKS } from "./constants";
 
+export const logIn = (firebase, username, password) => {
+  return firebase.auth().signInWithEmailAndPassword(username, password);
+};
+
+export const logOut = (firebase) => {
+  return firebase.auth().signOut();
+};
+
+export const getAuthorizedUser = (firebase) => {
+  return new Promise((resolve) => {
+    const removeListener = firebase.auth().onAuthStateChanged((user) => {
+      resolve(user);
+      removeListener();
+    });
+  });
+};
+
 export const getEvents = (firebase) => {
   const now = (new Date()).toISOString();
   const twoWeeksLater = (new Date(Date.now() + TWO_WEEKS)).toISOString();
@@ -13,13 +30,8 @@ export const getEvents = (firebase) => {
     .then((snapshot) => snapshot.val());
 };
 
-export const getAuthorizedUser = (firebase) => {
-  return new Promise((resolve) => {
-    const removeListener = firebase.auth().onAuthStateChanged((user) => {
-      resolve(user);
-      removeListener();
-    });
-  });
+export const postEvent = (firebase, eventDetails) => {
+  return firebase.database().ref("/events").push().set(eventDetails);
 };
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {

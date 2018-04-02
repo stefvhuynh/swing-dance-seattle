@@ -1,4 +1,10 @@
-import { getAuthorizedUser, getEvents } from "../utils";
+import {
+  getAuthorizedUser,
+  getEvents,
+  logIn,
+  logOut,
+  postEvent
+} from "../utils";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
@@ -22,6 +28,7 @@ export const appInitialized = () => {
       getEvents(firebase)
     ]).then((values) => {
       const [user, events] = values;
+
       dispatch({
         type: APP_INITIALIZED,
         payload: { isLoggedIn: !!user, events }
@@ -48,11 +55,9 @@ export const loginSubmitted = (username, password) => {
   return (dispatch, getState, firebase) => {
     dispatch({ type: LOGIN_SUBMITTED });
 
-    firebase.auth().signInWithEmailAndPassword(username, password).then(() => {
-      dispatch(loginSucceeded());
-    }).catch((error) => {
-      dispatch(loginFailed(error.message));
-    });
+    logIn(firebase, username, password)
+      .then(() => dispatch(loginSucceeded()))
+      .catch((error) => dispatch(loginFailed(error.message)));
   };
 };
 
@@ -67,11 +72,9 @@ export const logoutSubmitted = () => {
   return (dispatch, getState, firebase) => {
     dispatch({ type: LOGOUT_SUBMITTED });
 
-    firebase.auth().signOut().then(() => {
-      dispatch(logoutSucceeded());
-    }).catch((error) => {
-      dispatch(logoutFailed(error.message));
-    });
+    logOut(firebase)
+      .then(() => dispatch(logoutSucceeded()))
+      .catch((error) => dispatch(logoutFailed(error.message)));
   };
 };
 
@@ -87,14 +90,9 @@ export const eventSubmitted = (details) => {
   return (dispatch, getState, firebase) => {
     dispatch({ type: EVENT_SUBMITTED });
 
-    firebase.database().ref("/events").push().set({
-      ...details,
-      approved: false
-    }).then(() => {
-      dispatch(eventSubmissionSucceeded());
-    }).catch(() => {
-      dispatch(eventSubmissionFailed());
-    });
+    postEvent(firebase, { ...details, approved: false })
+      .then(() => dispatch(eventSubmissionSucceeded()))
+      .catch(() => dispatch(eventSubmissionFailed()));
   };
 };
 
