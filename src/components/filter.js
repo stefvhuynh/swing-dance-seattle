@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import { FILTER_MAP, SUBFILTER_MAP } from "../constants";
-import { generateValueDisplayList } from "../utils";
+import { getValueDisplayList } from "../utils";
 
 class Filter extends React.Component {
   static propTypes = {
@@ -31,8 +31,8 @@ class Filter extends React.Component {
 
   render() {
     const { selectedFilter, selectedSubfilter } = this.props;
-    const filters = generateValueDisplayList(FILTER_MAP);
-    const subfilters = generateValueDisplayList(SUBFILTER_MAP[selectedFilter]);
+    const filters = getValueDisplayList(FILTER_MAP);
+    const subfilters = getValueDisplayList(SUBFILTER_MAP[selectedFilter]);
 
     return (
       <div>

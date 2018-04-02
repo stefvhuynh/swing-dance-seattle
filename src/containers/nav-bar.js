@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import NavBar from "../components/nav-bar";
-import { selectIsMobile, selectIsNavBarOpen } from "../redux/reducer";
+import { selectIsMobile, selectIsNavBarOpen } from "../redux/selectors";
 import { navBarToggled } from "../redux/actions";
 
 const mapStateToProps = (state) => ({

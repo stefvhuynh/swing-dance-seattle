@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { selectFilter, selectSubfilter } from "../redux/reducer";
+import { selectFilter, selectSubfilter } from "../redux/selectors";
 import { filterSelected, subfilterSelected } from "../redux/actions";
 import Filter from "../components/filter";
 

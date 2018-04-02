@@ -26,13 +26,13 @@ DesktopNavBar.propTypes = {
 const MobileNavBar = ({ isOpen, links, onToggle }) => (
   <div className="fixed flex-row">
     {isOpen && (
-      <ul className="inline-block">
+      <ul>
         {links.map(({ content, href }) => (
           <li key={href}><Link href={href}>{content}</Link></li>
         ))}
       </ul>
     )}
-    <Icon className="inline-block" name="bars" onClick={onToggle}/>
+    <Icon name="bars" onClick={onToggle}/>
   </div>
 );
 

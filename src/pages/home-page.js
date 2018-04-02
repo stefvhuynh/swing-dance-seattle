@@ -1,9 +1,28 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { CATEGORY_CLASS } from "../constants";
+import { selectClasses, selectSubfilter } from "../redux/selectors";
 import Filter from "../containers/filter";
+import EventListRecurring from "../components/event-list-recurring";
 
 class HomePage extends React.Component {
+  static propTypes = {
+    classes: PropTypes.arrayOf(PropTypes.object),
+    subfilter: PropTypes.string
+  };
+
+  renderContent() {
+    const { classes, subfilter } = this.props;
+
+    switch (subfilter) {
+      case CATEGORY_CLASS: {
+        return <EventListRecurring events={classes}/>;
+      }
+    }
+  }
+
   render() {
     return (
       <div>
@@ -11,9 +30,15 @@ class HomePage extends React.Component {
           welcome message
         </div>
         <Filter/>
+        {this.renderContent()}
       </div>
     );
   }
 }
 
-export default connect()(HomePage);
+const mapStateToProps = (state) => ({
+  classes: selectClasses(state),
+  subfilter: selectSubfilter(state)
+});
+
+export default connect(mapStateToProps)(HomePage);

@@ -15,13 +15,15 @@ export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
-    const removeListener = firebase.auth().onAuthStateChanged((user) => {
-      dispatch({
-        type: APP_INITIALIZED,
-        payload: { isLoggedIn: !!user }
-      });
+    firebase.database().ref("/events").once("value").then((snapshot) => {
+      const removeListener = firebase.auth().onAuthStateChanged((user) => {
+        dispatch({
+          type: APP_INITIALIZED,
+          payload: { isLoggedIn: !!user, events: snapshot.val() }
+        });
 
-      removeListener();
+        removeListener();
+      });
     });
   };
 };

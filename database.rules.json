@@ -1,9 +1,5 @@
 {
   "rules": {
-    "users": {
-      ".read": false,
-      ".write": false
-    },
     "events": {
       ".read": true,
       ".write": "auth != null"

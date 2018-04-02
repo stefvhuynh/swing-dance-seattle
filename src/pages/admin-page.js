@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { logoutSubmitted } from "../redux/actions";
-import { selectIsLoggedIn } from "../redux/reducer";
+import { selectIsLoggedIn } from "../redux/selectors";
 import Login from "../containers/login";
 import AddEvent from "../containers/add-event";
 

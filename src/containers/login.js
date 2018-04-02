@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import { loginSubmitted } from "../redux/actions";
-import { selectLoginError } from "../redux/reducer";
+import { selectLoginError } from "../redux/selectors";
 import Login from "../components/login";
 
 const mapStateToProps = (state) => ({

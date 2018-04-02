@@ -3,7 +3,7 @@ import { routerForBrowser } from "redux-little-router";
 import thunk from "redux-thunk";
 import firebase from "firebase";
 
-import { auth, events, ui } from "./reducer";
+import { auth, events, ui } from "./reducers";
 import routes from "../routes";
 import firebaseConfig from "../../firebase.config";
 
