@@ -19,6 +19,14 @@ export const selectDances = createSelector(
   selectExperiences,
   (experiences) => experiences.dances || {}
 );
+export const selectEvents = createSelector(
+  selectExperiences,
+  (experiences) => experiences.events || {}
+);
+export const selectWorkshops = createSelector(
+  selectExperiences,
+  (experiences) => experiences.workshops || {}
+);
 
 export const selectClassesByDay = createSelector(
   selectClasses,
@@ -28,6 +36,16 @@ export const selectClassesByDay = createSelector(
 export const selectDancesByDay = createSelector(
   selectDances,
   (dances) => getExperiencesByDay(dances)
+);
+
+export const selectEventsByDay = createSelector(
+  selectEvents,
+  (events) => getExperiencesByDay(events)
+);
+
+export const selectWorkshopsByDay = createSelector(
+  selectWorkshops,
+  (workshops) => getExperiencesByDay(workshops)
 );
 
 export const selectIsMobile = (state) => state.ui.isMobile;

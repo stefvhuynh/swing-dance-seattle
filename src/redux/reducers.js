@@ -17,7 +17,7 @@ import {
 import {
   FILTER_LEARN,
   MOBILE_BREAKPOINT,
-  SUBFILTER_DEFAULT
+  FILTER_SUBFILTER_MAP
 } from "../constants";
 
 const initialState = {
@@ -44,7 +44,7 @@ const initialState = {
     isMobile: false,
     isNavBarOpen: false,
     page: 1,
-    subfilter: SUBFILTER_DEFAULT
+    subfilter: FILTER_SUBFILTER_MAP[FILTER_LEARN][0]
   }
 };
 
@@ -133,7 +133,8 @@ export const ui = (state = initialState.ui, action) => {
     }
 
     case FILTER_SELECTED: {
-      return { ...state, filter: payload.filter, subfilter: SUBFILTER_DEFAULT };
+      const { filter } = payload;
+      return { ...state, filter, subfilter: FILTER_SUBFILTER_MAP[filter][0] };
     }
 
     case SUBFILTER_SELECTED: {

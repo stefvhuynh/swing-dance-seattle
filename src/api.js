@@ -35,8 +35,8 @@ export const serializeExperience = ({
     recurrenceTime
   } : {
     ...commonDetails,
-    dateEnd: (new Date(dateEnd)).toISOString(),
-    dateStart: (new Date(dateStart)).toISOString()
+    dateEnd: (new Date(`${dateEnd} PDT`)).toISOString(),
+    dateStart: (new Date(`${dateStart} PDT`)).toISOString()
   };
 };
 

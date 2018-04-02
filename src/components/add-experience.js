@@ -7,7 +7,7 @@ import {
   RECURRENCE_DAY_MAP,
   RECURRENCE_TIME_MAP
 } from "../constants";
-import { getValueDisplayList, isRecurringCategory } from "../utils";
+import { convertMapToList, isRecurringCategory } from "../utils";
 import Select from "./select";
 
 export default class AddExperience extends React.Component {
@@ -72,7 +72,7 @@ export default class AddExperience extends React.Component {
             name="category"
             onChange={this.handleInputChange}
             value={category}
-            options={getValueDisplayList(CATEGORY_MAP)}
+            options={convertMapToList(CATEGORY_MAP, "value", "display")}
           />
         </label>
 
@@ -123,13 +123,15 @@ export default class AddExperience extends React.Component {
               name="recurrenceTime"
               onChange={this.handleInputChange}
               value={recurrenceTime}
-              options={getValueDisplayList(RECURRENCE_TIME_MAP)}
+              options={
+                convertMapToList(RECURRENCE_TIME_MAP, "value", "display")
+              }
             />
             <Select
               name="recurrenceDay"
               onChange={this.handleInputChange}
               value={recurrenceDay}
-              options={getValueDisplayList(RECURRENCE_DAY_MAP)}
+              options={convertMapToList(RECURRENCE_DAY_MAP, "value", "display")}
             />
           </label>
         ) : (

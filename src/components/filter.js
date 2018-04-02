@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { FILTER_MAP, SUBFILTER_MAP } from "../constants";
-import { getValueDisplayList } from "../utils";
+import { FILTER_MAP, FILTER_SUBFILTER_MAP, SUBFILTER_MAP } from "../constants";
+import { convertMapToList } from "../utils";
 
 class Filter extends React.Component {
   static propTypes = {
@@ -31,8 +31,10 @@ class Filter extends React.Component {
 
   render() {
     const { selectedFilter, selectedSubfilter } = this.props;
-    const filters = getValueDisplayList(FILTER_MAP);
-    const subfilters = getValueDisplayList(SUBFILTER_MAP[selectedFilter]);
+    const filters = convertMapToList(FILTER_MAP, "value", "display");
+    const subfilters = FILTER_SUBFILTER_MAP[selectedFilter].map((subfilter) => {
+      return { value: subfilter, display: SUBFILTER_MAP[subfilter] };
+    });
 
     return (
       <div>

@@ -3,40 +3,55 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import {
-  SUBFILTER_LEARN_CLASSES,
-  SUBFILTER_DANCE_DANCES
+  SUBFILTER_CLASSES,
+  SUBFILTER_DANCES,
+  SUBFILTER_EVENTS,
+  SUBFILTER_WORKSHOPS
 } from "../constants";
 
 import {
   selectClassesByDay,
   selectDancesByDay,
-  selectSubfilter
+  selectEventsByDay,
+  selectSubfilter,
+  selectWorkshopsByDay
 } from "../redux/selectors";
 
 import Filter from "../containers/filter";
-import RecurringSchedule from "../components/recurring-schedule";
+import Schedule from "../components/schedule";
 
-const experiencesByDayPropType = RecurringSchedule.propTypes.experiencesByDay;
+const experiencesByDayPropType = Schedule.propTypes.experiencesByDay;
 
 class HomePage extends React.Component {
   static propTypes = {
     classesByDay: experiencesByDayPropType,
     dancesByDay: experiencesByDayPropType,
-    subfilter: PropTypes.string
+    eventsByDay: experiencesByDayPropType,
+    subfilter: PropTypes.string,
+    workshopsByDay: experiencesByDayPropType
   };
 
   renderContent() {
-    const { classesByDay, dancesByDay, subfilter } = this.props;
+    const {
+      classesByDay,
+      dancesByDay,
+      eventsByDay,
+      subfilter,
+      workshopsByDay
+    } = this.props;
 
     switch (subfilter) {
-      case SUBFILTER_LEARN_CLASSES: {
-        return <RecurringSchedule experiencesByDay={classesByDay}/>;
+      case SUBFILTER_CLASSES: {
+        return <Schedule recurring experiencesByDay={classesByDay}/>;
       }
-      case SUBFILTER_DANCE_DANCES: {
-        return <RecurringSchedule experiencesByDay={dancesByDay}/>;
+      case SUBFILTER_DANCES: {
+        return <Schedule recurring experiencesByDay={dancesByDay}/>;
       }
-      default: {
-        return <div>some content</div>;
+      case SUBFILTER_EVENTS: {
+        return <Schedule experiencesByDay={eventsByDay}/>;
+      }
+      case SUBFILTER_WORKSHOPS: {
+        return <Schedule experiencesByDay={workshopsByDay}/>;
       }
     }
   }
@@ -55,9 +70,11 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  dancesByDay: selectDancesByDay(state),
   classesByDay: selectClassesByDay(state),
-  subfilter: selectSubfilter(state)
+  dancesByDay: selectDancesByDay(state),
+  eventsByDay: selectEventsByDay(state),
+  subfilter: selectSubfilter(state),
+  workshopsByDay: selectWorkshopsByDay(state)
 });
 
 export default connect(mapStateToProps)(HomePage);

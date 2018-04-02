@@ -59,25 +59,19 @@ export const FILTER_MAP = {
   [FILTER_DANCE]: "Dance"
 };
 
-export const SUBFILTER_DEFAULT = "1";
-
-export const SUBFILTER_LEARN_CLASSES = "1";
-export const SUBFILTER_LEARN_WORKSHOPS = "2";
-
-export const SUBFILTER_LEARN_MAP = {
-  [SUBFILTER_LEARN_CLASSES]: "Classes",
-  [SUBFILTER_LEARN_WORKSHOPS]: "Workshops"
-};
-
-export const SUBFILTER_DANCE_DANCES = "1";
-export const SUBFILTER_DANCE_EVENTS = "2";
-
-export const SUBFILTER_DANCE_MAP = {
-  [SUBFILTER_DANCE_DANCES]: "Dances",
-  [SUBFILTER_DANCE_EVENTS]: "Events"
-};
+export const SUBFILTER_CLASSES = "1";
+export const SUBFILTER_WORKSHOPS = "2";
+export const SUBFILTER_DANCES = "3";
+export const SUBFILTER_EVENTS = "4";
 
 export const SUBFILTER_MAP = {
-  [FILTER_LEARN]: SUBFILTER_LEARN_MAP,
-  [FILTER_DANCE]: SUBFILTER_DANCE_MAP
+  [SUBFILTER_CLASSES]: "Classes",
+  [SUBFILTER_WORKSHOPS]: "Workshops",
+  [SUBFILTER_DANCES]: "Dances",
+  [SUBFILTER_EVENTS]: "Events"
+};
+
+export const FILTER_SUBFILTER_MAP = {
+  [FILTER_LEARN]: [SUBFILTER_CLASSES, SUBFILTER_WORKSHOPS],
+  [FILTER_DANCE]: [SUBFILTER_DANCES, SUBFILTER_EVENTS]
 };

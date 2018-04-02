@@ -7,10 +7,6 @@ export const convertMapToList = (map, keyName = "key", valueName = "value") => {
   }));
 };
 
-export const getValueDisplayList = (map) => {
-  return convertMapToList(map, "value", "display");
-};
-
 export const isValidDate = (date) => {
   const dateObj = new Date(date);
   return dateObj !== "Invalid Date" && dateObj > Date.now();
@@ -31,9 +27,14 @@ export const isRecurringCategory = (category) => {
 
 export const getExperiencesByDay = (experiences) => {
   return Object.keys(experiences).reduce((experiencesByDay, key) => {
-    const recurrenceDay = experiences[key].recurrenceDay;
-    experiencesByDay[recurrenceDay] = (experiencesByDay[recurrenceDay] || [])
-      .concat([experiences[key]]);
+    const experience = experiences[key];
+    const day = experience.dateStart
+      ? experience.dateStart
+      : experience.recurrenceDay;
+
+    experiencesByDay[day] = (experiencesByDay[day] || [])
+      .concat([experience]);
+
     return experiencesByDay;
   }, {});
 };
