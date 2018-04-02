@@ -4,15 +4,15 @@ export const TWO_WEEKS = 12096e5;
 
 export const EMPTY_TYPE = "0";
 
-export const CATEGORY_DANCE = "1";
-export const CATEGORY_CLASS = "2";
+export const CATEGORY_CLASS = "1";
+export const CATEGORY_DANCE = "2";
 export const CATEGORY_EVENT = "3";
 export const CATEGORY_WORKSHOP = "4";
 
 export const CATEGORY_MAP = {
   [EMPTY_TYPE]: "",
-  [CATEGORY_DANCE]: "Dance",
   [CATEGORY_CLASS]: "Class",
+  [CATEGORY_DANCE]: "Dance",
   [CATEGORY_EVENT]: "Event",
   [CATEGORY_WORKSHOP]: "Workshop"
 };

@@ -1,11 +1,20 @@
 import {
+  CATEGORY_CLASS,
+  CATEGORY_DANCE,
+  CATEGORY_EVENT,
+  CATEGORY_WORKSHOP
+} from "../constants";
+
+import {
   getAuthorizedUser,
-  getEvents,
+  getExperiences,
   logIn,
   logOut,
-  postNonrecurringEvent,
-  postRecurringEvent
-} from "../utils";
+  postClass,
+  postDance,
+  postEvent,
+  postWorkshop
+} from "../api";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
@@ -16,9 +25,10 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 export const LOGOUT_SUBMITTED = "LOGOUT_SUBMITTED";
 export const LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
-export const EVENT_SUBMITTED = "EVENT_SUBMITTED";
-export const EVENT_SUBMISSION_SUCCEEDED = "EVENT_SUBMISSION_SUCCEEDED";
-export const EVENT_SUBMISSION_FAILED = "EVENT_SUBMISSION_FAILED";
+export const EXPERIENCE_SUBMITTED = "EXPERIENCE_SUBMITTED";
+export const EXPERIENCE_SUBMISSION_SUCCEEDED =
+  "EXPERIENCE_SUBMISSION_SUCCEEDED";
+export const EXPERIENCE_SUBMISSION_FAILED = "EXPERIENCE_SUBMISSION_FAILED";
 export const FILTER_SELECTED = "FILTER_SELECTED";
 export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
 
@@ -26,13 +36,13 @@ export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
     Promise.all([
       getAuthorizedUser(firebase),
-      getEvents(firebase)
+      getExperiences(firebase)
     ]).then((values) => {
-      const [user, events] = values;
+      const [user, experiences] = values;
 
       dispatch({
         type: APP_INITIALIZED,
-        payload: { isLoggedIn: !!user, events }
+        payload: { isLoggedIn: !!user, experiences }
       });
     });
   };
@@ -79,25 +89,41 @@ export const logoutSubmitted = () => {
   };
 };
 
-const eventSubmissionSucceeded = () => ({
-  type: EVENT_SUBMISSION_SUCCEEDED
+const experienceSubmissionSucceeded = () => ({
+  type: EXPERIENCE_SUBMISSION_SUCCEEDED
 });
 
-const eventSubmissionFailed = () => ({
-  type: EVENT_SUBMISSION_FAILED
+const experienceSubmissionFailed = () => ({
+  type: EXPERIENCE_SUBMISSION_FAILED
 });
 
-export const eventSubmitted = (details, recurring) => {
+export const experienceSubmitted = (details, experienceCategory) => {
   return (dispatch, getState, firebase) => {
-    dispatch({ type: EVENT_SUBMITTED });
+    dispatch({ type: EXPERIENCE_SUBMITTED });
 
-    const postEvent = recurring
-      ? postRecurringEvent(firebase, details)
-      : postNonrecurringEvent(firebase, details);
+    let postExperience;
+    switch (experienceCategory) {
+      case CATEGORY_CLASS: {
+        postExperience = postClass;
+        break;
+      }
+      case CATEGORY_DANCE: {
+        postExperience = postDance;
+        break;
+      }
+      case CATEGORY_EVENT: {
+        postExperience = postEvent;
+        break;
+      }
+      case CATEGORY_WORKSHOP: {
+        postExperience = postWorkshop;
+        break;
+      }
+    }
 
-    postEvent
-      .then(() => dispatch(eventSubmissionSucceeded()))
-      .catch(() => dispatch(eventSubmissionFailed()));
+    postExperience(firebase, details)
+      .then(() => dispatch(experienceSubmissionSucceeded()))
+      .catch(() => dispatch(experienceSubmissionFailed()));
   };
 };
 

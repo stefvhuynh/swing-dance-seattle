@@ -1,7 +1,7 @@
 import {
   APP_INITIALIZED,
-  EVENT_SUBMITTED,
-  EVENT_SUBMISSION_SUCCEEDED,
+  EXPERIENCE_SUBMITTED,
+  EXPERIENCE_SUBMISSION_SUCCEEDED,
   FILTER_SELECTED,
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
@@ -28,7 +28,7 @@ const initialState = {
     loginErrorMessage: "",
     logoutErrorMessage: ""
   },
-  events: {
+  experiences: {
     data: {},
     isSubmitting: false,
     submissionSucceeded: false
@@ -89,19 +89,19 @@ export const auth = (state = initialState.auth, action) => {
   }
 };
 
-export const events = (state = initialState.events, action) => {
+export const experiences = (state = initialState.experiences, action) => {
   const { payload, type } = action;
 
   switch (type) {
     case APP_INITIALIZED: {
-      return { ...state, data: payload.events };
+      return { ...state, data: payload.experiences };
     }
 
-    case EVENT_SUBMITTED: {
+    case EXPERIENCE_SUBMITTED: {
       return { ...state, isSubmitting: true };
     }
 
-    case EVENT_SUBMISSION_SUCCEEDED: {
+    case EXPERIENCE_SUBMISSION_SUCCEEDED: {
       return { ...state, isSubmitting: false, submissionSucceeded: true };
     }
 

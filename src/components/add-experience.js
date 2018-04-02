@@ -10,9 +10,9 @@ import {
 import { getValueDisplayList, isRecurringCategory } from "../utils";
 import Select from "./select";
 
-export default class AddEvent extends React.Component {
+export default class AddExperience extends React.Component {
   static propTypes = {
-    onEventSubmit: PropTypes.func,
+    onExperienceSubmit: PropTypes.func,
     submissionSucceeded: PropTypes.bool
   };
 
@@ -36,10 +36,10 @@ export default class AddEvent extends React.Component {
   };
 
   handleSubmit = () => {
-    const { onEventSubmit } = this.props;
+    const { onExperienceSubmit } = this.props;
 
-    if (onEventSubmit) {
-      onEventSubmit({ ...this.state });
+    if (onExperienceSubmit) {
+      onExperienceSubmit({ ...this.state });
     }
   };
 
@@ -62,7 +62,7 @@ export default class AddEvent extends React.Component {
 
     return (
       <div className="flex-column">
-        Add an Event
+        Add an Experience
 
         <label>
           Category

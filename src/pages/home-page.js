@@ -2,10 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { CATEGORY_CLASS } from "../constants";
-import { selectClassesByDay, selectSubfilter } from "../redux/selectors";
+import { selectSubfilter } from "../redux/selectors";
 import Filter from "../containers/filter";
-import EventListRecurring from "../components/event-list-recurring";
 
 class HomePage extends React.Component {
   static propTypes = {
@@ -14,13 +12,7 @@ class HomePage extends React.Component {
   };
 
   renderContent() {
-    const { classes, subfilter } = this.props;
-
-    switch (subfilter) {
-      case CATEGORY_CLASS: {
-        return <EventListRecurring events={classes}/>;
-      }
-    }
+    return <div>some content</div>;
   }
 
   render() {
@@ -37,7 +29,6 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  classes: selectClassesByDay(state),
   subfilter: selectSubfilter(state)
 });
 

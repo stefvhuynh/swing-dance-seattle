@@ -5,13 +5,13 @@ import { connect } from "react-redux";
 import { logoutSubmitted } from "../redux/actions";
 import { selectIsLoggedIn } from "../redux/selectors";
 import Login from "../containers/login";
-import AddEvent from "../containers/add-event";
+import AddExperience from "../containers/add-experience";
 
 const AdminPage = ({ isLoggedIn, onLogOutClick }) => {
   return (
     <div>
       {isLoggedIn && <button onClick={onLogOutClick}>Log Out</button>}
-      {isLoggedIn ? <AddEvent/> : <Login/>}
+      {isLoggedIn ? <AddExperience/> : <Login/>}
     </div>
   );
 };

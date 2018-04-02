@@ -3,7 +3,7 @@ import { routerForBrowser } from "redux-little-router";
 import thunk from "redux-thunk";
 import firebase from "firebase";
 
-import { auth, events, ui } from "./reducers";
+import { auth, experiences, ui } from "./reducers";
 import routes from "../routes";
 import firebaseConfig from "../../firebase.config";
 
@@ -33,7 +33,7 @@ export default () => {
 
   const rootReducer = combineReducers({
     auth,
-    events,
+    experiences,
     router,
     ui
   });
