@@ -1,5 +1,6 @@
 export const MOBILE_BREAKPOINT = 768;
 export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
+export const TWO_WEEKS = 12096e5;
 
 export const EMPTY_TYPE = "0";
 

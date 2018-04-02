@@ -48,6 +48,8 @@ export default class AddEvent extends React.Component {
 
     if (isValid && onEventSubmit) {
       const { isInvalid, ...details } = this.state;
+      details.dateStart = new Date(details.dateStart).toISOString();
+      details.dateEnd = new Date(details.dateEnd).toISOString();
       onEventSubmit(details);
     }
 
@@ -64,8 +66,7 @@ export default class AddEvent extends React.Component {
       neighborhood,
       recurrenceDay,
       recurrenceTime,
-      time,
-      venue
+      time
     } = this.state;
 
     const isRecurring = isRecurringCategory(category);
@@ -82,8 +83,7 @@ export default class AddEvent extends React.Component {
       && neighborhood
       && (isRecurring ? recurrenceDay !== EMPTY_TYPE : true)
       && (isRecurring ? recurrenceTime !== EMPTY_TYPE : true)
-      && (time ? isValidTime(time) : true)
-      && venue;
+      && (time ? isValidTime(time) : true);
   }
 
   renderMessage() {

@@ -1,3 +1,5 @@
+import { getAuthorizedUser, getEvents } from "../utils";
+
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
 export const NAV_BAR_TOGGLED = "NAV_BAR_TOGGLED";
@@ -15,14 +17,14 @@ export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
-    firebase.database().ref("/events").once("value").then((snapshot) => {
-      const removeListener = firebase.auth().onAuthStateChanged((user) => {
-        dispatch({
-          type: APP_INITIALIZED,
-          payload: { isLoggedIn: !!user, events: snapshot.val() }
-        });
-
-        removeListener();
+    Promise.all([
+      getAuthorizedUser(firebase),
+      getEvents(firebase)
+    ]).then((values) => {
+      const [user, events] = values;
+      dispatch({
+        type: APP_INITIALIZED,
+        payload: { isLoggedIn: !!user, events }
       });
     });
   };
