@@ -1,6 +1,6 @@
 {
   "classes": {
-    "1": {
+    "a": {
       "approved": true,
       "category": "3",
       "link": "cool.com",
@@ -11,7 +11,7 @@
       "time": "7:00pm",
       "venue": "cool venue"
     },
-    "2": {
+    "b": {
       "approved": true,
       "category": "4",
       "link": "cool.com",
@@ -24,7 +24,7 @@
     }
   },
   "dances": {
-    "1": {
+    "a": {
       "approved": true,
       "category": "3",
       "link": "cool.com",
@@ -35,7 +35,7 @@
       "time": "7:00pm",
       "venue": "cool venue"
     },
-    "2": {
+    "b": {
       "approved": true,
       "category": "4",
       "link": "cool.com",
@@ -48,7 +48,7 @@
     }
   },
   "events": {
-    "1": {
+    "a": {
       "approved": true,
       "category": "1",
       "dateEnd": "2018-04-07T07:00:00.000Z",
@@ -59,7 +59,7 @@
       "time": "7:00pm",
       "venue": "cool venue"
     },
-    "2": {
+    "b": {
       "approved": true,
       "category": "2",
       "dateEnd": "2018-04-15T07:00:00.000Z",
@@ -72,7 +72,7 @@
     }
   },
   "workshops": {
-    "1": {
+    "a": {
       "approved": true,
       "category": "1",
       "dateEnd": "2018-04-07T07:00:00.000Z",
@@ -83,7 +83,7 @@
       "time": "7:00pm",
       "venue": "cool venue"
     },
-    "2": {
+    "b": {
       "approved": true,
       "category": "2",
       "dateEnd": "2018-04-15T07:00:00.000Z",

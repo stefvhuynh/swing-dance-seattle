@@ -29,7 +29,12 @@ const initialState = {
     logoutErrorMessage: ""
   },
   experiences: {
-    data: {},
+    data: {
+      classes: {},
+      dances: {},
+      events: {},
+      workshops: {}
+    },
     isSubmitting: false,
     submissionSucceeded: false
   },
