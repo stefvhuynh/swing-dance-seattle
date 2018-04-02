@@ -9,11 +9,11 @@
       ".validate": "newData.hasChildren(['approved', 'category', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
     },
     "events": {
-      ".indexOn": ["dateStart"],
+      ".indexOn": ["dateEnd"],
       ".validate": "newData.hasChildren(['approved', 'category', 'dateEnd', 'dateStart', 'link', 'name', 'neighborhood', 'time', 'venue'])"
     },
     "workshops": {
-      ".indexOn": ["dateStart"],
+      ".indexOn": ["dateEnd"],
       ".validate": "newData.hasChildren(['approved', 'category', 'dateEnd', 'dateStart', 'link', 'name', 'neighborhood', 'time', 'venue'])"
     }
   }
