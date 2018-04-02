@@ -29,12 +29,12 @@ const initialState = {
     logoutErrorMessage: ""
   },
   events: {
-    data: [],
-    isFetching: false,
+    data: {},
     isSubmitting: false,
     submissionSucceeded: false
   },
   ui: {
+    appInitialized: false,
     filter: FILTER_LEARN,
     isMobile: false,
     isNavBarOpen: false,
@@ -90,9 +90,13 @@ export const auth = (state = initialState.auth, action) => {
 };
 
 export const events = (state = initialState.events, action) => {
-  const { type } = action;
+  const { payload, type } = action;
 
   switch (type) {
+    case APP_INITIALIZED: {
+      return { ...state, events: payload.events };
+    }
+
     case EVENT_SUBMITTED: {
       return { ...state, isSubmitting: true };
     }
@@ -111,6 +115,10 @@ export const ui = (state = initialState.ui, action) => {
   const { payload, type } = action;
 
   switch (type) {
+    case APP_INITIALIZED: {
+      return { ...state, appInitialized: true };
+    }
+
     case WINDOW_RESIZED: {
       return { ...state, isMobile: payload.width < MOBILE_BREAKPOINT };
     }
@@ -132,15 +140,3 @@ export const ui = (state = initialState.ui, action) => {
     }
   }
 };
-
-export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
-export const selectLoginError = (state) => state.auth.loginErrorMessage;
-
-export const selectEventSubmissionSucceeded = (state) => {
-  return state.events.submissionSucceeded;
-};
-
-export const selectIsMobile = (state) => state.ui.isMobile;
-export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
-export const selectFilter = (state) => state.ui.filter;
-export const selectSubfilter = (state) => state.ui.subfilter;

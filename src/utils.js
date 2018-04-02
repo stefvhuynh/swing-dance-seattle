@@ -1,10 +1,24 @@
 import { CATEGORY_CLASS, CATEGORY_DANCE } from "./constants";
 
-export const generateValueDisplayList = (map) => {
+export const convertMapToList = (map, keyName = "key", valueName = "value") => {
   return Object.keys(map).map((key) => ({
-    value: key,
-    display: map[key]
+    [keyName]: key,
+    [valueName]: map[key]
   }));
+};
+
+export const getValueDisplayList = (map) => {
+  return convertMapToList(map, "value", "display");
+};
+
+export const trimMap = (map) => {
+  return Object.keys(map).reduce((trimmedMap, key) => {
+    const value = map[key];
+    if (value !== "" && value !== undefined && value !== null) {
+      trimmedMap[key] = value;
+    }
+    return trimmedMap;
+  }, {});
 };
 
 export const isValidDate = (date) => {

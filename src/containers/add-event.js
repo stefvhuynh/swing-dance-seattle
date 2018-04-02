@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 
 import { eventSubmitted } from "../redux/actions";
-import { selectEventSubmissionSucceeded } from "../redux/reducer";
+import { selectEventSubmissionSucceeded } from "../redux/selectors";
 import AddEvent from "../components/add-event";
-import { isRecurringCategory } from "../utils";
+import { trimMap } from "../utils";
 
 const mapStateToProps = (state) => ({
   submissionSucceeded: selectEventSubmissionSucceeded(state)
@@ -11,15 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onEventSubmit: (details) => {
-    const isRecurring = isRecurringCategory(details.category);
-    const trimmedDetails = {
-      ...details,
-      dateStart: isRecurring ? null : details.dateStart,
-      dateEnd: isRecurring ? null : details.dateEnd,
-      recurrenceDay: isRecurring ? details.recurrenceDay : null,
-      recurrenceTime: isRecurring ? details.recurrenceTime : null
-    };
-
+    const trimmedDetails = trimMap(details);
     dispatch(eventSubmitted(trimmedDetails));
   }
 });

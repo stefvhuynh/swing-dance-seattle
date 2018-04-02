@@ -8,7 +8,7 @@ import {
   RECURRENCE_TIME_MAP
 } from "../constants";
 import {
-  generateValueDisplayList,
+  getValueDisplayList,
   isDateStartBeforeDateEnd,
   isRecurringCategory,
   isValidDate,
@@ -120,12 +120,12 @@ export default class AddEvent extends React.Component {
             name="category"
             onChange={this.handleInputChange}
             value={category}
-            options={generateValueDisplayList(CATEGORY_MAP)}
+            options={getValueDisplayList(CATEGORY_MAP)}
           />
         </label>
 
         <label>
-          Event Name
+          Name
           <input
             type="text"
             name="name"
@@ -171,13 +171,13 @@ export default class AddEvent extends React.Component {
               name="recurrenceTime"
               onChange={this.handleInputChange}
               value={recurrenceTime}
-              options={generateValueDisplayList(RECURRENCE_TIME_MAP)}
+              options={getValueDisplayList(RECURRENCE_TIME_MAP)}
             />
             <Select
               name="recurrenceDay"
               onChange={this.handleInputChange}
               value={recurrenceDay}
-              options={generateValueDisplayList(RECURRENCE_DAY_MAP)}
+              options={getValueDisplayList(RECURRENCE_DAY_MAP)}
             />
           </label>
         ) : (
