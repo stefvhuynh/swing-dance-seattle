@@ -61,7 +61,7 @@ export const isValidDate = (date) => {
 };
 
 export const isDateStartBeforeDateEnd = (dateStart, dateEnd) => {
-  return new Date(dateStart) < new Date(dateEnd);
+  return new Date(dateStart) <= new Date(dateEnd);
 };
 
 export const isValidTime = (time) => {
