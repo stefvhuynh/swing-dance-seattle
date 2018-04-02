@@ -1,15 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { RECURRENCE_DAY_MAP } from "../constants";
+import {
+  RECURRENCE_DAY_FRIDAY,
+  RECURRENCE_DAY_MAP,
+  RECURRENCE_DAY_MONDAY,
+  RECURRENCE_DAY_SATURDAY,
+  RECURRENCE_DAY_SUNDAY,
+  RECURRENCE_DAY_THURSDAY,
+  RECURRENCE_DAY_TUESDAY,
+  RECURRENCE_DAY_WEDNESDAY
+} from "../constants";
+
 import ExperienceList from "./experience-list";
 
-const RecurringSchedule = ({ experiences }) => {
-  const scheduleItems = Object.keys(experiences).map((day) => {
+const RecurringSchedule = ({ experiencesByDay }) => {
+  const scheduleItems = Object.keys(experiencesByDay).map((day) => {
     return (
       <li key={day}>
         <div>{RECURRENCE_DAY_MAP[day]}</div>
-        <ExperienceList experiences={experiences[day]}/>
+        <ExperienceList experiences={experiencesByDay[day]}/>
       </li>
     );
   });
@@ -17,8 +27,18 @@ const RecurringSchedule = ({ experiences }) => {
   return <ul>{scheduleItems}</ul>;
 };
 
+const experiencesPropType = ExperienceList.propTypes.experiences;
+
 RecurringSchedule.propTypes = {
-  experiences: PropTypes.object
+  experiencesByDay: PropTypes.shape({
+    [RECURRENCE_DAY_SUNDAY]: experiencesPropType,
+    [RECURRENCE_DAY_MONDAY]: experiencesPropType,
+    [RECURRENCE_DAY_TUESDAY]: experiencesPropType,
+    [RECURRENCE_DAY_WEDNESDAY]: experiencesPropType,
+    [RECURRENCE_DAY_THURSDAY]: experiencesPropType,
+    [RECURRENCE_DAY_FRIDAY]: experiencesPropType,
+    [RECURRENCE_DAY_SATURDAY]: experiencesPropType
+  })
 };
 
 export default RecurringSchedule;

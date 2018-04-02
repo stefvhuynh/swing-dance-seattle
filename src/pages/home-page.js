@@ -9,16 +9,16 @@ import RecurringSchedule from "../components/recurring-schedule";
 
 class HomePage extends React.Component {
   static propTypes = {
-    classes: PropTypes.object,
+    classesByDay: PropTypes.object,
     subfilter: PropTypes.string
   };
 
   renderContent() {
-    const { classes, subfilter } = this.props;
+    const { classesByDay, subfilter } = this.props;
 
     switch (subfilter) {
       case SUBFILTER_LEARN_CLASSES: {
-        return <RecurringSchedule experiences={classes}/>;
+        return <RecurringSchedule experiencesByDay={classesByDay}/>;
       }
       default: {
         return <div>some content</div>;
@@ -40,7 +40,7 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  classes: selectClassesByDay(state),
+  classesByDay: selectClassesByDay(state),
   subfilter: selectSubfilter(state)
 });
 

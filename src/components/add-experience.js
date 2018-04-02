@@ -23,6 +23,7 @@ export default class AddExperience extends React.Component {
     link: "",
     name: "",
     neighborhood: "",
+    organization: "",
     recurrenceDay: EMPTY_TYPE,
     recurrenceTime: EMPTY_TYPE,
     time: "",
@@ -52,6 +53,7 @@ export default class AddExperience extends React.Component {
       link,
       name,
       neighborhood,
+      organization,
       recurrenceDay,
       recurrenceTime,
       time,
@@ -160,6 +162,16 @@ export default class AddExperience extends React.Component {
             type="text"
             name="time"
             value={time}
+            onChange={this.handleInputChange}
+          />
+        </label>
+
+        <label>
+          Organization
+          <input
+            type="text"
+            name="organization"
+            value={organization}
             onChange={this.handleInputChange}
           />
         </label>

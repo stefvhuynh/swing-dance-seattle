@@ -13,6 +13,7 @@ export const serializeExperience = ({
   link,
   name,
   neighborhood,
+  organization,
   recurrenceDay,
   recurrenceTime,
   time,
@@ -23,6 +24,7 @@ export const serializeExperience = ({
     name,
     link,
     neighborhood,
+    organization,
     time,
     venue
   };

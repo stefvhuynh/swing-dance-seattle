@@ -6,6 +6,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "recurrenceDay": "1",
       "recurrenceTime": "1",
       "time": "7:00pm",
@@ -30,6 +31,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "recurrenceDay": "1",
       "recurrenceTime": "1",
       "time": "7:00pm",
@@ -41,6 +43,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "recurrenceDay": "1",
       "recurrenceTime": "1",
       "time": "7:00pm",
@@ -56,6 +59,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "time": "7:00pm",
       "venue": "cool venue"
     },
@@ -67,6 +71,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "time": "7:00pm",
       "venue": "cool venue"
     }
@@ -80,6 +85,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "time": "7:00pm",
       "venue": "cool venue"
     },
@@ -91,6 +97,7 @@
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
+      "organization": "cool org",
       "time": "7:00pm",
       "venue": "cool venue"
     }
