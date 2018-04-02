@@ -19,7 +19,7 @@ export const getAuthorizedUser = (firebase) => {
 
 export const getRecurringEvents = (firebase) => {
   return firebase.database()
-    .ref("/events/recurring")
+    .ref("/recurring-events")
     .once("value")
     .then((snapshot) => snapshot.val());
 };
@@ -29,7 +29,7 @@ export const getNonrecurringEvents = (firebase) => {
   const twoWeeksLater = (new Date(Date.now() + TWO_WEEKS)).toISOString();
 
   return firebase.database()
-    .ref("/events/nonrecurring")
+    .ref("/nonrecurring-events")
     .orderByChild("dateStart")
     .startAt(now)
     .endAt(twoWeeksLater)
@@ -48,12 +48,12 @@ export const getEvents = (firebase) => {
 };
 
 export const postRecurringEvent = (firebase, eventDetails) => {
-  return firebase.database().ref("/events/recurring").push().set(eventDetails);
+  return firebase.database().ref("/recurring-events").push().set(eventDetails);
 };
 
 export const postNonrecurringEvent = (firebase, eventDetails) => {
   return firebase.database()
-    .ref("/events/nonrecurring")
+    .ref("/nonrecurring-events")
     .push()
     .set(eventDetails);
 };

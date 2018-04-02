@@ -1,15 +1,13 @@
 {
   "rules": {
+    ".read": true,
+    ".write": "auth != null",
     "recurring-events": {
-      ".read": true,
-      ".write": "auth != null",
-      ".validate": "newData.hasChildren(['category', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
+      ".validate": "newData.hasChildren(['approved', 'category', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
     },
     "nonrecurring-events": {
-      ".read": true,
-      ".write": "auth != null",
       ".indexOn": ["dateStart"],
-      ".validate": "newData.hasChildren(['category', 'dateEnd', 'dateStart', 'link', 'name', 'neighborhood', 'time', 'venue'])"
+      ".validate": "newData.hasChildren(['approved', 'category', 'dateEnd', 'dateStart', 'link', 'name', 'neighborhood', 'time', 'venue'])"
     }
   }
 }
