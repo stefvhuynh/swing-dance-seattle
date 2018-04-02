@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { selectSubfilter } from "../redux/selectors";
+import { SUBFILTER_LEARN_CLASSES } from "../constants";
+import { selectClassesByDay, selectSubfilter } from "../redux/selectors";
 import Filter from "../containers/filter";
+import RecurringSchedule from "../components/recurring-schedule";
 
 class HomePage extends React.Component {
   static propTypes = {
@@ -12,7 +14,16 @@ class HomePage extends React.Component {
   };
 
   renderContent() {
-    return <div>some content</div>;
+    const { classes, subfilter } = this.props;
+
+    switch (subfilter) {
+      case SUBFILTER_LEARN_CLASSES: {
+        return <RecurringSchedule experiences={classes}/>;
+      }
+      default: {
+        return <div>some content</div>;
+      }
+    }
   }
 
   render() {
@@ -29,6 +40,7 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+  classes: selectClassesByDay(state),
   subfilter: selectSubfilter(state)
 });
 

@@ -2,7 +2,7 @@
   "classes": {
     "a": {
       "approved": true,
-      "category": "3",
+      "id": "a",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -13,7 +13,7 @@
     },
     "b": {
       "approved": true,
-      "category": "4",
+      "id": "b",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -26,7 +26,7 @@
   "dances": {
     "a": {
       "approved": true,
-      "category": "3",
+      "id": "a",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -37,7 +37,7 @@
     },
     "b": {
       "approved": true,
-      "category": "4",
+      "id": "b",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -50,9 +50,9 @@
   "events": {
     "a": {
       "approved": true,
-      "category": "1",
       "dateEnd": "2018-04-07T07:00:00.000Z",
       "dateStart": "2018-04-04T07:00:00.000Z",
+      "id": "a",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -61,9 +61,9 @@
     },
     "b": {
       "approved": true,
-      "category": "2",
       "dateEnd": "2018-04-15T07:00:00.000Z",
       "dateStart": "2018-04-12T07:00:00.000Z",
+      "id": "b",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -74,9 +74,9 @@
   "workshops": {
     "a": {
       "approved": true,
-      "category": "1",
       "dateEnd": "2018-04-07T07:00:00.000Z",
       "dateStart": "2018-04-04T07:00:00.000Z",
+      "id": "a",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",
@@ -85,9 +85,9 @@
     },
     "b": {
       "approved": true,
-      "category": "2",
       "dateEnd": "2018-04-15T07:00:00.000Z",
       "dateStart": "2018-04-12T07:00:00.000Z",
+      "id": "b",
       "link": "cool.com",
       "name": "cool",
       "neighborhood": "cool hood",

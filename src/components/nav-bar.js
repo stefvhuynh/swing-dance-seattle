@@ -11,30 +11,34 @@ const linksPropType = PropTypes.arrayOf(
   })
 );
 
-const DesktopNavBar = ({ links }) => (
-  <ul>
-    {links.map(({ content, href }) => (
-      <li key={href}><Link href={href}>{content}</Link></li>
-    ))}
-  </ul>
-);
+const DesktopNavBar = ({ links }) => {
+  return (
+    <ul>
+      {links.map(({ content, href }) => (
+        <li key={href}><Link href={href}>{content}</Link></li>
+      ))}
+    </ul>
+  );
+};
 
 DesktopNavBar.propTypes = {
   links: linksPropType
 };
 
-const MobileNavBar = ({ isOpen, links, onToggle }) => (
-  <div className="fixed flex-row">
-    {isOpen && (
-      <ul>
-        {links.map(({ content, href }) => (
-          <li key={href}><Link href={href}>{content}</Link></li>
-        ))}
-      </ul>
-    )}
-    <Icon name="bars" onClick={onToggle}/>
-  </div>
-);
+const MobileNavBar = ({ isOpen, links, onToggle }) => {
+  return (
+    <div className="fixed flex-row">
+      {isOpen && (
+        <ul>
+          {links.map(({ content, href }) => (
+            <li key={href}><Link href={href}>{content}</Link></li>
+          ))}
+        </ul>
+      )}
+      <Icon name="bars" onClick={onToggle}/>
+    </div>
+  );
+};
 
 MobileNavBar.propTypes = {
   isOpen: PropTypes.bool,

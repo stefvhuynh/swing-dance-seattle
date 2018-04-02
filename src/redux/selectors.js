@@ -1,7 +1,5 @@
 import { createSelector } from "reselect";
 
-import { CATEGORY_CLASS } from "../constants";
-
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
 
@@ -10,13 +8,20 @@ export const selectExperienceSubmissionSucceeded = (state) => {
 };
 
 export const selectExperiences = (state) => state.experiences.data;
-
 export const selectClasses = createSelector(
   selectExperiences,
-  (experiences) => {
-    return Object.keys(experiences)
-      .filter((key) => experiences[key].category === CATEGORY_CLASS)
-      .map((key) => experiences[key]);
+  (experiences) => experiences.classes || {}
+);
+
+export const selectClassesByDay = createSelector(
+  selectClasses,
+  (classes) => {
+    return Object.keys(classes).reduce((classesByDay, key) => {
+      const recurrenceDay = classes[key].recurrenceDay;
+      classesByDay[recurrenceDay] = (classesByDay[recurrenceDay] || [])
+        .concat([classes[key]]);
+      return classesByDay;
+    }, {});
   }
 );
 

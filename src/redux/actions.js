@@ -48,19 +48,21 @@ export const appInitialized = () => {
   };
 };
 
-export const windowResized = (width) => ({
-  type: WINDOW_RESIZED,
-  payload: { width }
-});
+export const windowResized = (width) => {
+  return { type: WINDOW_RESIZED, payload: { width } };
+};
 
-export const navBarToggled = () => ({ type: NAV_BAR_TOGGLED });
+export const navBarToggled = () => {
+  return { type: NAV_BAR_TOGGLED };
+};
 
-const loginSucceeded = () => ({ type: LOGIN_SUCCEEDED });
+const loginSucceeded = () => {
+  return { type: LOGIN_SUCCEEDED };
+};
 
-const loginFailed = (errorMessage) => ({
-  type: LOGIN_FAILED,
-  payload: { errorMessage }
-});
+const loginFailed = (errorMessage) => {
+  return { type: LOGIN_FAILED, payload: { errorMessage } };
+};
 
 export const loginSubmitted = (username, password) => {
   return (dispatch, getState, firebase) => {
@@ -72,12 +74,13 @@ export const loginSubmitted = (username, password) => {
   };
 };
 
-const logoutSucceeded = () => ({ type: LOGOUT_SUCCEEDED });
+const logoutSucceeded = () => {
+  return { type: LOGOUT_SUCCEEDED };
+};
 
-const logoutFailed = (errorMessage) => ({
-  type: LOGOUT_FAILED,
-  payload: { errorMessage }
-});
+const logoutFailed = (errorMessage) => {
+  return { type: LOGOUT_FAILED, payload: { errorMessage } };
+};
 
 export const logoutSubmitted = () => {
   return (dispatch, getState, firebase) => {
@@ -89,13 +92,13 @@ export const logoutSubmitted = () => {
   };
 };
 
-const experienceSubmissionSucceeded = () => ({
-  type: EXPERIENCE_SUBMISSION_SUCCEEDED
-});
+const experienceSubmissionSucceeded = () => {
+  return { type: EXPERIENCE_SUBMISSION_SUCCEEDED };
+};
 
-const experienceSubmissionFailed = () => ({
-  type: EXPERIENCE_SUBMISSION_FAILED
-});
+const experienceSubmissionFailed = () => {
+  return { type: EXPERIENCE_SUBMISSION_FAILED };
+};
 
 export const experienceSubmitted = (details, experienceCategory) => {
   return (dispatch, getState, firebase) => {
@@ -127,12 +130,10 @@ export const experienceSubmitted = (details, experienceCategory) => {
   };
 };
 
-export const filterSelected = (filter) => ({
-  type: FILTER_SELECTED,
-  payload: { filter }
-});
+export const filterSelected = (filter) => {
+  return { type: FILTER_SELECTED, payload: { filter } };
+};
 
-export const subfilterSelected = (subfilter) => ({
-  type: SUBFILTER_SELECTED,
-  payload: { subfilter }
-});
+export const subfilterSelected = (subfilter) => {
+  return { type: SUBFILTER_SELECTED, payload: { subfilter } };
+};

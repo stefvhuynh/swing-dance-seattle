@@ -1,4 +1,4 @@
-import { TWO_WEEKS } from "./constants";
+import { ONE_YEAR } from "./constants";
 import { isRecurringCategory } from "./utils";
 
 const API_CLASSES = "/classes";
@@ -20,7 +20,6 @@ export const serializeExperience = ({
 }) => {
   const commonDetails = {
     approved: false,
-    category,
     name,
     link,
     neighborhood,
@@ -65,13 +64,13 @@ export const getRecurringExperiences = (apiEndpoint, firebase) => {
 
 export const getNonrecurringExperiences = (apiEndpoint, firebase) => {
   const now = (new Date()).toISOString();
-  const twoWeeksLater = (new Date(Date.now() + TWO_WEEKS)).toISOString();
+  const oneYearLater = (new Date(Date.now() + ONE_YEAR)).toISOString();
 
   return firebase.database()
     .ref(apiEndpoint)
     .orderByChild("dateEnd")
     .startAt(now)
-    .endAt(twoWeeksLater)
+    .endAt(oneYearLater)
     .once("value")
     .then((snapshot) => snapshot.val());
 };
@@ -101,10 +100,8 @@ export const postExperience = (
   firebase,
   experience
 ) => {
-  return firebase.database()
-    .ref(apiEndpoint)
-    .push()
-    .set(experience);
+  const ref = firebase.database().ref(apiEndpoint).push();
+  return ref.set({ id: ref.key, ...experience });
 };
 
 export const postClass = postExperience.bind(null, API_CLASSES);
