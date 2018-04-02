@@ -69,8 +69,6 @@ export const getValueDisplayList = (map) => {
   return convertMapToList(map, "value", "display");
 };
 
-export const getDateString = (date) => (new Date(date)).toISOString();
-
 export const isValidDate = (date) => {
   const dateObj = new Date(date);
   return dateObj !== "Invalid Date" && dateObj > Date.now();
@@ -117,7 +115,7 @@ export const serializeEvent = ({
     recurrenceTime
   } : {
     ...commonDetails,
-    dateEnd: getDateString(dateEnd),
-    dateStart: getDateString(dateStart)
+    dateEnd: (new Date(dateEnd)).toISOString(),
+    dateStart: (new Date(dateStart)).toISOString()
   };
 };
