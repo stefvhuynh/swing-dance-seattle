@@ -14,7 +14,8 @@ const baseProdConfig = merge(baseConfig, {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { minimize: true } }
+          { loader: "css-loader", options: { importLoaders: 1, minimize: true } },
+          "postcss-loader"
         ],
         exclude: /node_modules/
       }

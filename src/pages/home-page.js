@@ -59,8 +59,9 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          welcome message
+        <div className="mg-top-lg">
+          <h1>Swing Dance Seattle</h1>
+          <div>Some descriptions</div>
         </div>
         <Filter/>
         {this.renderContent()}
