@@ -10,7 +10,7 @@ const Schedule = ({ experiencesByDay, recurring }) => {
 
     return (
       <li key={day}>
-        <div>{listHeading}</div>
+        <div className="semibold font-lg mg-b-sm">{listHeading}</div>
         <ExperienceList experiences={experiencesByDay[day]}/>
       </li>
     );

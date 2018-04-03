@@ -5,7 +5,11 @@ import Experience from "./experience";
 
 const ExperienceList = ({ experiences }) => {
   const listItems = experiences.map((experience) => {
-    return <li key={experience.id}><Experience {...experience}/></li>;
+    return (
+      <li key={experience.id} className="mg-b-sm pd-sm border-solid">
+        <Experience {...experience}/>
+      </li>
+    );
   });
 
   return <ul>{listItems}</ul>;

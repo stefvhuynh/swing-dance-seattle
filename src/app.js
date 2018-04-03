@@ -57,18 +57,9 @@ class App extends React.Component {
         <Fragment forRoute={ROUTE_HOME}>
           <div>
             <NavBar links={links}/>
-
-            <Fragment forRoute={ROUTE_HOME}>
-              <HomePage/>
-            </Fragment>
-
-            <Fragment forRoute={ROUTE_CONTACT}>
-              <div>contacting</div>
-            </Fragment>
-
-            <Fragment forRoute={ROUTE_ADMIN}>
-              <AdminPage/>
-            </Fragment>
+            <Fragment forRoute={ROUTE_HOME}><HomePage/></Fragment>
+            <Fragment forRoute={ROUTE_CONTACT}><div>contacting</div></Fragment>
+            <Fragment forRoute={ROUTE_ADMIN}><AdminPage/></Fragment>
           </div>
         </Fragment>
       </div>

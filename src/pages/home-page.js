@@ -59,11 +59,17 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="mg-top-lg">
-          <h1>Swing Dance Seattle</h1>
+        <div className="mg-b-md">
+          <h1 className="bold font-xl text-center mg-t-md mg-b-md">
+            Swing Dance Seattle
+          </h1>
           <div>Some descriptions</div>
         </div>
-        <Filter/>
+
+        <div className="mg-b-md">
+          <Filter/>
+        </div>
+
         {this.renderContent()}
       </div>
     );

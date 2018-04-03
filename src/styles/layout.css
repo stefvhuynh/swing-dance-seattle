@@ -1,13 +1,7 @@
-.fixed {
-  position: fixed;
-}
+.fixed { position: fixed; }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
+.flex { display: flex; }
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.justify-center { justify-content: center; }
+.justify-space-around { justify-content: space-around; }

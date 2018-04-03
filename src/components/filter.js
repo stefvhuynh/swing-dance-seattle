@@ -37,8 +37,8 @@ class Filter extends React.Component {
     });
 
     return (
-      <div>
-        <ul>
+      <div className="flex column">
+        <ul className="flex justify-space-around pd-t-sm pd-b-sm">
           {filters.map(({ display, value }) => (
             <li
               className={classNames({ underline: selectedFilter === value })}
@@ -51,7 +51,7 @@ class Filter extends React.Component {
           ))}
         </ul>
 
-        <ul>
+        <ul className="flex justify-space-around pd-t-sm pd-b-sm">
           {subfilters.map(({ display, value }) => (
             <li
               className={classNames({ underline: selectedSubfilter === value })}
