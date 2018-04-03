@@ -59,7 +59,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="mg-b-md">
+        <div className="mg-b-md mg-l-md mg-r-md">
           <h1 className="bold font-xl text-center mg-t-md mg-b-md">
             Swing Dance Seattle
           </h1>
@@ -70,7 +70,9 @@ class HomePage extends React.Component {
           <Filter/>
         </div>
 
-        {this.renderContent()}
+        <div className="mg-l-md mg-r-md">
+          {this.renderContent()}
+        </div>
       </div>
     );
   }

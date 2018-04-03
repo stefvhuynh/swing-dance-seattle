@@ -1,8 +1,9 @@
 :root {
-  --size-sm: 0.5em;
-  --size-md: 1em;
-  --size-lg: 1.5em;
-  --size-xl: 2em;
+  --size-sm: 0.5rem;
+  --size-md: 1rem;
+  --size-lg: 1.5rem;
+  --size-xl: 2rem;
 
   --color-black: #222222;
+  --color-grey: #777777;
 }

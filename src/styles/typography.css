@@ -2,9 +2,13 @@
 .semibold { font-weight: 600; }
 .italic { font-style: italic; }
 .underline { text-decoration: underline; }
+.uppercase { text-transform: uppercase; }
 .text-center { text-align: center; }
 
 .font-sm { font-size: var(--size-sm); }
 .font-md { font-size: var(--size-md); }
 .font-lg { font-size: var(--size-lg); }
 .font-xl { font-size: var(--size-xl); }
+
+.font-black { color: var(--color-black); }
+.font-grey { color: var(--color-grey); }

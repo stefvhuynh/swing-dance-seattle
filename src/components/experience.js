@@ -28,16 +28,22 @@ const Experience = ({
     && recurrenceTime !== RECURRENCE_TIME_EVERY;
 
   return (
-    <a target="_blank" href={link}>
+    <a
+      className="flex column pd-l-md pd-r-md pd-t-sm pd-b-sm border-solid"
+      href={link}
+      target="_blank"
+    >
       <div>
-        <span>{name}</span>
+        <span className="semibold">{name}</span>
         <Conditional condition={neighborhood}>
-          <span>{neighborhood}</span>
+          <span className="bold uppercase font-sm font-grey mg-l-md">
+            {neighborhood}
+          </span>
         </Conditional>
       </div>
 
       <Conditional condition={organization}>
-        <div>{organization}</div>
+        <div className="italic">{organization}</div>
       </Conditional>
 
       <Conditional condition={showRecurrence}>

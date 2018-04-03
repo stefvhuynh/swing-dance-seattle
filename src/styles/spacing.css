@@ -8,8 +8,23 @@
 .mg-b-lg { margin-bottom: var(--size-lg); }
 .mg-b-xl { margin-bottom: var(--size-xl); }
 
+.mg-l-sm { margin-left: var(--size-sm); }
+.mg-l-md { margin-left: var(--size-md); }
+
+.mg-r-sm { margin-right: var(--size-sm); }
+.mg-r-md { margin-right: var(--size-md); }
+
 .pd-t-sm { padding-top: var(--size-sm); }
+.pd-t-md { padding-top: var(--size-md); }
 
 .pd-b-sm { padding-bottom: var(--size-sm); }
+.pd-b-md { padding-bottom: var(--size-md); }
+
+.pd-l-sm { padding-left: var(--size-sm); }
+.pd-l-md { padding-left: var(--size-md); }
+
+.pd-r-sm { padding-right: var(--size-sm); }
+.pd-r-md { padding-right: var(--size-md); }
 
 .pd-sm { padding: var(--size-sm); }
+.pd-md { padding: var(--size-md); }

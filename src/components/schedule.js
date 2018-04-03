@@ -9,8 +9,8 @@ const Schedule = ({ experiencesByDay, recurring }) => {
     const listHeading = recurring ? RECURRENCE_DAY_MAP[day] : day;
 
     return (
-      <li key={day}>
-        <div className="semibold font-lg mg-b-sm">{listHeading}</div>
+      <li key={day} className="mg-b-md">
+        <div className="semibold font-lg mg-b-sm pd-l-md">{listHeading}</div>
         <ExperienceList experiences={experiencesByDay[day]}/>
       </li>
     );

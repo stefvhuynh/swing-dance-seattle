@@ -8,15 +8,14 @@
 
 html, body {
   font-family: sans-serif;
-  line-height: 1.2em;
   color: var(--color-black);
+}
+
+body {
+  line-height: 1.25;
 }
 
 a {
   text-decoration: none;
   color: var(--color-black);
-}
-
-#root {
-  padding: var(--size-sm);
 }
