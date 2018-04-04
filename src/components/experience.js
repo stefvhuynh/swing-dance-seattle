@@ -44,10 +44,12 @@ const Experience = ({
           <div className="semibold font-lg">{name}</div>
 
           <Conditional condition={organization}>
-            <div className="italic">{organization}</div>
+            <div className="italic font-grey">{organization}</div>
           </Conditional>
 
-          <Conditional condition={venue}><div>@ {venue}</div></Conditional>
+          <Conditional condition={venue}>
+            <div className="italic font-grey">@ {venue}</div>
+          </Conditional>
         </div>
 
         <div className="text-right">
