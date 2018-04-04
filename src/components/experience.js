@@ -29,7 +29,7 @@ const Experience = ({
 
   return (
     <a
-      className="block pd-md border-solid"
+      className="block pd-md bg-white shadow"
       href={link}
       target="_blank"
     >

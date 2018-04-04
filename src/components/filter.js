@@ -41,7 +41,7 @@ class Filter extends React.Component {
         <ul className="flex justify-space-evenly bg-green">
           {filters.map(({ display, value }) => (
             <li
-              className={classNames("pd-t-sm pd-b-sm uppercase", {
+              className={classNames("pd-t-sm pd-b-sm", {
                 "border-bottom-thick": selectedFilter === value
               })}
               key={value}
