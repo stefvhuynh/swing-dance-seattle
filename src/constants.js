@@ -25,11 +25,11 @@ export const RECURRENCE_TIME_EVERY = "5";
 
 export const RECURRENCE_TIME_MAP = {
   [EMPTY_TYPE]: "",
-  [RECURRENCE_TIME_EVERY]: "Every",
-  [RECURRENCE_TIME_FIRST]: "Every first",
-  [RECURRENCE_TIME_SECOND]: "Every second",
-  [RECURRENCE_TIME_THIRD]: "Every third",
-  [RECURRENCE_TIME_FOURTH]: "Every fourth"
+  [RECURRENCE_TIME_EVERY]: "Weekly",
+  [RECURRENCE_TIME_FIRST]: "First",
+  [RECURRENCE_TIME_SECOND]: "Second",
+  [RECURRENCE_TIME_THIRD]: "Third",
+  [RECURRENCE_TIME_FOURTH]: "Fourth"
 };
 
 export const RECURRENCE_DAY_SUNDAY = "1";
@@ -42,13 +42,13 @@ export const RECURRENCE_DAY_SATURDAY = "7";
 
 export const RECURRENCE_DAY_MAP = {
   [EMPTY_TYPE]: "",
-  [RECURRENCE_DAY_SUNDAY]: "Sunday",
-  [RECURRENCE_DAY_MONDAY]: "Monday",
-  [RECURRENCE_DAY_TUESDAY]: "Tuesday",
-  [RECURRENCE_DAY_WEDNESDAY]: "Wednesday",
-  [RECURRENCE_DAY_THURSDAY]: "Thursday",
-  [RECURRENCE_DAY_FRIDAY]: "Friday",
-  [RECURRENCE_DAY_SATURDAY]: "Saturday"
+  [RECURRENCE_DAY_SUNDAY]: "Sundays",
+  [RECURRENCE_DAY_MONDAY]: "Mondays",
+  [RECURRENCE_DAY_TUESDAY]: "Tuesdays",
+  [RECURRENCE_DAY_WEDNESDAY]: "Wednesdays",
+  [RECURRENCE_DAY_THURSDAY]: "Thursdays",
+  [RECURRENCE_DAY_FRIDAY]: "Fridays",
+  [RECURRENCE_DAY_SATURDAY]: "Saturdays"
 };
 
 export const FILTER_LEARN = "1";

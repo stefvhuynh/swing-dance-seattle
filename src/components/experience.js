@@ -23,54 +23,51 @@ const Experience = ({
   time,
   venue
 }) => {
-  const showRecurrence = recurrenceDay
-    && recurrenceTime
-    && recurrenceTime !== RECURRENCE_TIME_EVERY;
-
   return (
     <a
-      className="block pd-md bg-white shadow"
+      className="flex justify-space-between align-center  pd-md bg-white shadow"
       href={link}
       target="_blank"
     >
-      <Conditional condition={neighborhood}>
-        <div className="bold uppercase font-sm font-grey">
-          {neighborhood}
-        </div>
-      </Conditional>
+      <div>
+        <Conditional condition={neighborhood}>
+          <div className="bold uppercase font-sm font-grey">
+            {neighborhood}
+          </div>
+        </Conditional>
 
-      <div className="flex justify-space-between align-baseline">
-        <div>
-          <div className="bold font-lg">{name}</div>
+        <div className="bold font-lg">{name}</div>
 
-          <Conditional condition={organization}>
-            <div className="italic font-grey">{organization}</div>
-          </Conditional>
+        <Conditional condition={organization}>
+          <div className="italic font-grey">{organization}</div>
+        </Conditional>
 
-          <Conditional condition={venue}>
-            <div className="italic font-grey">@ {venue}</div>
-          </Conditional>
-        </div>
+        <Conditional condition={venue}>
+          <div className="italic font-grey">@ {venue}</div>
+        </Conditional>
+      </div>
 
-        <div className="text-right">
-          <Conditional condition={showRecurrence}>
-            <div>
-              {RECURRENCE_TIME_MAP[recurrenceTime]}
-              &nbsp;{RECURRENCE_DAY_MAP[recurrenceDay]}
-            </div>
-          </Conditional>
+      <div className="text-right">
+        <Conditional condition={recurrenceDay && recurrenceTime}>
+          <div>
+            {RECURRENCE_TIME_MAP[recurrenceTime]}
+            {
+              recurrenceTime !== RECURRENCE_TIME_EVERY
+                && ` ${RECURRENCE_DAY_MAP[recurrenceDay]}`
+            }
+          </div>
+        </Conditional>
 
-          <Conditional condition={dateStart}>
-            <div>
-              {dateStart}
-              <Conditional condition={dateEnd}>
-                <span> - {dateEnd}</span>
-              </Conditional>
-            </div>
-          </Conditional>
+        <Conditional condition={dateStart}>
+          <div>
+            {dateStart}
+            <Conditional condition={dateEnd}>
+              <span> - {dateEnd}</span>
+            </Conditional>
+          </div>
+        </Conditional>
 
-          <Conditional condition={time}><div>{time}</div></Conditional>
-        </div>
+        <Conditional condition={time}><div>{time}</div></Conditional>
       </div>
     </a>
   );
