@@ -1,4 +1,7 @@
 :root {
+  --font-primary: "Lato", sans-serif;
+  --font-emphasis: "Lobster", cursive;
+
   --size-xs: 0.5rem;
   --size-sm: 0.75rem;
   --size-md: 1rem;
@@ -6,6 +9,9 @@
   --size-xl: 2rem;
 
   --color-white: #fefefe;
+  --color-off-white: #f4f4f4;
   --color-black: #222222;
   --color-grey: #777777;
+  --color-dark-grey: #444444;
+  --color-green: #60a060;
 }

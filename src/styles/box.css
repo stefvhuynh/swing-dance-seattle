@@ -1,2 +1,8 @@
 .border-solid { border: 1px solid }
 .border-dashed { border: 1px dashed }
+
+.border-bottom-thick { border-bottom: 4px solid }
+
+.bg-off-white { background: var(--color-off-white) }
+.bg-green { background: var(--color-green) }
+.bg-dark-grey { background: var(--color-dark-grey) }

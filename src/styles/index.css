@@ -7,8 +7,9 @@
 @import "./typography.css";
 
 html, body {
-  font-family: sans-serif;
+  font-family: var(--font-primary);
   color: var(--color-black);
+  background: var(--color-off-white);
 }
 
 body {

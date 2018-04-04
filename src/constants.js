@@ -55,8 +55,8 @@ export const FILTER_LEARN = "1";
 export const FILTER_DANCE = "2";
 
 export const FILTER_MAP = {
-  [FILTER_LEARN]: "Learn",
-  [FILTER_DANCE]: "Dance"
+  [FILTER_LEARN]: "Learn!",
+  [FILTER_DANCE]: "Dance!"
 };
 
 export const SUBFILTER_CLASSES = "1";

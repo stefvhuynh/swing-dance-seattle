@@ -38,10 +38,12 @@ class Filter extends React.Component {
 
     return (
       <div className="flex column">
-        <ul className="flex justify-space-evenly pd-t-sm pd-b-sm">
+        <ul className="flex justify-space-evenly bg-green">
           {filters.map(({ display, value }) => (
             <li
-              className={classNames({ underline: selectedFilter === value })}
+              className={classNames("pd-t-sm pd-b-sm uppercase", {
+                "border-bottom-thick": selectedFilter === value
+              })}
               key={value}
               value={value}
               onClick={this.handleFilterClick}
@@ -51,10 +53,12 @@ class Filter extends React.Component {
           ))}
         </ul>
 
-        <ul className="flex justify-space-evenly pd-t-sm pd-b-sm">
+        <ul className="flex justify-space-evenly">
           {subfilters.map(({ display, value }) => (
             <li
-              className={classNames({ underline: selectedSubfilter === value })}
+              className={classNames("pd-t-sm pd-b-sm", {
+                "border-bottom-thick": selectedSubfilter === value
+              })}
               key={value}
               value={value}
               onClick={this.handleSubfilterClick}
