@@ -29,46 +29,47 @@ const Experience = ({
 
   return (
     <a
-      className="flex column pd-l-md pd-r-md pd-t-sm pd-b-sm border-solid"
+      className="block pd-md border-solid"
       href={link}
       target="_blank"
     >
-      <div>
-        <span className="semibold">{name}</span>
-        <Conditional condition={neighborhood}>
-          <span className="bold uppercase font-sm font-grey mg-l-md">
-            {neighborhood}
-          </span>
-        </Conditional>
-      </div>
-
-      <Conditional condition={organization}>
-        <div className="italic">{organization}</div>
-      </Conditional>
-
-      <Conditional condition={showRecurrence}>
-        <div>
-          {RECURRENCE_TIME_MAP[recurrenceTime]}
-          &nbsp;{RECURRENCE_DAY_MAP[recurrenceDay]}
+      <Conditional condition={neighborhood}>
+        <div className="bold uppercase font-sm font-grey">
+          {neighborhood}
         </div>
       </Conditional>
 
-      <Conditional condition={dateStart}>
+      <div className="flex justify-space-between align-baseline">
         <div>
-          {dateStart}
-          <Conditional condition={dateEnd}>
-            <span> - {dateEnd}</span>
+          <div className="semibold font-lg">{name}</div>
+
+          <Conditional condition={organization}>
+            <div className="italic">{organization}</div>
           </Conditional>
-        </div>
-      </Conditional>
 
-      <Conditional condition={time || venue}>
-        <div>
-          <Conditional condition={time}><span>{time}</span></Conditional>
-          <Conditional condition={time && venue}><span> @ </span></Conditional>
-          <Conditional condition={venue}><span>{venue}</span></Conditional>
+          <Conditional condition={venue}><div>@ {venue}</div></Conditional>
         </div>
-      </Conditional>
+
+        <div className="text-right">
+          <Conditional condition={showRecurrence}>
+            <div>
+              {RECURRENCE_TIME_MAP[recurrenceTime]}
+              &nbsp;{RECURRENCE_DAY_MAP[recurrenceDay]}
+            </div>
+          </Conditional>
+
+          <Conditional condition={dateStart}>
+            <div>
+              {dateStart}
+              <Conditional condition={dateEnd}>
+                <span> - {dateEnd}</span>
+              </Conditional>
+            </div>
+          </Conditional>
+
+          <Conditional condition={time}><div>{time}</div></Conditional>
+        </div>
+      </div>
     </a>
   );
 };
