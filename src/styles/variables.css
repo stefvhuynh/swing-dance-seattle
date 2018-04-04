@@ -1,6 +1,9 @@
 :root {
-  --font-primary: "Lato", sans-serif;
+  --font-primary: "Noto Sans", sans-serif;
   --font-emphasis: "Lobster", cursive;
+
+  --font-bold: 700;
+  --font-normal: 400;
 
   --size-xs: 0.5rem;
   --size-sm: 0.75rem;

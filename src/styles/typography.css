@@ -1,8 +1,7 @@
 .font-primary { font-family: var(--font-primary) }
 .font-emphasis { font-family: var(--font-emphasis) }
 
-.bold { font-weight: 900 }
-.semibold { font-weight: 600 }
+.bold { font-weight: var(--font-bold) }
 .italic { font-style: italic }
 .underline { text-decoration: underline }
 .uppercase { text-transform: uppercase }

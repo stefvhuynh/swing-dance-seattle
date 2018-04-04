@@ -61,7 +61,7 @@ class HomePage extends React.Component {
       <div>
         <div className="mg-b-lg bg-dark-grey font-white shadow">
           <div className="mg-b-lg mg-l-md mg-r-md text-center">
-            <h1 className="font-emphasis bold font-xl mg-b-md">
+            <h1 className="font-emphasis font-xl mg-b-md">
               Swing Dance Seattle
             </h1>
             <div>

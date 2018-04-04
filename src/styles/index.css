@@ -8,6 +8,7 @@
 
 html, body {
   font-family: var(--font-primary);
+  font-weight: var(--font-normal);
   color: var(--color-black);
   background: var(--color-off-white);
 }

@@ -41,7 +41,7 @@ const Experience = ({
 
       <div className="flex justify-space-between align-baseline">
         <div>
-          <div className="semibold font-lg">{name}</div>
+          <div className="bold font-lg">{name}</div>
 
           <Conditional condition={organization}>
             <div className="italic font-grey">{organization}</div>
