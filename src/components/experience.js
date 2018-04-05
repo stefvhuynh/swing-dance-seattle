@@ -27,7 +27,7 @@ const Experience = ({
 }) => {
   return (
     <a
-      className="flex justify-space-between align-center  pd-md bg-white shadow"
+      className="flex justify-space-between align-center pd-md bg-white shadow"
       href={link}
       target="_blank"
     >

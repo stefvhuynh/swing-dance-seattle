@@ -48,7 +48,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="full-height flex column justify-space-between">
         <Fragment forRoute={ROUTE_HOME}>
           <div>
             <Fragment forRoute={ROUTE_HOME}><HomePage/></Fragment>
@@ -58,8 +58,8 @@ class App extends React.Component {
 
         <div
           className={
-            "flex justify-space-between align-center bg-dark-grey pd-t-lg " +
-              "pd-b-lg pd-l-md pd-r-md mg-t-xxl font-white"
+            "no-shrink flex justify-space-between align-center bg-dark-grey " +
+              "pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xxl font-white"
           }
         >
           <div className="lines-spaced">

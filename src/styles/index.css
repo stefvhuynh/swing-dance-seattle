@@ -11,6 +11,7 @@ html, body {
   font-weight: var(--font-normal);
   color: var(--color-black);
   background: var(--color-off-white);
+  height: 100%;
 }
 
 body {
@@ -20,4 +21,8 @@ body {
 a {
   text-decoration: none;
   color: var(--color-black);
+}
+
+#root {
+  height: 100%;
 }
