@@ -37,8 +37,8 @@ class Filter extends React.Component {
     });
 
     return (
-      <div className="flex column">
-        <ul className="flex font-lg bg-green shadow">
+      <div className="flex column font-white shadow">
+        <ul className="flex font-lg bg-green shadow z-top">
           {filters.map(({ display, value }) => (
             <li
               className={classNames("fill text-center pd-t-sm pd-b-sm", {
@@ -54,7 +54,7 @@ class Filter extends React.Component {
           ))}
         </ul>
 
-        <ul className="flex">
+        <ul className="flex bg-dark-grey">
           {subfilters.map(({ display, value }) => (
             <li
               className={classNames("fill text-center pd-t-sm pd-b-sm", {

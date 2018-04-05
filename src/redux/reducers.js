@@ -43,7 +43,6 @@ const initialState = {
     filter: FILTER_LEARN,
     isMobile: false,
     isNavBarOpen: false,
-    page: 1,
     subfilter: FILTER_SUBFILTER_MAP[FILTER_LEARN][0]
   }
 };

@@ -59,7 +59,7 @@ class App extends React.Component {
         <div
           className={
             "no-shrink flex justify-space-between align-center bg-dark-grey " +
-              "pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xxl font-white"
+              "pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xl font-white"
           }
         >
           <div className="lines-spaced">
