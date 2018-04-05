@@ -23,6 +23,10 @@ export const isDateStartBeforeDateEnd = (dateStart, dateEnd) => {
 
 /* eslint-disable no-magic-numbers */
 const getNumericDateSuffix = (numericDate) => {
+  if (numericDate > 10 && numericDate < 14) {
+    return "th";
+  }
+
   switch (numericDate % 10) {
     case 1: {
       return "st";
@@ -40,10 +44,13 @@ const getNumericDateSuffix = (numericDate) => {
 };
 /* eslint-enable no-magic-numbers */
 
-export const getDateDisplay = (date, includeDay = false) => {
+export const getDateDisplay = (
+  date,
+  { includeDay = false, includeSuffix = false } = {}
+) => {
   const dateInstance = new Date(date);
   const numericDate = dateInstance.getDate();
-  const dateSuffix = getNumericDateSuffix(numericDate);
+  const dateSuffix = includeSuffix ? getNumericDateSuffix(numericDate) : "";
   const display =
     `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
   return includeDay ? `${DAY_MAP[dateInstance.getDay()]}, ${display}` : display;

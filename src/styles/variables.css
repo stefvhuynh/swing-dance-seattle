@@ -8,8 +8,9 @@
   --size-xs: 0.5rem;
   --size-sm: 0.75rem;
   --size-md: 1rem;
-  --size-lg: 1.5rem;
-  --size-xl: 2rem;
+  --size-lg: 1.25rem;
+  --size-xl: 1.75rem;
+  --size-xxl: 2.5rem;
 
   --color-white: #fdfdfd;
   --color-off-white: #f4f4f4;

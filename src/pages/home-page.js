@@ -59,16 +59,14 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="mg-b-lg bg-dark-grey font-white shadow">
-          <div className="mg-b-lg mg-l-md mg-r-md text-center">
-            <h1 className="font-emphasis font-xl mg-b-md">
+        <div className="pd-t-xl mg-b-lg bg-dark-grey font-white shadow">
+          <div className="mg-b-xl mg-l-md mg-r-md text-center">
+            <h1 className="font-emphasis font-xxl mg-b-md">
               Swing Dance Seattle
             </h1>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            <div className="line-height-spaced">
+              A schedule of all things Lindy Hop, Balboa, Blues, and Shag
+              related in the greater Seattle area
             </div>
           </div>
 

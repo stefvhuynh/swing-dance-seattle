@@ -64,7 +64,9 @@ const Experience = ({
           <div>
             {getDateDisplay(dateStart)}
             <Conditional condition={dateEnd}>
-              <span> - {getDateDisplay(dateEnd)}</span>
+              <span> - <span className="no-wrap">
+                {getDateDisplay(dateEnd)}
+              </span></span>
             </Conditional>
           </div>
         </Conditional>

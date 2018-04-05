@@ -10,7 +10,7 @@ const Schedule = ({ experiencesByDay, recurring }) => {
   const scheduleItems = Object.keys(experiencesByDay).map((day) => {
     const listHeading = recurring
       ? RECURRENCE_DAY_MAP[day]
-      : getDateDisplay(day, true);
+      : getDateDisplay(day, { includeDay: true, includeSuffix: true });
 
     return (
       <li key={day} className="mg-b-md">
