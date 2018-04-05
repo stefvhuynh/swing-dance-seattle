@@ -2,6 +2,31 @@ export const MOBILE_BREAKPOINT = 768;
 export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
 export const ONE_YEAR = 3154e10;
 
+export const MONTH_MAP = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
+
+export const DAY_MAP = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 export const EMPTY_TYPE = "0";
 
 export const CATEGORY_CLASS = "1";

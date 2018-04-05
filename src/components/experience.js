@@ -7,6 +7,8 @@ import {
   RECURRENCE_TIME_MAP
 } from "../constants";
 
+import { getDateDisplay } from "../utils";
+
 const Conditional = ({ children, condition }) => {
   return condition ? children : null;
 };
@@ -60,9 +62,9 @@ const Experience = ({
 
         <Conditional condition={dateStart}>
           <div>
-            {dateStart}
+            {getDateDisplay(dateStart)}
             <Conditional condition={dateEnd}>
-              <span> - {dateEnd}</span>
+              <span> - {getDateDisplay(dateEnd)}</span>
             </Conditional>
           </div>
         </Conditional>

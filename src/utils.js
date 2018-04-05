@@ -1,4 +1,9 @@
-import { CATEGORY_CLASS, CATEGORY_DANCE } from "./constants";
+import {
+  CATEGORY_CLASS,
+  CATEGORY_DANCE,
+  DAY_MAP,
+  MONTH_MAP
+} from "./constants";
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {
   return Object.keys(map).map((key) => ({
@@ -14,6 +19,40 @@ export const isValidDate = (date) => {
 
 export const isDateStartBeforeDateEnd = (dateStart, dateEnd) => {
   return new Date(dateStart) <= new Date(dateEnd);
+};
+
+/* eslint-disable no-magic-numbers */
+const getNumericDateSuffix = (numericDate) => {
+  switch (numericDate % 10) {
+    case 1: {
+      return "st";
+    }
+    case 2: {
+      return "nd";
+    }
+    case 3: {
+      return "rd";
+    }
+    default: {
+      return "th";
+    }
+  }
+};
+/* eslint-enable no-magic-numbers */
+
+export const getDateDisplay = (date) => {
+  const dateInstance = new Date(date);
+  const numericDate = dateInstance.getDate();
+  const dateSuffix = getNumericDateSuffix(numericDate);
+  return `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
+};
+
+export const getExtendedDateDisplay = (date) => {
+  const dateInstance = new Date(date);
+  const numericDate = dateInstance.getDate();
+  const dateSuffix = getNumericDateSuffix(numericDate);
+  return `${DAY_MAP[dateInstance.getDay()]},
+    ${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
 };
 
 export const isValidTime = (time) => {
