@@ -1,11 +1,12 @@
 .border-solid { border: 1px solid }
 .border-dashed { border: 1px dashed }
 
-.border-bottom-thick { border-bottom: 4px solid var(--color-off-white) }
+.border-bottom-thick { border-bottom: 3px solid }
+.border-off-white { border-color: var(--color-off-white) }
 
 .bg-white { background: var(--color-white) }
 .bg-off-white { background: var(--color-off-white) }
 .bg-green { background: var(--color-green) }
 .bg-dark-grey { background: var(--color-dark-grey) }
 
-.shadow { box-shadow: 0 5px 17px -6px var(--color-grey) }
+.shadow { box-shadow: 0 5px 18px -6px var(--color-black) }
