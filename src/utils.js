@@ -40,19 +40,13 @@ const getNumericDateSuffix = (numericDate) => {
 };
 /* eslint-enable no-magic-numbers */
 
-export const getDateDisplay = (date) => {
+export const getDateDisplay = (date, includeDay = false) => {
   const dateInstance = new Date(date);
   const numericDate = dateInstance.getDate();
   const dateSuffix = getNumericDateSuffix(numericDate);
-  return `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
-};
-
-export const getExtendedDateDisplay = (date) => {
-  const dateInstance = new Date(date);
-  const numericDate = dateInstance.getDate();
-  const dateSuffix = getNumericDateSuffix(numericDate);
-  return `${DAY_MAP[dateInstance.getDay()]},
-    ${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
+  const display =
+    `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
+  return includeDay ? `${DAY_MAP[dateInstance.getDay()]}, ${display}` : display;
 };
 
 export const isValidTime = (time) => {

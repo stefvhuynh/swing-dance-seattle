@@ -5,13 +5,13 @@ export const ONE_YEAR = 3154e10;
 export const MONTH_MAP = [
   "Jan",
   "Feb",
-  "Mar",
-  "Apr",
+  "March",
+  "April",
   "May",
-  "Jun",
-  "Jul",
+  "June",
+  "July",
   "Aug",
-  "Sep",
+  "Sept",
   "Oct",
   "Nov",
   "Dec"

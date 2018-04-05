@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import { RECURRENCE_DAY_MAP } from "../constants";
-import { getExtendedDateDisplay } from "../utils";
+import { getDateDisplay } from "../utils";
 import ExperienceList from "./experience-list";
 
 const Schedule = ({ experiencesByDay, recurring }) => {
   const scheduleItems = Object.keys(experiencesByDay).map((day) => {
     const listHeading = recurring
       ? RECURRENCE_DAY_MAP[day]
-      : getExtendedDateDisplay(day);
+      : getDateDisplay(day, true);
 
     return (
       <li key={day} className="mg-b-md">
