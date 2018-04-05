@@ -60,11 +60,11 @@ class HomePage extends React.Component {
     return (
       <div>
         <div className="pd-t-xl mg-b-lg bg-dark-grey font-white shadow">
-          <div className="mg-b-xl mg-l-md mg-r-md text-center">
+          <div className="mg-b-xl pd-l-md pd-r-md text-center">
             <h1 className="font-emphasis font-xxl mg-b-md">
               Swing Dance Seattle
             </h1>
-            <div className="line-height-spaced">
+            <div className="lines-spaced">
               A schedule of all things Lindy Hop, Balboa, Blues, and Shag
               related in the greater Seattle area
             </div>
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
           <Filter/>
         </div>
 
-        <div className="mg-l-md mg-r-md">
+        <div className="pd-l-md pd-r-md">
           {this.renderContent()}
         </div>
       </div>

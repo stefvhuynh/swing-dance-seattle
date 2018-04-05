@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import bars from "@fortawesome/fontawesome-free-solid/faBars";
+import arrowUp from "@fortawesome/fontawesome-free-solid/faArrowUp";
 
 const iconMap = {
+  arrowUp,
   bars
 };
 

@@ -19,5 +19,5 @@
 .font-black { color: var(--color-black) }
 .font-grey { color: var(--color-grey) }
 
-.line-height-spaced { line-height: 1.5 }
+.lines-spaced { line-height: 1.5 }
 .no-wrap { white-space: nowrap }
