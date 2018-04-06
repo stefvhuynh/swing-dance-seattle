@@ -7,7 +7,7 @@ import {
   RECURRENCE_TIME_MAP
 } from "../constants";
 
-import { getDateDisplay } from "../utils";
+import { getDateDisplay, getValidLink } from "../utils";
 
 const Conditional = ({ children, condition }) => {
   return condition ? children : null;
@@ -31,7 +31,7 @@ const Experience = ({
         "flex justify-space-between align-center pd-md bg-white shadow " +
           "lines-spaced"
       }
-      href={link}
+      href={getValidLink(link)}
       target="_blank"
     >
       <div>
@@ -43,7 +43,11 @@ const Experience = ({
 
         <div className="bold font-lg">{name}</div>
 
-        <Conditional condition={organization && organization !== venue}>
+        <Conditional
+          condition={
+            organization && organization !== venue && organization !== name
+          }
+        >
           <div className="font-sm italic font-grey">{organization}</div>
         </Conditional>
 

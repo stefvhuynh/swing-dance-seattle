@@ -2,6 +2,7 @@ import {
   CATEGORY_CLASS,
   CATEGORY_DANCE,
   DAY_MAP,
+  LINK_PREFIX,
   MONTH_MAP
 } from "./constants";
 
@@ -59,6 +60,10 @@ export const getDateDisplay = (
 export const isValidTime = (time) => {
   const timeRegex = /^[0-1]?[0-9]:[0-5][0-9][ap]m$/;
   return timeRegex.test(time);
+};
+
+export const getValidLink = (link) => {
+  return link.startsWith(LINK_PREFIX) ? link : `${LINK_PREFIX}://${link}`;
 };
 
 export const isRecurringCategory = (category) => {
