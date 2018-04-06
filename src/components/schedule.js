@@ -15,7 +15,7 @@ const Schedule = ({ experiencesByDay, recurring }) => {
     return (
       <li key={day} className="mg-b-xl">
         <div
-          className={classNames("bold mg-b-sm pd-l-md", {
+          className={classNames("bold mg-b-sm pd-l-md font-grey", {
             "uppercase": recurring
           })}
         >
