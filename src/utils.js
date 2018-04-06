@@ -109,10 +109,9 @@ export const getExperiencesByDay = (experiencesByKey) => {
       ? experience.dateStart
       : experience.recurrenceDay;
 
-    experiencesByDay[day] = (experiencesByDay[day] || [])
-      .concat([experience]);
+    dayMap[day] = (dayMap[day] || []).concat([experience]);
 
-    return experiencesByDay;
+    return dayMap;
   }, {});
 
   Object.keys(experiencesByDay).forEach((key) => {
