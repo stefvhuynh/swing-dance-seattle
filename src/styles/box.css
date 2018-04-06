@@ -9,4 +9,4 @@
 .bg-green { background: var(--color-green) }
 .bg-dark-grey { background: var(--color-dark-grey) }
 
-.shadow { box-shadow: 0 5px 18px -6px var(--color-black) }
+.shadow { box-shadow: 0 5px 14px -12px var(--color-black) }

@@ -5,10 +5,11 @@
   --font-bold: 700;
   --font-normal: 400;
 
-  --size-xs: 0.5rem;
-  --size-sm: 0.75rem;
+  --size-xxs: 0.5rem;
+  --size-xs: 0.7rem;
+  --size-sm: 0.85rem;
   --size-md: 1rem;
-  --size-lg: 1.25rem;
+  --size-lg: 1.2rem;
   --size-xl: 1.75rem;
   --size-xxl: 2.5rem;
 

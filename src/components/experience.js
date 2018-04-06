@@ -27,29 +27,32 @@ const Experience = ({
 }) => {
   return (
     <a
-      className="flex justify-space-between align-center pd-md bg-white shadow"
+      className={
+        "flex justify-space-between align-center pd-md bg-white shadow " +
+          "lines-spaced"
+      }
       href={link}
       target="_blank"
     >
       <div>
         <Conditional condition={neighborhood}>
-          <div className="bold uppercase font-sm font-grey">
+          <div className="bold uppercase font-xs font-grey">
             {neighborhood}
           </div>
         </Conditional>
 
         <div className="bold font-lg">{name}</div>
 
-        <Conditional condition={organization}>
-          <div className="italic font-grey">{organization}</div>
+        <Conditional condition={organization && organization !== venue}>
+          <div className="font-sm italic font-grey">{organization}</div>
         </Conditional>
 
         <Conditional condition={venue}>
-          <div className="italic font-grey">@ {venue}</div>
+          <div className="font-sm italic font-grey">@ {venue}</div>
         </Conditional>
       </div>
 
-      <div className="text-right">
+      <div className="text-right mg-l-lg">
         <Conditional condition={recurrenceDay && recurrenceTime}>
           <div>
             {RECURRENCE_TIME_MAP[recurrenceTime]}
@@ -63,7 +66,7 @@ const Experience = ({
         <Conditional condition={dateStart}>
           <div>
             {getDateDisplay(dateStart)}
-            <Conditional condition={dateEnd}>
+            <Conditional condition={dateEnd !== dateStart}>
               <span> - <span className="no-wrap">
                 {getDateDisplay(dateEnd)}
               </span></span>

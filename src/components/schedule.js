@@ -13,7 +13,7 @@ const Schedule = ({ experiencesByDay, recurring }) => {
       : getDateDisplay(day, { includeDay: true, includeSuffix: true });
 
     return (
-      <li key={day} className="mg-b-md">
+      <li key={day} className="mg-b-xl">
         <div
           className={classNames("bold mg-b-sm pd-l-md", {
             "uppercase": recurring
