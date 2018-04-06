@@ -13,11 +13,13 @@ import {
   selectClassesByDay,
   selectDancesByDay,
   selectEventsByDay,
+  selectIsAppInitialized,
   selectSubfilter,
   selectWorkshopsByDay
 } from "../redux/selectors";
 
 import Filter from "../containers/filter";
+import Spinner from "../components/spinner";
 import Schedule from "../components/schedule";
 
 const experiencesByDayPropType = Schedule.propTypes.experiencesByDay;
@@ -27,6 +29,7 @@ class HomePage extends React.Component {
     classesByDay: experiencesByDayPropType,
     dancesByDay: experiencesByDayPropType,
     eventsByDay: experiencesByDayPropType,
+    isLoading: PropTypes.bool,
     subfilter: PropTypes.string,
     workshopsByDay: experiencesByDayPropType
   };
@@ -40,23 +43,33 @@ class HomePage extends React.Component {
       workshopsByDay
     } = this.props;
 
+    let content;
+
     switch (subfilter) {
       case SUBFILTER_CLASSES: {
-        return <Schedule recurring experiencesByDay={classesByDay}/>;
+        content = <Schedule recurring experiencesByDay={classesByDay}/>;
+        break;
       }
       case SUBFILTER_DANCES: {
-        return <Schedule recurring experiencesByDay={dancesByDay}/>;
+        content = <Schedule recurring experiencesByDay={dancesByDay}/>;
+        break;
       }
       case SUBFILTER_EVENTS: {
-        return <Schedule experiencesByDay={eventsByDay}/>;
+        content = <Schedule experiencesByDay={eventsByDay}/>;
+        break;
       }
       case SUBFILTER_WORKSHOPS: {
-        return <Schedule experiencesByDay={workshopsByDay}/>;
+        content = <Schedule experiencesByDay={workshopsByDay}/>;
+        break;
       }
     }
+
+    return <div className="animation-fade-in">{content}</div>;
   }
 
   render() {
+    const { isLoading } = this.props;
+
     return (
       <div>
         <div
@@ -77,7 +90,7 @@ class HomePage extends React.Component {
         <Filter/>
 
         <div className="mg-t-lg pd-l-md pd-r-md">
-          {this.renderContent()}
+          {isLoading ? <Spinner/> : this.renderContent()}
         </div>
       </div>
     );
@@ -87,6 +100,7 @@ class HomePage extends React.Component {
 const mapStateToProps = (state) => ({
   classesByDay: selectClassesByDay(state),
   dancesByDay: selectDancesByDay(state),
+  isLoading: !selectIsAppInitialized(state),
   eventsByDay: selectEventsByDay(state),
   subfilter: selectSubfilter(state),
   workshopsByDay: selectWorkshopsByDay(state)

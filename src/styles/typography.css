@@ -14,10 +14,12 @@
 .font-lg { font-size: var(--size-lg) }
 .font-xl { font-size: var(--size-xl) }
 .font-xxl { font-size: var(--size-xxl) }
+.font-xxxl { font-size: var(--size-xxxl) }
 
 .font-white { color: var(--color-white) }
 .font-black { color: var(--color-black) }
 .font-grey { color: var(--color-grey) }
+.font-green { color: var(--color-green) }
 
 .lines-spaced { line-height: 1.5 }
 .no-wrap { white-space: nowrap }

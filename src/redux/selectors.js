@@ -48,6 +48,7 @@ export const selectWorkshopsByDay = createSelector(
   (workshops) => getExperiencesByDay(workshops)
 );
 
+export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
 export const selectIsMobile = (state) => state.ui.isMobile;
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectFilter = (state) => state.ui.filter;

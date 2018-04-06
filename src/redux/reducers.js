@@ -39,8 +39,8 @@ const initialState = {
     submissionSucceeded: false
   },
   ui: {
-    appInitialized: false,
     filter: FILTER_LEARN,
+    isAppInitialized: false,
     isMobile: false,
     isNavBarOpen: false,
     subfilter: FILTER_SUBFILTER_MAP[FILTER_LEARN][0]
@@ -120,7 +120,7 @@ export const ui = (state = initialState.ui, action) => {
 
   switch (type) {
     case APP_INITIALIZED: {
-      return { ...state, appInitialized: true };
+      return { ...state, isAppInitialized: true };
     }
 
     case WINDOW_RESIZED: {
