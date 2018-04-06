@@ -70,9 +70,41 @@ export const isRecurringCategory = (category) => {
   return category === CATEGORY_CLASS || category === CATEGORY_DANCE;
 };
 
-export const getExperiencesByDay = (experiences) => {
-  return Object.keys(experiences).reduce((experiencesByDay, key) => {
-    const experience = experiences[key];
+/* eslint-disable no-magic-numbers */
+const sortExperiencesByTime = (experiences) => {
+  return experiences.sort((a, b) => {
+    if (!a.time) {
+      return 1;
+    } else if (!b.time) {
+      return -1;
+    }
+
+    const aPeriod = a.time.replace(/\s/g, "").substr(-1, 2).toLowerCase();
+    const bPeriod = b.time.replace(/\s/g, "").substr(-1, 2).toLowerCase();
+
+    if (aPeriod === "am" && bPeriod === "pm") {
+      return -1;
+    } else if (aPeriod === "pm" && bPeriod === "am") {
+      return 1;
+    }
+
+    if (a.time < b.time) {
+      return -1;
+    } else if (b.time < a.time) {
+      return 1;
+    }
+
+    return 0;
+  });
+};
+/* eslint-enable no-magic-numbers */
+
+export const getExperiencesByDay = (experiencesByKey) => {
+  const experiencesByDay = Object.keys(experiencesByKey).reduce((
+    dayMap,
+    key
+  ) => {
+    const experience = experiencesByKey[key];
     const day = experience.dateStart
       ? experience.dateStart
       : experience.recurrenceDay;
@@ -82,4 +114,10 @@ export const getExperiencesByDay = (experiences) => {
 
     return experiencesByDay;
   }, {});
+
+  Object.keys(experiencesByDay).forEach((key) => {
+    experiencesByDay[key] = sortExperiencesByTime(experiencesByDay[key]);
+  });
+
+  return experiencesByDay;
 };
