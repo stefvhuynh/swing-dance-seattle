@@ -7,6 +7,7 @@ import { convertMapToList } from "../utils";
 
 class Filter extends React.Component {
   static propTypes = {
+    isMobile: PropTypes.bool,
     onFilterClick: PropTypes.func,
     onSubfilterClick: PropTypes.func,
     selectedFilter: PropTypes.string,
@@ -30,7 +31,7 @@ class Filter extends React.Component {
   };
 
   render() {
-    const { selectedFilter, selectedSubfilter } = this.props;
+    const { isMobile, selectedFilter, selectedSubfilter } = this.props;
     const filters = convertMapToList(FILTER_MAP, "value", "display");
     const subfilters = FILTER_SUBFILTER_MAP[selectedFilter].map((subfilter) => {
       return { value: subfilter, display: SUBFILTER_MAP[subfilter] };
@@ -38,12 +39,14 @@ class Filter extends React.Component {
 
     return (
       <div className="flex column font-white shadow">
-        <ul className="flex font-lg bg-green shadow z-top">
+        <ul className="flex font-lg bg-green shadow z-top justify-center">
           {filters.map(({ display, value }) => (
             <li
-              className={classNames("fill text-center pd-t-sm pd-b-sm", {
-                "border-bottom-thick border-off-white bold":
-                  selectedFilter === value
+              className={classNames("text-center pd-sm", {
+                "border-bottom-thick border-off-white":
+                  selectedFilter === value,
+                "transparent": selectedFilter !== value,
+                "fill": isMobile
               })}
               key={value}
               value={value}
@@ -54,12 +57,14 @@ class Filter extends React.Component {
           ))}
         </ul>
 
-        <ul className="flex bg-dark-grey">
+        <ul className="flex bg-dark-grey justify-center">
           {subfilters.map(({ display, value }) => (
             <li
-              className={classNames("fill text-center pd-t-sm pd-b-sm", {
-                "border-bottom-thick border-off-white bold":
-                  selectedSubfilter === value
+              className={classNames("text-center pd-sm", {
+                "border-bottom-thick border-off-white":
+                  selectedSubfilter === value,
+                "transparent": selectedSubfilter !== value,
+                "fill": isMobile
               })}
               key={value}
               value={value}

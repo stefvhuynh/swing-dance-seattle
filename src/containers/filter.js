@@ -1,10 +1,16 @@
 import { connect } from "react-redux";
 
-import { selectFilter, selectSubfilter } from "../redux/selectors";
+import {
+  selectFilter,
+  selectIsMobile,
+  selectSubfilter
+} from "../redux/selectors";
+
 import { filterSelected, subfilterSelected } from "../redux/actions";
 import Filter from "../components/filter";
 
 const mapStateToProps = (state) => ({
+  isMobile: selectIsMobile(state),
   selectedFilter: selectFilter(state),
   selectedSubfilter: selectSubfilter(state)
 });
