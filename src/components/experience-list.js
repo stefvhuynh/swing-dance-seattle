@@ -6,13 +6,13 @@ import Experience from "./experience";
 const ExperienceList = ({ experiences }) => {
   const listItems = experiences.map((experience) => {
     return (
-      <li key={experience.id} className="mg-b-sm">
+      <li key={experience.id} className="border-bottom border-light-grey">
         <Experience {...experience}/>
       </li>
     );
   });
 
-  return <ul>{listItems}</ul>;
+  return <ul className="shadow">{listItems}</ul>;
 };
 
 ExperienceList.propTypes = {
