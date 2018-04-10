@@ -44,7 +44,8 @@ class Experience extends React.Component {
     return (
       <a
         className={
-          "flex justify-space-between align-center pd-md bg-white lines-spaced"
+          "flex justify-space-between align-center pd-md bg-white " +
+            "lines-spaced font-black"
         }
         href={getValidLink(link)}
         onMouseEnter={this.handleMouseEnter}

@@ -56,19 +56,21 @@ class App extends React.Component {
           </div>
         </Fragment>
 
-        <div
-          className={
-            "no-shrink flex justify-space-between align-center bg-dark-grey " +
-              "pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xl font-white"
-          }
-        >
-          <div className="lines-spaced">
-            <div className="font-emphasis">Seattle Swing Dance</div>
-            <div className="font-sm">revivalrhythmswing@gmail.com</div>
+        <div className="bg-dark-grey">
+          <div
+            className={
+              "no-shrink flex justify-space-between align-center max-width " +
+                "margin-auto pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xl font-white"
+            }
+          >
+            <div className="lines-spaced">
+              <div className="font-emphasis">Seattle Swing Dance</div>
+              <div className="font-sm">revivalrhythmswing@gmail.com</div>
+            </div>
+            <a href="#" className="font-white font-sm">
+              Back to top <Icon name="arrowUp"/>
+            </a>
           </div>
-          <a href="#" className="font-white font-sm">
-            Back to top <Icon name="arrowUp"/>
-          </a>
         </div>
       </div>
     );

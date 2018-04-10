@@ -6,6 +6,8 @@
 .underline { text-decoration: underline }
 .uppercase { text-transform: uppercase }
 
+.hover-underline:hover { text-decoration: underline }
+
 .text-center { text-align: center }
 .text-right { text-align: right }
 
