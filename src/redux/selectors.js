@@ -1,6 +1,8 @@
 import { createSelector } from "reselect";
 
 import {
+  MAX_WIDTH_BREAKPOINT,
+  MOBILE_BREAKPOINT,
   SUBFILTER_CLASSES,
   SUBFILTER_DANCES,
   SUBFILTER_EVENTS,
@@ -19,10 +21,17 @@ export const selectExperienceSubmissionSucceeded = (state) => {
 export const selectExperiences = (state) => state.experiences.data;
 
 export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
-export const selectIsMobile = (state) => state.ui.isMobile;
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectFilter = (state) => state.ui.filter;
 export const selectSubfilter = (state) => state.ui.subfilter;
+
+export const selectIsMobile = (state) => {
+  return state.ui.windowWidth < MOBILE_BREAKPOINT;
+};
+
+export const selectIsMaxWidth = (state) => {
+  return state.ui.windowWidth > MAX_WIDTH_BREAKPOINT;
+};
 
 export const selectIsRecurring = createSelector(
   selectSubfilter,

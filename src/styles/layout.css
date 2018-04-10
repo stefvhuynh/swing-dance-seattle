@@ -1,5 +1,6 @@
 .full-height { height: 100% }
-.width-300 { width: 300px }
+.max-width { max-width: var(--max-width) }
+.margin-auto { margin: 0 auto }
 
 .flex { display: flex }
 .row { flex-direction: row }
@@ -16,5 +17,8 @@
 }
 
 .no-shrink { flex-shrink: 0 }
+
+.basis-third { flex-basis: 33.33% }
+.basis-half { flex-basis: 50% }
 
 .z-top { z-index: 1 }

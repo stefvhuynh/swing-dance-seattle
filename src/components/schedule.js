@@ -6,7 +6,13 @@ import { RECURRENCE_DAY_MAP } from "../constants";
 import { getDateDisplay } from "../utils";
 import ExperienceList from "./experience-list";
 
-const Schedule = ({ className, experiencesByDay, isMobile, recurring }) => {
+const Schedule = ({
+  className,
+  experiencesByDay,
+  isMaxWidth,
+  isMobile,
+  recurring
+}) => {
   const scheduleItems = Object.keys(experiencesByDay).map((day) => {
     const listHeading = recurring
       ? RECURRENCE_DAY_MAP[day]
@@ -15,8 +21,9 @@ const Schedule = ({ className, experiencesByDay, isMobile, recurring }) => {
     return (
       <li
         key={day}
-        className={classNames("mg-b-xl", {
-          "width-300 mg-r-md": !isMobile
+        className={classNames("mg-b-xl pd-l-xs pd-r-xs", {
+          "basis-half": !isMobile && !isMaxWidth,
+          "basis-third": !isMobile && isMaxWidth
         })}
       >
         <div
@@ -46,6 +53,7 @@ const Schedule = ({ className, experiencesByDay, isMobile, recurring }) => {
 Schedule.propTypes = {
   className: PropTypes.string,
   experiencesByDay: PropTypes.objectOf(ExperienceList.propTypes.experiences),
+  isMaxWidth: PropTypes.bool,
   isMobile: PropTypes.bool,
   recurring: PropTypes.bool
 };

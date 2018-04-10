@@ -14,11 +14,7 @@ import {
   WINDOW_RESIZED
 } from "./actions";
 
-import {
-  FILTER_LEARN,
-  MOBILE_BREAKPOINT,
-  FILTER_SUBFILTER_MAP
-} from "../constants";
+import { FILTER_LEARN, FILTER_SUBFILTER_MAP } from "../constants";
 
 const initialState = {
   auth: {
@@ -41,9 +37,9 @@ const initialState = {
   ui: {
     filter: FILTER_LEARN,
     isAppInitialized: false,
-    isMobile: false,
     isNavBarOpen: false,
-    subfilter: FILTER_SUBFILTER_MAP[FILTER_LEARN][0]
+    subfilter: FILTER_SUBFILTER_MAP[FILTER_LEARN][0],
+    windowWidth: 0
   }
 };
 
@@ -124,7 +120,7 @@ export const ui = (state = initialState.ui, action) => {
     }
 
     case WINDOW_RESIZED: {
-      return { ...state, isMobile: payload.width < MOBILE_BREAKPOINT };
+      return { ...state, windowWidth: payload.width };
     }
 
     case NAV_BAR_TOGGLED: {

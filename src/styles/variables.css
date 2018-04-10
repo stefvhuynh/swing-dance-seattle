@@ -1,4 +1,6 @@
 :root {
+  --max-width: 1024px;
+
   --font-primary: "Noto Sans", sans-serif;
   --font-emphasis: "Lobster", cursive;
 

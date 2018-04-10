@@ -34,7 +34,7 @@ class HomePage extends React.Component {
 
         <Filter/>
 
-        <div className="mg-t-lg pd-l-md pd-r-md">
+        <div className="mg-t-lg pd-l-md pd-r-md max-width margin-auto">
           {isLoading ? <Spinner/> : <Schedule className="animated-fade-in"/>}
         </div>
       </div>

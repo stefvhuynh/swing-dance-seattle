@@ -7,6 +7,10 @@
 @import "./spacing.css";
 @import "./typography.css";
 
+* {
+  box-sizing: border-box;  
+}
+
 html, body {
   font-family: var(--font-primary);
   font-weight: var(--font-normal);
