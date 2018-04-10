@@ -1,5 +1,12 @@
 import { createSelector } from "reselect";
 
+import {
+  SUBFILTER_CLASSES,
+  SUBFILTER_DANCES,
+  SUBFILTER_EVENTS,
+  SUBFILTER_WORKSHOPS
+} from "../constants";
+
 import { getExperiencesByDay } from "../utils";
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
@@ -11,45 +18,39 @@ export const selectExperienceSubmissionSucceeded = (state) => {
 
 export const selectExperiences = (state) => state.experiences.data;
 
-export const selectClasses = createSelector(
-  selectExperiences,
-  (experiences) => experiences.classes || {}
-);
-export const selectDances = createSelector(
-  selectExperiences,
-  (experiences) => experiences.dances || {}
-);
-export const selectEvents = createSelector(
-  selectExperiences,
-  (experiences) => experiences.events || {}
-);
-export const selectWorkshops = createSelector(
-  selectExperiences,
-  (experiences) => experiences.workshops || {}
-);
-
-export const selectClassesByDay = createSelector(
-  selectClasses,
-  (classes) => getExperiencesByDay(classes)
-);
-
-export const selectDancesByDay = createSelector(
-  selectDances,
-  (dances) => getExperiencesByDay(dances)
-);
-
-export const selectEventsByDay = createSelector(
-  selectEvents,
-  (events) => getExperiencesByDay(events)
-);
-
-export const selectWorkshopsByDay = createSelector(
-  selectWorkshops,
-  (workshops) => getExperiencesByDay(workshops)
-);
-
 export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
 export const selectIsMobile = (state) => state.ui.isMobile;
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectFilter = (state) => state.ui.filter;
 export const selectSubfilter = (state) => state.ui.subfilter;
+
+export const selectIsRecurring = createSelector(
+  selectSubfilter,
+  (subfilter) => {
+    return subfilter === SUBFILTER_CLASSES || subfilter === SUBFILTER_DANCES;
+  }
+);
+
+export const selectExperiencesByDay = createSelector(
+  selectSubfilter,
+  selectExperiences,
+  (subfilter, experiences) => {
+    switch (subfilter) {
+      case SUBFILTER_CLASSES: {
+        return getExperiencesByDay(experiences.classes);
+      }
+      case SUBFILTER_DANCES: {
+        return getExperiencesByDay(experiences.dances);
+      }
+      case SUBFILTER_EVENTS: {
+        return getExperiencesByDay(experiences.events);
+      }
+      case SUBFILTER_WORKSHOPS: {
+        return getExperiencesByDay(experiences.workshops);
+      }
+      default: {
+        return {};
+      }
+    }
+  }
+);
