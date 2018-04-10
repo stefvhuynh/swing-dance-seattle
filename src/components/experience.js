@@ -73,7 +73,9 @@ class Experience extends React.Component {
           </Conditional>
 
           <Conditional condition={venue}>
-            <div className="font-sm italic font-grey">@ {venue}</div>
+            <div className="font-sm font-grey">
+              @ <span className="italic">{venue}</span>
+            </div>
           </Conditional>
         </div>
 
