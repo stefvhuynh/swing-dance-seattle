@@ -42,7 +42,7 @@ class Filter extends React.Component {
         <ul className="flex font-lg bg-green shadow z-top justify-center">
           {filters.map(({ display, value }) => (
             <li
-              className={classNames("text-center pd-sm", {
+              className={classNames("text-center pd-sm pointer", {
                 "border-bottom-thick border-off-white":
                   selectedFilter === value,
                 "transparent": selectedFilter !== value,
@@ -60,7 +60,7 @@ class Filter extends React.Component {
         <ul className="flex bg-dark-grey justify-center">
           {subfilters.map(({ display, value }) => (
             <li
-              className={classNames("text-center pd-sm", {
+              className={classNames("text-center pd-sm pointer", {
                 "border-bottom-thick border-off-white":
                   selectedSubfilter === value,
                 "transparent": selectedSubfilter !== value,

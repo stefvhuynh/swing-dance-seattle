@@ -11,3 +11,5 @@
 .shadow { box-shadow: 0 5px 19px -10px var(--color-black) }
 
 .transparent { opacity: 0.7 }
+
+.pointer { cursor: pointer }
