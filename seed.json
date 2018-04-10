@@ -117,7 +117,7 @@
       "name": "Savoy Monday",
       "neighborhood": "Queen Anne",
       "organization": "Savoy Swing Club",
-      "recurrenceDay": "2",
+      "recurrenceDay": "1",
       "recurrenceTime": "5",
       "time": "9:00pm",
       "venue": "Clubhouse of Queen Anne"
@@ -129,7 +129,7 @@
       "name": "Savoy Swing Practice Space",
       "neighborhood": "Capitol Hill",
       "organization": "Savoy Swing Club",
-      "recurrenceDay": "3",
+      "recurrenceDay": "2",
       "recurrenceTime": "5",
       "time": "8:45pm",
       "venue": "Dance Underground"
@@ -141,7 +141,7 @@
       "name": "Century Wednesday",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
-      "recurrenceDay": "4",
+      "recurrenceDay": "3",
       "recurrenceTime": "5",
       "time": "9:30pm",
       "venue": "Century Ballroom"
@@ -153,7 +153,7 @@
       "name": "Hepcat Productions",
       "neighborhood": "Capitol Hill",
       "organization": "Hepcat Productions",
-      "recurrenceDay": "5",
+      "recurrenceDay": "4",
       "recurrenceTime": "5",
       "time": "9:00pm",
       "venue": "Russian Center"
@@ -165,7 +165,7 @@
       "name": "Eastside Stomp",
       "neighborhood": "Redmond",
       "organization": "Syncopation Foundation",
-      "recurrenceDay": "6",
+      "recurrenceDay": "5",
       "recurrenceTime": "5",
       "time": "9:00pm",
       "venue": "Aria Ballroom"
@@ -177,7 +177,7 @@
       "name": "Revival Rhythm",
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
-      "recurrenceDay": "7",
+      "recurrenceDay": "6",
       "recurrenceTime": "2",
       "time": "9:00pm",
       "venue": "SCT"
@@ -189,10 +189,22 @@
       "name": "Balboa, Blues, and Booze",
       "neighborhood": "Downtown",
       "organization": "Hot Rhythm Club",
-      "recurrenceDay": "2",
+      "recurrenceDay": "1",
       "recurrenceTime": "1",
       "time": "8:00pm",
       "venue": "Smith Tower"
+    },
+    "h": {
+      "approved": true,
+      "id": "h",
+      "link": "centuryballroom.com",
+      "name": "Century Sunday",
+      "neighborhood": "Capitol Hill",
+      "organization": "Century Ballroom",
+      "recurrenceDay": "7",
+      "recurrenceTime": "5",
+      "time": "9:00pm",
+      "venue": "Century Ballroom"
     }
   },
   "events": {

@@ -3,7 +3,7 @@ export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
 export const ONE_YEAR = 3154e10;
 export const LINK_PREFIX = "http";
 
-export const MONTH_MAP = [
+export const DATE_MONTH_MAP = [
   "Jan",
   "Feb",
   "March",
@@ -18,7 +18,7 @@ export const MONTH_MAP = [
   "Dec"
 ];
 
-export const DAY_MAP = [
+export const DATE_DAY_MAP = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -58,23 +58,23 @@ export const RECURRENCE_TIME_MAP = {
   [RECURRENCE_TIME_FOURTH]: "Fourth"
 };
 
-export const RECURRENCE_DAY_SUNDAY = "1";
-export const RECURRENCE_DAY_MONDAY = "2";
-export const RECURRENCE_DAY_TUESDAY = "3";
-export const RECURRENCE_DAY_WEDNESDAY = "4";
-export const RECURRENCE_DAY_THURSDAY = "5";
-export const RECURRENCE_DAY_FRIDAY = "6";
-export const RECURRENCE_DAY_SATURDAY = "7";
+export const RECURRENCE_DAY_MONDAY = "1";
+export const RECURRENCE_DAY_TUESDAY = "2";
+export const RECURRENCE_DAY_WEDNESDAY = "3";
+export const RECURRENCE_DAY_THURSDAY = "4";
+export const RECURRENCE_DAY_FRIDAY = "5";
+export const RECURRENCE_DAY_SATURDAY = "6";
+export const RECURRENCE_DAY_SUNDAY = "7";
 
 export const RECURRENCE_DAY_MAP = {
   [EMPTY_TYPE]: "",
-  [RECURRENCE_DAY_SUNDAY]: "Sundays",
   [RECURRENCE_DAY_MONDAY]: "Mondays",
   [RECURRENCE_DAY_TUESDAY]: "Tuesdays",
   [RECURRENCE_DAY_WEDNESDAY]: "Wednesdays",
   [RECURRENCE_DAY_THURSDAY]: "Thursdays",
   [RECURRENCE_DAY_FRIDAY]: "Fridays",
-  [RECURRENCE_DAY_SATURDAY]: "Saturdays"
+  [RECURRENCE_DAY_SATURDAY]: "Saturdays",
+  [RECURRENCE_DAY_SUNDAY]: "Sundays"
 };
 
 export const FILTER_LEARN = "1";

@@ -1,9 +1,9 @@
 import {
   CATEGORY_CLASS,
   CATEGORY_DANCE,
-  DAY_MAP,
-  LINK_PREFIX,
-  MONTH_MAP
+  DATE_DAY_MAP,
+  DATE_MONTH_MAP,
+  LINK_PREFIX
 } from "./constants";
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {
@@ -53,8 +53,10 @@ export const getDateDisplay = (
   const numericDate = dateInstance.getDate();
   const dateSuffix = includeSuffix ? getNumericDateSuffix(numericDate) : "";
   const display =
-    `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
-  return includeDay ? `${DAY_MAP[dateInstance.getDay()]}, ${display}` : display;
+    `${DATE_MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
+  return includeDay
+    ? `${DATE_DAY_MAP[dateInstance.getDay()]}, ${display}`
+    : display;
 };
 
 export const isValidTime = (time) => {
