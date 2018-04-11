@@ -35,7 +35,7 @@ class HomePage extends React.Component {
               in the region. This list will be kept up-to-date to the best of
               our ability. For the most accurate information, please click on an
               event to see the event's associated webpage. If you would like
-              your event added, altered, or removed, please send us an{" "}
+              your event added, altered, or removed, please send us{" "}
               <a
                 href="mailto:revivalrhythmswing@gmail.com"
                 className="bold hover-underline"
