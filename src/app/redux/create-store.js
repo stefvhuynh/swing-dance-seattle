@@ -5,7 +5,7 @@ import firebase from "firebase";
 
 import { auth, experiences, ui } from "./reducers";
 import routes from "../routes";
-import firebaseConfig from "../../firebase.config";
+import firebaseConfig from "../../../firebase.config";
 
 export default () => {
   const {

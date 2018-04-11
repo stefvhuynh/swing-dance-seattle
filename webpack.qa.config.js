@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 
-const prodConfig = require("./webpack.prod.config.js");
+const baseConfig = require("./webpack.config.js");
 
-module.exports = merge(prodConfig.base, {
+module.exports = merge(baseConfig, {
   mode: "development",
   devtool: "cheap-module-source-map",
   plugins: [

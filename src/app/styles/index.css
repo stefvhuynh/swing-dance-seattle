@@ -1,4 +1,4 @@
-@import "../../node_modules/reset-css/reset.css";
+@import "../../../node_modules/reset-css/reset.css";
 @import "./variables.css";
 
 @import "./animations.css";
