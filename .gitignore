@@ -1,3 +1,4 @@
 node_modules/
 public/
 firebase.config.js
+firebase-debug.log
