@@ -21,7 +21,7 @@ const Schedule = ({
       <li
         key={day}
         className={classNames("mg-b-xl", {
-          "basis-half pd-l-xs pd-r-xs": !isMobile
+          "basis-half pd-l-sm pd-r-sm": !isMobile
         })}
       >
         <div
