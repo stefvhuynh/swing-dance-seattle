@@ -78,6 +78,20 @@ export const RECURRENCE_DAY_MAP = {
   [RECURRENCE_DAY_SUNDAY]: "Sundays"
 };
 
+export const DANCE_STYLE_LINDY = "1";
+export const DANCE_STYLE_BALBOA = "2";
+export const DANCE_STYLE_BLUES = "3";
+export const DANCE_STYLE_SHAG = "4";
+export const DANCE_STYLE_JAZZ = "5";
+
+export const DANCE_STYLE_MAP = {
+  [DANCE_STYLE_LINDY]: "Lindy Hop",
+  [DANCE_STYLE_BALBOA]: "Balboa",
+  [DANCE_STYLE_BLUES]: "Blues",
+  [DANCE_STYLE_SHAG]: "Shag",
+  [DANCE_STYLE_JAZZ]: "Solo Jazz"
+};
+
 export const FILTER_LEARN = "1";
 export const FILTER_DANCE = "2";
 

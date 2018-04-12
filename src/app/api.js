@@ -103,7 +103,7 @@ export const postExperience = (
   experience
 ) => {
   const ref = firebase.database().ref(apiEndpoint).push();
-  return ref.set({ id: ref.key, ...experience });
+  return ref.set({ id: ref.key, approved: false, ...experience });
 };
 
 export const postClass = postExperience.bind(null, API_CLASSES);

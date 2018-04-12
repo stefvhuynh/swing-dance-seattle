@@ -6,6 +6,7 @@
 .mg-t-xl { margin-top: var(--size-xl) }
 .mg-t-xxl { margin-top: var(--size-xxl) }
 
+.mg-b-xxs { margin-bottom: var(--size-xxs) }
 .mg-b-xs { margin-bottom: var(--size-xs) }
 .mg-b-sm { margin-bottom: var(--size-sm) }
 .mg-b-md { margin-bottom: var(--size-md) }
