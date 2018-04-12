@@ -119,7 +119,7 @@
     },
     "j": {
       "approved": true,
-      "danceStyles": ["1"],
+      "danceStyles": ["1", "5"],
       "id": "i",
       "link": "salsacontodo.com/swing",
       "name": "Swing Dance SCT Training Team",
@@ -209,10 +209,25 @@
     },
     "f": {
       "approved": true,
+      "danceStyles": ["1"],
+      "hadDropIn": true,
+      "hasLiveMusic": false,
+      "id": "f",
+      "link": "savoyswing.org/membership",
+      "name": "Savoy Swing Club Practice Space",
+      "neighborhood": "Capitol Hill",
+      "organization": "Savoy Swing Club",
+      "recurrenceDay": "2",
+      "recurrenceTime": "5",
+      "time": "8:45pm",
+      "venue": "Dance Underground"
+    },
+    "g": {
+      "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "f",
+      "id": "g",
       "link": "savoyswing.org/bug",
       "name": "Blues Underground",
       "neighborhood": "Capitol Hill",
@@ -222,12 +237,12 @@
       "time": "8:00pm",
       "venue": "Dance Underground"
     },
-    "g": {
+    "h": {
       "approved": true,
       "danceStyles": ["1", "2"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
-      "id": "g",
+      "id": "h",
       "link": "eastsidestomp.com/dances.html",
       "name": "Eastside Stomp",
       "neighborhood": "Redmond",
@@ -237,12 +252,12 @@
       "time": "8:30pm",
       "venue": "Aria Ballroom"
     },
-    "h": {
+    "i": {
       "approved": true,
       "danceStyles": ["1", "2", "3"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
-      "id": "h",
+      "id": "i",
       "link": "salsacontodo.com/swing",
       "name": "Revival Rhythm",
       "neighborhood": "Fremont",
@@ -252,12 +267,12 @@
       "time": "8:00pm",
       "venue": "SCT"
     },
-    "i": {
+    "j": {
       "approved": true,
       "danceStyles": ["2"],
       "hasDropInClass": false,
       "hasLiveMusic": true,
-      "id": "i",
+      "id": "j",
       "link": "hotrhythmclub.com/balboabluesbooze",
       "name": "Balboa, Blues, and Booze",
       "neighborhood": "Downtown",
@@ -267,12 +282,12 @@
       "time": "8:00pm",
       "venue": "Smith Tower"
     },
-    "j": {
+    "k": {
       "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "j",
+      "id": "k",
       "link": "facebook.com/AlibiBlues",
       "name": "Alibi Blues",
       "neighborhood": "Greenwood",

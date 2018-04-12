@@ -134,11 +134,11 @@ class Experience extends React.Component {
           </Conditional>
 
           <Conditional condition={hasLiveMusic}>
-            <li>&ndash; Live Music!</li>
+            <li>&ndash; Live music!</li>
           </Conditional>
 
           <Conditional condition={hasDropInClass}>
-            <li>&ndash; Drop-in class included</li>
+            <li>&ndash; Drop-in class</li>
           </Conditional>
         </ul>
       </a>
