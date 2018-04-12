@@ -49,7 +49,7 @@ export const createStoreOnServer = (request, state = {}) => {
     enhancer: routerEnhancer
   } = routerForExpress({ routes, request });
 
-  const middleware = applyMiddleware(routerMiddleware, thunk);
+  const middleware = applyMiddleware(routerMiddleware);
 
   const enhancer = compose(middleware, routerEnhancer);
 
