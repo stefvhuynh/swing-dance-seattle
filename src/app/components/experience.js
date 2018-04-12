@@ -123,6 +123,10 @@ class Experience extends React.Component {
         </div>
 
         <ul className="font-sm italic font-grey">
+          <Conditional condition={hasLiveMusic}>
+            <li>&ndash; Live music!</li>
+          </Conditional>
+
           <Conditional condition={danceStyles.length > 0}>
             <li>&ndash;&nbsp;
               {
@@ -131,10 +135,6 @@ class Experience extends React.Component {
                   .join(", ")
               }
             </li>
-          </Conditional>
-
-          <Conditional condition={hasLiveMusic}>
-            <li>&ndash; Live music!</li>
           </Conditional>
 
           <Conditional condition={hasDropInClass}>
