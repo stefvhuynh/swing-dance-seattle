@@ -1,8 +1,6 @@
 /*eslint-disable max-len */
-import assets from "../webpack-assets.json";
-
-export default () => {
-  const { css, js } = assets.main;
+export default (body, state, assetPaths) => {
+  const { css, js } = assetPaths;
 
   return (`
     <!DOCTYPE html>
@@ -18,8 +16,9 @@ export default () => {
         <title>Swing Dance Seattle</title>
       </head>
       <body>
-        <div id="root"><h1>Swing Dance Seattle</h1></div>
+        <div id="root">${body}</div>
 
+        <script>window.__REDUX_STATE__ = ${JSON.stringify(state)}</script>
         <script src="${js}"></script>
       </body>
     </html>

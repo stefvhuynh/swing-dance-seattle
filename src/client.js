@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import createStore from "./app/redux/create-store";
+import { createStoreOnClient } from "./app/redux/create-store";
 import App from "./app";
 
 import "./app/styles/index.css";
 
-const store = createStore();
+const store = createStoreOnClient(window.__REDUX_STATE__);
 
-ReactDOM.render(
+delete window.__REDUX_STATE__;
+
+ReactDOM.hydrate(
   <Provider store={store}>
     <App/>
   </Provider>,
