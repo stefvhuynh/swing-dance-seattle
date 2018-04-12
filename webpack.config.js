@@ -1,5 +1,4 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
 
@@ -10,7 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, "public")
   },
   plugins: [
-    new CleanWebpackPlugin(["public"]),
     new MiniCssExtractPlugin({ filename: "assets/bundle-[hash].css" }),
     new AssetsPlugin()
   ],
