@@ -239,7 +239,7 @@
     },
     "h": {
       "approved": true,
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
       "id": "h",
