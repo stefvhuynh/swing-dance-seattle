@@ -9,7 +9,6 @@ import ExperienceList from "./experience-list";
 const Schedule = ({
   className,
   experiencesByDay,
-  isMaxWidth,
   isMobile,
   recurring
 }) => {
@@ -22,9 +21,7 @@ const Schedule = ({
       <li
         key={day}
         className={classNames("mg-b-xl", {
-          "basis-half": !isMobile && !isMaxWidth,
-          "basis-third": !isMobile && isMaxWidth,
-          "pd-l-xs pd-r-xs": !isMobile
+          "basis-half pd-l-xs pd-r-xs": !isMobile
         })}
       >
         <div
@@ -54,7 +51,6 @@ const Schedule = ({
 Schedule.propTypes = {
   className: PropTypes.string,
   experiencesByDay: PropTypes.objectOf(ExperienceList.propTypes.experiences),
-  isMaxWidth: PropTypes.bool,
   isMobile: PropTypes.bool,
   recurring: PropTypes.bool
 };
