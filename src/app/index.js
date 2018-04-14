@@ -46,12 +46,18 @@ class App extends React.Component {
     WINDOW_RESIZE_DEBOUNCE_TIME
   );
 
+  onHomePage = (location) => {
+    return location.route !== ROUTE_ADMIN;
+  };
+
   render() {
     return (
       <div className="full-height flex column justify-space-between">
         <Fragment forRoute={ROUTE_HOME}>
           <div>
-            <Fragment forRoute={ROUTE_HOME}><HomePage/></Fragment>
+            <Fragment withConditions={this.onHomePage}>
+              <HomePage/>
+            </Fragment>
             <Fragment forRoute={ROUTE_ADMIN}><AdminPage/></Fragment>
           </div>
         </Fragment>

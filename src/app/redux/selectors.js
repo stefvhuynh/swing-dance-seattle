@@ -1,55 +1,52 @@
 import { createSelector } from "reselect";
 
 import {
-  MOBILE_BREAKPOINT,
-  SUBFILTER_CLASSES,
-  SUBFILTER_DANCES,
-  SUBFILTER_EVENTS,
-  SUBFILTER_WORKSHOPS
-} from "../constants";
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_HOME,
+  ROUTE_EVENTS,
+  ROUTE_WORKSHOPS
+} from "../routes";
 
+import { MOBILE_BREAKPOINT } from "../constants";
 import { getExperiencesByDay } from "../utils";
+
+export const selectRoute = (state) => state.router.route;
+export const selectRouterResult = (state) => state.router.result;
+export const selectIsRecurringExperience = createSelector(
+  selectRouterResult,
+  (result) => result.isRecurring
+);
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
-
+export const selectExperiences = (state) => state.experiences.data;
 export const selectExperienceSubmissionSucceeded = (state) => {
   return state.experiences.submissionSucceeded;
 };
 
-export const selectExperiences = (state) => state.experiences.data;
-
 export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
-export const selectFilter = (state) => state.ui.filter;
-export const selectSubfilter = (state) => state.ui.subfilter;
-
 export const selectIsMobile = (state) => {
   return state.ui.windowWidth < MOBILE_BREAKPOINT;
 };
 
-export const selectIsRecurring = createSelector(
-  selectSubfilter,
-  (subfilter) => {
-    return subfilter === SUBFILTER_CLASSES || subfilter === SUBFILTER_DANCES;
-  }
-);
-
 export const selectExperiencesByDay = createSelector(
-  selectSubfilter,
+  selectRoute,
   selectExperiences,
-  (subfilter, experiences) => {
-    switch (subfilter) {
-      case SUBFILTER_CLASSES: {
+  (route, experiences) => {
+    switch (route) {
+      case ROUTE_HOME:
+      case ROUTE_CLASSES: {
         return getExperiencesByDay(experiences.classes);
       }
-      case SUBFILTER_DANCES: {
+      case ROUTE_DANCES: {
         return getExperiencesByDay(experiences.dances);
       }
-      case SUBFILTER_EVENTS: {
+      case ROUTE_EVENTS: {
         return getExperiencesByDay(experiences.events);
       }
-      case SUBFILTER_WORKSHOPS: {
+      case ROUTE_WORKSHOPS: {
         return getExperiencesByDay(experiences.workshops);
       }
       default: {

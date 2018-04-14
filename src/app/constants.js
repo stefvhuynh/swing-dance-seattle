@@ -90,28 +90,3 @@ export const DANCE_STYLE_MAP = {
   [DANCE_STYLE_SHAG]: "Shag",
   [DANCE_STYLE_JAZZ]: "Solo Jazz"
 };
-
-export const FILTER_LEARN = "1";
-export const FILTER_DANCE = "2";
-
-export const FILTER_MAP = {
-  [FILTER_LEARN]: "Learn!",
-  [FILTER_DANCE]: "Dance!"
-};
-
-export const SUBFILTER_CLASSES = "1";
-export const SUBFILTER_WORKSHOPS = "2";
-export const SUBFILTER_DANCES = "3";
-export const SUBFILTER_EVENTS = "4";
-
-export const SUBFILTER_MAP = {
-  [SUBFILTER_CLASSES]: "Classes",
-  [SUBFILTER_WORKSHOPS]: "Workshops",
-  [SUBFILTER_DANCES]: "Dances",
-  [SUBFILTER_EVENTS]: "Events"
-};
-
-export const FILTER_SUBFILTER_MAP = {
-  [FILTER_LEARN]: [SUBFILTER_CLASSES, SUBFILTER_WORKSHOPS],
-  [FILTER_DANCE]: [SUBFILTER_DANCES, SUBFILTER_EVENTS]
-};

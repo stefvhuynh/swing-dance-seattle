@@ -29,8 +29,6 @@ export const EXPERIENCE_SUBMITTED = "EXPERIENCE_SUBMITTED";
 export const EXPERIENCE_SUBMISSION_SUCCEEDED =
   "EXPERIENCE_SUBMISSION_SUCCEEDED";
 export const EXPERIENCE_SUBMISSION_FAILED = "EXPERIENCE_SUBMISSION_FAILED";
-export const FILTER_SELECTED = "FILTER_SELECTED";
-export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
@@ -128,12 +126,4 @@ export const experienceSubmitted = (details, experienceCategory) => {
       .then(() => dispatch(experienceSubmissionSucceeded()))
       .catch(() => dispatch(experienceSubmissionFailed()));
   };
-};
-
-export const filterSelected = (filter) => {
-  return { type: FILTER_SELECTED, payload: { filter } };
-};
-
-export const subfilterSelected = (subfilter) => {
-  return { type: SUBFILTER_SELECTED, payload: { subfilter } };
 };
