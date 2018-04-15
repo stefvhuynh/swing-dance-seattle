@@ -10,20 +10,16 @@ export default {
     title: "Home",
 
     [ROUTE_CLASSES]: {
-      title: "Classes",
-      isRecurring: true
+      title: "Classes"
     },
     [ROUTE_WORKSHOPS]: {
-      title: "Workshops",
-      isRecurring: false
+      title: "Workshops"
     },
     [ROUTE_DANCES]: {
-      title: "Dances",
-      isRecurring: true
+      title: "Dances"
     },
     [ROUTE_EVENTS]: {
-      title: "Events",
-      isRecurring: false
+      title: "Events"
     }
   },
   [ROUTE_ADMIN]: {

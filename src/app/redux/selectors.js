@@ -12,11 +12,6 @@ import { MOBILE_BREAKPOINT } from "../constants";
 import { getExperiencesByDay } from "../utils";
 
 export const selectRoute = (state) => state.router.route;
-export const selectRouterResult = (state) => state.router.result;
-export const selectIsRecurringExperience = createSelector(
-  selectRouterResult,
-  (result) => result.isRecurring
-);
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
