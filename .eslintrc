@@ -5,6 +5,7 @@
     "consistent-return": 0,
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "max-len": ["error", { "code": 80 }],
+    "max-statements": 0,
     "no-invalid-this": 0,
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "react/no-multi-comp": 0

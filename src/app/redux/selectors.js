@@ -16,11 +16,21 @@ export const selectRoute = (state) => state.router.route;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
 export const selectExperiences = (state) => state.experiences.data;
+export const selectIsFetchingExperiences = (state) => {
+  return state.experiences.isFetching;
+};
 export const selectExperienceSubmissionSucceeded = (state) => {
   return state.experiences.submissionSucceeded;
 };
 
 export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
+export const selectIsLoading = createSelector(
+  selectIsAppInitialized,
+  selectIsFetchingExperiences,
+  (isAppInitialized, isFetchingExperiences) => {
+    return !isAppInitialized || isFetchingExperiences;
+  }
+);
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectIsMobile = (state) => {
   return state.ui.windowWidth < MOBILE_BREAKPOINT;

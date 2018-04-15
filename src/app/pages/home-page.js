@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { selectIsAppInitialized } from "../redux/selectors";
+import { selectIsLoading } from "../redux/selectors";
 import Filter from "../containers/filter";
 import Schedule from "../containers/schedule";
 import Spinner from "../components/spinner";
@@ -57,7 +57,7 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  isLoading: !selectIsAppInitialized(state)
+  isLoading: selectIsLoading(state)
 });
 
 export default connect(mapStateToProps)(HomePage);

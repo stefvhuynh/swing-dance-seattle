@@ -14,7 +14,8 @@ import {
 class Filter extends React.Component {
   static propTypes = {
     currentRoute: PropTypes.string,
-    isMobile: PropTypes.bool
+    isMobile: PropTypes.bool,
+    onFilterClick: PropTypes.func
   };
 
   learnSubTabs = [
@@ -41,7 +42,7 @@ class Filter extends React.Component {
   }
 
   renderSubTabs() {
-    const { currentRoute, isMobile } = this.props;
+    const { currentRoute, isMobile, onFilterClick } = this.props;
     const subTabs = this.onLearnTab() ? this.learnSubTabs : this.danceSubTabs;
 
     return (
@@ -55,7 +56,13 @@ class Filter extends React.Component {
               "fill": isMobile
             })}
           >
-            <Link className="font-white" href={route}>{display}</Link>
+            <Link
+              className="font-white"
+              href={route}
+              onClick={onFilterClick.bind(null, route)}
+            >
+              {display}
+            </Link>
           </li>
         ))}
       </ul>
@@ -63,7 +70,7 @@ class Filter extends React.Component {
   }
 
   render() {
-    const { isMobile } = this.props;
+    const { isMobile, onFilterClick } = this.props;
 
     return (
       <div className="flex column shadow">
@@ -75,7 +82,13 @@ class Filter extends React.Component {
               "fill": isMobile
             })}
           >
-            <Link className="font-white" href={ROUTE_CLASSES}>Learn!</Link>
+            <Link
+              className="font-white"
+              href={ROUTE_CLASSES}
+              onClick={onFilterClick.bind(null, ROUTE_CLASSES)}
+            >
+              Learn!
+            </Link>
           </li>
           <li
             className={classNames("text-center pd-sm pointer", {
@@ -84,7 +97,13 @@ class Filter extends React.Component {
               "fill": isMobile
             })}
           >
-            <Link className="font-white" href={ROUTE_DANCES}>Dance!</Link>
+            <Link
+              className="font-white"
+              href={ROUTE_DANCES}
+              onClick={onFilterClick.bind(null, ROUTE_DANCES)}
+            >
+              Dance!
+            </Link>
           </li>
         </ul>
 

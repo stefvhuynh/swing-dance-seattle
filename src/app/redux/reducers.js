@@ -2,6 +2,9 @@ import {
   APP_INITIALIZED,
   EXPERIENCE_SUBMITTED,
   EXPERIENCE_SUBMISSION_SUCCEEDED,
+  EXPERIENCES_FETCH_FAILED,
+  EXPERIENCES_FETCH_INITIATED,
+  EXPERIENCES_FETCH_SUCCEEDED,
   LOGIN_FAILED,
   LOGIN_SUBMITTED,
   LOGIN_SUCCEEDED,
@@ -11,6 +14,13 @@ import {
   NAV_BAR_TOGGLED,
   WINDOW_RESIZED
 } from "./actions";
+
+import {
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_WORKSHOPS
+} from "../routes";
 
 const initialState = {
   auth: {
@@ -27,7 +37,9 @@ const initialState = {
       events: {},
       workshops: {}
     },
+    isFetching: false,
     isSubmitting: false,
+    lastFetch: null,
     submissionSucceeded: false
   },
   ui: {
@@ -87,8 +99,37 @@ export const experiences = (state = initialState.experiences, action) => {
   const { payload, type } = action;
 
   switch (type) {
-    case APP_INITIALIZED: {
-      return { ...state, data: payload.experiences };
+    case EXPERIENCES_FETCH_INITIATED: {
+      return { ...state, isFetching: true };
+    }
+
+    case EXPERIENCES_FETCH_SUCCEEDED: {
+      let { data } = state;
+
+      switch (payload.route) {
+        case ROUTE_CLASSES: {
+          data = { ...data, classes: payload.experiences };
+          break;
+        }
+        case ROUTE_DANCES: {
+          data = { ...data, dances: payload.experiences };
+          break;
+        }
+        case ROUTE_EVENTS: {
+          data = { ...data, events: payload.experiences };
+          break;
+        }
+        case ROUTE_WORKSHOPS: {
+          data = { ...data, workshops: payload.experiences };
+          break;
+        }
+      }
+
+      return { ...state, isFetching: false, lastFetch: Date.now(), data };
+    }
+
+    case EXPERIENCES_FETCH_FAILED: {
+      return { ...state, isFetching: false };
     }
 
     case EXPERIENCE_SUBMITTED: {

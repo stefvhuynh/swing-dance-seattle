@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import { selectIsMobile, selectRoute } from "../redux/selectors";
+import { filterSelected } from "../redux/actions";
 import Filter from "../components/filter";
 
 const mapStateToProps = (state) => ({
@@ -8,4 +9,8 @@ const mapStateToProps = (state) => ({
   isMobile: selectIsMobile(state)
 });
 
-export default connect(mapStateToProps)(Filter);
+const mapDispatchToProps = (dispatch) => ({
+  onFilterClick: (route) => dispatch(filterSelected(route))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
