@@ -9,7 +9,6 @@ import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
 import { appInitialized, windowResized } from "./redux/actions";
 import AdminPage from "./pages/admin-page";
 import HomePage from "./pages/home-page";
-import Icon from "./components/icon";
 
 class App extends React.Component {
   static propTypes = {
@@ -46,32 +45,21 @@ class App extends React.Component {
     WINDOW_RESIZE_DEBOUNCE_TIME
   );
 
+  onHomePage = (location) => {
+    return location.route !== ROUTE_ADMIN;
+  };
+
   render() {
     return (
       <div className="full-height flex column justify-space-between">
         <Fragment forRoute={ROUTE_HOME}>
           <div>
-            <Fragment forRoute={ROUTE_HOME}><HomePage/></Fragment>
+            <Fragment withConditions={this.onHomePage}>
+              <HomePage/>
+            </Fragment>
             <Fragment forRoute={ROUTE_ADMIN}><AdminPage/></Fragment>
           </div>
         </Fragment>
-
-        <div className="bg-dark-grey">
-          <div
-            className={
-              "no-shrink flex justify-space-between align-center max-width " +
-                "margin-auto pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xl font-white"
-            }
-          >
-            <div className="lines-spaced">
-              <div className="font-emphasis">Seattle Swing Dance</div>
-              <div className="font-sm">revivalrhythmswing@gmail.com</div>
-            </div>
-            <a href="#" className="font-white font-sm">
-              Back to top <Icon name="arrowUp"/>
-            </a>
-          </div>
-        </div>
       </div>
     );
   }

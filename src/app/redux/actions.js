@@ -2,12 +2,23 @@ import {
   CATEGORY_CLASS,
   CATEGORY_DANCE,
   CATEGORY_EVENT,
-  CATEGORY_WORKSHOP
+  CATEGORY_WORKSHOP,
+  ONE_HOUR
 } from "../constants";
 
 import {
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_WORKSHOPS
+} from "../routes";
+
+import {
   getAuthorizedUser,
-  getExperiences,
+  getClasses,
+  getDances,
+  getEvents,
+  getWorkshops,
   logIn,
   logOut,
   postClass,
@@ -19,31 +30,95 @@ import {
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
 export const NAV_BAR_TOGGLED = "NAV_BAR_TOGGLED";
+
 export const LOGIN_SUBMITTED = "LOGIN_SUBMITTED";
 export const LOGIN_SUCCEEDED = "LOGIN_SUCCEEDED";
 export const LOGIN_FAILED = "LOGIN_FAILED";
+
 export const LOGOUT_SUBMITTED = "LOGOUT_SUBMITTED";
 export const LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
+
 export const EXPERIENCE_SUBMITTED = "EXPERIENCE_SUBMITTED";
 export const EXPERIENCE_SUBMISSION_SUCCEEDED =
   "EXPERIENCE_SUBMISSION_SUCCEEDED";
 export const EXPERIENCE_SUBMISSION_FAILED = "EXPERIENCE_SUBMISSION_FAILED";
+
 export const FILTER_SELECTED = "FILTER_SELECTED";
-export const SUBFILTER_SELECTED = "SUBFILTER_SELECTED";
+export const EXPERIENCES_FETCH_INITIATED = "EXPERIENCES_FETCH_INITIATED";
+export const EXPERIENCES_FETCH_SUCCEEDED = "EXPERIENCES_FETCH_SUCCEEDED";
+export const EXPERIENCES_FETCH_FAILED = "EXPERIENCES_FETCH_FAILED";
 
 export const appInitialized = () => {
   return (dispatch, getState, firebase) => {
-    Promise.all([
-      getAuthorizedUser(firebase),
-      getExperiences(firebase)
-    ]).then((values) => {
-      const [user, experiences] = values;
-
+    getAuthorizedUser(firebase).then((user) => {
       dispatch({
         type: APP_INITIALIZED,
-        payload: { isLoggedIn: !!user, experiences }
+        payload: { isLoggedIn: !!user }
       });
+    });
+  };
+};
+
+const experiencesFetchSucceeded = (route, experiences) => {
+  return {
+    type: EXPERIENCES_FETCH_SUCCEEDED,
+    payload: { experiences, route }
+  };
+};
+
+const experiencesFetchFailed = (error) => {
+  return {
+    type: EXPERIENCES_FETCH_FAILED,
+    payload: { error }
+  };
+};
+
+export const filterSelected = (route) => {
+  return (dispatch, getState, firebase) => {
+    dispatch({ type: FILTER_SELECTED });
+
+    const { data, lastFetch } = getState().experiences;
+    let currentExperiences = {};
+    let getExperiences;
+
+    switch (route) {
+      case ROUTE_CLASSES: {
+        getExperiences = getClasses;
+        currentExperiences = data.classes;
+        break;
+      }
+      case ROUTE_DANCES: {
+        getExperiences = getDances;
+        currentExperiences = data.dances;
+        break;
+      }
+      case ROUTE_EVENTS: {
+        getExperiences = getEvents;
+        currentExperiences = data.events;
+        break;
+      }
+      case ROUTE_WORKSHOPS: {
+        getExperiences = getWorkshops;
+        currentExperiences = data.workshops;
+        break;
+      }
+    }
+
+    if (
+      Object.keys(currentExperiences).length > 0
+        && Date.now() - lastFetch < ONE_HOUR
+        || !getExperiences
+    ) {
+      return Promise.resolve();
+    }
+
+    dispatch({ type: EXPERIENCES_FETCH_INITIATED });
+
+    return getExperiences(firebase).then((experiences) => {
+      dispatch(experiencesFetchSucceeded(route, experiences));
+    }).catch((error) => {
+      dispatch(experiencesFetchFailed(error));
     });
   };
 };
@@ -128,12 +203,4 @@ export const experienceSubmitted = (details, experienceCategory) => {
       .then(() => dispatch(experienceSubmissionSucceeded()))
       .catch(() => dispatch(experienceSubmissionFailed()));
   };
-};
-
-export const filterSelected = (filter) => {
-  return { type: FILTER_SELECTED, payload: { filter } };
-};
-
-export const subfilterSelected = (subfilter) => {
-  return { type: SUBFILTER_SELECTED, payload: { subfilter } };
 };

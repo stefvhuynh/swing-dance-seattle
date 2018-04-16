@@ -7,19 +7,28 @@ import { auth, experiences, ui } from "./reducers";
 import routes from "../routes";
 import firebaseConfig from "../../../firebase.config";
 
-export const createStoreOnClient = (state = {}) => {
+const firebaseInstance = firebase.initializeApp(
+  firebaseConfig.config,
+  firebaseConfig.key
+);
+
+const thunkMiddleware = thunk.withExtraArgument(firebaseInstance);
+
+const createRootReducer = (routerReducer) => {
+  return combineReducers({
+    router: routerReducer,
+    auth,
+    experiences,
+    ui
+  });
+};
+
+export const createStoreOnClient = (state) => {
   const {
-    reducer: router,
+    reducer: routerReducer,
     middleware: routerMiddleware,
     enhancer: routerEnhancer
   } = routerForBrowser({ routes });
-
-  const firebaseInstance = firebase.initializeApp(
-    firebaseConfig.config,
-    firebaseConfig.key
-  );
-
-  const thunkMiddleware = thunk.withExtraArgument(firebaseInstance);
 
   const middleware = applyMiddleware(routerMiddleware, thunkMiddleware);
 
@@ -32,33 +41,21 @@ export const createStoreOnClient = (state = {}) => {
     ? compose(middleware, routerEnhancer, devtoolsEnhancer)
     : compose(middleware, routerEnhancer);
 
-  const rootReducer = combineReducers({
-    auth,
-    experiences,
-    router,
-    ui
-  });
+  const rootReducer = createRootReducer(routerReducer);
 
   return createStore(rootReducer, state, enhancer);
 };
 
-export const createStoreOnServer = (request, state = {}) => {
+export const createStoreOnServer = (request) => {
   const {
-    reducer: router,
+    reducer: routerReducer,
     middleware: routerMiddleware,
     enhancer: routerEnhancer
   } = routerForExpress({ routes, request });
 
-  const middleware = applyMiddleware(routerMiddleware);
-
+  const middleware = applyMiddleware(routerMiddleware, thunkMiddleware);
   const enhancer = compose(middleware, routerEnhancer);
+  const rootReducer = createRootReducer(routerReducer);
 
-  const rootReducer = combineReducers({
-    auth,
-    experiences,
-    router,
-    ui
-  });
-
-  return createStore(rootReducer, state, enhancer);
+  return createStore(rootReducer, enhancer);
 };

@@ -85,18 +85,6 @@ export const getWorkshops = getNonrecurringExperiences.bind(
   API_WORKSHOPS
 );
 
-export const getExperiences = (firebase) => {
-  return Promise.all([
-    getClasses(firebase),
-    getDances(firebase),
-    getEvents(firebase),
-    getWorkshops(firebase)
-  ]).then((values) => {
-    const [classes, dances, events, workshops] = values;
-    return { classes, dances, events, workshops };
-  });
-};
-
 export const postExperience = (
   apiEndpoint,
   firebase,

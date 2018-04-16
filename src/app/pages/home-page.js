@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { selectIsAppInitialized } from "../redux/selectors";
+import { selectIsFetchingExperiences } from "../redux/selectors";
 import Filter from "../containers/filter";
 import Schedule from "../containers/schedule";
 import Spinner from "../components/spinner";
+import Icon from "../components/icon";
 
 class HomePage extends React.Component {
   static propTypes = {
@@ -48,8 +49,30 @@ class HomePage extends React.Component {
 
         <Filter/>
 
-        <div className="mg-t-lg mg-b-xl max-width margin-auto">
-          {isLoading ? <Spinner/> : <Schedule className="animated-fade-in"/>}
+        <div className="relative">
+          <div className="mg-t-lg mg-b-xl max-width margin-auto">
+            <Schedule className="animated-fade-in"/>
+          </div>
+
+          <Spinner show={isLoading}/>
+
+          <div className="bg-dark-grey">
+            <div
+              className={
+                "no-shrink flex justify-space-between align-center max-width " +
+                  "margin-auto pd-t-lg pd-b-lg pd-l-md pd-r-md mg-t-xl " +
+                  "font-white"
+              }
+            >
+              <div className="lines-spaced">
+                <div className="font-emphasis">Seattle Swing Dance</div>
+                <div className="font-sm">revivalrhythmswing@gmail.com</div>
+              </div>
+              <a href="#" className="font-white font-sm">
+                Back to top <Icon name="arrowUp"/>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -57,7 +80,7 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  isLoading: !selectIsAppInitialized(state)
+  isLoading: selectIsFetchingExperiences(state)
 });
 
 export default connect(mapStateToProps)(HomePage);

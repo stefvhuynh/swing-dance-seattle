@@ -1,79 +1,107 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { Link } from "redux-little-router";
 
-import { FILTER_MAP, FILTER_SUBFILTER_MAP, SUBFILTER_MAP } from "../constants";
-import { convertMapToList } from "../utils";
+import {
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_HOME,
+  ROUTE_WORKSHOPS
+} from "../routes";
 
 class Filter extends React.Component {
   static propTypes = {
+    currentRoute: PropTypes.string,
     isMobile: PropTypes.bool,
-    onFilterClick: PropTypes.func,
-    onSubfilterClick: PropTypes.func,
-    selectedFilter: PropTypes.string,
-    selectedSubfilter: PropTypes.string
+    onFilterClick: PropTypes.func
   };
 
-  handleFilterClick = (event) => {
-    const { onFilterClick } = this.props;
+  learnSubTabs = [
+    { route: ROUTE_CLASSES, display: "Classes" },
+    { route: ROUTE_WORKSHOPS, display: "Workshops" }
+  ];
 
-    if (onFilterClick) {
-      onFilterClick(`${event.target.value}`);
-    }
-  };
+  danceSubTabs = [
+    { route: ROUTE_DANCES, display: "Dances" },
+    { route: ROUTE_EVENTS, display: "Events" }
+  ];
 
-  handleSubfilterClick = (event) => {
-    const { onSubfilterClick } = this.props;
+  onLearnTab() {
+    const { currentRoute } = this.props;
 
-    if (onSubfilterClick) {
-      onSubfilterClick(`${event.target.value}`);
-    }
-  };
+    return currentRoute === ROUTE_CLASSES
+      || currentRoute === ROUTE_WORKSHOPS
+      || currentRoute === ROUTE_HOME;
+  }
 
-  render() {
-    const { isMobile, selectedFilter, selectedSubfilter } = this.props;
-    const filters = convertMapToList(FILTER_MAP, "value", "display");
-    const subfilters = FILTER_SUBFILTER_MAP[selectedFilter].map((subfilter) => {
-      return { value: subfilter, display: SUBFILTER_MAP[subfilter] };
-    });
+  onDanceTab() {
+    const { currentRoute } = this.props;
+    return currentRoute === ROUTE_DANCES || currentRoute === ROUTE_EVENTS;
+  }
+
+  getTabClassName(selected) {
+    const { isMobile } = this.props;
+
+    return classNames(
+      "flex font-white text-center pd-sm pointer",
+      {
+        "border-bottom-thick border-off-white": selected,
+        "transparent": !selected,
+        "fill": isMobile
+      }
+    );
+  }
+
+  renderSubTabs() {
+    const { currentRoute, onFilterClick } = this.props;
+    const subTabs = this.onLearnTab() ? this.learnSubTabs : this.danceSubTabs;
 
     return (
-      <div className="flex column font-white shadow">
-        <ul className="flex font-lg bg-green shadow z-top justify-center">
-          {filters.map(({ display, value }) => (
-            <li
-              className={classNames("text-center pd-sm pointer", {
-                "border-bottom-thick border-off-white":
-                  selectedFilter === value,
-                "transparent": selectedFilter !== value,
-                "fill": isMobile
-              })}
-              key={value}
-              value={value}
-              onClick={this.handleFilterClick}
+      <ul className="flex bg-dark-grey justify-center">
+        {subTabs.map(({ route, display }) => (
+          <li key={route}>
+            <Link
+              className={this.getTabClassName(currentRoute === route)}
+              href={route}
+              onClick={onFilterClick.bind(null, route)}
             >
               {display}
-            </li>
-          ))}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  render() {
+    const { onFilterClick } = this.props;
+
+    return (
+      <div className="flex column shadow">
+        <ul className="flex font-lg bg-green shadow z-top justify-center">
+          <li>
+            <Link
+              className={this.getTabClassName(this.onLearnTab())}
+              href={ROUTE_CLASSES}
+              onClick={onFilterClick.bind(null, ROUTE_CLASSES)}
+            >
+              Learn!
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={this.getTabClassName(this.onDanceTab())}
+              href={ROUTE_DANCES}
+              onClick={onFilterClick.bind(null, ROUTE_DANCES)}
+            >
+              Dance!
+            </Link>
+          </li>
         </ul>
 
-        <ul className="flex bg-dark-grey justify-center">
-          {subfilters.map(({ display, value }) => (
-            <li
-              className={classNames("text-center pd-sm pointer", {
-                "border-bottom-thick border-off-white":
-                  selectedSubfilter === value,
-                "transparent": selectedSubfilter !== value,
-                "fill": isMobile
-              })}
-              key={value}
-              value={value}
-              onClick={this.handleSubfilterClick}
-            >
-              {display}
-            </li>
-          ))}
-        </ul>
+        {this.renderSubTabs()}
       </div>
     );
   }
