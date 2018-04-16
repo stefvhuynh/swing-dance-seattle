@@ -18,15 +18,20 @@ class Filter extends React.Component {
     onFilterClick: PropTypes.func
   };
 
-  learnSubTabs = [
-    { route: ROUTE_CLASSES, display: "Classes" },
-    { route: ROUTE_WORKSHOPS, display: "Workshops" }
-  ];
-
-  danceSubTabs = [
-    { route: ROUTE_DANCES, display: "Dances" },
-    { route: ROUTE_EVENTS, display: "Events" }
-  ];
+  subTabs = {
+    dance: [
+      { display: "Dances", route: ROUTE_DANCES },
+      { display: "Events", route: ROUTE_EVENTS }
+    ],
+    learn: [
+      {
+        display: "Classes",
+        route: ROUTE_CLASSES,
+        selected: [ROUTE_HOME, ROUTE_CLASSES]
+      },
+      { display: "Workshops", route: ROUTE_WORKSHOPS }
+    ]
+  };
 
   onLearnTab() {
     const { currentRoute } = this.props;
@@ -50,21 +55,29 @@ class Filter extends React.Component {
 
   renderSubTabs() {
     const { currentRoute, isMobile, onFilterClick } = this.props;
-    const subTabs = this.onLearnTab() ? this.learnSubTabs : this.danceSubTabs;
+    const subTabs = this.onLearnTab() ? this.subTabs.learn : this.subTabs.dance;
+
+    const subTabItems = subTabs.map(({ display, route, selected }) => {
+      const isTabSelected = selected
+        ? selected.includes(currentRoute)
+        : route === currentRoute;
+
+      return (
+        <li className={classNames({ "fill": isMobile })} key={route}>
+          <Link
+            className={this.getTabClassName(isTabSelected)}
+            href={route}
+            onClick={onFilterClick.bind(null, route)}
+          >
+            {display}
+          </Link>
+        </li>
+      );
+    });
 
     return (
       <ul className="flex bg-dark-grey justify-center">
-        {subTabs.map(({ route, display }) => (
-          <li className={classNames({ "fill": isMobile })} key={route}>
-            <Link
-              className={this.getTabClassName(currentRoute === route)}
-              href={route}
-              onClick={onFilterClick.bind(null, route)}
-            >
-              {display}
-            </Link>
-          </li>
-        ))}
+        {subTabItems}
       </ul>
     );
   }
