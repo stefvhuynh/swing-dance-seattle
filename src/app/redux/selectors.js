@@ -24,13 +24,6 @@ export const selectExperienceSubmissionSucceeded = (state) => {
 };
 
 export const selectIsAppInitialized = (state) => state.ui.isAppInitialized;
-export const selectIsLoading = createSelector(
-  selectIsAppInitialized,
-  selectIsFetchingExperiences,
-  (isAppInitialized, isFetchingExperiences) => {
-    return !isAppInitialized || isFetchingExperiences;
-  }
-);
 export const selectIsNavBarOpen = (state) => state.ui.isNavBarOpen;
 export const selectIsMobile = (state) => {
   return state.ui.windowWidth < MOBILE_BREAKPOINT;

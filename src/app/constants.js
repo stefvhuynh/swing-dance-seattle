@@ -1,6 +1,7 @@
 export const MOBILE_BREAKPOINT = 768;
 export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
-export const ONE_YEAR = 3154e10;
+export const ONE_HOUR = 3.6e6;
+export const ONE_YEAR = 3.154e10;
 export const LINK_PREFIX = "http";
 
 export const DATE_MONTH_MAP = [

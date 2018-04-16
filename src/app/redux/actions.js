@@ -2,7 +2,8 @@ import {
   CATEGORY_CLASS,
   CATEGORY_DANCE,
   CATEGORY_EVENT,
-  CATEGORY_WORKSHOP
+  CATEGORY_WORKSHOP,
+  ONE_HOUR
 } from "../constants";
 
 import {
@@ -78,8 +79,8 @@ export const filterSelected = (route) => {
     dispatch({ type: FILTER_SELECTED });
 
     const { data, lastFetch } = getState().experiences;
+    let currentExperiences = {};
     let getExperiences;
-    let currentExperiences;
 
     switch (route) {
       case ROUTE_CLASSES: {
@@ -106,10 +107,10 @@ export const filterSelected = (route) => {
 
     if (
       Object.keys(currentExperiences).length > 0
-        && lastFetch < Date.now()
+        && Date.now() - lastFetch < ONE_HOUR
         || !getExperiences
     ) {
-      return;
+      return Promise.resolve();
     }
 
     dispatch({ type: EXPERIENCES_FETCH_INITIATED });
