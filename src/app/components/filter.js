@@ -41,23 +41,29 @@ class Filter extends React.Component {
     return currentRoute === ROUTE_DANCES || currentRoute === ROUTE_EVENTS;
   }
 
+  getTabClassName(selected) {
+    const { isMobile } = this.props;
+
+    return classNames(
+      "flex font-white text-center pd-sm pointer",
+      {
+        "border-bottom-thick border-off-white": selected,
+        "transparent": !selected,
+        "fill": isMobile
+      }
+    );
+  }
+
   renderSubTabs() {
-    const { currentRoute, isMobile, onFilterClick } = this.props;
+    const { currentRoute, onFilterClick } = this.props;
     const subTabs = this.onLearnTab() ? this.learnSubTabs : this.danceSubTabs;
 
     return (
       <ul className="flex bg-dark-grey justify-center">
         {subTabs.map(({ route, display }) => (
-          <li
-            key={route}
-            className={classNames("text-center pd-sm pointer", {
-              "border-bottom-thick border-off-white": currentRoute === route,
-              "transparent": currentRoute !== route,
-              "fill": isMobile
-            })}
-          >
+          <li key={route}>
             <Link
-              className="font-white"
+              className={this.getTabClassName(currentRoute === route)}
               href={route}
               onClick={onFilterClick.bind(null, route)}
             >
@@ -70,35 +76,23 @@ class Filter extends React.Component {
   }
 
   render() {
-    const { isMobile, onFilterClick } = this.props;
+    const { onFilterClick } = this.props;
 
     return (
       <div className="flex column shadow">
         <ul className="flex font-lg bg-green shadow z-top justify-center">
-          <li
-            className={classNames("text-center pd-sm pointer", {
-              "border-bottom-thick border-off-white": this.onLearnTab(),
-              "transparent": !this.onLearnTab(),
-              "fill": isMobile
-            })}
-          >
+          <li>
             <Link
-              className="font-white"
+              className={this.getTabClassName(this.onLearnTab())}
               href={ROUTE_CLASSES}
               onClick={onFilterClick.bind(null, ROUTE_CLASSES)}
             >
               Learn!
             </Link>
           </li>
-          <li
-            className={classNames("text-center pd-sm pointer", {
-              "border-bottom-thick border-off-white": this.onDanceTab(),
-              "transparent": !this.onDanceTab(),
-              "fill": isMobile
-            })}
-          >
+          <li>
             <Link
-              className="font-white"
+              className={this.getTabClassName(this.onDanceTab())}
               href={ROUTE_DANCES}
               onClick={onFilterClick.bind(null, ROUTE_DANCES)}
             >
