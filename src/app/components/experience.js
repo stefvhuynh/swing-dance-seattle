@@ -81,14 +81,14 @@ class Experience extends React.Component {
               </div>
             </Conditional>
 
-            <div
+            <h3
               className={classNames("bold font-lg", { underline: isHovering })}
             >
               {name}
-            </div>
+            </h3>
 
             <Conditional condition={organization}>
-              <div className="font-sm font-grey">{organization}</div>
+              <h2 className="font-sm font-grey">{organization}</h2>
             </Conditional>
 
             <Conditional condition={venue !== organization}>
