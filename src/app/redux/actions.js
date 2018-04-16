@@ -10,6 +10,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
+  ROUTE_HOME,
   ROUTE_WORKSHOPS
 } from "../routes";
 
@@ -83,6 +84,7 @@ export const filterSelected = (route) => {
     let getExperiences;
 
     switch (route) {
+      case ROUTE_HOME:
       case ROUTE_CLASSES: {
         getExperiences = getClasses;
         currentExperiences = data.classes;

@@ -19,6 +19,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
+  ROUTE_HOME,
   ROUTE_WORKSHOPS
 } from "../routes";
 
@@ -107,6 +108,7 @@ export const experiences = (state = initialState.experiences, action) => {
       let { data } = state;
 
       switch (payload.route) {
+        case ROUTE_HOME:
         case ROUTE_CLASSES: {
           data = { ...data, classes: payload.experiences };
           break;
