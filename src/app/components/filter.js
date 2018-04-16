@@ -42,26 +42,20 @@ class Filter extends React.Component {
   }
 
   getTabClassName(selected) {
-    const { isMobile } = this.props;
-
-    return classNames(
-      "flex font-white text-center pd-sm pointer",
-      {
-        "border-bottom-thick border-off-white": selected,
-        "transparent": !selected,
-        "fill": isMobile
-      }
-    );
+    return classNames("flex justify-center font-white pd-sm pointer", {
+      "border-bottom-thick border-off-white": selected,
+      "transparent": !selected
+    });
   }
 
   renderSubTabs() {
-    const { currentRoute, onFilterClick } = this.props;
+    const { currentRoute, isMobile, onFilterClick } = this.props;
     const subTabs = this.onLearnTab() ? this.learnSubTabs : this.danceSubTabs;
 
     return (
       <ul className="flex bg-dark-grey justify-center">
         {subTabs.map(({ route, display }) => (
-          <li key={route}>
+          <li className={classNames({ "fill": isMobile })} key={route}>
             <Link
               className={this.getTabClassName(currentRoute === route)}
               href={route}
@@ -76,12 +70,12 @@ class Filter extends React.Component {
   }
 
   render() {
-    const { onFilterClick } = this.props;
+    const { isMobile, onFilterClick } = this.props;
 
     return (
       <div className="flex column shadow">
         <ul className="flex font-lg bg-green shadow z-top justify-center">
-          <li>
+          <li className={classNames({ "fill": isMobile })}>
             <Link
               className={this.getTabClassName(this.onLearnTab())}
               href={ROUTE_CLASSES}
@@ -90,7 +84,7 @@ class Filter extends React.Component {
               Learn!
             </Link>
           </li>
-          <li>
+          <li className={classNames({ "fill": isMobile })}>
             <Link
               className={this.getTabClassName(this.onDanceTab())}
               href={ROUTE_DANCES}
