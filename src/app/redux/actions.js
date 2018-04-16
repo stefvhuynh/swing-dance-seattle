@@ -114,7 +114,7 @@ export const filterSelected = (route) => {
 
     dispatch({ type: EXPERIENCES_FETCH_INITIATED });
 
-    getExperiences(firebase).then((experiences) => {
+    return getExperiences(firebase).then((experiences) => {
       dispatch(experiencesFetchSucceeded(route, experiences));
     }).catch((error) => {
       dispatch(experiencesFetchFailed(error));
