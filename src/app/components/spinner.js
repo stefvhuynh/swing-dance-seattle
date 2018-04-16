@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import window from "global/window";
 
 import Icon from "./icon";
 

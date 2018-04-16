@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { routerForBrowser, routerForExpress } from "redux-little-router";
 import thunk from "redux-thunk";
 import firebase from "firebase";
+import window from "global/window";
 
 import { auth, experiences, ui } from "./reducers";
 import routes from "../routes";

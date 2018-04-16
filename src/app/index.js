@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Fragment } from "redux-little-router";
 import debounce from "debounce";
+import window from "global/window";
 
 import { ROUTE_ADMIN, ROUTE_HOME } from "./routes";
 import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
@@ -16,15 +17,21 @@ class App extends React.Component {
     onWindowResize: PropTypes.func
   };
 
-  componentDidMount() {
-    const { onAppMount, onWindowResize } = this.props;
+  constructor(props) {
+    super(props);
 
-    if (onAppMount) {
-      onAppMount();
-    }
+    const { onWindowResize } = props;
 
     if (onWindowResize) {
       onWindowResize(window.innerWidth);
+    }
+  }
+
+  componentDidMount() {
+    const { onAppMount } = this.props;
+
+    if (onAppMount) {
+      onAppMount();
     }
 
     window.addEventListener("resize", this.handleWindowResize);
