@@ -7,7 +7,7 @@ import window from "global/window";
 
 import { ROUTE_ADMIN, ROUTE_HOME } from "./routes";
 import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
-import { appInitialized, windowResized } from "./redux/actions";
+import { windowResized } from "./redux/actions";
 import AdminPage from "./pages/admin-page";
 import HomePage from "./pages/home-page";
 
@@ -17,23 +17,7 @@ class App extends React.Component {
     onWindowResize: PropTypes.func
   };
 
-  constructor(props) {
-    super(props);
-
-    const { onWindowResize } = props;
-
-    if (onWindowResize) {
-      onWindowResize(window.innerWidth);
-    }
-  }
-
   componentDidMount() {
-    const { onAppMount } = this.props;
-
-    if (onAppMount) {
-      onAppMount();
-    }
-
     window.addEventListener("resize", this.handleWindowResize);
   }
 
@@ -73,7 +57,6 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  onAppMount: () => dispatch(appInitialized()),
   onWindowResize: (width) => dispatch(windowResized(width))
 });
 

@@ -3,11 +3,15 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import { createStoreOnClient } from "./app/redux/create-store";
+import { appInitialized, windowResized } from "./app/redux/actions";
 import App from "./app";
 
 import "./app/styles/index.css";
 
 const store = createStoreOnClient(window.__REDUX_STATE__);
+
+store.dispatch(appInitialized());
+store.dispatch(windowResized(window.innerWidth));
 
 delete window.__REDUX_STATE__;
 
