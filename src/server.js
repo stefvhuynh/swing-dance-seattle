@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { Provider } from "react-redux";
 
-import assets from "../webpack-assets.json";
+import manifest from "../webpack-manifest.json";
 import html from "./html";
 import { createStoreOnServer } from "./app/redux/create-store";
 import { filterSelected } from "./app/redux/actions";
@@ -21,6 +21,6 @@ export const app = functions.https.onRequest((request, response) => {
     );
     const state = store.getState();
 
-    response.send(html(appString, state, assets.main));
+    response.send(html(appString, state, manifest));
   });
 });

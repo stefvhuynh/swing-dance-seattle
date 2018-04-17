@@ -1,7 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const AssetsPlugin = require("assets-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
   entry: "./src/client.js",
@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({ filename: "bundle-[hash].css" }),
     new CopyPlugin([{ from: path.resolve(__dirname, "assets/favicon.ico") }]),
-    new AssetsPlugin()
+    new ManifestPlugin({ fileName: "../webpack-manifest.json" })
   ],
   module: {
     rules: [

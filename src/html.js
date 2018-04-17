@@ -1,7 +1,5 @@
 /*eslint-disable max-len */
-export default (body, state, assetPaths) => {
-  const { css, js } = assetPaths;
-
+export default (body, state, manifest) => {
   return (`
     <!DOCTYPE html>
     <html lang="en">
@@ -12,14 +10,14 @@ export default (body, state, assetPaths) => {
         <meta name="keywords" content="swing,swing dance,swing dancing,dancing,lindy,lindy hop,charleston,balboa,blues,shag,jazz,partner dance,ballroom,vintage,seattle,washington,capitol hill,fremont,redmond,queen anne">
 
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Lobster" rel="stylesheet">
-        <link href="${css}" rel="stylesheet">
+        <link href="${manifest["main.css"]}" rel="stylesheet">
         <title>Swing Dance Seattle</title>
       </head>
       <body>
         <div id="root">${body}</div>
 
         <script>window.__REDUX_STATE__ = ${JSON.stringify(state)}</script>
-        <script src="${js}"></script>
+        <script src="${manifest["main.js"]}"></script>
       </body>
     </html>
   `);

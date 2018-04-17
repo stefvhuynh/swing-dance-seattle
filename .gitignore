@@ -1,7 +1,7 @@
 node_modules/
 public/
 lib/
-webpack-assets.json
+webpack-manifest.json
 firebase.config.js
 firebase-debug.log
 cloud-functions-emulator.log
