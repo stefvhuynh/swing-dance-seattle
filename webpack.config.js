@@ -6,7 +6,7 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 module.exports = {
   entry: "./src/client.js",
   output: {
-    filename: "bundle-[hash].js",
+    filename: "bundle-[contenthash].js",
     path: path.resolve(__dirname, "public")
   },
   plugins: [
@@ -34,5 +34,17 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "initial"
+        }
+      }
+    }
   }
 };

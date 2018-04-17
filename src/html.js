@@ -17,6 +17,8 @@ export default (body, state, manifest) => {
         <div id="root">${body}</div>
 
         <script>window.__REDUX_STATE__ = ${JSON.stringify(state)}</script>
+        <script src="${manifest["runtime.js"]}"></script>
+        <script src="${manifest["vendors.js"]}"></script>
         <script src="${manifest["main.js"]}"></script>
       </body>
     </html>
