@@ -10,9 +10,6 @@ import "./app/styles/index.css";
 
 const store = createStoreOnClient(window.__REDUX_STATE__);
 
-store.dispatch(appInitialized());
-store.dispatch(windowResized(window.innerWidth));
-
 delete window.__REDUX_STATE__;
 
 ReactDOM.hydrate(
@@ -21,3 +18,6 @@ ReactDOM.hydrate(
   </Provider>,
   document.getElementById("root")
 );
+
+store.dispatch(appInitialized());
+store.dispatch(windowResized(window.innerWidth));
