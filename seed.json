@@ -222,8 +222,8 @@
     },
     "f": {
       "approved": true,
-      "danceStyles": ["1"],
-      "hasDropInClass": true,
+      "danceStyles": ["1", "2", "3", "4", "5"],
+      "hasDropInClass": false,
       "hasLiveMusic": false,
       "id": "f",
       "link": "savoyswing.org/membership",
