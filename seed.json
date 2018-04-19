@@ -208,7 +208,7 @@
     "e": {
       "approved": true,
       "danceStyles": ["1"],
-      "hadDropIn": true,
+      "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "e",
       "link": "savoyswing.org/savoy_mondays",
@@ -217,13 +217,13 @@
       "organization": "Savoy Swing Club",
       "recurrenceDay": "1",
       "recurrenceTime": "5",
-      "time": "8:30pm",
+      "time": "8:00pm",
       "venue": "Clubhouse of Queen Anne"
     },
     "f": {
       "approved": true,
       "danceStyles": ["1"],
-      "hadDropIn": true,
+      "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "f",
       "link": "savoyswing.org/membership",
