@@ -88,10 +88,10 @@ class HomePage extends React.Component {
               }
             >
               <div className="lines-spaced">
-                <div className="font-emphasis">Seattle Swing Dance</div>
-                <div className="font-sm">revivalrhythmswing@gmail.com</div>
+                <div className="font-emphasis font-sm">Seattle Swing Dance</div>
+                <div className="font-xs">revivalrhythmswing@gmail.com</div>
               </div>
-              <a href="#" className="font-white font-sm">
+              <a href="#" className="font-white font-xs">
                 Back to top <Icon name="arrowUp"/>
               </a>
             </div>
