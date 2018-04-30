@@ -50,6 +50,7 @@
 .pd-r-lg { padding-right: var(--size-lg) }
 .pd-r-xl { padding-right: var(--size-xl) }
 
+.pd-xxs { padding: var(--size-xxs) }
 .pd-xs { padding: var(--size-xs) }
 .pd-sm { padding: var(--size-sm) }
 .pd-md { padding: var(--size-md) }

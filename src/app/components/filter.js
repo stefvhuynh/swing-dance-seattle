@@ -19,9 +19,13 @@ class Filter extends React.Component {
   };
 
   getTabClassName(selected) {
-    return classNames("flex justify-center font-white pd-sm pointer", {
+    const { isMobile } = this.props;
+
+    return classNames("flex justify-center font-white font-md pointer", {
       "border-bottom-thick border-off-white": selected,
-      "transparent": !selected
+      "transparent": !selected,
+      "pd-xxs": isMobile,
+      "pd-sm": !isMobile
     });
   }
 
@@ -30,8 +34,14 @@ class Filter extends React.Component {
 
     return (
       <div className="flex column shadow">
-        <ul className="flex font-lg bg-green shadow z-top justify-center">
-          <li className={classNames({ "fill": isMobile })}>
+        <ul
+          className={
+            classNames("flex font-lg bg-green shadow z-top justify-center", {
+              "column": isMobile
+            })
+          }
+        >
+          <li>
             <Link
               className={
                 this.getTabClassName(
@@ -44,16 +54,16 @@ class Filter extends React.Component {
               Classes
             </Link>
           </li>
-          <li className={classNames({ "fill": isMobile })}>
+          <li>
             <Link
               className={this.getTabClassName(currentRoute === ROUTE_WORKSHOPS)}
               href={ROUTE_WORKSHOPS}
-              onClick={onFilterClick.bind(null, ROUTE_CLASSES)}
+              onClick={onFilterClick.bind(null, ROUTE_WORKSHOPS)}
             >
               Workshops
             </Link>
           </li>
-          <li className={classNames({ "fill": isMobile })}>
+          <li>
             <Link
               className={this.getTabClassName(currentRoute === ROUTE_DANCES)}
               href={ROUTE_DANCES}
@@ -62,7 +72,7 @@ class Filter extends React.Component {
               Dances
             </Link>
           </li>
-          <li className={classNames({ "fill": isMobile })}>
+          <li>
             <Link
               className={this.getTabClassName(currentRoute === ROUTE_EVENTS)}
               href={ROUTE_EVENTS}

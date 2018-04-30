@@ -28,10 +28,10 @@ class HomePage extends React.Component {
             <h1 className="font-emphasis font-xxl mg-b-sm">
               Swing Dance Seattle
             </h1>
-            <div className="mg-b-xl lines-spaced">
+            <div className="lines-spaced">
               Lindy Hop, Balboa, Blues, and Shag in the greater Seattle area
             </div>
-            <div className="font-sm lines-spaced">
+            <div className="mg-t-xl font-sm lines-spaced">
               This is a schedule of all classes, workshops, dances, and events
               in the region. This list will be kept up-to-date to the best of
               our ability. For the most accurate information, please click on an
