@@ -13,6 +13,7 @@
 .mg-b-lg { margin-bottom: var(--size-lg) }
 .mg-b-xl { margin-bottom: var(--size-xl) }
 
+.mg-l-xxs { margin-left: var(--size-xxs) }
 .mg-l-xs { margin-left: var(--size-xs) }
 .mg-l-sm { margin-left: var(--size-sm) }
 .mg-l-md { margin-left: var(--size-md) }
