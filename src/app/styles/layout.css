@@ -24,6 +24,7 @@
 
 .no-shrink { flex-shrink: 0 }
 
+.basis-fifth { flex-basis: 20% }
 .basis-third { flex-basis: 33.33% }
 .basis-half { flex-basis: 50% }
 

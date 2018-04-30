@@ -73,7 +73,7 @@ class HomePage extends React.Component {
         <Filter/>
 
         <div className="relative">
-          <div className="mg-t-lg mg-b-xl max-width margin-auto">
+          <div className="mg-t-md max-width margin-auto">
             <Schedule className="animated-fade-in"/>
           </div>
 

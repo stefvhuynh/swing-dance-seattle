@@ -17,29 +17,29 @@ const Schedule = ({ className, experiencesByDay, isMobile }) => {
     return (
       <li
         key={day}
-        className={classNames("mg-b-xl", {
-          "basis-half pd-l-sm pd-r-sm": !isMobile
+        className={classNames({
+          "flex mg-b-xl": !isMobile,
+          "mg-b-lg": isMobile
         })}
       >
         <div
-          className={classNames("bold mg-b-sm pd-l-md font-grey", {
-            "uppercase": isRecurring
+          className={classNames("bold font-grey", {
+            "uppercase": isRecurring,
+            "basis-fifth text-right pd-t-md pd-r-xl": !isMobile,
+            "pd-md": isMobile
           })}
         >
           {listHeading}
         </div>
-        <ExperienceList experiences={experiencesByDay[day]}/>
+        <div className="fill">
+          <ExperienceList experiences={experiencesByDay[day]}/>
+        </div>
       </li>
     );
   });
 
   return (
-    <ul
-      className={classNames(`flex ${className}`, {
-        "column": isMobile,
-        "wrap": !isMobile
-      })}
-    >
+    <ul className={`flex column ${className}`}>
       {scheduleItems}
     </ul>
   );
