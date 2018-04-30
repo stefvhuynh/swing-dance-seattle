@@ -4,6 +4,14 @@ export default (body, state, manifest) => {
     <!DOCTYPE html>
     <html lang="en">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54709608-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments) }
+          gtag('js', new Date());
+          gtag('config', 'UA-54709608-2');
+        </script>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="A schedule of classes and social dances in the greater Seattle area for dances in the swing family, including Lindy Hop, Balboa, Blues, and Shag">
