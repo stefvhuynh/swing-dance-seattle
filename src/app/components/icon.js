@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import bars from "@fortawesome/fontawesome-free-solid/faBars";
 import arrowUp from "@fortawesome/fontawesome-free-solid/faArrowUp";
+import bars from "@fortawesome/fontawesome-free-solid/faBars";
+import caretDown from "@fortawesome/fontawesome-free-solid/faCaretDown";
+import caretRight from "@fortawesome/fontawesome-free-solid/faCaretRight";
 import compass from "@fortawesome/fontawesome-free-regular/faCompass";
 
 const iconMap = {
   arrowUp,
   bars,
+  caretDown,
+  caretRight,
   compass
 };
 

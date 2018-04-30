@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { selectIsFetchingExperiences } from "../redux/selectors";
+import {
+  selectIsFetchingExperiences,
+  selectIsMobile
+} from "../redux/selectors";
 import Filter from "../containers/filter";
 import Schedule from "../containers/schedule";
 import Spinner from "../components/spinner";
@@ -10,14 +13,23 @@ import Icon from "../components/icon";
 
 class HomePage extends React.Component {
   static propTypes = {
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
+    isMobile: PropTypes.bool
   };
 
+  state = { showInfo: false };
+
+  handleInfoClick = () => {
+    const { showInfo } = this.state;
+    this.setState({ showInfo: !showInfo });
+  }
+
   render() {
-    const { isLoading } = this.props;
+    const { isLoading, isMobile } = this.props;
+    const { showInfo } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <div className="bg-dark-grey">
           <div
             className={
@@ -28,22 +40,33 @@ class HomePage extends React.Component {
             <h1 className="font-emphasis font-xxl mg-b-sm">
               Swing Dance Seattle
             </h1>
-            <div className="mg-b-xl lines-spaced">
+            <div className="mg-b-lg lines-spaced">
               Lindy Hop, Balboa, Blues, and Shag in the greater Seattle area
             </div>
-            <div className="font-sm lines-spaced">
-              This is a schedule of all classes, workshops, dances, and events
-              in the region. This list will be kept up-to-date to the best of
-              our ability. For the most accurate information, please click on an
-              event to see the event's associated webpage. If you would like
-              your event added, altered, or removed, please send us{" "}
-              <a
-                href="mailto:revivalrhythmswing@gmail.com"
-                className="bold hover-underline"
+            {isMobile && (
+              <div
+                className="font-green font-sm bold"
+                onClick={this.handleInfoClick}
               >
-                an email
-              </a>.
-            </div>
+                <Icon name={showInfo ? "caretDown" : "caretRight"}/>
+                <span className="mg-l-xxs">More info</span>
+              </div>
+            )}
+            {(!isMobile || showInfo) && (
+              <div className="mg-t-sm font-sm lines-spaced">
+                This is a schedule of all classes, workshops, dances, and events
+                in the region. This list will be kept up-to-date to the best of
+                our ability. For the most accurate information, please click on
+                an event to see the event's associated webpage. If you would
+                like your event added, altered, or removed, please send us{" "}
+                <a
+                  href="mailto:revivalrhythmswing@gmail.com"
+                  className="bold hover-underline"
+                >
+                  an email
+                </a>.
+              </div>
+            )}
           </div>
         </div>
 
@@ -65,22 +88,23 @@ class HomePage extends React.Component {
               }
             >
               <div className="lines-spaced">
-                <div className="font-emphasis">Seattle Swing Dance</div>
-                <div className="font-sm">revivalrhythmswing@gmail.com</div>
+                <div className="font-emphasis font-sm">Seattle Swing Dance</div>
+                <div className="font-xs">revivalrhythmswing@gmail.com</div>
               </div>
-              <a href="#" className="font-white font-sm">
+              <a href="#" className="font-white font-xs">
                 Back to top <Icon name="arrowUp"/>
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  isLoading: selectIsFetchingExperiences(state)
+  isLoading: selectIsFetchingExperiences(state),
+  isMobile: selectIsMobile(state)
 });
 
 export default connect(mapStateToProps)(HomePage);
