@@ -91,7 +91,7 @@ class Experience extends React.Component {
               <h2 className="font-sm font-grey">{organization}</h2>
             </Conditional>
 
-            <Conditional condition={venue !== organization}>
+            <Conditional condition={venue && venue !== organization}>
               <div className="font-sm font-grey">@ {venue}</div>
             </Conditional>
           </div>
