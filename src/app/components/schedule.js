@@ -7,7 +7,7 @@ import { getDateDisplay } from "../utils";
 import ExperienceList from "./experience-list";
 
 const Schedule = ({ className, experiencesByDay, isMobile }) => {
-  const scheduleItems = Object.keys(experiencesByDay).map((day) => {
+  const scheduleItems = Object.keys(experiencesByDay).sort().map((day) => {
     const isRecurring = !!RECURRENCE_DAY_MAP[day];
 
     const listHeading = isRecurring
