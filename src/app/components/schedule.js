@@ -23,10 +23,9 @@ const Schedule = ({ className, experiencesByDay, isMobile }) => {
         })}
       >
         <div
-          className={classNames("bold font-grey", {
+          className={classNames("bold font-grey pd-md", {
             "uppercase": isRecurring,
-            "basis-fifth text-right pd-t-md pd-r-xl": !isMobile,
-            "pd-md": isMobile
+            "basis-fifth": !isMobile
           })}
         >
           {listHeading}
