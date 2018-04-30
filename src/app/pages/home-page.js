@@ -29,7 +29,7 @@ class HomePage extends React.Component {
     const { showInfo } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <div className="bg-dark-grey">
           <div
             className={
@@ -97,7 +97,7 @@ class HomePage extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
