@@ -45,7 +45,7 @@ class HomePage extends React.Component {
             </div>
             {isMobile && (
               <div
-                className="font-green font-sm"
+                className="font-green font-sm bold"
                 onClick={this.handleInfoClick}
               >
                 <Icon name={showInfo ? "caretDown" : "caretRight"}/>
