@@ -1,6 +1,8 @@
 .full-height { height: 100% }
 .full-width { width: 100% }
 .max-width { max-width: var(--max-width) }
+.width-xs { width: var(--size-xs) }
+
 .margin-auto { margin: 0 auto }
 
 .absolute { position: absolute }

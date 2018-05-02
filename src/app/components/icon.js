@@ -17,7 +17,14 @@ const iconMap = {
 
 const Icon = (props) => {
   const { name, ...iconProps } = props;
-  return <FontAwesomeIcon icon={iconMap[name]} {...iconProps}/>;
+
+  return (
+    <FontAwesomeIcon
+      className="width-xs"
+      icon={iconMap[name]}
+      {...iconProps}
+    />
+  );
 };
 
 Icon.propTypes = {
