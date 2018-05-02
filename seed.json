@@ -31,7 +31,7 @@
       "danceStyles": ["5"],
       "id": "c",
       "link": "centuryballroom.com/home/classes/lindy-hop",
-      "name": "Century Swing",
+      "name": "The Big Apple",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": "2",
@@ -57,7 +57,7 @@
       "danceStyles": ["2"],
       "id": "e",
       "link": "centuryballroom.com/home/classes/lindy-hop",
-      "name": "Century Swing",
+      "name": "Century Balboa",
       "organization": "Century Ballroom",
       "neighborhood": "Capitol Hill",
       "recurrenceDay": "4",
@@ -142,6 +142,32 @@
       "recurrenceTime": "2",
       "time": "4:00pm",
       "venue": "Salsa Con Todo"
+    },
+    "l": {
+      "approved": true,
+      "danceStyles": ["1"],
+      "id": "l",
+      "link": "eastsidestomp.com",
+      "name": "Int/Adv Lindy Hop",
+      "neighborhood": "Lower Queen Anne",
+      "organization": "Syncopation Foundation",
+      "recurrenceDay": "1",
+      "recurrenceTime": "5",
+      "time": "8:00pm",
+      "venue": "Theater Puget Sound"
+    },
+    "m": {
+      "approved": true,
+      "danceStyles": ["5"],
+      "id": "m",
+      "link": "eastsidestomp.com",
+      "name": "Beginner Solo Jazz",
+      "neighborhood": "Lower Queen Anne",
+      "organization": "Syncopation Foundation",
+      "recurrenceDay": "2",
+      "recurrenceTime": "5",
+      "time": "7:00pm",
+      "venue": "Theater Puget Sound"
     }
   },
   "dances": {
@@ -252,7 +278,7 @@
     },
     "h": {
       "approved": true,
-      "danceStyles": ["1"],
+      "danceStyles": ["1", "2"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
       "id": "h",
@@ -342,35 +368,20 @@
       "link": "savoyswing.com",
       "name": "Seattle Lindy Extravaganza",
       "organization": "Savoy Swing Club"
+    },
+    "d": {
+      "approved": true,
+      "danceStyles": ["1", "2"],
+      "dateEnd": "2018-06-25T07:00:00.000Z",
+      "dateStart": "2018-06-22T07:00:00.000Z",
+      "hasLiveMusic": true,
+      "id": "d",
+      "link": "bigskyweekend.com",
+      "name": "Big Sky Weekend",
+      "organization": "Syncopation Foundation"
     }
   },
   "workshops": {
-    "a": {
-      "approved": true,
-      "danceStyles": ["1"],
-      "dateEnd": "2018-05-08T07:00:00.000Z",
-      "dateStart": "2018-03-27T07:00:00.000Z",
-      "id": "a",
-      "link": "eastsidestomp.com",
-      "name": "Int/Adv Lindy Hop",
-      "neighborhood": "Lower Queen Anne",
-      "organization": "Syncopation Foundation",
-      "time": "8:00pm",
-      "venue": "Theater Puget Sound"
-    },
-    "b": {
-      "approved": true,
-      "danceStyles": ["5"],
-      "dateEnd": "2018-05-07T07:00:00.000Z",
-      "dateStart": "2018-03-26T07:00:00.000Z",
-      "id": "b",
-      "link": "eastsidestomp.com",
-      "name": "Beginner Solo Jazz",
-      "neighborhood": "Lower Queen Anne",
-      "organization": "Syncopation Foundation",
-      "time": "7:00pm",
-      "venue": "Theater Puget Sound"
-    },
     "c": {
       "approved": true,
       "danceStyles": ["3"],
