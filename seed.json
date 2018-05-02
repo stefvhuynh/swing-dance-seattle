@@ -382,7 +382,20 @@
     }
   },
   "workshops": {
-    "c": {
+    "a": {
+      "approved": true,
+      "danceStyles": ["2"],
+      "dateEnd": "2018-05-06T07:00:00.000Z",
+      "dateStart": "2018-05-06T07:00:00.000Z",
+      "id": "a",
+      "link": "nwdance.net",
+      "name": "Balboa, Beyond the Basics",
+      "neighborhood": "Westlake",
+      "organization": "Northwest Dance Network",
+      "time": "6:00pm",
+      "venue": "Swedish Club"
+    },
+    "b": {
       "approved": true,
       "danceStyles": ["3"],
       "dateEnd": "2018-05-13T07:00:00.000Z",
