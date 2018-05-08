@@ -148,13 +148,13 @@
       "danceStyles": ["1"],
       "id": "l",
       "link": "eastsidestomp.com",
-      "name": "Int/Adv Lindy Hop",
-      "neighborhood": "Lower Queen Anne",
+      "name": "Int/Adv Lindy Hop Technique",
+      "neighborhood": "Bellevue",
       "organization": "Syncopation Foundation",
       "recurrenceDay": "1",
       "recurrenceTime": "5",
       "time": "8:00pm",
-      "venue": "Theater Puget Sound"
+      "venue": "Crescendo Dance Academy"
     },
     "m": {
       "approved": true,
@@ -162,12 +162,12 @@
       "id": "m",
       "link": "eastsidestomp.com",
       "name": "Beginner Solo Jazz",
-      "neighborhood": "Lower Queen Anne",
+      "neighborhood": "Bellevue",
       "organization": "Syncopation Foundation",
       "recurrenceDay": "2",
       "recurrenceTime": "5",
       "time": "7:00pm",
-      "venue": "Theater Puget Sound"
+      "venue": "Crescendo Dance Academy"
     }
   },
   "dances": {
@@ -360,7 +360,7 @@
     },
     "c": {
       "approved": true,
-      "danceStyles": ["1"],
+      "danceStyles": ["1", "2", "3", "5"],
       "dateEnd": "2018-07-15T07:00:00.000Z",
       "dateStart": "2018-07-13T07:00:00.000Z",
       "hasLiveMusic": true,
