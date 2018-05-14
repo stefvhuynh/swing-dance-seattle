@@ -56,9 +56,9 @@ class HomePage extends React.Component {
               <div className="mg-t-sm font-sm lines-spaced">
                 This is a schedule of all classes, dances, and events in the
                 region. This list will be kept up-to-date to the best of our
-                ability. For the most accurate information, please click on an
-                event to see the event's associated webpage. If you would like
-                your event added, altered, or removed, please send us{" "}
+                ability. For the most accurate information, click on an event to
+                see the event's associated webpage. If you would like your event
+                added, altered, or removed, send us{" "}
                 <a
                   href="mailto:revivalrhythmswing@gmail.com"
                   className="bold hover-underline"
