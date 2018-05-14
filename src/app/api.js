@@ -61,7 +61,10 @@ export const getRecurringExperiences = (apiEndpoint, firebase) => {
   return firebase.database()
     .ref(apiEndpoint)
     .once("value")
-    .then((snapshot) => snapshot.val());
+    .then((snapshot) => {
+      const value = snapshot.val();
+      return value ? value : {};
+    });
 };
 
 export const getNonrecurringExperiences = (apiEndpoint, firebase) => {
@@ -74,7 +77,10 @@ export const getNonrecurringExperiences = (apiEndpoint, firebase) => {
     .startAt(now)
     .endAt(oneYearLater)
     .once("value")
-    .then((snapshot) => snapshot.val());
+    .then((snapshot) => {
+      const value = snapshot.val();
+      return value ? value : {};
+    });
 };
 
 export const getClasses = getRecurringExperiences.bind(null, API_CLASSES);
