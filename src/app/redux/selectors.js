@@ -14,7 +14,11 @@ export const selectRoute = (state) => state.router.route;
 
 export const selectIsRecurringExperience = createSelector(
   selectRoute,
-  (route) => route === ROUTE_CLASSES || route === ROUTE_DANCES
+  (route) => {
+    return route === ROUTE_HOME
+      || route === ROUTE_CLASSES
+      || route === ROUTE_DANCES;
+  }
 );
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
