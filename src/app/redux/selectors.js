@@ -12,6 +12,11 @@ import { getExperiencesByDay } from "../utils";
 
 export const selectRoute = (state) => state.router.route;
 
+export const selectIsRecurringExperience = createSelector(
+  selectRoute,
+  (route) => route === ROUTE_CLASSES || route === ROUTE_DANCES
+);
+
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
 export const selectExperiences = (state) => state.experiences.data;

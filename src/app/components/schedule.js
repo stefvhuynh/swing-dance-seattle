@@ -6,11 +6,19 @@ import { RECURRENCE_DAY_MAP } from "../constants";
 import { getDateDisplay } from "../utils";
 import ExperienceList from "./experience-list";
 
-const Schedule = ({ className, experiencesByDay, isMobile }) => {
-  const scheduleItems = Object.keys(experiencesByDay).sort().map((day) => {
-    const isRecurring = !!RECURRENCE_DAY_MAP[day];
+const Schedule = ({
+  className,
+  experiencesByDay,
+  isMobile,
+  isRecurringExperience
+}) => {
+  let days = Object.keys(experiencesByDay).sort();
+  days = isRecurringExperience
+    ? [...days.slice(1), ...days.slice(0, 1)]
+    : days;
 
-    const listHeading = isRecurring
+  const scheduleItems = days.map((day) => {
+    const listHeading = isRecurringExperience
       ? RECURRENCE_DAY_MAP[day]
       : getDateDisplay(day, { includeDay: true, includeSuffix: true });
 
@@ -24,7 +32,7 @@ const Schedule = ({ className, experiencesByDay, isMobile }) => {
       >
         <div
           className={classNames("bold font-grey pd-md", {
-            "uppercase": isRecurring,
+            "uppercase": isRecurringExperience,
             "basis-fifth": !isMobile
           })}
         >
@@ -47,7 +55,8 @@ const Schedule = ({ className, experiencesByDay, isMobile }) => {
 Schedule.propTypes = {
   className: PropTypes.string,
   experiencesByDay: PropTypes.objectOf(ExperienceList.propTypes.experiences),
-  isMobile: PropTypes.bool
+  isMobile: PropTypes.bool,
+  isRecurringExperience: PropTypes.bool
 };
 
 export default Schedule;

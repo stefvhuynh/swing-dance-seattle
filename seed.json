@@ -8,7 +8,7 @@
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
-      "recurrenceDay": "7",
+      "recurrenceDay": "0",
       "recurrenceTime": "5",
       "time": "6:00pm",
       "venue": "Century Ballroom"
@@ -181,7 +181,7 @@
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
-      "recurrenceDay": "7",
+      "recurrenceDay": "0",
       "recurrenceTime": "5",
       "time": "9:00pm",
       "venue": "Century Ballroom"
