@@ -346,7 +346,8 @@
       "hasLiveMusic": true,
       "id": "a",
       "link": "nwbalfest.com",
-      "name": "Northwest Balfest"
+      "name": "Northwest Balfest",
+      "weekendEvent": true
     },
     "b": {
       "approved": true,
@@ -356,7 +357,8 @@
       "hasLiveMusic": true,
       "id": "b",
       "link": "campjitterbug.com",
-      "name": "Camp Jitterbug"
+      "name": "Camp Jitterbug",
+      "weekendEvent": true
     },
     "c": {
       "approved": true,
@@ -367,7 +369,8 @@
       "id": "c",
       "link": "savoyswing.com",
       "name": "Seattle Lindy Extravaganza",
-      "organization": "Savoy Swing Club"
+      "organization": "Savoy Swing Club",
+      "weekendEvent": true
     },
     "d": {
       "approved": true,
@@ -378,7 +381,8 @@
       "id": "d",
       "link": "bigskyweekend.com",
       "name": "Big Sky Weekend",
-      "organization": "Syncopation Foundation"
+      "organization": "Syncopation Foundation",
+      "weekendEvent": true
     },
     "e": {
       "approved": true,
