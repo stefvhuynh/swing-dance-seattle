@@ -10,8 +10,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
-  ROUTE_HOME,
-  ROUTE_WORKSHOPS
+  ROUTE_HOME
 } from "../routes";
 
 import {
@@ -19,7 +18,6 @@ import {
   getClasses,
   getDances,
   getEvents,
-  getWorkshops,
   logIn,
   logOut,
   postClass,
@@ -98,11 +96,6 @@ export const filterSelected = (route) => {
       case ROUTE_EVENTS: {
         getExperiences = getEvents;
         currentExperiences = data.events;
-        break;
-      }
-      case ROUTE_WORKSHOPS: {
-        getExperiences = getWorkshops;
-        currentExperiences = data.workshops;
         break;
       }
     }

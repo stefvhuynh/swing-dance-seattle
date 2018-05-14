@@ -4,8 +4,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_HOME,
-  ROUTE_EVENTS,
-  ROUTE_WORKSHOPS
+  ROUTE_EVENTS
 } from "../routes";
 
 import { MOBILE_BREAKPOINT } from "../constants";
@@ -43,9 +42,6 @@ export const selectExperiencesByDay = createSelector(
       }
       case ROUTE_EVENTS: {
         return getExperiencesByDay(experiences.events);
-      }
-      case ROUTE_WORKSHOPS: {
-        return getExperiencesByDay(experiences.workshops);
       }
       default: {
         return {};

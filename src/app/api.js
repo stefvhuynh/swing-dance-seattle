@@ -4,7 +4,6 @@ import { isRecurringCategory } from "./utils";
 const API_CLASSES = "/classes";
 const API_DANCES = "/dances";
 const API_EVENTS = "/events";
-const API_WORKSHOPS = "/workshops";
 
 export const serializeExperience = ({
   category,
@@ -86,10 +85,6 @@ export const getNonrecurringExperiences = (apiEndpoint, firebase) => {
 export const getClasses = getRecurringExperiences.bind(null, API_CLASSES);
 export const getDances = getRecurringExperiences.bind(null, API_DANCES);
 export const getEvents = getNonrecurringExperiences.bind(null, API_EVENTS);
-export const getWorkshops = getNonrecurringExperiences.bind(
-  null,
-  API_WORKSHOPS
-);
 
 export const postExperience = (
   apiEndpoint,
@@ -103,4 +98,3 @@ export const postExperience = (
 export const postClass = postExperience.bind(null, API_CLASSES);
 export const postDance = postExperience.bind(null, API_DANCES);
 export const postEvent = postExperience.bind(null, API_EVENTS);
-export const postWorkshop = postExperience.bind(null, API_WORKSHOPS);
