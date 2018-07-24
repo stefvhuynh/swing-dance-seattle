@@ -1,22 +1,22 @@
 {
   "classes": {
-    "a": {
+    "century1": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "a",
+      "id": "century1",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": "0",
       "recurrenceTime": "5",
-      "time": "6:00pm",
+      "time": "7:00pm",
       "venue": "Century Ballroom"
     },
-    "b": {
+    "century2": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "b",
+      "id": "century2",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
@@ -26,49 +26,23 @@
       "time": "6:30pm",
       "venue": "Century Ballroom"
     },
-    "c": {
+    "century3": {
       "approved": true,
       "danceStyles": ["5"],
-      "id": "c",
-      "link": "centuryballroom.com/home/classes/lindy-hop",
-      "name": "The Big Apple",
-      "neighborhood": "Capitol Hill",
-      "organization": "Century Ballroom",
-      "recurrenceDay": "2",
-      "recurrenceTime": "5",
-      "time": "6:00pm",
-      "venue": "Century Ballroom"
-    },
-    "d": {
-      "approved": true,
-      "danceStyles": ["1"],
-      "id": "d",
+      "id": "century3",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": "3",
       "recurrenceTime": "5",
-      "time": "6:00pm",
-      "venue": "Century Ballroom"
-    },
-    "e": {
-      "approved": true,
-      "danceStyles": ["2"],
-      "id": "e",
-      "link": "centuryballroom.com/home/classes/lindy-hop",
-      "name": "Century Balboa",
-      "organization": "Century Ballroom",
-      "neighborhood": "Capitol Hill",
-      "recurrenceDay": "4",
-      "recurrenceTime": "5",
       "time": "7:00pm",
       "venue": "Century Ballroom"
     },
-    "f": {
+    "hepcat1": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "f",
+      "id": "hepcat1",
       "link": "seattleswing.com/lindy",
       "name": "Seattle Swing",
       "neighborhood": "Capitol Hill",
@@ -78,23 +52,23 @@
       "time": "7:00pm",
       "venue": "Russian Community Center"
     },
-    "g": {
+    "savoy1": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "g",
+      "id": "savoy1",
       "link": "savoyswing.org/savoy_mondays",
       "name": "Savoy Monday",
-      "neighborhood": "Queen Anne",
+      "neighborhood": "Ballard",
       "organization": "Savoy Swing Club",
       "recurrenceDay": "1",
       "recurrenceTime": "5",
       "time": "7:00pm",
-      "venue": "Clubhouse of Queen Anne"
+      "venue": "Leif Erikson Lodge"
     },
-    "h": {
+    "syncopation1": {
       "approved": true,
       "danceStyles": ["1", "2"],
-      "id": "h",
+      "id": "syncopation1",
       "link": "eastsidestomp.com",
       "name": "Eastside Stomp",
       "neighborhood": "Redmond",
@@ -104,23 +78,62 @@
       "time": "6:30pm",
       "venue": "Aria Ballroom"
     },
-    "i": {
+    "syncopation2": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "i",
+      "id": "syncopation2",
+      "link": "eastsidestomp.com",
+      "name": "Int/Adv Lindy Hop",
+      "neighborhood": "Bellevue",
+      "organization": "Syncopation Foundation",
+      "recurrenceDay": "2",
+      "recurrenceTime": "5",
+      "time": "8:00pm",
+      "venue": "Crescendo Dance Academy"
+    },
+    "syncopation3": {
+      "approved": true,
+      "danceStyles": ["5"],
+      "id": "syncopation3",
+      "link": "eastsidestomp.com",
+      "name": "Classic Solo Jazz Routines",
+      "neighborhood": "Capitol Hill",
+      "organization": "Syncopation Foundation",
+      "recurrenceDay": "0",
+      "recurrenceTime": "5",
+      "time": "12:00pm",
+      "venue": "Lowdown Ballroom"
+    },
+    "syncopation4": {
+      "approved": true,
+      "danceStyles": ["1"],
+      "id": "syncopation4",
+      "link": "eastsidestomp.com",
+      "name": "Slow Dancing to Swing Music",
+      "neighborhood": "Bellevue",
+      "organization": "Syncopation Foundation",
+      "recurrenceDay": "0",
+      "recurrenceTime": "3",
+      "time": "7:00pm",
+      "venue": "Crescendo Dance Academy"
+    },
+    "sct1": {
+      "approved": true,
+      "danceStyles": ["1"],
+      "id": "sct1",
       "link": "salsacontodo.com/swing",
       "name": "SCT Swing",
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": "4",
       "recurrenceTime": "5",
-      "time": "6:30pm",
+      "time": "7:00pm",
       "venue": "Salsa Con Todo"
     },
-    "j": {
+    "sct2": {
       "approved": true,
       "danceStyles": ["1", "5"],
-      "id": "j",
+      "id": "sct2",
       "link": "salsacontodo.com/swing",
       "name": "SCT Training Team",
       "neighborhood": "Fremont",
@@ -130,10 +143,23 @@
       "time": "8:30pm",
       "venue": "Salsa Con Todo"
     },
-    "k": {
+    "sct3": {
+      "approved": true,
+      "danceStyles": ["1", "5"],
+      "id": "sct3",
+      "link": "salsacontodo.com/swing",
+      "name": "SCT Swing",
+      "neighborhood": "Fremont",
+      "organization": "Swing Dance SCT",
+      "recurrenceDay": "0",
+      "recurrenceTime": "5",
+      "time": "6:00pm",
+      "venue": "Salsa Con Todo"
+    },
+    "sct4": {
       "approved": true,
       "danceStyles": ["1"],
-      "id": "k",
+      "id": "sct4",
       "link": "salsacontodo.com/swing",
       "name": "Beginner Swing Bootcamp",
       "neighborhood": "Fremont",
@@ -142,41 +168,15 @@
       "recurrenceTime": "2",
       "time": "4:00pm",
       "venue": "Salsa Con Todo"
-    },
-    "l": {
-      "approved": true,
-      "danceStyles": ["1"],
-      "id": "l",
-      "link": "eastsidestomp.com",
-      "name": "Int/Adv Lindy Hop Technique",
-      "neighborhood": "Bellevue",
-      "organization": "Syncopation Foundation",
-      "recurrenceDay": "1",
-      "recurrenceTime": "5",
-      "time": "8:00pm",
-      "venue": "Crescendo Dance Academy"
-    },
-    "m": {
-      "approved": true,
-      "danceStyles": ["5"],
-      "id": "m",
-      "link": "eastsidestomp.com",
-      "name": "Beginner Solo Jazz",
-      "neighborhood": "Bellevue",
-      "organization": "Syncopation Foundation",
-      "recurrenceDay": "2",
-      "recurrenceTime": "5",
-      "time": "7:00pm",
-      "venue": "Crescendo Dance Academy"
     }
   },
   "dances": {
-    "a": {
+    "century1": {
       "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "a",
+      "id": "century1",
       "link": "centuryballroom.com/home/calendar",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
@@ -186,12 +186,12 @@
       "time": "9:00pm",
       "venue": "Century Ballroom"
     },
-    "b": {
+    "century2": {
       "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "b",
+      "id": "century2",
       "link": "centuryballroom.com/home/calendar",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
@@ -201,12 +201,12 @@
       "time": "9:00pm",
       "venue": "Century Ballroom"
     },
-    "c": {
+    "century3": {
       "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "c",
+      "id": "century3",
       "link": "centuryballroom.com/home/calendar",
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
@@ -216,12 +216,12 @@
       "time": "7:30pm",
       "venue": "Century Ballroom"
     },
-    "d": {
+    "hepcat1": {
       "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
-      "id": "d",
+      "id": "hepcat1",
       "link": "seattleswing.com/dance",
       "name": "HepCat Swing Dance",
       "neighborhood": "Capitol Hill",
@@ -231,12 +231,12 @@
       "time": "9:00pm",
       "venue": "Russian Community Center"
     },
-    "e": {
+    "savoy1": {
       "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "e",
+      "id": "savoy1",
       "link": "savoyswing.org/savoy_mondays",
       "name": "Savoy Monday",
       "neighborhood": "Queen Anne",
@@ -246,12 +246,12 @@
       "time": "8:00pm",
       "venue": "Clubhouse of Queen Anne"
     },
-    "f": {
+    "savoy2": {
       "approved": true,
       "danceStyles": ["1", "2", "3", "4", "5"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
-      "id": "f",
+      "id": "savoy2",
       "link": "savoyswing.org/membership",
       "name": "Savoy Swing Club Practice Space",
       "neighborhood": "Capitol Hill",
@@ -261,12 +261,12 @@
       "time": "8:45pm",
       "venue": "Dance Underground"
     },
-    "g": {
+    "savoy3": {
       "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "g",
+      "id": "savoy3",
       "link": "savoyswing.org/bug",
       "name": "Blues Underground",
       "neighborhood": "Capitol Hill",
@@ -276,12 +276,12 @@
       "time": "8:00pm",
       "venue": "Dance Underground"
     },
-    "h": {
+    "syncopation1": {
       "approved": true,
       "danceStyles": ["1", "2"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
-      "id": "h",
+      "id": "syncopation1",
       "link": "eastsidestomp.com/dances.html",
       "name": "Eastside Stomp",
       "neighborhood": "Redmond",
@@ -291,12 +291,12 @@
       "time": "8:30pm",
       "venue": "Aria Ballroom"
     },
-    "i": {
+    "sct1": {
       "approved": true,
       "danceStyles": ["1", "2", "3"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
-      "id": "i",
+      "id": "sct1",
       "link": "salsacontodo.com/swing",
       "name": "Revival Rhythm",
       "neighborhood": "Fremont",
@@ -306,12 +306,27 @@
       "time": "8:00pm",
       "venue": "Salsa Con Todo"
     },
-    "j": {
+    "sct2": {
+      "approved": true,
+      "danceStyles": ["1", "2", "3", "4", "5"],
+      "hasDropInClass": true,
+      "hasLiveMusic": true,
+      "id": "sct2",
+      "link": "salsacontodo.com/swing",
+      "name": "Open/Guided Practice",
+      "neighborhood": "Fremont",
+      "organization": "Swing Dance SCT",
+      "recurrenceDay": "0",
+      "recurrenceTime": "5",
+      "time": "7:00pm",
+      "venue": "Salsa Con Todo"
+    },
+    "hotrhythm1": {
       "approved": true,
       "danceStyles": ["2"],
       "hasDropInClass": false,
       "hasLiveMusic": true,
-      "id": "j",
+      "id": "hotrhythm1",
       "link": "hotrhythmclub.com/balboabluesbooze",
       "name": "Balboa, Blues, and Booze",
       "neighborhood": "Downtown",
@@ -321,12 +336,12 @@
       "time": "8:00pm",
       "venue": "Smith Tower"
     },
-    "k": {
+    "alibi1": {
       "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
-      "id": "k",
+      "id": "alibi1",
       "link": "facebook.com/AlibiBlues",
       "name": "Alibi Blues",
       "neighborhood": "Greenwood",
@@ -338,75 +353,75 @@
     }
   },
   "events": {
-    "a": {
+    "nwbalfest": {
       "approved": true,
       "danceStyles": ["2"],
       "dateEnd": "2018-05-06T07:00:00.000Z",
       "dateStart": "2018-05-04T07:00:00.000Z",
       "hasLiveMusic": true,
-      "id": "a",
+      "id": "nwbalfest",
       "link": "nwbalfest.com",
       "name": "Northwest Balfest",
       "weekendEvent": true
     },
-    "b": {
+    "campjitterbug": {
       "approved": true,
       "danceStyles": ["1", "2"],
       "dateEnd": "2018-05-28T07:00:00.000Z",
       "dateStart": "2018-05-25T07:00:00.000Z",
       "hasLiveMusic": true,
-      "id": "b",
+      "id": "campjitterbug",
       "link": "campjitterbug.com",
       "name": "Camp Jitterbug",
       "weekendEvent": true
     },
-    "c": {
+    "slx": {
       "approved": true,
       "danceStyles": ["1", "2", "3", "5"],
       "dateEnd": "2018-07-15T07:00:00.000Z",
       "dateStart": "2018-07-13T07:00:00.000Z",
       "hasLiveMusic": true,
-      "id": "c",
-      "link": "savoyswing.com",
+      "id": "slx",
+      "link": "savoyswing.com/slx",
       "name": "Seattle Lindy Extravaganza",
       "organization": "Savoy Swing Club",
       "weekendEvent": true
     },
-    "d": {
+    "bigsky": {
       "approved": true,
       "danceStyles": ["1", "2"],
       "dateEnd": "2018-06-25T07:00:00.000Z",
       "dateStart": "2018-06-22T07:00:00.000Z",
       "hasLiveMusic": true,
-      "id": "d",
+      "id": "bigsky",
       "link": "bigskyweekend.com",
       "name": "Big Sky Weekend",
       "organization": "Syncopation Foundation",
       "weekendEvent": true
     },
-    "e": {
+    "solojam": {
       "approved": true,
-      "danceStyles": ["2"],
-      "dateEnd": "2018-05-06T07:00:00.000Z",
-      "dateStart": "2018-05-06T07:00:00.000Z",
-      "id": "e",
-      "link": "nwdance.net",
-      "name": "Balboa, Beyond the Basics",
-      "organization": "Northwest Dance Network",
-      "time": "6:00pm",
-      "venue": "Swedish Club"
+      "danceStyles": ["1", "5"],
+      "dateEnd": "2019-01-27T07:00:00.000Z",
+      "dateStart": "2019-01-25T07:00:00.000Z",
+      "hasLiveMusic": true,
+      "id": "solojam",
+      "link": "emeraldcitysolojam.com",
+      "name": "Emerald City Solo Jam",
+      "organization": "Syncopation Foundation",
+      "weekendEvent": true
     },
-    "f": {
+    "advanceyourlindy": {
       "approved": true,
-      "danceStyles": ["3"],
-      "dateEnd": "2018-05-13T07:00:00.000Z",
-      "dateStart": "2018-05-13T07:00:00.000Z",
-      "id": "f",
-      "link": "nwdance.net",
-      "name": "Blues to Make Your Mama Smile",
-      "organization": "Northwest Dance Network",
-      "time": "6:00pm",
-      "venue": "Swedish Club"
+      "danceStyles": ["1"],
+      "dateEnd": "2018-08-18T07:00:00.000Z",
+      "dateStart": "2018-08-18T07:00:00.000Z",
+      "hasLiveMusic": false,
+      "id": "advanceyourlindy",
+      "link": "savoyswing.com/advanceyourlindy",
+      "name": "Advance Your Lindy with Nalla Kim and Jessica Yoon",
+      "organization": "Savoy Swing Club",
+      "weekendEvent": false
     }
   }
 }
