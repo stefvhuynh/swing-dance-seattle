@@ -11,10 +11,6 @@
     "events": {
       ".indexOn": ["dateEnd"],
       ".validate": "newData.hasChildren(['approved', 'dateEnd', 'dateStart', 'id', 'link', 'name', 'neighborhood', 'time', 'venue'])"
-    },
-    "workshops": {
-      ".indexOn": ["dateEnd"],
-      ".validate": "newData.hasChildren(['approved', 'dateEnd', 'dateStart', 'id', 'link', 'name', 'neighborhood', 'time', 'venue'])"
     }
   }
 }

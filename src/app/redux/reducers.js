@@ -19,8 +19,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
-  ROUTE_HOME,
-  ROUTE_WORKSHOPS
+  ROUTE_HOME
 } from "../routes";
 
 const initialState = {
@@ -35,8 +34,7 @@ const initialState = {
     data: {
       classes: {},
       dances: {},
-      events: {},
-      workshops: {}
+      events: {}
     },
     isFetching: false,
     isSubmitting: false,
@@ -119,10 +117,6 @@ export const experiences = (state = initialState.experiences, action) => {
         }
         case ROUTE_EVENTS: {
           data = { ...data, events: payload.experiences };
-          break;
-        }
-        case ROUTE_WORKSHOPS: {
-          data = { ...data, workshops: payload.experiences };
           break;
         }
       }

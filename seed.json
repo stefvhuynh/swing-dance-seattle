@@ -8,7 +8,7 @@
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
-      "recurrenceDay": "7",
+      "recurrenceDay": "0",
       "recurrenceTime": "5",
       "time": "6:00pm",
       "venue": "Century Ballroom"
@@ -181,7 +181,7 @@
       "name": "Century Swing",
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
-      "recurrenceDay": "7",
+      "recurrenceDay": "0",
       "recurrenceTime": "5",
       "time": "9:00pm",
       "venue": "Century Ballroom"
@@ -346,7 +346,8 @@
       "hasLiveMusic": true,
       "id": "a",
       "link": "nwbalfest.com",
-      "name": "Northwest Balfest"
+      "name": "Northwest Balfest",
+      "weekendEvent": true
     },
     "b": {
       "approved": true,
@@ -356,7 +357,8 @@
       "hasLiveMusic": true,
       "id": "b",
       "link": "campjitterbug.com",
-      "name": "Camp Jitterbug"
+      "name": "Camp Jitterbug",
+      "weekendEvent": true
     },
     "c": {
       "approved": true,
@@ -367,7 +369,8 @@
       "id": "c",
       "link": "savoyswing.com",
       "name": "Seattle Lindy Extravaganza",
-      "organization": "Savoy Swing Club"
+      "organization": "Savoy Swing Club",
+      "weekendEvent": true
     },
     "d": {
       "approved": true,
@@ -378,32 +381,29 @@
       "id": "d",
       "link": "bigskyweekend.com",
       "name": "Big Sky Weekend",
-      "organization": "Syncopation Foundation"
-    }
-  },
-  "workshops": {
-    "a": {
+      "organization": "Syncopation Foundation",
+      "weekendEvent": true
+    },
+    "e": {
       "approved": true,
       "danceStyles": ["2"],
       "dateEnd": "2018-05-06T07:00:00.000Z",
       "dateStart": "2018-05-06T07:00:00.000Z",
-      "id": "a",
+      "id": "e",
       "link": "nwdance.net",
       "name": "Balboa, Beyond the Basics",
-      "neighborhood": "Westlake",
       "organization": "Northwest Dance Network",
       "time": "6:00pm",
       "venue": "Swedish Club"
     },
-    "b": {
+    "f": {
       "approved": true,
       "danceStyles": ["3"],
       "dateEnd": "2018-05-13T07:00:00.000Z",
       "dateStart": "2018-05-13T07:00:00.000Z",
-      "id": "b",
+      "id": "f",
       "link": "nwdance.net",
       "name": "Blues to Make Your Mama Smile",
-      "neighborhood": "Westlake",
       "organization": "Northwest Dance Network",
       "time": "6:00pm",
       "venue": "Swedish Club"

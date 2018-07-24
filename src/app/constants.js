@@ -29,19 +29,17 @@ export const DATE_DAY_MAP = [
   "Saturday"
 ];
 
-export const EMPTY_TYPE = "0";
+export const EMPTY_TYPE = "-1";
 
 export const CATEGORY_CLASS = "1";
 export const CATEGORY_DANCE = "2";
 export const CATEGORY_EVENT = "3";
-export const CATEGORY_WORKSHOP = "4";
 
 export const CATEGORY_MAP = {
   [EMPTY_TYPE]: "",
   [CATEGORY_CLASS]: "Class",
   [CATEGORY_DANCE]: "Dance",
-  [CATEGORY_EVENT]: "Event",
-  [CATEGORY_WORKSHOP]: "Workshop"
+  [CATEGORY_EVENT]: "Event"
 };
 
 export const RECURRENCE_TIME_FIRST = "1";
@@ -59,23 +57,23 @@ export const RECURRENCE_TIME_MAP = {
   [RECURRENCE_TIME_FOURTH]: "Fourth"
 };
 
+export const RECURRENCE_DAY_SUNDAY = "0";
 export const RECURRENCE_DAY_MONDAY = "1";
 export const RECURRENCE_DAY_TUESDAY = "2";
 export const RECURRENCE_DAY_WEDNESDAY = "3";
 export const RECURRENCE_DAY_THURSDAY = "4";
 export const RECURRENCE_DAY_FRIDAY = "5";
 export const RECURRENCE_DAY_SATURDAY = "6";
-export const RECURRENCE_DAY_SUNDAY = "7";
 
 export const RECURRENCE_DAY_MAP = {
   [EMPTY_TYPE]: "",
+  [RECURRENCE_DAY_SUNDAY]: "Sundays",
   [RECURRENCE_DAY_MONDAY]: "Mondays",
   [RECURRENCE_DAY_TUESDAY]: "Tuesdays",
   [RECURRENCE_DAY_WEDNESDAY]: "Wednesdays",
   [RECURRENCE_DAY_THURSDAY]: "Thursdays",
   [RECURRENCE_DAY_FRIDAY]: "Fridays",
-  [RECURRENCE_DAY_SATURDAY]: "Saturdays",
-  [RECURRENCE_DAY_SUNDAY]: "Sundays"
+  [RECURRENCE_DAY_SATURDAY]: "Saturdays"
 };
 
 export const DANCE_STYLE_LINDY = "1";

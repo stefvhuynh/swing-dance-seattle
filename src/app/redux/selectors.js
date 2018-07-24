@@ -4,14 +4,22 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_HOME,
-  ROUTE_EVENTS,
-  ROUTE_WORKSHOPS
+  ROUTE_EVENTS
 } from "../routes";
 
 import { MOBILE_BREAKPOINT } from "../constants";
 import { getExperiencesByDay } from "../utils";
 
 export const selectRoute = (state) => state.router.route;
+
+export const selectIsRecurringExperience = createSelector(
+  selectRoute,
+  (route) => {
+    return route === ROUTE_HOME
+      || route === ROUTE_CLASSES
+      || route === ROUTE_DANCES;
+  }
+);
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectLoginError = (state) => state.auth.loginErrorMessage;
@@ -43,9 +51,6 @@ export const selectExperiencesByDay = createSelector(
       }
       case ROUTE_EVENTS: {
         return getExperiencesByDay(experiences.events);
-      }
-      case ROUTE_WORKSHOPS: {
-        return getExperiencesByDay(experiences.workshops);
       }
       default: {
         return {};

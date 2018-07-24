@@ -7,8 +7,7 @@ import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
-  ROUTE_HOME,
-  ROUTE_WORKSHOPS
+  ROUTE_HOME
 } from "../routes";
 
 class Filter extends React.Component {
@@ -52,15 +51,6 @@ class Filter extends React.Component {
               onClick={onFilterClick.bind(null, ROUTE_CLASSES)}
             >
               Classes
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={this.getTabClassName(currentRoute === ROUTE_WORKSHOPS)}
-              href={ROUTE_WORKSHOPS}
-              onClick={onFilterClick.bind(null, ROUTE_WORKSHOPS)}
-            >
-              Workshops
             </Link>
           </li>
           <li>

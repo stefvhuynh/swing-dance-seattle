@@ -29,7 +29,8 @@ class Experience extends React.Component {
     recurrenceDay: PropTypes.string,
     recurrenceTime: PropTypes.string,
     time: PropTypes.string,
-    venue: PropTypes.string
+    venue: PropTypes.string,
+    weekendEvent: PropTypes.bool
   };
 
   static defaultProps = {
@@ -60,7 +61,8 @@ class Experience extends React.Component {
       recurrenceDay,
       recurrenceTime,
       time,
-      venue
+      venue,
+      weekendEvent
     } = this.props;
 
     const { isHovering } = this.state;
@@ -123,6 +125,10 @@ class Experience extends React.Component {
         </div>
 
         <ul className="font-sm italic font-grey">
+          <Conditional condition={weekendEvent}>
+            <li>&ndash; Weekend event</li>
+          </Conditional>
+
           <Conditional condition={hasLiveMusic}>
             <li>&ndash; Live music!</li>
           </Conditional>
