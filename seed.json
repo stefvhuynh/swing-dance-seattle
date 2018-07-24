@@ -28,7 +28,7 @@
     },
     "century3": {
       "approved": true,
-      "danceStyles": ["5"],
+      "danceStyles": ["1"],
       "id": "century3",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
@@ -112,8 +112,8 @@
       "name": "Slow Dancing to Swing Music",
       "neighborhood": "Bellevue",
       "organization": "Syncopation Foundation",
-      "recurrenceDay": "0",
-      "recurrenceTime": "3",
+      "recurrenceDay": "3",
+      "recurrenceTime": "5",
       "time": "7:00pm",
       "venue": "Crescendo Dance Academy"
     },
