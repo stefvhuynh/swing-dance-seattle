@@ -145,7 +145,7 @@
     },
     "sct3": {
       "approved": true,
-      "danceStyles": ["1", "5"],
+      "danceStyles": ["1"],
       "id": "sct3",
       "link": "salsacontodo.com/swing",
       "name": "SCT Swing",
