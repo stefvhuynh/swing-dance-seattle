@@ -19,7 +19,6 @@ export const serializeExperience = ({
   venue
 }) => {
   const commonDetails = {
-    approved: false,
     name,
     link,
     neighborhood,
@@ -92,7 +91,7 @@ export const postExperience = (
   experience
 ) => {
   const ref = firebase.database().ref(apiEndpoint).push();
-  return ref.set({ id: ref.key, approved: false, ...experience });
+  return ref.set({ id: ref.key, ...experience });
 };
 
 export const postClass = postExperience.bind(null, API_CLASSES);

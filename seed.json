@@ -1,7 +1,6 @@
 {
   "classes": {
     "century1": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "century1",
       "link": "centuryballroom.com/home/classes/lindy-hop",
@@ -14,7 +13,6 @@
       "venue": "Century Ballroom"
     },
     "century2": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "century2",
       "link": "centuryballroom.com/home/classes/lindy-hop",
@@ -27,7 +25,6 @@
       "venue": "Century Ballroom"
     },
     "century3": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "century3",
       "link": "centuryballroom.com/home/classes/lindy-hop",
@@ -40,7 +37,6 @@
       "venue": "Century Ballroom"
     },
     "hepcat1": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "hepcat1",
       "link": "seattleswing.com/lindy",
@@ -53,7 +49,6 @@
       "venue": "Russian Community Center"
     },
     "savoy1": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "savoy1",
       "link": "savoyswing.org/savoy_mondays",
@@ -66,7 +61,6 @@
       "venue": "Leif Erikson Lodge"
     },
     "syncopation1": {
-      "approved": true,
       "danceStyles": ["1", "2"],
       "id": "syncopation1",
       "link": "eastsidestomp.com",
@@ -79,7 +73,6 @@
       "venue": "Aria Ballroom"
     },
     "syncopation2": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "syncopation2",
       "link": "eastsidestomp.com",
@@ -92,7 +85,6 @@
       "venue": "Crescendo Dance Academy"
     },
     "syncopation3": {
-      "approved": true,
       "danceStyles": ["5"],
       "id": "syncopation3",
       "link": "eastsidestomp.com",
@@ -105,7 +97,6 @@
       "venue": "Lowdown Ballroom"
     },
     "syncopation4": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "syncopation4",
       "link": "eastsidestomp.com",
@@ -118,7 +109,6 @@
       "venue": "Crescendo Dance Academy"
     },
     "sct1": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "sct1",
       "link": "salsacontodo.com/swing",
@@ -131,7 +121,6 @@
       "venue": "Salsa Con Todo"
     },
     "sct2": {
-      "approved": true,
       "danceStyles": ["1", "5"],
       "id": "sct2",
       "link": "salsacontodo.com/swing",
@@ -144,7 +133,6 @@
       "venue": "Salsa Con Todo"
     },
     "sct3": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "sct3",
       "link": "salsacontodo.com/swing",
@@ -157,7 +145,6 @@
       "venue": "Salsa Con Todo"
     },
     "sct4": {
-      "approved": true,
       "danceStyles": ["1"],
       "id": "sct4",
       "link": "salsacontodo.com/swing",
@@ -172,7 +159,6 @@
   },
   "dances": {
     "century1": {
-      "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -187,7 +173,6 @@
       "venue": "Century Ballroom"
     },
     "century2": {
-      "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -202,7 +187,6 @@
       "venue": "Century Ballroom"
     },
     "century3": {
-      "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -217,7 +201,6 @@
       "venue": "Century Ballroom"
     },
     "hepcat1": {
-      "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
@@ -232,7 +215,6 @@
       "venue": "Russian Community Center"
     },
     "savoy1": {
-      "approved": true,
       "danceStyles": ["1"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -247,7 +229,6 @@
       "venue": "Clubhouse of Queen Anne"
     },
     "savoy2": {
-      "approved": true,
       "danceStyles": ["1", "2", "3", "4", "5"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
@@ -262,7 +243,6 @@
       "venue": "Dance Underground"
     },
     "savoy3": {
-      "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -277,7 +257,6 @@
       "venue": "Dance Underground"
     },
     "syncopation1": {
-      "approved": true,
       "danceStyles": ["1", "2"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
@@ -292,7 +271,6 @@
       "venue": "Aria Ballroom"
     },
     "syncopation2": {
-      "approved": true,
       "danceStyles": ["1", "2"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -307,7 +285,6 @@
       "venue": "Greenwood Masonic Lodge"
     },
     "sct1": {
-      "approved": true,
       "danceStyles": ["1", "2", "3"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
@@ -322,7 +299,6 @@
       "venue": "Salsa Con Todo"
     },
     "sct2": {
-      "approved": true,
       "danceStyles": ["1", "2", "3", "4", "5"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
@@ -337,7 +313,6 @@
       "venue": "Salsa Con Todo"
     },
     "hotrhythm1": {
-      "approved": true,
       "danceStyles": ["2"],
       "hasDropInClass": false,
       "hasLiveMusic": true,
@@ -352,7 +327,6 @@
       "venue": "Smith Tower"
     },
     "alibi1": {
-      "approved": true,
       "danceStyles": ["3"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
@@ -369,7 +343,6 @@
   },
   "events": {
     "nwbalfest": {
-      "approved": true,
       "danceStyles": ["2"],
       "dateEnd": "2018-05-06T12:00:00-08:00",
       "dateStart": "2018-05-04T12:00:00-08:00",
@@ -380,7 +353,6 @@
       "weekendEvent": true
     },
     "campjitterbug": {
-      "approved": true,
       "danceStyles": ["1", "2"],
       "dateEnd": "2018-05-28T12:00:00-08:00",
       "dateStart": "2018-05-25T12:00:00-08:00",
@@ -391,7 +363,6 @@
       "weekendEvent": true
     },
     "slx": {
-      "approved": true,
       "danceStyles": ["1", "2", "3", "5"],
       "dateEnd": "2018-07-15T12:00:00-08:00",
       "dateStart": "2018-07-13T12:00:00-08:00",
@@ -403,7 +374,6 @@
       "weekendEvent": true
     },
     "bigsky": {
-      "approved": true,
       "danceStyles": ["1", "2"],
       "dateEnd": "2018-06-25T12:00:00-08:00",
       "dateStart": "2018-06-22T12:00:00-08:00",
@@ -415,7 +385,6 @@
       "weekendEvent": true
     },
     "solojam": {
-      "approved": true,
       "danceStyles": ["1", "5"],
       "dateEnd": "2019-01-27T12:00:00-08:00",
       "dateStart": "2019-01-25T12:00:00-08:00",
@@ -427,7 +396,6 @@
       "weekendEvent": true
     },
     "advanceyourlindy": {
-      "approved": true,
       "danceStyles": ["1"],
       "dateEnd": "2018-08-18T12:00:00-08:00",
       "dateStart": "2018-08-18T12:00:00-08:00",

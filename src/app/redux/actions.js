@@ -183,10 +183,6 @@ export const experienceSubmitted = (details, experienceCategory) => {
         postExperience = postEvent;
         break;
       }
-      case CATEGORY_WORKSHOP: {
-        postExperience = postWorkshop;
-        break;
-      }
     }
 
     postExperience(firebase, details)
