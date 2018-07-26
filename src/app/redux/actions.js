@@ -28,7 +28,6 @@ import {
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
-export const NAV_BAR_TOGGLED = "NAV_BAR_TOGGLED";
 
 export const LOGIN_SUBMITTED = "LOGIN_SUBMITTED";
 export const LOGIN_SUCCEEDED = "LOGIN_SUCCEEDED";
@@ -120,10 +119,6 @@ export const filterSelected = (route) => {
 
 export const windowResized = (width) => {
   return { type: WINDOW_RESIZED, payload: { width } };
-};
-
-export const navBarToggled = () => {
-  return { type: NAV_BAR_TOGGLED };
 };
 
 const loginSucceeded = () => {
