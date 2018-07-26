@@ -1,7 +1,7 @@
 {
   "classes": {
     "century1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "century1",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
@@ -13,7 +13,7 @@
       "venue": "Century Ballroom"
     },
     "century2": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "century2",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
@@ -25,7 +25,7 @@
       "venue": "Century Ballroom"
     },
     "century3": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "century3",
       "link": "centuryballroom.com/home/classes/lindy-hop",
       "name": "Century Swing",
@@ -37,7 +37,7 @@
       "venue": "Century Ballroom"
     },
     "hepcat1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "hepcat1",
       "link": "seattleswing.com/lindy",
       "name": "Seattle Swing",
@@ -49,7 +49,7 @@
       "venue": "Russian Community Center"
     },
     "savoy1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "savoy1",
       "link": "savoyswing.org/savoy_mondays",
       "name": "Savoy Monday",
@@ -61,7 +61,7 @@
       "venue": "Leif Erikson Lodge"
     },
     "syncopation1": {
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["LINDY", "BALBOA"],
       "id": "syncopation1",
       "link": "eastsidestomp.com",
       "name": "Eastside Stomp",
@@ -73,7 +73,7 @@
       "venue": "Aria Ballroom"
     },
     "syncopation2": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "syncopation2",
       "link": "eastsidestomp.com",
       "name": "Int/Adv Lindy Hop",
@@ -85,7 +85,7 @@
       "venue": "Crescendo Dance Academy"
     },
     "syncopation3": {
-      "danceStyles": ["EVERY"],
+      "danceStyles": ["JAZZ"],
       "id": "syncopation3",
       "link": "eastsidestomp.com",
       "name": "Classic Solo Jazz Routines",
@@ -97,7 +97,7 @@
       "venue": "Lowdown Ballroom"
     },
     "syncopation4": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "syncopation4",
       "link": "eastsidestomp.com",
       "name": "Slow Dancing to Swing Music",
@@ -109,7 +109,7 @@
       "venue": "Crescendo Dance Academy"
     },
     "sct1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "sct1",
       "link": "salsacontodo.com/swing",
       "name": "SCT Swing",
@@ -121,7 +121,7 @@
       "venue": "Salsa Con Todo"
     },
     "sct2": {
-      "danceStyles": ["1", "EVERY"],
+      "danceStyles": ["LINDY", "JAZZ"],
       "id": "sct2",
       "link": "salsacontodo.com/swing",
       "name": "SCT Training Team",
@@ -133,7 +133,7 @@
       "venue": "Salsa Con Todo"
     },
     "sct3": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "sct3",
       "link": "salsacontodo.com/swing",
       "name": "SCT Swing",
@@ -145,7 +145,7 @@
       "venue": "Salsa Con Todo"
     },
     "sct4": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "id": "sct4",
       "link": "salsacontodo.com/swing",
       "name": "Beginner Swing Bootcamp",
@@ -159,7 +159,7 @@
   },
   "dances": {
     "century1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "century1",
@@ -173,7 +173,7 @@
       "venue": "Century Ballroom"
     },
     "century2": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "century2",
@@ -187,7 +187,7 @@
       "venue": "Century Ballroom"
     },
     "century3": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "century3",
@@ -201,7 +201,7 @@
       "venue": "Century Ballroom"
     },
     "hepcat1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
       "id": "hepcat1",
@@ -215,7 +215,7 @@
       "venue": "Russian Community Center"
     },
     "savoy1": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "savoy1",
@@ -229,7 +229,7 @@
       "venue": "Clubhouse of Queen Anne"
     },
     "savoy2": {
-      "danceStyles": ["1", "2", "3", "4", "EVERY"],
+      "danceStyles": ["LINDY", "BALBOA", "BLUES", "SHAG", "JAZZ"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
       "id": "savoy2",
@@ -243,7 +243,7 @@
       "venue": "Dance Underground"
     },
     "savoy3": {
-      "danceStyles": ["3"],
+      "danceStyles": ["BLUES"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "savoy3",
@@ -257,7 +257,7 @@
       "venue": "Dance Underground"
     },
     "syncopation1": {
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["LINDY", "BALBOA"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
       "id": "syncopation1",
@@ -271,7 +271,7 @@
       "venue": "Aria Ballroom"
     },
     "syncopation2": {
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["LINDY", "BALBOA"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "syncopation2",
@@ -285,7 +285,7 @@
       "venue": "Greenwood Masonic Lodge"
     },
     "sct1": {
-      "danceStyles": ["1", "2", "3"],
+      "danceStyles": ["LINDY", "BALBOA", "BLUES"],
       "hasDropInClass": true,
       "hasLiveMusic": true,
       "id": "sct1",
@@ -299,7 +299,7 @@
       "venue": "Salsa Con Todo"
     },
     "sct2": {
-      "danceStyles": ["1", "2", "3", "4", "EVERY"],
+      "danceStyles": ["LINDY", "BALBOA", "BLUES", "SHAG", "JAZZ"],
       "hasDropInClass": false,
       "hasLiveMusic": false,
       "id": "sct2",
@@ -313,7 +313,7 @@
       "venue": "Salsa Con Todo"
     },
     "hotrhythm1": {
-      "danceStyles": ["2"],
+      "danceStyles": ["BALBOA"],
       "hasDropInClass": false,
       "hasLiveMusic": true,
       "id": "hotrhythm1",
@@ -327,7 +327,7 @@
       "venue": "Smith Tower"
     },
     "alibi1": {
-      "danceStyles": ["3"],
+      "danceStyles": ["BLUES"],
       "hasDropInClass": true,
       "hasLiveMusic": false,
       "id": "alibi1",
@@ -343,7 +343,7 @@
   },
   "events": {
     "nwbalfest": {
-      "danceStyles": ["2"],
+      "danceStyles": ["BALBOA"],
       "dateEnd": "2018-05-06T12:00:00-08:00",
       "dateStart": "2018-05-04T12:00:00-08:00",
       "hasLiveMusic": true,
@@ -353,7 +353,7 @@
       "weekendEvent": true
     },
     "campjitterbug": {
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["LINDY", "BALBOA"],
       "dateEnd": "2018-05-28T12:00:00-08:00",
       "dateStart": "2018-05-25T12:00:00-08:00",
       "hasLiveMusic": true,
@@ -363,7 +363,7 @@
       "weekendEvent": true
     },
     "slx": {
-      "danceStyles": ["1", "2", "3", "EVERY"],
+      "danceStyles": ["LINDY", "BALBOA", "BLUES", "JAZZ"],
       "dateEnd": "2018-07-15T12:00:00-08:00",
       "dateStart": "2018-07-13T12:00:00-08:00",
       "hasLiveMusic": true,
@@ -374,7 +374,7 @@
       "weekendEvent": true
     },
     "bigsky": {
-      "danceStyles": ["1", "2"],
+      "danceStyles": ["LINDY", "BALBOA"],
       "dateEnd": "2018-06-25T12:00:00-08:00",
       "dateStart": "2018-06-22T12:00:00-08:00",
       "hasLiveMusic": true,
@@ -385,7 +385,7 @@
       "weekendEvent": true
     },
     "solojam": {
-      "danceStyles": ["1", "EVERY"],
+      "danceStyles": ["LINDY", "JAZZ"],
       "dateEnd": "2019-01-27T12:00:00-08:00",
       "dateStart": "2019-01-25T12:00:00-08:00",
       "hasLiveMusic": true,
@@ -396,7 +396,7 @@
       "weekendEvent": true
     },
     "advanceyourlindy": {
-      "danceStyles": ["1"],
+      "danceStyles": ["LINDY"],
       "dateEnd": "2018-08-18T12:00:00-08:00",
       "dateStart": "2018-08-18T12:00:00-08:00",
       "hasLiveMusic": false,
