@@ -1,6 +1,6 @@
 {
   "projects": {
-    "production": "<your project id here>",
-    "qa": "<your project id here>"
+    "qa": "<your project id here>",
+    "production": "<your project id here>"
   }
 }
