@@ -106,7 +106,7 @@ class Experience extends React.Component {
                 {RECURRENCE_TIME_MAP[recurrenceTime]}
                 {
                   recurrenceTime !== RECURRENCE_TIME_EVERY
-                    && ` ${DAY_MAP[recurrenceDay]}`
+                    && ` ${DAY_MAP[recurrenceDay]}s`
                 }
               </div>
             </Conditional>
