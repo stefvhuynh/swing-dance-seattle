@@ -2,7 +2,6 @@ import {
   CATEGORY_CLASS,
   CATEGORY_DANCE,
   CATEGORY_EVENT,
-  CATEGORY_WORKSHOP,
   ONE_HOUR
 } from "../constants";
 
@@ -22,8 +21,7 @@ import {
   logOut,
   postClass,
   postDance,
-  postEvent,
-  postWorkshop
+  postEvent
 } from "../api";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
