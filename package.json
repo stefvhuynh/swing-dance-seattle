@@ -1,6 +1,6 @@
 {
   "name": "swing-dance-seattle",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Schedule of swing dance experiences in Seattle",
   "main": "lib/server.js",
   "scripts": {
