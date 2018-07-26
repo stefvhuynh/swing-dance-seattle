@@ -4,7 +4,7 @@ export const ONE_HOUR = 3.6e6;
 export const ONE_YEAR = 3.154e10;
 export const LINK_PREFIX = "http";
 
-export const DATE_MONTH_MAP = [
+export const MONTH_MAP = [
   "Jan",
   "Feb",
   "March",
@@ -19,7 +19,7 @@ export const DATE_MONTH_MAP = [
   "Dec"
 ];
 
-export const DATE_DAY_MAP = [
+export const DAY_MAP = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -29,51 +29,18 @@ export const DATE_DAY_MAP = [
   "Saturday"
 ];
 
-export const EMPTY_TYPE = "-1";
-
-export const CATEGORY_CLASS = "1";
-export const CATEGORY_DANCE = "2";
-export const CATEGORY_EVENT = "3";
-
-export const CATEGORY_MAP = {
-  [EMPTY_TYPE]: "",
-  [CATEGORY_CLASS]: "Class",
-  [CATEGORY_DANCE]: "Dance",
-  [CATEGORY_EVENT]: "Event"
-};
-
-export const RECURRENCE_TIME_FIRST = "1";
-export const RECURRENCE_TIME_SECOND = "2";
-export const RECURRENCE_TIME_THIRD = "3";
-export const RECURRENCE_TIME_FOURTH = "4";
-export const RECURRENCE_TIME_EVERY = "5";
+export const RECURRENCE_TIME_EVERY = "EVERY";
+export const RECURRENCE_TIME_FIRST = "FIRST";
+export const RECURRENCE_TIME_SECOND = "SECOND";
+export const RECURRENCE_TIME_THIRD = "THIRD";
+export const RECURRENCE_TIME_FOURTH = "FOURTH";
 
 export const RECURRENCE_TIME_MAP = {
-  [EMPTY_TYPE]: "",
   [RECURRENCE_TIME_EVERY]: "Weekly",
   [RECURRENCE_TIME_FIRST]: "First",
   [RECURRENCE_TIME_SECOND]: "Second",
   [RECURRENCE_TIME_THIRD]: "Third",
   [RECURRENCE_TIME_FOURTH]: "Fourth"
-};
-
-export const RECURRENCE_DAY_SUNDAY = "0";
-export const RECURRENCE_DAY_MONDAY = "1";
-export const RECURRENCE_DAY_TUESDAY = "2";
-export const RECURRENCE_DAY_WEDNESDAY = "3";
-export const RECURRENCE_DAY_THURSDAY = "4";
-export const RECURRENCE_DAY_FRIDAY = "5";
-export const RECURRENCE_DAY_SATURDAY = "6";
-
-export const RECURRENCE_DAY_MAP = {
-  [EMPTY_TYPE]: "",
-  [RECURRENCE_DAY_SUNDAY]: "Sundays",
-  [RECURRENCE_DAY_MONDAY]: "Mondays",
-  [RECURRENCE_DAY_TUESDAY]: "Tuesdays",
-  [RECURRENCE_DAY_WEDNESDAY]: "Wednesdays",
-  [RECURRENCE_DAY_THURSDAY]: "Thursdays",
-  [RECURRENCE_DAY_FRIDAY]: "Fridays",
-  [RECURRENCE_DAY_SATURDAY]: "Saturdays"
 };
 
 export const DANCE_STYLE_LINDY = "1";

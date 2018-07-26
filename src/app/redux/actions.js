@@ -1,9 +1,4 @@
-import {
-  CATEGORY_CLASS,
-  CATEGORY_DANCE,
-  CATEGORY_EVENT,
-  ONE_HOUR
-} from "../constants";
+import { ONE_HOUR } from "../constants";
 
 import {
   ROUTE_CLASSES,
@@ -18,10 +13,7 @@ import {
   getDances,
   getEvents,
   logIn,
-  logOut,
-  postClass,
-  postDance,
-  postEvent
+  logOut
 } from "../api";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
@@ -34,11 +26,6 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 export const LOGOUT_SUBMITTED = "LOGOUT_SUBMITTED";
 export const LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
-
-export const EXPERIENCE_SUBMITTED = "EXPERIENCE_SUBMITTED";
-export const EXPERIENCE_SUBMISSION_SUCCEEDED =
-  "EXPERIENCE_SUBMISSION_SUCCEEDED";
-export const EXPERIENCE_SUBMISSION_FAILED = "EXPERIENCE_SUBMISSION_FAILED";
 
 export const FILTER_SELECTED = "FILTER_SELECTED";
 export const EXPERIENCES_FETCH_INITIATED = "EXPERIENCES_FETCH_INITIATED";
@@ -152,39 +139,5 @@ export const logoutSubmitted = () => {
     logOut(firebase)
       .then(() => dispatch(logoutSucceeded()))
       .catch((error) => dispatch(logoutFailed(error.message)));
-  };
-};
-
-const experienceSubmissionSucceeded = () => {
-  return { type: EXPERIENCE_SUBMISSION_SUCCEEDED };
-};
-
-const experienceSubmissionFailed = () => {
-  return { type: EXPERIENCE_SUBMISSION_FAILED };
-};
-
-export const experienceSubmitted = (details, experienceCategory) => {
-  return (dispatch, getState, firebase) => {
-    dispatch({ type: EXPERIENCE_SUBMITTED });
-
-    let postExperience;
-    switch (experienceCategory) {
-      case CATEGORY_CLASS: {
-        postExperience = postClass;
-        break;
-      }
-      case CATEGORY_DANCE: {
-        postExperience = postDance;
-        break;
-      }
-      case CATEGORY_EVENT: {
-        postExperience = postEvent;
-        break;
-      }
-    }
-
-    postExperience(firebase, details)
-      .then(() => dispatch(experienceSubmissionSucceeded()))
-      .catch(() => dispatch(experienceSubmissionFailed()));
   };
 };

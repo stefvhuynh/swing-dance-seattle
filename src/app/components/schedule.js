@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { RECURRENCE_DAY_MAP } from "../constants";
+import { DAY_MAP } from "../constants";
 import { getDateDisplay } from "../utils";
 import ExperienceList from "./experience-list";
 
@@ -21,7 +21,7 @@ const Schedule = ({
 
   const scheduleItems = days.map((day) => {
     const listHeading = isRecurringExperience
-      ? RECURRENCE_DAY_MAP[day]
+      ? `${DAY_MAP[day]}s`
       : getDateDisplay(day, { includeDay: true, includeSuffix: true });
 
     return (
