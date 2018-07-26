@@ -1,13 +1,12 @@
 import { createSelector } from "reselect";
 
 import {
+  MOBILE_BREAKPOINT,
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_HOME,
   ROUTE_EVENTS
-} from "../routes";
-
-import { MOBILE_BREAKPOINT } from "../constants";
+} from "../constants";
 import { getExperiencesByDay } from "../utils";
 
 export const selectRoute = (state) => state.router.route;

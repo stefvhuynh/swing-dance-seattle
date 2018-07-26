@@ -1,11 +1,10 @@
-import { ONE_HOUR } from "../constants";
-
 import {
+  ONE_HOUR,
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
   ROUTE_HOME
-} from "../routes";
+} from "../constants";
 
 import {
   getAuthorizedUser,

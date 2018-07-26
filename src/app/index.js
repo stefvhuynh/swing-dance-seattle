@@ -5,8 +5,11 @@ import { Fragment } from "redux-little-router";
 import debounce from "debounce";
 import window from "global/window";
 
-import { ROUTE_ADMIN, ROUTE_HOME } from "./routes";
-import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
+import {
+  ROUTE_ADMIN,
+  ROUTE_HOME,
+  WINDOW_RESIZE_DEBOUNCE_TIME
+} from "./constants";
 import { windowResized } from "./redux/actions";
 import AdminPage from "./pages/admin-page";
 import HomePage from "./pages/home-page";

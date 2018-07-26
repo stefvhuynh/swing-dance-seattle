@@ -1,8 +1,10 @@
-export const ROUTE_HOME = "/";
-export const ROUTE_CLASSES = "/classes";
-export const ROUTE_DANCES = "/dances";
-export const ROUTE_EVENTS = "/events";
-export const ROUTE_ADMIN = "/admin";
+import {
+  ROUTE_ADMIN,
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_HOME
+} from "./constants";
 
 export default {
   [ROUTE_HOME]: {

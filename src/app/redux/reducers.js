@@ -19,7 +19,7 @@ import {
   ROUTE_DANCES,
   ROUTE_EVENTS,
   ROUTE_HOME
-} from "../routes";
+} from "../constants";
 
 const initialState = {
   auth: {
