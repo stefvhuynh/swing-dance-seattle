@@ -1,10 +1,14 @@
-export const MOBILE_BREAKPOINT = 768;
-export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
-export const ONE_HOUR = 3.6e6;
-export const ONE_YEAR = 3.154e10;
-export const LINK_PREFIX = "http";
+export const ROUTE_HOME = "/";
+export const ROUTE_CLASSES = "/classes";
+export const ROUTE_DANCES = "/dances";
+export const ROUTE_EVENTS = "/events";
+export const ROUTE_ADMIN = "/admin";
 
-export const DATE_MONTH_MAP = [
+export const API_PATH_CLASSES = "/classes";
+export const API_PATH_DANCES = "/dances";
+export const API_PATH_EVENTS = "/events";
+
+export const MONTH_MAP = [
   "Jan",
   "Feb",
   "March",
@@ -19,7 +23,7 @@ export const DATE_MONTH_MAP = [
   "Dec"
 ];
 
-export const DATE_DAY_MAP = [
+export const DAY_MAP = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -29,27 +33,13 @@ export const DATE_DAY_MAP = [
   "Saturday"
 ];
 
-export const EMPTY_TYPE = "-1";
-
-export const CATEGORY_CLASS = "1";
-export const CATEGORY_DANCE = "2";
-export const CATEGORY_EVENT = "3";
-
-export const CATEGORY_MAP = {
-  [EMPTY_TYPE]: "",
-  [CATEGORY_CLASS]: "Class",
-  [CATEGORY_DANCE]: "Dance",
-  [CATEGORY_EVENT]: "Event"
-};
-
-export const RECURRENCE_TIME_FIRST = "1";
-export const RECURRENCE_TIME_SECOND = "2";
-export const RECURRENCE_TIME_THIRD = "3";
-export const RECURRENCE_TIME_FOURTH = "4";
-export const RECURRENCE_TIME_EVERY = "5";
+export const RECURRENCE_TIME_EVERY = "EVERY";
+export const RECURRENCE_TIME_FIRST = "FIRST";
+export const RECURRENCE_TIME_SECOND = "SECOND";
+export const RECURRENCE_TIME_THIRD = "THIRD";
+export const RECURRENCE_TIME_FOURTH = "FOURTH";
 
 export const RECURRENCE_TIME_MAP = {
-  [EMPTY_TYPE]: "",
   [RECURRENCE_TIME_EVERY]: "Weekly",
   [RECURRENCE_TIME_FIRST]: "First",
   [RECURRENCE_TIME_SECOND]: "Second",
@@ -57,30 +47,11 @@ export const RECURRENCE_TIME_MAP = {
   [RECURRENCE_TIME_FOURTH]: "Fourth"
 };
 
-export const RECURRENCE_DAY_SUNDAY = "0";
-export const RECURRENCE_DAY_MONDAY = "1";
-export const RECURRENCE_DAY_TUESDAY = "2";
-export const RECURRENCE_DAY_WEDNESDAY = "3";
-export const RECURRENCE_DAY_THURSDAY = "4";
-export const RECURRENCE_DAY_FRIDAY = "5";
-export const RECURRENCE_DAY_SATURDAY = "6";
-
-export const RECURRENCE_DAY_MAP = {
-  [EMPTY_TYPE]: "",
-  [RECURRENCE_DAY_SUNDAY]: "Sundays",
-  [RECURRENCE_DAY_MONDAY]: "Mondays",
-  [RECURRENCE_DAY_TUESDAY]: "Tuesdays",
-  [RECURRENCE_DAY_WEDNESDAY]: "Wednesdays",
-  [RECURRENCE_DAY_THURSDAY]: "Thursdays",
-  [RECURRENCE_DAY_FRIDAY]: "Fridays",
-  [RECURRENCE_DAY_SATURDAY]: "Saturdays"
-};
-
-export const DANCE_STYLE_LINDY = "1";
-export const DANCE_STYLE_BALBOA = "2";
-export const DANCE_STYLE_BLUES = "3";
-export const DANCE_STYLE_SHAG = "4";
-export const DANCE_STYLE_JAZZ = "5";
+export const DANCE_STYLE_LINDY = "LINDY";
+export const DANCE_STYLE_BALBOA = "BALBOA";
+export const DANCE_STYLE_BLUES = "BLUES";
+export const DANCE_STYLE_SHAG = "SHAG";
+export const DANCE_STYLE_JAZZ = "JAZZ";
 
 export const DANCE_STYLE_MAP = {
   [DANCE_STYLE_LINDY]: "Lindy Hop",
@@ -89,3 +60,9 @@ export const DANCE_STYLE_MAP = {
   [DANCE_STYLE_SHAG]: "Shag",
   [DANCE_STYLE_JAZZ]: "Solo Jazz"
 };
+
+export const MOBILE_BREAKPOINT = 768;
+export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
+export const ONE_HOUR = 3.6e6;
+export const ONE_YEAR = 3.154e10;
+export const LINK_PREFIX = "http";

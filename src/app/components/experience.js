@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import {
   DANCE_STYLE_MAP,
-  RECURRENCE_DAY_MAP,
+  DAY_MAP,
   RECURRENCE_TIME_EVERY,
   RECURRENCE_TIME_MAP
 } from "../constants";
@@ -26,7 +26,7 @@ class Experience extends React.Component {
     name: PropTypes.string,
     neighborhood: PropTypes.string,
     organization: PropTypes.string,
-    recurrenceDay: PropTypes.string,
+    recurrenceDay: PropTypes.number,
     recurrenceTime: PropTypes.string,
     time: PropTypes.string,
     venue: PropTypes.string,
@@ -104,7 +104,7 @@ class Experience extends React.Component {
                 {RECURRENCE_TIME_MAP[recurrenceTime]}
                 {
                   recurrenceTime !== RECURRENCE_TIME_EVERY
-                    && ` ${RECURRENCE_DAY_MAP[recurrenceDay]}`
+                    && ` ${DAY_MAP[recurrenceDay]}`
                 }
               </div>
             </Conditional>

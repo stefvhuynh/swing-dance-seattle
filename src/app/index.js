@@ -5,12 +5,15 @@ import { Fragment } from "redux-little-router";
 import debounce from "debounce";
 import window from "global/window";
 
-import { ROUTE_ADMIN, ROUTE_HOME } from "./routes";
-import { WINDOW_RESIZE_DEBOUNCE_TIME } from "./constants";
+import {
+  ROUTE_ADMIN,
+  ROUTE_HOME,
+  WINDOW_RESIZE_DEBOUNCE_TIME
+} from "./constants";
 import { windowResized } from "./redux/actions";
 import AdminPage from "./pages/admin-page";
 import HomePage from "./pages/home-page";
-import Icon from "./components/icon";
+import Footer from "./components/footer";
 
 class App extends React.Component {
   static propTypes = {
@@ -53,22 +56,7 @@ class App extends React.Component {
           </div>
         </Fragment>
 
-        <div className="bg-dark-grey">
-          <div
-            className={
-              "no-shrink flex justify-space-between align-center max-width " +
-                "margin-auto pd-t-lg pd-b-lg pd-l-md pd-r-md font-white"
-            }
-          >
-            <div className="lines-spaced">
-              <div className="font-emphasis font-sm">Seattle Swing Dance</div>
-              <div className="font-xs">revivalrhythmswing@gmail.com</div>
-            </div>
-            <a href="#" className="font-white font-xs">
-              Back to top <Icon name="arrowUp"/>
-            </a>
-          </div>
-        </div>
+        <Footer/>
       </div>
     );
   }

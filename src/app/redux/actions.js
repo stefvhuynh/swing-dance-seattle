@@ -1,17 +1,10 @@
 import {
-  CATEGORY_CLASS,
-  CATEGORY_DANCE,
-  CATEGORY_EVENT,
-  CATEGORY_WORKSHOP,
-  ONE_HOUR
-} from "../constants";
-
-import {
+  ONE_HOUR,
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
   ROUTE_HOME
-} from "../routes";
+} from "../constants";
 
 import {
   getAuthorizedUser,
@@ -19,16 +12,11 @@ import {
   getDances,
   getEvents,
   logIn,
-  logOut,
-  postClass,
-  postDance,
-  postEvent,
-  postWorkshop
+  logOut
 } from "../api";
 
 export const APP_INITIALIZED = "APP_INITIALIZED";
 export const WINDOW_RESIZED = "WINDOW_RESIZED";
-export const NAV_BAR_TOGGLED = "NAV_BAR_TOGGLED";
 
 export const LOGIN_SUBMITTED = "LOGIN_SUBMITTED";
 export const LOGIN_SUCCEEDED = "LOGIN_SUCCEEDED";
@@ -37,11 +25,6 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 export const LOGOUT_SUBMITTED = "LOGOUT_SUBMITTED";
 export const LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
-
-export const EXPERIENCE_SUBMITTED = "EXPERIENCE_SUBMITTED";
-export const EXPERIENCE_SUBMISSION_SUCCEEDED =
-  "EXPERIENCE_SUBMISSION_SUCCEEDED";
-export const EXPERIENCE_SUBMISSION_FAILED = "EXPERIENCE_SUBMISSION_FAILED";
 
 export const FILTER_SELECTED = "FILTER_SELECTED";
 export const EXPERIENCES_FETCH_INITIATED = "EXPERIENCES_FETCH_INITIATED";
@@ -122,10 +105,6 @@ export const windowResized = (width) => {
   return { type: WINDOW_RESIZED, payload: { width } };
 };
 
-export const navBarToggled = () => {
-  return { type: NAV_BAR_TOGGLED };
-};
-
 const loginSucceeded = () => {
   return { type: LOGIN_SUCCEEDED };
 };
@@ -159,43 +138,5 @@ export const logoutSubmitted = () => {
     logOut(firebase)
       .then(() => dispatch(logoutSucceeded()))
       .catch((error) => dispatch(logoutFailed(error.message)));
-  };
-};
-
-const experienceSubmissionSucceeded = () => {
-  return { type: EXPERIENCE_SUBMISSION_SUCCEEDED };
-};
-
-const experienceSubmissionFailed = () => {
-  return { type: EXPERIENCE_SUBMISSION_FAILED };
-};
-
-export const experienceSubmitted = (details, experienceCategory) => {
-  return (dispatch, getState, firebase) => {
-    dispatch({ type: EXPERIENCE_SUBMITTED });
-
-    let postExperience;
-    switch (experienceCategory) {
-      case CATEGORY_CLASS: {
-        postExperience = postClass;
-        break;
-      }
-      case CATEGORY_DANCE: {
-        postExperience = postDance;
-        break;
-      }
-      case CATEGORY_EVENT: {
-        postExperience = postEvent;
-        break;
-      }
-      case CATEGORY_WORKSHOP: {
-        postExperience = postWorkshop;
-        break;
-      }
-    }
-
-    postExperience(firebase, details)
-      .then(() => dispatch(experienceSubmissionSucceeded()))
-      .catch(() => dispatch(experienceSubmissionFailed()));
   };
 };

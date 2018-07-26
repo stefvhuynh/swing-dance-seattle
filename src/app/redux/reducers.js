@@ -11,7 +11,6 @@ import {
   LOGOUT_FAILED,
   LOGOUT_SUBMITTED,
   LOGOUT_SUCCEEDED,
-  NAV_BAR_TOGGLED,
   WINDOW_RESIZED
 } from "./actions";
 
@@ -20,7 +19,7 @@ import {
   ROUTE_DANCES,
   ROUTE_EVENTS,
   ROUTE_HOME
-} from "../routes";
+} from "../constants";
 
 const initialState = {
   auth: {
@@ -43,7 +42,6 @@ const initialState = {
   },
   ui: {
     isAppInitialized: false,
-    isNavBarOpen: false,
     windowWidth: 0
   }
 };
@@ -152,10 +150,6 @@ export const ui = (state = initialState.ui, action) => {
 
     case WINDOW_RESIZED: {
       return { ...state, windowWidth: payload.width };
-    }
-
-    case NAV_BAR_TOGGLED: {
-      return { ...state, isNavBarOpen: !state.isNavBarOpen };
     }
 
     default: {

@@ -1,9 +1,7 @@
 import {
-  CATEGORY_CLASS,
-  CATEGORY_DANCE,
-  DATE_DAY_MAP,
-  DATE_MONTH_MAP,
-  LINK_PREFIX
+  DAY_MAP,
+  LINK_PREFIX,
+  MONTH_MAP
 } from "./constants";
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {
@@ -53,9 +51,9 @@ export const getDateDisplay = (
   const numericDate = dateInstance.getDate();
   const dateSuffix = includeSuffix ? getNumericDateSuffix(numericDate) : "";
   const display =
-    `${DATE_MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
+    `${MONTH_MAP[dateInstance.getMonth()]} ${numericDate}${dateSuffix}`;
   return includeDay
-    ? `${DATE_DAY_MAP[dateInstance.getDay()]}, ${display}`
+    ? `${DAY_MAP[dateInstance.getDay()]}, ${display}`
     : display;
 };
 
@@ -66,10 +64,6 @@ export const isValidTime = (time) => {
 
 export const getValidLink = (link) => {
   return link.startsWith(LINK_PREFIX) ? link : `${LINK_PREFIX}://${link}`;
-};
-
-export const isRecurringCategory = (category) => {
-  return category === CATEGORY_CLASS || category === CATEGORY_DANCE;
 };
 
 /* eslint-disable no-magic-numbers */
