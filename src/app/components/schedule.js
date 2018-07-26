@@ -13,10 +13,11 @@ const Schedule = ({
   isRecurringExperience
 }) => {
   let days = Object.keys(experiencesByDay).sort();
+
   // If first day is Sunday, move it to the end of the array.
-  days = isRecurringExperience && days[0] === "0"
-    ? [...days.slice(1), ...days.slice(0, 1)]
-    : days;
+  if (isRecurringExperience && days[0] === "0") {
+    days = [...days.slice(1), ...days.slice(0, 1)];
+  }
 
   const scheduleItems = days.map((day) => {
     const listHeading = isRecurringExperience
