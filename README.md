@@ -7,7 +7,7 @@ a listing of swing-era classes, dances, and events in the region.
 Development
 -----------
 
-Clone this repo and run
+Fork this repo, clone it locally, and run
 ```
 npm install
 ```
@@ -77,5 +77,7 @@ Contributing
 ------------
 
 You can take a look at the issues tab for any outstanding features or bugs. If
-you find a bug or would like to discuss a new feature, create an issue to discuss
-it. Thanks and happy coding!
+you find a bug or would like to discuss a new feature, create an issue to
+discuss it. When you have a feature or bug fix ready, create a PR in your fork
+against this repo. It will be reviewed and merged when ready! Thanks and happy
+coding!
