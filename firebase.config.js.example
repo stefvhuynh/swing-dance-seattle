@@ -1,0 +1,19 @@
+const qaConfig = {
+  config: {
+    // Copy and paste your config here.
+  },
+  key: "qa"
+};
+
+const productionConfig = {
+  config: {
+    // Copy and paste your config here.
+  },
+  key: "production"
+};
+
+const config = process.env.NODE_ENV === "production"
+  ? productionConfig
+  : qaConfig;
+
+module.exports = config;

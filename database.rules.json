@@ -2,15 +2,8 @@
   "rules": {
     ".read": true,
     ".write": "auth != null",
-    "classes": {
-      ".validate": "newData.hasChildren(['approved', 'id', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
-    },
-    "dances": {
-      ".validate": "newData.hasChildren(['approved', 'id', 'link', 'name', 'neighborhood', 'recurrenceDay', 'recurrenceTime', 'time', 'venue'])"
-    },
     "events": {
-      ".indexOn": ["dateEnd"],
-      ".validate": "newData.hasChildren(['approved', 'dateEnd', 'dateStart', 'id', 'link', 'name', 'neighborhood', 'time', 'venue'])"
+      ".indexOn": ["dateEnd"]
     }
   }
 }
