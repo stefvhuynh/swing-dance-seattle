@@ -99,12 +99,14 @@ class Experience extends React.Component {
           </div>
 
           <div className="text-right mg-l-lg">
-            <Conditional condition={recurrenceDay && recurrenceTime}>
+            <Conditional
+              condition={recurrenceDay !== undefined && recurrenceTime}
+            >
               <div>
                 {RECURRENCE_TIME_MAP[recurrenceTime]}
                 {
                   recurrenceTime !== RECURRENCE_TIME_EVERY
-                    && ` ${DAY_MAP[recurrenceDay]}`
+                    && ` ${DAY_MAP[recurrenceDay]}s`
                 }
               </div>
             </Conditional>
