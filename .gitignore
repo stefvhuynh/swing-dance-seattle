@@ -3,5 +3,6 @@ public/
 lib/
 webpack-manifest.json
 firebase.config.js
+.firebaserc
 firebase-debug.log
 cloud-functions-emulator.log
