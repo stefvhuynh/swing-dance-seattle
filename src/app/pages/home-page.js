@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import classNames from "classnames";
 
 import { selectIsFetchingExperiences } from "../redux/selectors";
 import Filter from "../containers/filter";
@@ -46,7 +47,15 @@ class HomePage extends React.Component {
               onClick={this.handleInfoClick}
             >
               <Icon name={showInfo ? "caretDown" : "caretRight"}/>
-              <span className="mg-l-xxs">More info</span>
+              <span
+                className={
+                  classNames("mg-l-xxs hover-underline", {
+                    underline: showInfo
+                  })
+                }
+              >
+                More info
+              </span>
             </div>
 
             {showInfo && (
