@@ -75,8 +75,8 @@ class Experience extends React.Component {
         onMouseLeave={this.handleMouseLeave}
         target="_blank"
       >
-        <div className="flex justify-space-between align-center mg-b-xxs">
-          <div>
+        <div className="flex align-center mg-b-xxs">
+          <div className="basis-80">
             <Conditional condition={neighborhood}>
               <div className="bold uppercase font-xs font-grey">
                 {neighborhood}
@@ -98,7 +98,7 @@ class Experience extends React.Component {
             </Conditional>
           </div>
 
-          <div className="text-right mg-l-lg">
+          <div className="text-right basis-20">
             <Conditional
               condition={recurrenceDay !== undefined && recurrenceTime}
             >

@@ -22,7 +22,7 @@ class Filter extends React.Component {
 
     return classNames("flex justify-center font-white font-md pointer", {
       "border-bottom-thick border-off-white bold": selected,
-      "transparent": !selected,
+      "opacity-6 hover-opacity-8": !selected,
       "pd-xxs": isMobile,
       "pd-sm": !isMobile
     });

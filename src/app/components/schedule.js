@@ -35,12 +35,12 @@ const Schedule = ({
         <div
           className={classNames("bold font-grey pd-md", {
             "uppercase": isRecurringExperience,
-            "basis-fifth": !isMobile
+            "basis-20": !isMobile
           })}
         >
           {listHeading}
         </div>
-        <div className="fill">
+        <div className="basis-80">
           <ExperienceList experiences={experiencesByDay[day]}/>
         </div>
       </li>
