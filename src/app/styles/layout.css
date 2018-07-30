@@ -13,10 +13,8 @@
 .flex { display: flex }
 .row { flex-direction: row }
 .column { flex-direction: column }
-.wrap { flex-wrap: wrap }
 .justify-center { justify-content: center }
 .justify-space-between { justify-content: space-between }
-.justify-space-evenly { justify-content: space-evenly }
 .align-center { align-items: center }
 
 .no-shrink { flex-shrink: 0 }
