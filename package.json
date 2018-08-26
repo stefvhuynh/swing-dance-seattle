@@ -15,7 +15,6 @@
     "deploy:qa": "npm run build:server && npm run build:client:qa && firebase use qa && firebase deploy",
     "deploy:prod": "npm run build:server && npm run build:client:prod && firebase use production && firebase deploy",
     "seed:qa": "firebase use qa && firebase database:set / seed.json",
-    "seed:prod": "firebase use production && firebase database:set / seed.json",
     "lint": "eslint src",
     "precommit": "npm run lint"
   },
