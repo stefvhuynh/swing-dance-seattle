@@ -17,7 +17,7 @@ const Conditional = ({ children, condition }) => {
 
 class Experience extends React.Component {
   static propTypes = {
-    danceStyles: PropTypes.array,
+    danceStyles: PropTypes.oneOf([PropTypes.string, PropTypes.array]),
     dateEnd: PropTypes.string,
     dateStart: PropTypes.string,
     hasDropInClass: PropTypes.bool,
@@ -135,12 +135,14 @@ class Experience extends React.Component {
             <li>&ndash; Live music!</li>
           </Conditional>
 
-          <Conditional condition={danceStyles.length > 0}>
+          <Conditional condition={danceStyles && danceStyles.length > 0}>
             <li>&ndash;&nbsp;
               {
-                danceStyles
-                  .map((danceStyle) => DANCE_STYLE_MAP[danceStyle])
-                  .join(", ")
+                Array.isArray(danceStyles)
+                  ? danceStyles
+                    .map((danceStyle) => DANCE_STYLE_MAP[danceStyle])
+                    .join(", ")
+                  : DANCE_STYLE_MAP[danceStyles]
               }
             </li>
           </Conditional>
