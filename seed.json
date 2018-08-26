@@ -8,7 +8,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 0,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Century Ballroom"
     },
@@ -20,7 +20,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 1,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "6:30pm",
       "venue": "Century Ballroom"
     },
@@ -32,7 +32,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 3,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Century Ballroom"
     },
@@ -44,7 +44,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "HepCat Productions",
       "recurrenceDay": 4,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Russian Community Center"
     },
@@ -56,7 +56,7 @@
       "neighborhood": "Ballard",
       "organization": "Savoy Swing Club",
       "recurrenceDay": 1,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Leif Erikson Lodge"
     },
@@ -68,7 +68,7 @@
       "neighborhood": "Redmond",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 5,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "6:30pm",
       "venue": "Aria Ballroom"
     },
@@ -80,7 +80,7 @@
       "neighborhood": "Bellevue",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 2,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "8:00pm",
       "venue": "Crescendo Dance Academy"
     },
@@ -92,7 +92,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 0,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "12:00pm",
       "venue": "Lowdown Ballroom"
     },
@@ -104,7 +104,7 @@
       "neighborhood": "Bellevue",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 3,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Crescendo Dance Academy"
     },
@@ -116,7 +116,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 4,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Salsa Con Todo"
     },
@@ -128,7 +128,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 4,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "8:30pm",
       "venue": "Salsa Con Todo"
     },
@@ -140,7 +140,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 0,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "6:00pm",
       "venue": "Salsa Con Todo"
     },
@@ -152,7 +152,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 6,
-      "recurrenceTime": "THIRD",
+      "recurrenceTimes": ["THIRD"],
       "time": "4:00pm",
       "venue": "Salsa Con Todo"
     }
@@ -168,7 +168,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 0,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "9:00pm",
       "venue": "Century Ballroom"
     },
@@ -182,7 +182,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 3,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "9:00pm",
       "venue": "Century Ballroom"
     },
@@ -196,7 +196,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Century Ballroom",
       "recurrenceDay": 6,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:30pm",
       "venue": "Century Ballroom"
     },
@@ -210,7 +210,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "HepCat Productions",
       "recurrenceDay": 4,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "9:00pm",
       "venue": "Russian Community Center"
     },
@@ -224,7 +224,7 @@
       "neighborhood": "Queen Anne",
       "organization": "Savoy Swing Club",
       "recurrenceDay": 1,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "8:00pm",
       "venue": "Clubhouse of Queen Anne"
     },
@@ -238,7 +238,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Savoy Swing Club",
       "recurrenceDay": 2,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "8:45pm",
       "venue": "Dance Underground"
     },
@@ -252,7 +252,7 @@
       "neighborhood": "Capitol Hill",
       "organization": "Savoy Swing Club",
       "recurrenceDay": 5,
-      "recurrenceTime": "FIRST",
+      "recurrenceTimes": ["FIRST"],
       "time": "8:00pm",
       "venue": "Dance Underground"
     },
@@ -266,7 +266,7 @@
       "neighborhood": "Redmond",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 5,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "8:30pm",
       "venue": "Aria Ballroom"
     },
@@ -280,7 +280,7 @@
       "neighborhood": "Greenwood",
       "organization": "Syncopation Foundation",
       "recurrenceDay": 2,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:30pm",
       "venue": "Greenwood Masonic Lodge"
     },
@@ -294,7 +294,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 6,
-      "recurrenceTime": "THIRD",
+      "recurrenceTimes": ["FIRST", "THIRD"],
       "time": "8:00pm",
       "venue": "Salsa Con Todo"
     },
@@ -308,7 +308,7 @@
       "neighborhood": "Fremont",
       "organization": "Swing Dance SCT",
       "recurrenceDay": 0,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["EVERY"],
       "time": "7:00pm",
       "venue": "Salsa Con Todo"
     },
@@ -322,7 +322,7 @@
       "neighborhood": "Downtown",
       "organization": "Hot Rhythm Club",
       "recurrenceDay": 1,
-      "recurrenceTime": "FIRST",
+      "recurrenceTimes": ["FIRST"],
       "time": "8:00pm",
       "venue": "Smith Tower"
     },
@@ -336,7 +336,7 @@
       "neighborhood": "Greenwood",
       "organization": "Alibi Blues",
       "recurrenceDay": 2,
-      "recurrenceTime": "EVERY",
+      "recurrenceTimes": ["FIRST", "THIRD"],
       "time": "8:30pm",
       "venue": "Alibi Room"
     }
