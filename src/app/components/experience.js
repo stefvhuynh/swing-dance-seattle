@@ -11,10 +11,6 @@ import {
 
 import { getDateDisplay, getValidLink } from "../utils";
 
-const Conditional = ({ children, condition }) => {
-  return condition ? children : null;
-};
-
 class Experience extends React.Component {
   static propTypes = {
     danceStyles: PropTypes.array,
@@ -27,7 +23,8 @@ class Experience extends React.Component {
     neighborhood: PropTypes.string,
     organization: PropTypes.string,
     recurrenceDay: PropTypes.number,
-    recurrenceTime: PropTypes.string,
+    // recurrenceTime: PropTypes.string,
+    recurrenceTimes: PropTypes.array,
     time: PropTypes.string,
     venue: PropTypes.string,
     weekendEvent: PropTypes.bool
@@ -59,7 +56,7 @@ class Experience extends React.Component {
       neighborhood,
       organization,
       recurrenceDay,
-      recurrenceTime,
+      recurrenceTimes,
       time,
       venue,
       weekendEvent
@@ -76,12 +73,12 @@ class Experience extends React.Component {
         target="_blank"
       >
         <div className="flex align-center mg-b-xxs">
-          <div className="basis-80">
-            <Conditional condition={neighborhood}>
+          <div className="basis-70">
+            {neighborhood && (
               <div className="bold uppercase font-xs font-grey">
                 {neighborhood}
               </div>
-            </Conditional>
+            )}
 
             <h3
               className={classNames("bold font-lg", { underline: isHovering })}
@@ -89,53 +86,62 @@ class Experience extends React.Component {
               {name}
             </h3>
 
-            <Conditional condition={organization}>
+            {organization && (
               <h2 className="font-sm font-grey">{organization}</h2>
-            </Conditional>
+            )}
 
-            <Conditional condition={venue && venue !== organization}>
+            {venue && venue !== organization && (
               <div className="font-sm font-grey">@ {venue}</div>
-            </Conditional>
+            )}
           </div>
 
-          <div className="text-right basis-20">
-            <Conditional
-              condition={recurrenceDay !== undefined && recurrenceTime}
-            >
-              <div>
-                {RECURRENCE_TIME_MAP[recurrenceTime]}
-                {
-                  recurrenceTime !== RECURRENCE_TIME_EVERY
-                    && ` ${DAY_MAP[recurrenceDay]}s`
-                }
-              </div>
-            </Conditional>
+          <div className="text-right basis-30">
+            {
+              recurrenceDay !== undefined
+                && recurrenceTimes
+                && recurrenceTimes.length > 0
+                && (
+                  <div>
+                    {
+                      recurrenceTimes.map((recurrenceTime, index) => {
+                        if (index === recurrenceTimes.length - 1) {
+                          return RECURRENCE_TIME_MAP[recurrenceTime];
+                        // eslint-disable-next-line no-magic-numbers
+                        } else if (index === recurrenceTimes.length - 2) {
+                          return `${RECURRENCE_TIME_MAP[recurrenceTime]} & `;
+                        } else {
+                          return `${RECURRENCE_TIME_MAP[recurrenceTime]}, `;
+                        }
+                      })
+                    }
+                    {
+                      recurrenceTimes[0] !== RECURRENCE_TIME_EVERY
+                        && ` ${DAY_MAP[recurrenceDay]}s`
+                    }
+                  </div>
+                )
+            }
 
-            <Conditional condition={dateStart}>
+            {dateStart && (
               <div>
                 {getDateDisplay(dateStart)}
-                <Conditional condition={dateEnd !== dateStart}>
+                {dateEnd !== dateStart && (
                   <span> - <span className="no-wrap">
                     {getDateDisplay(dateEnd)}
                   </span></span>
-                </Conditional>
+                )}
               </div>
-            </Conditional>
+            )}
 
-            <Conditional condition={time}><div>{time}</div></Conditional>
+            {time && <div>{time}</div>}
           </div>
         </div>
 
         <ul className="font-sm italic font-grey">
-          <Conditional condition={weekendEvent}>
-            <li>&ndash; Weekend event</li>
-          </Conditional>
+          {weekendEvent && <li>&ndash; Weekend event</li>}
+          {hasLiveMusic && <li>&ndash; Live music!</li>}
 
-          <Conditional condition={hasLiveMusic}>
-            <li>&ndash; Live music!</li>
-          </Conditional>
-
-          <Conditional condition={danceStyles.length > 0}>
+          {danceStyles && danceStyles.length > 0 && (
             <li>&ndash;&nbsp;
               {
                 danceStyles
@@ -143,11 +149,9 @@ class Experience extends React.Component {
                   .join(", ")
               }
             </li>
-          </Conditional>
+          )}
 
-          <Conditional condition={hasDropInClass}>
-            <li>&ndash; Drop-in class</li>
-          </Conditional>
+          {hasDropInClass && <li>&ndash; Drop-in class</li>}
         </ul>
       </a>
     );
