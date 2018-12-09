@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
 import { fetchClasses } from "../api";
 import { serializeClasses } from "../serializers";
@@ -39,6 +40,10 @@ const ClassesProvider = ({ children }) => {
       {children}
     </ClassesContext.Provider>
   );
+};
+
+ClassesProvider.propTypes = {
+  children: PropTypes.node
 };
 
 export default ClassesProvider;

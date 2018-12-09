@@ -1,7 +1,6 @@
 const arrayType = (array) => array || [];
 const stringType = (string) => string || "";
 const numberType = (number) => number || -1;
-const booleanType = (boolean) => boolean || false;
 
 export const serializeClasses = (classes) =>
   Object.values(classes).map((danceClass) => ({

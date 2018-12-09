@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const defaultScreenWidth = 0;
 
@@ -21,6 +22,10 @@ const ScreenWidthProvider = ({ children }) => {
       {children}
     </ScreenWidthContext.Provider>
   );
+};
+
+ScreenWidthProvider.propTypes = {
+  children: PropTypes.node
 };
 
 export default ScreenWidthProvider;

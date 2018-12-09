@@ -3,7 +3,7 @@ import React, { Fragment, useContext, useEffect } from "react";
 import { ClassesContext } from "../providers/classes";
 
 const Classes = () => {
-  const { classes, fetched, fetching, getClasses } = useContext(ClassesContext);
+  const { fetched, fetching, getClasses } = useContext(ClassesContext);
 
   useEffect(() => {
     getClasses();
