@@ -1,69 +1,62 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Fragment } from "redux-little-router";
+import React, { Fragment, useContext, useLayoutEffect } from "react";
+import { Route, Switch } from "react-router-dom";
 import debounce from "debounce";
-import window from "global/window";
+import isNode from "detect-node";
 
 import {
-  ROUTE_ADMIN,
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
   ROUTE_HOME,
   WINDOW_RESIZE_DEBOUNCE_TIME
 } from "./constants";
-import { windowResized } from "./redux/actions";
-import AdminPage from "./pages/admin-page";
-import HomePage from "./pages/home-page";
-import Footer from "./components/footer";
+import Providers from "./providers";
+import { ScreenWidthContext } from "./providers/screen-width";
+import Header from "./components/header";
+import NavBar from "./components/nav-bar";
+import Classes from "./pages/classes";
+import Dances from "./pages/dances";
+import Events from "./pages/events";
 
-class App extends React.Component {
-  static propTypes = {
-    onAppMount: PropTypes.func,
-    onWindowResize: PropTypes.func
-  };
+const App = () => {
+  const { setScreenWidth } = useContext(ScreenWidthContext);
 
-  componentDidMount() {
-    window.addEventListener("resize", this.handleWindowResize);
-  }
-
-  componentWillUnmount() {
-    this.handleWindowResize.clear();
-    window.removeEventListener("resize", this.handleWindowResize);
-  }
-
-  handleWindowResize = debounce(
-    (event) => {
-      const { onWindowResize } = this.props;
-      if (onWindowResize) {
-        onWindowResize(event.currentTarget.innerWidth);
-      }
-    },
+  const handleWindowResize = debounce(
+    (event) => setScreenWidth(event.currentTarget.innerWidth),
     WINDOW_RESIZE_DEBOUNCE_TIME
   );
 
-  onHomePage = (location) => {
-    return location.route !== ROUTE_ADMIN;
-  };
+  if (!isNode) {
+    useLayoutEffect(() => {
+      setScreenWidth(window.innerWidth);
+      window.addEventListener("resize", handleWindowResize);
 
-  render() {
-    return (
-      <div className="full-height flex column justify-space-between">
-        <Fragment forRoute={ROUTE_HOME}>
-          <div>
-            <Fragment withConditions={this.onHomePage}>
-              <HomePage/>
-            </Fragment>
-            <Fragment forRoute={ROUTE_ADMIN}><AdminPage/></Fragment>
-          </div>
-        </Fragment>
-
-        <Footer/>
-      </div>
-    );
+      return () => {
+        handleWindowResize.clear();
+        window.removeEventListener("resize", handleWindowResize);
+      };
+    }, []);
   }
-}
 
-const mapDispatchToProps = (dispatch) => ({
-  onWindowResize: (width) => dispatch(windowResized(width))
-});
+  return (
+    <Fragment>
+      <Header />
+      <NavBar />
 
-export default connect(null, mapDispatchToProps)(App);
+      <Switch>
+        <Route path={ROUTE_HOME} exact component={Classes} />
+        <Route path={ROUTE_CLASSES} component={Classes} />
+        <Route path={ROUTE_DANCES} component={Dances} />
+        <Route path={ROUTE_EVENTS} component={Events} />
+      </Switch>
+    </Fragment>
+  );
+};
+
+export default () => {
+  return (
+    <Providers>
+      <App />
+    </Providers>
+  );
+};

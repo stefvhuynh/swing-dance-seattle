@@ -6,3 +6,4 @@ firebase.config.js
 .firebaserc
 firebase-debug.log
 cloud-functions-emulator.log
+.DS_Store

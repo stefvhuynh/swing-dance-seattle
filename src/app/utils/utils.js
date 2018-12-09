@@ -2,7 +2,7 @@ import {
   DAY_MAP,
   LINK_PREFIX,
   MONTH_MAP
-} from "./constants";
+} from "../constants";
 
 export const convertMapToList = (map, keyName = "key", valueName = "value") => {
   return Object.keys(map).map((key) => ({

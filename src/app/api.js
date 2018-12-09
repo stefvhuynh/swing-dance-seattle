@@ -1,3 +1,6 @@
+import firebase from "firebase";
+import firebaseConfig from "../../firebase.config";
+
 import {
   API_PATH_CLASSES,
   API_PATH_DANCES,
@@ -5,26 +8,14 @@ import {
   ONE_YEAR
 } from "./constants";
 
-export const logIn = (firebase, username, password) => {
-  return firebase.auth().signInWithEmailAndPassword(username, password);
-};
+const firebaseInstance = firebase.initializeApp(
+  firebaseConfig.config,
+  firebaseConfig.key
+);
 
-export const logOut = (firebase) => {
-  return firebase.auth().signOut();
-};
-
-export const getAuthorizedUser = (firebase) => {
-  return new Promise((resolve) => {
-    const removeListener = firebase.auth().onAuthStateChanged((user) => {
-      resolve(user);
-      removeListener();
-    });
-  });
-};
-
-export const getRecurringExperiences = (apiEndpoint, firebase) => {
-  return firebase.database()
-    .ref(apiEndpoint)
+export const fetchRecurringExperiences = (apiPath) => {
+  return firebaseInstance.database()
+    .ref(apiPath)
     .once("value")
     .then((snapshot) => {
       const value = snapshot.val();
@@ -32,11 +23,11 @@ export const getRecurringExperiences = (apiEndpoint, firebase) => {
     });
 };
 
-export const getNonrecurringExperiences = (apiPath, firebase) => {
+export const fetchNonrecurringExperiences = (apiPath) => {
   const now = (new Date()).toISOString();
   const oneYearLater = (new Date(Date.now() + ONE_YEAR)).toISOString();
 
-  return firebase.database()
+  return firebaseInstance.database()
     .ref(apiPath)
     .orderByChild("dateEnd")
     .startAt(now)
@@ -48,6 +39,6 @@ export const getNonrecurringExperiences = (apiPath, firebase) => {
     });
 };
 
-export const getClasses = getRecurringExperiences.bind(null, API_PATH_CLASSES);
-export const getDances = getRecurringExperiences.bind(null, API_PATH_DANCES);
-export const getEvents = getNonrecurringExperiences.bind(null, API_PATH_EVENTS);
+export const fetchClasses = () => fetchRecurringExperiences(API_PATH_CLASSES);
+export const fetchDances = () => fetchRecurringExperiences(API_PATH_DANCES);
+export const fetchEvents = () => fetchNonrecurringExperiences(API_PATH_EVENTS);

@@ -1,26 +1,26 @@
 import * as functions from "firebase-functions";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import { Provider } from "react-redux";
+import { StaticRouter } from "react-router-dom";
 
 import manifest from "../webpack-manifest.json";
 import html from "./html";
-import { createStoreOnServer } from "./app/redux/create-store";
-import { filterSelected } from "./app/redux/actions";
 import App from "./app";
 
+const REDIRECT_STATUS = 301;
+
 export const app = functions.https.onRequest((request, response) => {
-  const store = createStoreOnServer(request);
-  const route = store.getState().router.route;
+  const context = {};
 
-  store.dispatch(filterSelected(route)).then(() => {
-    const appString = ReactDOMServer.renderToString(
-      <Provider store={store}>
-        <App/>
-      </Provider>
-    );
-    const state = store.getState();
+  const appString = ReactDOMServer.renderToString(
+    <StaticRouter location={request.url} context={context}>
+      <App/>
+    </StaticRouter>
+  );
 
-    response.send(html(appString, state, manifest));
-  });
+  if (context.url) {
+    response.redirect(REDIRECT_STATUS, context.url);
+  } else {
+    response.send(html(appString, manifest));
+  }
 });

@@ -1,5 +1,5 @@
 /*eslint-disable max-len */
-export default (body, state, manifest) => {
+export default (body, manifest) => {
   return (`
     <!DOCTYPE html>
     <html lang="en">
@@ -24,7 +24,6 @@ export default (body, state, manifest) => {
       <body>
         <div id="root">${body}</div>
 
-        <script>window.__REDUX_STATE__ = ${JSON.stringify(state)}</script>
         <script src="${manifest["runtime.js"]}"></script>
         <script src="${manifest["vendors.js"]}"></script>
         <script src="${manifest["main.js"]}"></script>
