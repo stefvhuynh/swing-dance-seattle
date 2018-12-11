@@ -1,26 +1,37 @@
 import * as functions from "firebase-functions";
 import React from "react";
+import { Provider } from "react-redux";
 import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 
 import manifest from "../webpack-manifest.json";
 import html from "./html";
+import createStore from "./app/state/create-store";
 import App from "./app";
+import { navigated } from "./app/state/actions";
 
 const REDIRECT_STATUS = 301;
 
 export const app = functions.https.onRequest((request, response) => {
   const context = {};
 
-  const appString = ReactDOMServer.renderToString(
-    <StaticRouter location={request.url} context={context}>
-      <App/>
-    </StaticRouter>
-  );
-
   if (context.url) {
     response.redirect(REDIRECT_STATUS, context.url);
   } else {
-    response.send(html(appString, manifest));
+    const store = createStore();
+
+    store.dispatch(navigated(request.path)).then(() => {
+      const appString = ReactDOMServer.renderToString(
+        <StaticRouter location={request.path} context={context}>
+          <Provider store={store}>
+            <App/>
+          </Provider>
+        </StaticRouter>
+      );
+
+      const state = store.getState();
+
+      response.send(html(manifest, appString, state));
+    });
   }
 });

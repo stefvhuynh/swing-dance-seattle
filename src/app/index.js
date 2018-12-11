@@ -1,5 +1,7 @@
-import React, { Fragment, useContext, useLayoutEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { Fragment, useLayoutEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Route, Switch, withRouter } from "react-router-dom";
 import debounce from "debounce";
 import isNode from "detect-node";
 
@@ -10,25 +12,22 @@ import {
   ROUTE_HOME,
   WINDOW_RESIZE_DEBOUNCE_TIME
 } from "./constants";
-import Providers from "./providers";
-import { ScreenWidthContext } from "./providers/screen-width";
-import Header from "./components/header";
-import NavBar from "./components/nav-bar";
+import { windowResized } from "./state/actions";
 import Classes from "./pages/classes";
 import Dances from "./pages/dances";
 import Events from "./pages/events";
+import Header from "./components/header";
+import NavBar from "./components/nav-bar";
 
-const App = () => {
-  const { setScreenWidth } = useContext(ScreenWidthContext);
-
+const App = ({ onWindowResize }) => {
   const handleWindowResize = debounce(
-    (event) => setScreenWidth(event.currentTarget.innerWidth),
+    (event) => onWindowResize(event.currentTarget.innerWidth),
     WINDOW_RESIZE_DEBOUNCE_TIME
   );
 
   if (!isNode) {
     useLayoutEffect(() => {
-      setScreenWidth(window.innerWidth);
+      onWindowResize(window.innerWidth);
       window.addEventListener("resize", handleWindowResize);
 
       return () => {
@@ -40,8 +39,8 @@ const App = () => {
 
   return (
     <Fragment>
-      <Header />
-      <NavBar />
+      <Header/>
+      <NavBar/>
 
       <Switch>
         <Route path={ROUTE_HOME} exact component={Classes} />
@@ -53,10 +52,12 @@ const App = () => {
   );
 };
 
-export default () => {
-  return (
-    <Providers>
-      <App />
-    </Providers>
-  );
+App.propTypes = {
+  onWindowResize: PropTypes.func.isRequired
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  onWindowResize: (width) => dispatch(windowResized(width))
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

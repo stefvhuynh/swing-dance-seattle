@@ -1,5 +1,5 @@
 /*eslint-disable max-len */
-export default (body, manifest) => {
+export default (manifest, body, state) => {
   return (`
     <!DOCTYPE html>
     <html lang="en">
@@ -24,6 +24,9 @@ export default (body, manifest) => {
       <body>
         <div id="root">${body}</div>
 
+        <script>
+          window.APP_STATE = ${JSON.stringify(state)};
+        </script>
         <script src="${manifest["runtime.js"]}"></script>
         <script src="${manifest["vendors.js"]}"></script>
         <script src="${manifest["main.js"]}"></script>

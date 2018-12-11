@@ -1,21 +1,16 @@
-import React, { Fragment, useContext, useEffect } from "react";
-
-import { ClassesContext } from "../providers/classes";
+import React, { Fragment } from "react";
+import { connect } from "react-redux";
 
 const Classes = () => {
-  const { fetched, fetching, getClasses } = useContext(ClassesContext);
-
-  useEffect(() => {
-    getClasses();
-  }, []);
-
   return (
     <Fragment>
       <h3>classes</h3>
-      {fetching && <div>loading...</div>}
-      {fetched && <div>loaded!</div>}
     </Fragment>
   );
 };
 
-export default Classes;
+const mapStateToProps = (state) => ({
+  classes: state.classes.data
+});
+
+export default connect(mapStateToProps)(Classes);

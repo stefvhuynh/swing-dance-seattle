@@ -1,6 +1,3 @@
-import firebase from "firebase";
-import firebaseConfig from "../../firebase.config";
-
 import {
   API_PATH_CLASSES,
   API_PATH_DANCES,
@@ -8,13 +5,8 @@ import {
   ONE_YEAR
 } from "./constants";
 
-const firebaseInstance = firebase.initializeApp(
-  firebaseConfig.config,
-  firebaseConfig.key
-);
-
-export const fetchRecurringExperiences = (apiPath) => {
-  return firebaseInstance.database()
+export const fetchRecurringExperiences = (firebase, apiPath) => {
+  return firebase.database()
     .ref(apiPath)
     .once("value")
     .then((snapshot) => {
@@ -23,11 +15,11 @@ export const fetchRecurringExperiences = (apiPath) => {
     });
 };
 
-export const fetchNonrecurringExperiences = (apiPath) => {
+export const fetchNonrecurringExperiences = (firebase, apiPath) => {
   const now = (new Date()).toISOString();
   const oneYearLater = (new Date(Date.now() + ONE_YEAR)).toISOString();
 
-  return firebaseInstance.database()
+  return firebase.database()
     .ref(apiPath)
     .orderByChild("dateEnd")
     .startAt(now)
@@ -39,6 +31,9 @@ export const fetchNonrecurringExperiences = (apiPath) => {
     });
 };
 
-export const fetchClasses = () => fetchRecurringExperiences(API_PATH_CLASSES);
-export const fetchDances = () => fetchRecurringExperiences(API_PATH_DANCES);
-export const fetchEvents = () => fetchNonrecurringExperiences(API_PATH_EVENTS);
+export const fetchClasses =
+  (firebase) => fetchRecurringExperiences(firebase, API_PATH_CLASSES);
+export const fetchDances =
+  (firebase) => fetchRecurringExperiences(firebase, API_PATH_DANCES);
+export const fetchEvents =
+  (firebase) => fetchNonrecurringExperiences(firebase, API_PATH_EVENTS);
