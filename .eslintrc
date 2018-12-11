@@ -1,4 +1,7 @@
 {
   "parser": "babel-eslint",
-  "extends": ["plugin:prettier/recommended"]
+  "extends": ["plugin:prettier/recommended", "plugin:import/recommended"],
+  "rules": {
+    "import/order": ["error", { "newlines-between": "always" }]
+  }
 }

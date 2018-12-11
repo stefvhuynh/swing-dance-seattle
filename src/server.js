@@ -1,13 +1,14 @@
 import * as functions from "firebase-functions";
 import React from "react";
-import { Provider } from "react-redux";
 import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import manifest from "../webpack-manifest.json";
+
 import html from "./html";
-import createStore from "./app/state/create-store";
 import App from "./app";
+import createStore from "./app/state/create-store";
 import { navigated } from "./app/state/actions";
 
 const REDIRECT_STATUS = 301;

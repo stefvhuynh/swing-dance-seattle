@@ -27,7 +27,6 @@ const App = ({ onWindowResize }) => {
 
   if (!isNode) {
     useLayoutEffect(() => {
-      onWindowResize(window.innerWidth);
       window.addEventListener("resize", handleWindowResize);
 
       return () => {

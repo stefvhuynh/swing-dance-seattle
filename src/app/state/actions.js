@@ -1,12 +1,13 @@
+import { ROUTE_CLASSES, ROUTE_HOME } from "../constants";
+import { fetchClasses } from "../api";
+import { serializeClasses } from "../serializers";
+
 import {
   CLASSES_RECEIVED,
   CLASSES_REQUESTED,
   NAVIGATED,
   WINDOW_RESIZED
 } from "./types";
-import { ROUTE_CLASSES, ROUTE_HOME } from "../constants";
-import { fetchClasses } from "../api";
-import { serializeClasses } from "../serializers";
 
 export const windowResized = width => ({
   type: WINDOW_RESIZED,

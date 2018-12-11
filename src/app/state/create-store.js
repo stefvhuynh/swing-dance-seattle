@@ -9,6 +9,7 @@ import firebase from "firebase";
 import isNode from "detect-node";
 
 import firebaseConfig from "../../../firebase.config";
+
 import { classes, ui } from "./reducers";
 
 const firebaseInstance = firebase.initializeApp(
