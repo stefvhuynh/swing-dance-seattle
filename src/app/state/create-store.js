@@ -10,7 +10,7 @@ import isNode from "detect-node";
 
 import firebaseConfig from "../../../firebase.config";
 
-import { classes, ui } from "./reducers";
+import { classes, dances, events, ui } from "./reducers";
 
 const firebaseInstance = firebase.initializeApp(
   firebaseConfig.config,
@@ -20,7 +20,12 @@ const firebaseInstance = firebase.initializeApp(
 const getFirebase = () => firebaseInstance;
 
 const createStore = state => {
-  const rootReducer = combineReducers({ classes, ui });
+  const rootReducer = combineReducers({
+    classes,
+    dances,
+    events,
+    ui
+  });
 
   const thunkMiddleware = thunk.withExtraArgument(getFirebase);
   const middleware = applyMiddleware(thunkMiddleware);
