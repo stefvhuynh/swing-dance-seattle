@@ -21,7 +21,7 @@ import NavBar from "./components/nav-bar";
 
 const App = ({ onWindowResize }) => {
   const handleWindowResize = debounce(
-    (event) => onWindowResize(event.currentTarget.innerWidth),
+    event => onWindowResize(event.currentTarget.innerWidth),
     WINDOW_RESIZE_DEBOUNCE_TIME
   );
 
@@ -39,8 +39,8 @@ const App = ({ onWindowResize }) => {
 
   return (
     <Fragment>
-      <Header/>
-      <NavBar/>
+      <Header />
+      <NavBar />
 
       <Switch>
         <Route path={ROUTE_HOME} exact component={Classes} />
@@ -56,8 +56,13 @@ App.propTypes = {
   onWindowResize: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  onWindowResize: (width) => dispatch(windowResized(width))
+const mapDispatchToProps = dispatch => ({
+  onWindowResize: width => dispatch(windowResized(width))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(App)
+);

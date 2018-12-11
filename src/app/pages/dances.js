@@ -1,9 +1,7 @@
 import React from "react";
 
 const Dances = () => {
-  return (
-    <div>dances</div>
-  );
+  return <div>dances</div>;
 };
 
 export default Dances;

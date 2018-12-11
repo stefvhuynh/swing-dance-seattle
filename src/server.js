@@ -24,7 +24,7 @@ export const app = functions.https.onRequest((request, response) => {
       const appString = ReactDOMServer.renderToString(
         <StaticRouter location={request.path} context={context}>
           <Provider store={store}>
-            <App/>
+            <App />
           </Provider>
         </StaticRouter>
       );

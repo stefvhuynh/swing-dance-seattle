@@ -18,7 +18,7 @@ const firebaseInstance = firebase.initializeApp(
 
 const getFirebase = () => firebaseInstance;
 
-const createStore = (state) => {
+const createStore = state => {
   const rootReducer = combineReducers({ classes, ui });
 
   const thunkMiddleware = thunk.withExtraArgument(getFirebase);
@@ -28,14 +28,17 @@ const createStore = (state) => {
 
   if (!isNode) {
     devToolsEnhancer =
-      process.env.NODE_ENV !== "production"
-      && window.__REDUX_DEVTOOLS_EXTENSION__
+      process.env.NODE_ENV !== "production" &&
+      window.__REDUX_DEVTOOLS_EXTENSION__
         ? window.__REDUX_DEVTOOLS_EXTENSION__()
         : undefined;
   }
 
   const enhancer = devToolsEnhancer
-    ? compose(middleware, devToolsEnhancer)
+    ? compose(
+        middleware,
+        devToolsEnhancer
+      )
     : middleware;
 
   return createReduxStore(rootReducer, state, enhancer);

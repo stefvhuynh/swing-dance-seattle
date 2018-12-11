@@ -4,19 +4,16 @@ import {
   NAVIGATED,
   WINDOW_RESIZED
 } from "./types";
-import {
-  ROUTE_CLASSES,
-  ROUTE_HOME
-} from "../constants";
+import { ROUTE_CLASSES, ROUTE_HOME } from "../constants";
 import { fetchClasses } from "../api";
 import { serializeClasses } from "../serializers";
 
-export const windowResized = (width) => ({
+export const windowResized = width => ({
   type: WINDOW_RESIZED,
   payload: { width }
 });
 
-export const navigated = (path) => (dispatch, getState, getFirebase) => {
+export const navigated = path => (dispatch, getState, getFirebase) => {
   dispatch({ type: NAVIGATED });
 
   let fetchPromise;
@@ -32,7 +29,7 @@ export const navigated = (path) => (dispatch, getState, getFirebase) => {
   if (fetchPromise) {
     dispatch({ type: CLASSES_REQUESTED });
 
-    return fetchPromise(getFirebase()).then((classes) =>
+    return fetchPromise(getFirebase()).then(classes =>
       dispatch({
         type: CLASSES_RECEIVED,
         payload: { classes: serializeClasses(classes) }

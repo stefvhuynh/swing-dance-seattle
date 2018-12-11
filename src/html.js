@@ -1,6 +1,6 @@
 /*eslint-disable max-len */
 export default (manifest, body, state) => {
-  return (`
+  return `
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -32,5 +32,5 @@ export default (manifest, body, state) => {
         <script src="${manifest["main.js"]}"></script>
       </body>
     </html>
-  `);
+  `;
 };

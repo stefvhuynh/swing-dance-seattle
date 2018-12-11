@@ -16,8 +16,8 @@ const Header = () => {
           This is a schedule of all classes, dances, and events in the region,
           and it will be kept up-to-date to the best of our ability. For the
           most accurate information, click on an event to see the event's
-          webpage. If you would like your event added, altered, or removed,
-          send us an email. This is also an open-source project! Check out the
+          webpage. If you would like your event added, altered, or removed, send
+          us an email. This is also an open-source project! Check out the
           project here if you would like to contribute!
         </p>
       )}

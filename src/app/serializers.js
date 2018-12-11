@@ -1,9 +1,9 @@
-const arrayType = (array) => array || [];
-const stringType = (string) => string || "";
-const numberType = (number) => number || -1;
+const arrayType = array => array || [];
+const stringType = string => string || "";
+const numberType = number => number || -1;
 
-export const serializeClasses = (classes) =>
-  Object.values(classes).map((danceClass) => ({
+export const serializeClasses = classes =>
+  Object.values(classes).map(danceClass => ({
     danceStyles: arrayType(danceClass.danceStyles),
     id: stringType(danceClass.id),
     link: stringType(danceClass.link),

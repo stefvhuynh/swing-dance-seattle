@@ -16,7 +16,7 @@ delete window.APP_STATE;
 ReactDOM.hydrate(
   <BrowserRouter>
     <Provider store={store}>
-      <App/>
+      <App />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

@@ -9,7 +9,7 @@ const Classes = () => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   classes: state.classes.data
 });
 

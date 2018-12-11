@@ -26,8 +26,11 @@ NavBar.propTypes = {
   onNavigate: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  onNavigate: (path) => dispatch(navigated(path))
+const mapDispatchToProps = dispatch => ({
+  onNavigate: path => dispatch(navigated(path))
 });
 
-export default connect(null, mapDispatchToProps)(NavBar);
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavBar);
