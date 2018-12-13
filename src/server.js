@@ -20,25 +20,24 @@ const firebaseInstance = firebase.initializeApp(
 );
 
 export const app = functions.https.onRequest((request, response) => {
-  const context = {};
+  const { path } = request;
+  const store = createStore(firebaseInstance);
 
-  if (context.url) {
-    response.redirect(REDIRECT_STATUS, context.url);
-  } else {
-    const { path } = request;
-    const store = createStore(firebaseInstance);
+  store.dispatch(navigated(path)).then(() => {
+    const routerContext = {};
+    const appString = ReactDOMServer.renderToString(
+      <StaticRouter location={path} context={routerContext}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </StaticRouter>
+    );
 
-    store.dispatch(navigated(path)).then(() => {
-      const appString = ReactDOMServer.renderToString(
-        <StaticRouter location={path} context={context}>
-          <Provider store={store}>
-            <App />
-          </Provider>
-        </StaticRouter>
-      );
-
+    if (routerContext.url) {
+      response.redirect(REDIRECT_STATUS, routerContext.url);
+    } else {
       const state = store.getState();
       response.send(html(manifest, appString, state));
-    });
-  }
+    }
+  });
 });
