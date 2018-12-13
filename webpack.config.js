@@ -3,6 +3,8 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const postCssPresetEnv = require("postcss-preset-env");
+const cssNano = require("cssnano");
 
 module.exports = {
   entry: "./src/client.js",
@@ -28,9 +30,18 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
-            options: { importLoaders: 1, minimize: true }
+            options: { importLoaders: 1 }
           },
-          "postcss-loader"
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [
+                postCssPresetEnv({ browsers: "last 2 versions" }),
+                cssNano()
+              ]
+            }
+          }
         ],
         exclude: /node_modules/
       }

@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import firebase from "firebase";
+import firebase from "firebase-admin";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
