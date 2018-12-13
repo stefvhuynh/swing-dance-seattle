@@ -7,14 +7,19 @@
   --font-bold: 700;
   --font-normal: 400;
 
-  --size-xxs: 0.5rem;
-  --size-xs: 0.7rem;
-  --size-sm: 0.85rem;
-  --size-md: 1rem;
-  --size-lg: 1.2rem;
-  --size-xl: 1.75rem;
-  --size-xxl: 2.5rem;
-  --size-xxxl: 4rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 2.5rem;
+
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.7rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.3rem;
+  --spacing-xl: 1.6rem;
+
+  --line-height-base: 1.25;
+  --line-height-extra: 1.5;
 
   --color-white: #fdfdfd;
   --color-off-white: #f4f4f4;

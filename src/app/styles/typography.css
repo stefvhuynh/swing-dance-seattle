@@ -1,26 +1,23 @@
-.font-primary { font-family: var(--font-primary) }
 .font-emphasis { font-family: var(--font-emphasis) }
 
-.bold { font-weight: var(--font-bold) }
-.italic { font-style: italic }
-.underline { text-decoration: underline }
-.uppercase { text-transform: uppercase }
-.hover-underline:hover { text-decoration: underline }
-
-.text-center { text-align: center }
-.text-right { text-align: right }
-
-.font-xs { font-size: var(--size-xs) }
-.font-sm { font-size: var(--size-sm) }
-.font-md { font-size: var(--size-md) }
-.font-lg { font-size: var(--size-lg) }
-.font-xxl { font-size: var(--size-xxl) }
-.font-xxxl { font-size: var(--size-xxxl) }
+.font-sm { font-size: var(--font-size-sm) }
+.font-md { font-size: var(--font-size-md) }
+.font-lg { font-size: var(--font-size-lg) }
+.font-xl { font-size: var(--font-size-xl) }
 
 .font-white { color: var(--color-white) }
 .font-black { color: var(--color-black) }
 .font-grey { color: var(--color-grey) }
 .font-green { color: var(--color-green) }
 
-.lines-spaced { line-height: 1.5 }
-.no-wrap { white-space: nowrap }
+.bold { font-weight: var(--font-bold) }
+.italic { font-style: italic }
+.underline { text-decoration: underline }
+.uppercase { text-transform: uppercase }
+
+.hover-underline:hover { text-decoration: underline }
+
+.text-center { text-align: center }
+.text-right { text-align: right }
+
+.lines-spaced { line-height: var(--line-height-extra) }

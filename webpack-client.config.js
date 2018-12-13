@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const postCssImport = require("postcss-import");
 const postCssPresetEnv = require("postcss-preset-env");
 const cssNano = require("cssnano");
 
@@ -51,6 +52,7 @@ module.exports = env => {
               options: {
                 ident: "postcss",
                 plugins: () => [
+                  postCssImport(),
                   postCssPresetEnv({ browsers: "last 2 versions" }),
                   cssNano()
                 ]

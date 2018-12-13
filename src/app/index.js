@@ -2,6 +2,8 @@ import React, { Fragment, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Route, Switch, withRouter } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import debounce from "debounce";
 import isNode from "detect-node";
 
@@ -18,6 +20,8 @@ import Dances from "./pages/dances";
 import Events from "./pages/events";
 import Header from "./components/header";
 import NavBar from "./components/nav-bar";
+
+library.add(faAngleDown, faAngleRight);
 
 const App = ({ onWindowResize }) => {
   const handleWindowResize = debounce(
