@@ -1,20 +1,14 @@
-import React, { Fragment, useLayoutEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Route, Switch, withRouter } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import debounce from "debounce";
-import isNode from "detect-node";
 
 import {
   ROUTE_CLASSES,
   ROUTE_DANCES,
   ROUTE_EVENTS,
-  ROUTE_HOME,
-  WINDOW_RESIZE_DEBOUNCE_TIME
+  ROUTE_HOME
 } from "./constants";
-import { windowResized } from "./state/actions";
 import Classes from "./pages/classes";
 import Dances from "./pages/dances";
 import Events from "./pages/events";
@@ -23,23 +17,7 @@ import NavBar from "./components/nav-bar";
 
 library.add(faAngleDown, faAngleRight);
 
-const App = ({ onWindowResize }) => {
-  const handleWindowResize = debounce(
-    event => onWindowResize(event.currentTarget.innerWidth),
-    WINDOW_RESIZE_DEBOUNCE_TIME
-  );
-
-  if (!isNode) {
-    useLayoutEffect(() => {
-      window.addEventListener("resize", handleWindowResize);
-
-      return () => {
-        handleWindowResize.clear();
-        window.removeEventListener("resize", handleWindowResize);
-      };
-    }, []);
-  }
-
+const App = () => {
   return (
     <Fragment>
       <Header />
@@ -55,17 +33,4 @@ const App = ({ onWindowResize }) => {
   );
 };
 
-App.propTypes = {
-  onWindowResize: PropTypes.func.isRequired
-};
-
-const mapDispatchToProps = dispatch => ({
-  onWindowResize: width => dispatch(windowResized(width))
-});
-
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(App)
-);
+export default App;
