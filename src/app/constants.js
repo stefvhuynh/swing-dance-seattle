@@ -1,11 +1,11 @@
+export const API_PATH_CLASSES = "/classes";
+export const API_PATH_DANCES = "/dances";
+export const API_PATH_EVENTS = "/events";
+
 export const ROUTE_HOME = "/";
 export const ROUTE_CLASSES = "/classes";
 export const ROUTE_DANCES = "/dances";
 export const ROUTE_EVENTS = "/events";
-
-export const API_PATH_CLASSES = "/classes";
-export const API_PATH_DANCES = "/dances";
-export const API_PATH_EVENTS = "/events";
 
 export const MONTH_MAP = [
   "Jan",
@@ -60,8 +60,9 @@ export const DANCE_STYLE_MAP = {
   [DANCE_STYLE_JAZZ]: "Solo Jazz"
 };
 
-export const MOBILE_BREAKPOINT = 768;
+export const DESKTOP_BREAKPOINT = 767;
 export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
 export const ONE_HOUR = 3.6e6;
 export const ONE_YEAR = 3.154e10;
 export const LINK_PREFIX = "http";
+export const REDIRECT_STATUS = 301;

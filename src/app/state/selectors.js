@@ -1,5 +1,7 @@
 import { createSelector } from "reselect";
 
+import { DESKTOP_BREAKPOINT } from "../constants";
+
 export const selectClassesState = state => state.classes;
 export const selectClassesFetched = state => selectClassesState(state).fetched;
 export const selectClassesFetching = state =>
@@ -26,4 +28,11 @@ export const selectEventsNeedFetching = createSelector(
   selectEventsFetched,
   selectEventsFetching,
   (fetched, fetching) => !fetched && !fetching
+);
+
+export const selectUiState = state => state.ui;
+export const selectWindowWidth = state => selectUiState(state).windowWidth;
+export const selectIsDesktop = createSelector(
+  selectWindowWidth,
+  windowWidth => windowWidth > DESKTOP_BREAKPOINT
 );

@@ -1,4 +1,5 @@
 const path = require("path");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
