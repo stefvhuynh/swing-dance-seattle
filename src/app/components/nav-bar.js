@@ -1,36 +1,68 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import classNames from "classnames";
 
-import { ROUTE_CLASSES, ROUTE_DANCES, ROUTE_EVENTS } from "../constants";
+import {
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_HOME
+} from "../constants";
 import { navigated } from "../state/actions";
 
-const NavBar = ({ onNavigate }) => {
+const NavBar = ({ location, onNavigate = () => {} }) => {
+  const { pathname } = location;
+  const navLinks = [
+    { route: ROUTE_CLASSES, label: "Classes" },
+    { route: ROUTE_DANCES, label: "Dances" },
+    { route: ROUTE_EVENTS, label: "Events" }
+  ];
+
   return (
-    <nav>
-      <NavLink to={ROUTE_CLASSES}>
-        <span onClick={() => onNavigate(ROUTE_CLASSES)}>Classes</span>
-      </NavLink>
-      <NavLink to={ROUTE_DANCES}>
-        <span onClick={() => onNavigate(ROUTE_DANCES)}>Dances</span>
-      </NavLink>
-      <NavLink to={ROUTE_EVENTS}>
-        <span onClick={() => onNavigate(ROUTE_EVENTS)}>Events</span>
-      </NavLink>
+    <nav className="desktop-flex justify-center bg-green">
+      <div className="desktop-flex text-center">
+        {navLinks.map(({ label, route }) => {
+          const isActive =
+            route === ROUTE_CLASSES
+              ? pathname === ROUTE_HOME || pathname === route
+              : pathname === route;
+
+          return (
+            <NavLink key={route} to={route}>
+              <div
+                className={classNames(
+                  "pd-y-xs desktop-pd-y-sm pd-x-sm font-white border-b-thick",
+                  {
+                    "bold border-white": isActive,
+                    "border-transparent opacity-half": !isActive
+                  }
+                )}
+                onClick={() => onNavigate(route)}
+              >
+                {label}
+              </div>
+            </NavLink>
+          );
+        })}
+      </div>
     </nav>
   );
 };
 
 NavBar.propTypes = {
-  onNavigate: PropTypes.func.isRequired
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
+  onNavigate: PropTypes.func
 };
 
 const mapDispatchToProps = dispatch => ({
-  onNavigate: path => dispatch(navigated(path))
+  onNavigate: route => dispatch(navigated(route))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(NavBar);
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(NavBar)
+);

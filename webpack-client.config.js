@@ -53,7 +53,7 @@ module.exports = env => {
                 ident: "postcss",
                 plugins: () => [
                   postCssImport(),
-                  postCssPresetEnv({ browsers: "last 2 versions" }),
+                  postCssPresetEnv({ browsers: "last 2 versions", stage: 0 }),
                   cssNano()
                 ]
               }

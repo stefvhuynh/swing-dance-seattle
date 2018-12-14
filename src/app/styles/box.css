@@ -2,3 +2,9 @@
 .bg-off-white { background: var(--color-off-white) }
 .bg-green { background: var(--color-green) }
 .bg-dark-grey { background: var(--color-dark-grey) }
+
+.opacity-half { opacity: 0.5 }
+
+.border-b-thick { border-bottom: var(--border-thick) solid }
+.border-white { border-color: var(--color-white) }
+.border-transparent { border-color: var(--color-transparent) }

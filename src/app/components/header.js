@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
@@ -7,8 +8,8 @@ const Header = () => {
   const handleMoreInfoClick = () => setShowInfo(!showInfo);
 
   return (
-    <header className="bg-dark-grey text-center font-white pd-t-xl pd-b-xl pd-r-md pd-l-md">
-      <div>
+    <header className="flex justify-center bg-dark-grey font-white pd-t-xl pd-b-md pd-x-md">
+      <div className="max-width text-center">
         <h1 className="font-emphasis font-xl font-white mg-b-sm">
           Swing Dance Seattle
         </h1>
@@ -17,7 +18,10 @@ const Header = () => {
         </h2>
 
         <div className="mg-b-xs">
-          <a className="bold font-sm" onClick={handleMoreInfoClick}>
+          <a
+            className={classNames("bold font-sm", { underline: showInfo })}
+            onClick={handleMoreInfoClick}
+          >
             <FontAwesomeIcon
               className="mg-r-xs"
               icon={showInfo ? "angle-down" : "angle-right"}
