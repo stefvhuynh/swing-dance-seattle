@@ -1,6 +1,6 @@
 const arrayType = array => array || [];
 const booleanType = boolean => boolean || false;
-const numberType = number => number || -1;
+const numberType = number => number || 0;
 const stringType = string => string || "";
 
 export const serializeClasses = classes =>

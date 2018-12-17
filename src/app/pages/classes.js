@@ -1,16 +1,20 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
-const Classes = () => {
+import { DAY_MAP } from "../constants";
+import { selectClassesByDay } from "../state/selectors";
+import OccasionsList from "../components/occasions-list";
+
+const Classes = ({ classes }) => {
   return (
     <Fragment>
-      <h3>classes</h3>
+      <OccasionsList heading={DAY_MAP[0]} occasions={classes[0]} />
     </Fragment>
   );
 };
 
 const mapStateToProps = state => ({
-  classes: state.classes.data
+  classes: selectClassesByDay(state)
 });
 
 export default connect(mapStateToProps)(Classes);
