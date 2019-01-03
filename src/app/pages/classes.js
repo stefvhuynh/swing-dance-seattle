@@ -6,9 +6,13 @@ import { selectClassesByDay } from "../state/selectors";
 import OccasionsList from "../components/occasions-list";
 
 const Classes = ({ classes }) => {
+  const classesList = [...Object.entries(classes).slice(1), ["0", classes[0]]];
+
   return (
     <Fragment>
-      <OccasionsList heading={DAY_MAP[0]} occasions={classes[0]} />
+      {classesList.map(([key, classList]) => (
+        <OccasionsList key={key} heading={DAY_MAP[key]} occasions={classList} />
+      ))}
     </Fragment>
   );
 };
