@@ -11,8 +11,8 @@ const getPeriod = time =>
     .substr(-1, 2)
     .toLowerCase();
 
-const sortOccasionsByTime = occasions => {
-  return occasions.slice().sort((a, b) => {
+const sortOccasionsByTime = occasions =>
+  occasions.slice().sort((a, b) => {
     if (!a.time) {
       return 1;
     } else if (!b.time) {
@@ -22,19 +22,24 @@ const sortOccasionsByTime = occasions => {
     const aPeriod = getPeriod(a.time);
     const bPeriod = getPeriod(b.time);
 
-    if (aPeriod === bPeriod) {
-      if (a.time < b.time) {
+    if (aPeriod === "am" && bPeriod === "pm") {
+      return -1;
+    } else if (aPeriod === "pm" && bPeriod === "am") {
+      return 1;
+    }
+
+    if (a.time === b.time) {
+      if (a.name < b.name) {
         return -1;
       } else {
         return 1;
       }
-    } else if (aPeriod === "am" && bPeriod === "pm") {
+    } else if (a.time < b.time) {
       return -1;
     } else {
       return 1;
     }
   });
-};
 
 const groupItemsByKey = (items, key) => {
   return items.reduce((accum, item) => {
