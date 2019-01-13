@@ -39,7 +39,7 @@ export const selectDancesNeedFetching = createDataNeedsFetchingSelector(
 
 export const selectEventsState = state => state.events;
 export const selectEvents = state => selectEventsState(state).data;
-export const selectEventsByDay = createSelector(
+export const selectEventsByDate = createSelector(
   selectEvents,
   getOccasionsByDate
 );

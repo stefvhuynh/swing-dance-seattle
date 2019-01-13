@@ -9,9 +9,9 @@ import {
   ROUTE_EVENTS,
   ROUTE_HOME
 } from "./constants";
-import Classes from "./pages/classes";
-import Dances from "./pages/dances";
-import Events from "./pages/events";
+import ClassesPage from "./pages/classes-page";
+import DancesPage from "./pages/dances-page";
+import EventsPage from "./pages/events-page";
 import Header from "./components/header";
 import NavBar from "./components/nav-bar";
 
@@ -24,10 +24,10 @@ const App = () => {
       <NavBar />
 
       <Switch>
-        <Route path={ROUTE_HOME} exact component={Classes} />
-        <Route path={ROUTE_CLASSES} component={Classes} />
-        <Route path={ROUTE_DANCES} component={Dances} />
-        <Route path={ROUTE_EVENTS} component={Events} />
+        <Route path={ROUTE_HOME} exact component={ClassesPage} />
+        <Route path={ROUTE_CLASSES} component={ClassesPage} />
+        <Route path={ROUTE_DANCES} component={DancesPage} />
+        <Route path={ROUTE_EVENTS} component={EventsPage} />
       </Switch>
     </Fragment>
   );
