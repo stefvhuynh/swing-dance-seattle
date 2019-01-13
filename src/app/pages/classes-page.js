@@ -8,20 +8,9 @@ import OccasionsList from "../components/occasions-list";
 const ClassesPage = ({ classes }) => {
   return (
     <Fragment>
-      {DAY_MAP.map(
-        (day, index) =>
-          index !== 0 && (
-            <OccasionsList
-              key={index}
-              heading={day}
-              occasions={classes[index]}
-            />
-          )
-      )}
-
-      {classes[0] && (
-        <OccasionsList heading={DAY_MAP[0]} occasions={classes[0]} />
-      )}
+      {DAY_MAP.map((day, index) => (
+        <OccasionsList key={index} heading={day} occasions={classes[index]} />
+      ))}
     </Fragment>
   );
 };

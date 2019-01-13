@@ -1,38 +1,26 @@
-import React, { Fragment } from "react";
+import React from "react";
+import classNames from "classnames";
 
-import { formatDanceStyles, formatRecurrence } from "../utils";
+import Occasion from "./occasion";
 
 const OccasionsList = ({ heading, occasions = [] }) => {
   return (
-    <Fragment>
-      <h3>{heading}</h3>
-      <ul>
-        {occasions.map(occasion => (
-          <li key={occasion.id}>
-            <div className="flex">
-              <div>
-                <div>{occasion.neighborhood}</div>
-                <h4>{occasion.name}</h4>
-                <div>{occasion.organization}</div>
-                <div>@ {occasion.venue}</div>
-              </div>
-              <div>
-                <div>
-                  {formatRecurrence(
-                    occasion.recurrenceTimes,
-                    occasion.recurrenceDay
-                  )}
-                </div>
-                <div>{occasion.time}</div>
-              </div>
-            </div>
-            <ul>
-              <li>&ndash; {formatDanceStyles(occasion.danceStyles)}</li>
-            </ul>
-          </li>
+    <div className="mg-t-xl font-grey">
+      <h3 className="font-lg mg-l-sm mg-b-sm uppercase bold">{heading}</h3>
+
+      <ul className="bg-white shadow">
+        {occasions.map((occasion, index) => (
+          <Occasion
+            key={occasion.id}
+            className={classNames({
+              ["border-b-thin border-light-grey"]:
+                index !== occasions.length - 1
+            })}
+            {...occasion}
+          />
         ))}
       </ul>
-    </Fragment>
+    </div>
   );
 };
 

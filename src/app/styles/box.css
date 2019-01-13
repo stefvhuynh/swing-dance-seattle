@@ -6,5 +6,9 @@
 .opacity-half { opacity: 0.5 }
 
 .border-b-thick { border-bottom: var(--border-thick) solid }
+.border-b-thin { border-bottom: var(--border-thin) solid }
 .border-white { border-color: var(--color-white) }
+.border-light-grey { border-color: var(--color-light-grey) }
 .border-transparent { border-color: var(--color-transparent) }
+
+.shadow { box-shadow: 0 5px 18px -14px var(--color-dark-grey) }

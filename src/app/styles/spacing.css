@@ -1,15 +1,24 @@
 /* Margin */
+.mg-t-lg { margin-top: var(--space-lg) }
+.mg-t-xl { margin-top: var(--space-xl) }
 .mg-b-xs { margin-bottom: var(--space-xs) }
 .mg-b-sm { margin-bottom: var(--space-sm) }
 .mg-b-md { margin-bottom: var(--space-md) }
+
 .mg-r-xs { margin-right: var(--space-xs) }
+.mg-l-sm { margin-left: var(--space-sm) }
 
 /* Padding */
 .pd-t-xl { padding-top: var(--space-xl) }
 .pd-b-md { padding-bottom: var(--space-md) }
+
 .pd-y-xs {
   padding-top: var(--space-xs);
   padding-bottom: var(--space-xs);
+}
+.pd-y-sm {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
 }
 
 .pd-x-sm {
