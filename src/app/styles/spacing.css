@@ -6,6 +6,7 @@
 .mg-b-md { margin-bottom: var(--space-md) }
 
 .mg-r-xs { margin-right: var(--space-xs) }
+.mg-l-xs { margin-left: var(--space-xs) }
 .mg-l-sm { margin-left: var(--space-sm) }
 
 /* Padding */
@@ -20,7 +21,10 @@
   padding-top: var(--space-sm);
   padding-bottom: var(--space-sm);
 }
-
+.pd-y-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
 .pd-x-sm {
   padding-left: var(--space-sm);
   padding-right: var(--space-sm);

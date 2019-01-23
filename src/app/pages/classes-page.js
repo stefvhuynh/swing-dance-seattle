@@ -7,11 +7,11 @@ import OccasionsList from "../components/occasions-list";
 
 const ClassesPage = ({ classes }) => {
   return (
-    <Fragment>
+    <div className="pd-y-md">
       {DAY_MAP.map((day, index) => (
         <OccasionsList key={index} heading={day} occasions={classes[index]} />
       ))}
-    </Fragment>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@
 .inline-flex { display: inline-flex }
 .justify-center { justify-content: center }
 .justify-between { justify-content: space-between }
+.align-center { align-items: center }
 
 .full-height { height: 100% }
 .full-width { width: 100% }

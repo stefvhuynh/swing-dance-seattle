@@ -5,7 +5,7 @@ import Occasion from "./occasion";
 
 const OccasionsList = ({ heading, occasions = [] }) => {
   return (
-    <div className="mg-t-xl font-grey">
+    <div className="pd-y-md font-grey">
       <h3 className="font-lg mg-l-sm mg-b-sm uppercase bold">{heading}</h3>
 
       <ul className="bg-white shadow">
