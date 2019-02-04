@@ -25,18 +25,20 @@ library.add(faAngleDown, faAngleRight, faArrowUp, faCompass);
 
 const App = () => {
   return (
-    <div className="full-height relative">
-      <Header />
-      <NavBar />
+    <div className="full-height flex column">
+      <div className="grow">
+        <Header />
+        <NavBar />
 
-      <Switch>
-        <Route path={ROUTE_HOME} exact component={ClassesPage} />
-        <Route path={ROUTE_CLASSES} component={ClassesPage} />
-        <Route path={ROUTE_DANCES} component={DancesPage} />
-        <Route path={ROUTE_EVENTS} component={EventsPage} />
-      </Switch>
+        <Switch>
+          <Route path={ROUTE_HOME} exact component={ClassesPage} />
+          <Route path={ROUTE_CLASSES} component={ClassesPage} />
+          <Route path={ROUTE_DANCES} component={DancesPage} />
+          <Route path={ROUTE_EVENTS} component={EventsPage} />
+        </Switch>
+      </div>
 
-      <Footer className="absolute bottom full-width" />
+      <Footer className="no-shrink" />
     </div>
   );
 };

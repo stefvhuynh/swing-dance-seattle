@@ -1,7 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const Events = () => {
-  return <div>events</div>;
+import { selectEventsByDate, selectEventsFetching } from "../state/selectors";
+import OccasionsList from "../components/occasions-list";
+import Loader from "../components/loader";
+
+const EventsPage = ({ events, loading }) => {
+  return (
+    <div className="pd-y-md">
+      {loading ? (
+        <Loader />
+      ) : (
+        Object.entries(events).map(([date, eventsOnDate]) => (
+          <OccasionsList key={date} heading={date} occasions={eventsOnDate} />
+        ))
+      )}
+    </div>
+  );
 };
 
-export default Events;
+const mapStateToProps = state => ({
+  events: selectEventsByDate(state),
+  loading: selectEventsFetching(state)
+});
+
+export default connect(mapStateToProps)(EventsPage);

@@ -40,8 +40,8 @@ export const serializeEvents = events =>
     dateStart: stringType(event.dateStart),
     hasLiveMusic: booleanType(event.hasLiveMusic),
     id: stringType(event.id),
+    isWeekendEvent: booleanType(event.weekendEvent),
     link: stringType(event.link),
     name: stringType(event.name),
-    organization: stringType(event.organization),
-    weekendEvent: booleanType(event.weekendEvent)
+    organization: stringType(event.organization)
   }));

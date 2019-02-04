@@ -1,12 +1,11 @@
 .flex { display: flex }
 .inline-flex { display: inline-flex }
+.column { flex-direction: column }
+.grow { flex-grow: 1 }
+.no-shrink { flex-shrink: 0 }
 .justify-center { justify-content: center }
 .justify-between { justify-content: space-between }
 .align-center { align-items: center }
-
-.absolute { position: absolute }
-.relative { position: relative }
-.bottom { bottom: 0 }
 
 .full-height { height: 100% }
 .full-width { width: 100% }
