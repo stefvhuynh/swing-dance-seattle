@@ -1,9 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Footer = () => {
+const Footer = ({ className }) => {
   return (
-    <div className="flex justify-between align-center bg-dark-grey font-white font-xs pd-x-sm pd-y-md">
+    <div
+      className={`flex justify-between align-center bg-dark-grey font-white font-xs pd-x-sm pd-y-md ${className}`}
+    >
       <div>
         <div className="font-emphasis font-sm">Swing Dance Seattle</div>
         <div>swingdancesct@gmail.com</div>

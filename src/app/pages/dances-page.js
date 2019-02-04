@@ -1,7 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const Dances = () => {
-  return <div>dances</div>;
+import { DAY_MAP } from "../constants";
+import { selectDancesByDay, selectDancesFetching } from "../state/selectors";
+import OccasionsList from "../components/occasions-list";
+import Loader from "../components/loader";
+
+const DancesPage = ({ dances, loading }) => {
+  return (
+    <div className="pd-y-md">
+      {loading ? (
+        <Loader />
+      ) : (
+        DAY_MAP.map((day, index) => (
+          <OccasionsList key={index} heading={day} occasions={dances[index]} />
+        ))
+      )}
+    </div>
+  );
 };
 
-export default Dances;
+const mapStateToProps = state => ({
+  dances: selectDancesByDay(state),
+  loading: selectDancesFetching(state)
+});
+
+export default connect(mapStateToProps)(DancesPage);

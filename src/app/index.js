@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faAngleDown,
   faAngleRight,
-  faArrowUp
+  faArrowUp,
+  faCompass
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -20,11 +21,11 @@ import Header from "./components/header";
 import NavBar from "./components/nav-bar";
 import Footer from "./components/footer";
 
-library.add(faAngleDown, faAngleRight, faArrowUp);
+library.add(faAngleDown, faAngleRight, faArrowUp, faCompass);
 
 const App = () => {
   return (
-    <Fragment>
+    <div className="full-height relative">
       <Header />
       <NavBar />
 
@@ -35,8 +36,8 @@ const App = () => {
         <Route path={ROUTE_EVENTS} component={EventsPage} />
       </Switch>
 
-      <Footer />
-    </Fragment>
+      <Footer className="absolute bottom full-width" />
+    </div>
   );
 };
 
