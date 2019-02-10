@@ -23,13 +23,13 @@ export const MONTH_MAP = [
 ];
 
 export const DAY_MAP = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
+  "Sundays",
+  "Mondays",
+  "Tuesdays",
+  "Wednesdays",
+  "Thursdays",
+  "Fridays",
+  "Saturdays"
 ];
 
 export const RECURRENCE_TIME_EVERY = "EVERY";

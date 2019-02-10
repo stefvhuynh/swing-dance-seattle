@@ -93,23 +93,25 @@ export const formatRecurrence = (recurrenceTimes, recurrenceDay) => {
 export const formatDanceStyles = danceStyles =>
   formatListToString(danceStyles, DANCE_STYLE_MAP);
 
-export const formatDate = dateString => {
+export const formatDate = (dateString, withSuffix) => {
   const date = new Date(dateString);
   const dayOfMonth = date.getDate();
   let dayOfMonthDisplay = `${dayOfMonth}`;
 
-  switch (dayOfMonth % 10) {
-    case 1:
-      dayOfMonthDisplay += "st";
-      break;
-    case 2:
-      dayOfMonthDisplay += "nd";
-      break;
-    case 3:
-      dayOfMonthDisplay += "rd";
-      break;
-    default:
-      dayOfMonthDisplay += "th";
+  if (withSuffix) {
+    switch (dayOfMonth % 10) {
+      case 1:
+        dayOfMonthDisplay += "st";
+        break;
+      case 2:
+        dayOfMonthDisplay += "nd";
+        break;
+      case 3:
+        dayOfMonthDisplay += "rd";
+        break;
+      default:
+        dayOfMonthDisplay += "th";
+    }
   }
 
   return `${MONTH_MAP[date.getMonth()]} ${dayOfMonthDisplay}`;

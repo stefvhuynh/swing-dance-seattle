@@ -5,6 +5,7 @@
 .mg-b-sm { margin-bottom: var(--space-sm) }
 .mg-b-md { margin-bottom: var(--space-md) }
 
+.mg-r-space { margin-right: var(--space-char-width) }
 .mg-r-xs { margin-right: var(--space-xs) }
 .mg-l-xs { margin-left: var(--space-xs) }
 .mg-l-sm { margin-left: var(--space-sm) }

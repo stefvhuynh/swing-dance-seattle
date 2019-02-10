@@ -36,7 +36,7 @@ const Occasion = ({
           {venue && <div>@ {venue}</div>}
         </div>
 
-        <div className="flex column align-end">
+        <div className="basis-35 text-right">
           {dateStart && (
             <div>
               <span>{formatDate(dateStart)} </span>
@@ -57,7 +57,10 @@ const Occasion = ({
         {hasLiveMusic && <li>&ndash; Live music!</li>}
         {hasDropInClass && <li>&ndash; Drop-in class</li>}
         {danceStyles.length > 0 && (
-          <li>&ndash; {formatDanceStyles(danceStyles)}</li>
+          <li className="flex">
+            <div className="mg-r-space">&ndash;</div>
+            <div>{formatDanceStyles(danceStyles)}</div>
+          </li>
         )}
       </ul>
     </li>

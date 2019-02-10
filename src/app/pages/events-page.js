@@ -15,7 +15,7 @@ const EventsPage = ({ events, loading }) => {
         Object.entries(events).map(([date, eventsOnDate]) => (
           <OccasionsList
             key={date}
-            heading={formatDate(date)}
+            heading={formatDate(date, true)}
             occasions={eventsOnDate}
           />
         ))
