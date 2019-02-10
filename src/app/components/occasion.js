@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classNames from "classnames";
 
 import { formatDanceStyles, formatDate, formatRecurrence } from "../utils";
@@ -30,7 +30,7 @@ const Occasion = ({
       )}
 
       <div className="flex justify-between mg-b-sm">
-        <div>
+        <div className="basis-65">
           {name && <h4 className="font-black font-lg bold mg-b-xs">{name}</h4>}
           {organization && <div>{organization}</div>}
           {venue && <div>@ {venue}</div>}
@@ -39,9 +39,12 @@ const Occasion = ({
         <div className="basis-35 text-right">
           {dateStart && (
             <div>
-              <span>{formatDate(dateStart)} </span>
+              <span className="no-line-wrap">{formatDate(dateStart)}</span>
               {dateEnd && dateEnd !== dateStart && (
-                <span> &ndash; {formatDate(dateEnd)}</span>
+                <Fragment>
+                  <span> &ndash; </span>
+                  <span className="no-line-wrap">{formatDate(dateEnd)}</span>
+                </Fragment>
               )}
             </div>
           )}

@@ -7,6 +7,7 @@
 
 .grow { flex-grow: 1 }
 .no-shrink { flex-shrink: 0 }
+.basis-65 { flex-basis: 65% }
 .basis-35 { flex-basis: 35% }
 
 .full-height { height: 100% }

@@ -22,3 +22,5 @@
 .text-right { text-align: right }
 
 .lines-spaced { line-height: var(--line-height-extra) }
+
+.no-line-wrap { white-space: nowrap }
