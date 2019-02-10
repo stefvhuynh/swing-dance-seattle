@@ -1,8 +1,9 @@
 import {
+  DANCE_STYLE_MAP,
   DAY_MAP,
+  MONTH_MAP,
   RECURRENCE_TIME_EVERY,
-  RECURRENCE_TIME_MAP,
-  DANCE_STYLE_MAP
+  RECURRENCE_TIME_MAP
 } from "./constants";
 
 const getPeriod = time =>
@@ -63,12 +64,13 @@ const formatListToString = (list, itemStringMap, useAmpersand) => {
     .map((item, index) => {
       const itemString = itemStringMap[item];
 
-      if (index === list.length - 1) {
-        return itemString;
-      } else if (index === list.length - 2) {
-        return useAmpersand ? `${itemString} & ` : `${itemString}, `;
-      } else {
-        return `${itemString}, `;
+      switch (index) {
+        case list.length - 1:
+          return itemString;
+        case list.length - 2:
+          return useAmpersand ? `${itemString} & ` : `${itemString}, `;
+        default:
+          return `${itemString}, `;
       }
     })
     .join("");
@@ -90,3 +92,25 @@ export const formatRecurrence = (recurrenceTimes, recurrenceDay) => {
 
 export const formatDanceStyles = danceStyles =>
   formatListToString(danceStyles, DANCE_STYLE_MAP);
+
+export const formatDate = dateString => {
+  const date = new Date(dateString);
+  const dayOfMonth = date.getDate();
+  let dayOfMonthDisplay = `${dayOfMonth}`;
+
+  switch (dayOfMonth % 10) {
+    case 1:
+      dayOfMonthDisplay += "st";
+      break;
+    case 2:
+      dayOfMonthDisplay += "nd";
+      break;
+    case 3:
+      dayOfMonthDisplay += "rd";
+      break;
+    default:
+      dayOfMonthDisplay += "th";
+  }
+
+  return `${MONTH_MAP[date.getMonth()]} ${dayOfMonthDisplay}`;
+};

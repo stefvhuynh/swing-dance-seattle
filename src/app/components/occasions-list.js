@@ -3,10 +3,16 @@ import classNames from "classnames";
 
 import Occasion from "./occasion";
 
-const OccasionsList = ({ heading, occasions = [] }) => {
+const OccasionsList = ({ heading, headingClassName, occasions = [] }) => {
   return (
     <div className="pd-y-md font-grey">
-      <h3 className="font-lg mg-l-sm mg-b-sm uppercase bold">{heading}</h3>
+      <h3
+        className={classNames("font-lg mg-l-sm mg-b-sm bold", {
+          [headingClassName]: !!headingClassName
+        })}
+      >
+        {heading}
+      </h3>
 
       <ul className="bg-white shadow">
         {occasions.map((occasion, index) => (

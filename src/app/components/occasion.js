@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { formatDanceStyles, formatRecurrence } from "../utils";
+import { formatDanceStyles, formatDate, formatRecurrence } from "../utils";
 
 const Occasion = ({
   className,
@@ -36,10 +36,16 @@ const Occasion = ({
           {venue && <div>@ {venue}</div>}
         </div>
 
-        <div>
-          {dateStart && <span>{formatDate(dateStart)}</span>}
-          {dateEnd && <span>&ndash; {formatDate(dateEnd)}</span>}
-          {recurrenceTimes.length > 0 && recurrenceDay && (
+        <div className="flex column align-end">
+          {dateStart && (
+            <div>
+              <span>{formatDate(dateStart)} </span>
+              {dateEnd && dateEnd !== dateStart && (
+                <span> &ndash; {formatDate(dateEnd)}</span>
+              )}
+            </div>
+          )}
+          {recurrenceTimes.length > 0 && !isNaN(recurrenceDay) && (
             <div>{formatRecurrence(recurrenceTimes, recurrenceDay)}</div>
           )}
           {time && <div>{time}</div>}

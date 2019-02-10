@@ -6,6 +6,7 @@
 .justify-center { justify-content: center }
 .justify-between { justify-content: space-between }
 .align-center { align-items: center }
+.align-end { align-items: flex-end }
 
 .full-height { height: 100% }
 .full-width { width: 100% }

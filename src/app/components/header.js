@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   const [showInfo, setShowInfo] = useState(false);
-
   const handleMoreInfoClick = () => setShowInfo(!showInfo);
 
   return (

@@ -13,7 +13,12 @@ const DancesPage = ({ dances, loading }) => {
         <Loader />
       ) : (
         DAY_MAP.map((day, index) => (
-          <OccasionsList key={index} heading={day} occasions={dances[index]} />
+          <OccasionsList
+            key={index}
+            heading={day}
+            headingClassName="uppercase"
+            occasions={dances[index]}
+          />
         ))
       )}
     </div>
