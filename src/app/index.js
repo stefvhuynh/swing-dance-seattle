@@ -38,7 +38,7 @@ const App = () => {
         </Switch>
       </div>
 
-      <Footer className="no-shrink" />
+      <Footer className="no-shrink mg-t-md" />
     </div>
   );
 };

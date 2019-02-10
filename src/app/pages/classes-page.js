@@ -3,25 +3,21 @@ import { connect } from "react-redux";
 
 import { DAY_MAP } from "../constants";
 import { selectClassesByDay, selectClassesFetching } from "../state/selectors";
+import Page from "../components/page";
 import OccasionsList from "../components/occasions-list";
-import Loader from "../components/loader";
 
 const ClassesPage = ({ classes, loading }) => {
   return (
-    <div className="pd-y-md">
-      {loading ? (
-        <Loader />
-      ) : (
-        DAY_MAP.map((day, index) => (
-          <OccasionsList
-            key={index}
-            heading={day}
-            headingClassName="uppercase"
-            occasions={classes[index]}
-          />
-        ))
-      )}
-    </div>
+    <Page loading={loading}>
+      {DAY_MAP.map((day, index) => (
+        <OccasionsList
+          key={index}
+          heading={day}
+          headingClassName="uppercase"
+          occasions={classes[index]}
+        />
+      ))}
+    </Page>
   );
 };
 

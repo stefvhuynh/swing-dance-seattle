@@ -3,24 +3,20 @@ import { connect } from "react-redux";
 
 import { formatDate } from "../utils";
 import { selectEventsByDate, selectEventsFetching } from "../state/selectors";
+import Page from "../components/page";
 import OccasionsList from "../components/occasions-list";
-import Loader from "../components/loader";
 
 const EventsPage = ({ events, loading }) => {
   return (
-    <div className="pd-y-md">
-      {loading ? (
-        <Loader />
-      ) : (
-        Object.entries(events).map(([date, eventsOnDate]) => (
-          <OccasionsList
-            key={date}
-            heading={formatDate(date, true)}
-            occasions={eventsOnDate}
-          />
-        ))
-      )}
-    </div>
+    <Page loading={loading}>
+      {Object.entries(events).map(([date, eventsOnDate]) => (
+        <OccasionsList
+          key={date}
+          heading={formatDate(date, true)}
+          occasions={eventsOnDate}
+        />
+      ))}
+    </Page>
   );
 };
 

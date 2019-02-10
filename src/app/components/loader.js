@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Loader = () => {
   return (
-    <div className="flex justify-center align-center">
+    <div className="flex justify-center align-center pd-y-md">
       <FontAwesomeIcon
         className="animation-compass font-green font-xl"
         icon="compass"
