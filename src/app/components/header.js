@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-center bg-dark-grey font-white pd-t-xl pd-b-md pd-x-md">
-      <div className="desktop-full-width text-center">
+      <div className="text-center max-width">
         <h1 className="font-emphasis font-xl font-white mg-b-sm">
           Swing Dance Seattle
         </h1>

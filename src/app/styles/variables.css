@@ -1,7 +1,7 @@
-@custom-media --desktop-width (width > 767px);
+@custom-media --desktop-breakpoint (width > 767px);
 
 :root {
-  --desktop-width: 1024px;
+  --max-width: 1024px;
 
   --font-primary: "Noto Sans", sans-serif;
   --font-emphasis: "Lobster", cursive;

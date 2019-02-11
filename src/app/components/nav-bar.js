@@ -21,8 +21,8 @@ const NavBar = ({ location, onNavigate = () => {} }) => {
   ];
 
   return (
-    <nav className="desktop-flex justify-center bg-green">
-      <div className="desktop-flex text-center">
+    <nav className="justify-center bg-green desktop-flex">
+      <div className="text-center desktop-flex">
         {navLinks.map(({ label, route }) => {
           const isActive =
             route === ROUTE_CLASSES
@@ -33,7 +33,7 @@ const NavBar = ({ location, onNavigate = () => {} }) => {
             <NavLink key={route} to={route}>
               <div
                 className={classNames(
-                  "pd-y-xs desktop-pd-y-sm pd-x-sm font-white border-b-thick",
+                  "pd-y-xs pd-x-sm font-white border-b-thick desktop-pd-y-sm",
                   {
                     "bold border-white": isActive,
                     "border-transparent opacity-half": !isActive

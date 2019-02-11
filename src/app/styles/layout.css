@@ -12,10 +12,10 @@
 
 .full-height { height: 100% }
 .full-width { width: 100% }
+.max-width { max-width: var(--max-width) }
 
-@media (--desktop-width) {
+@media (--desktop-breakpoint) {
   .desktop-flex { display: flex }
-  .desktop-full-width { width: var(--desktop-width) }
-  .desktop-basis-80 { flex-basis: 80% }
-  .desktop-basis-20 { flex-basis: 20% }
+  .desktop-basis-85 { flex-basis: 85% }
+  .desktop-basis-15 { flex-basis: 15% }
 }

@@ -38,7 +38,13 @@
   padding-right: var(--space-md);
 }
 
-@media (--desktop-width) {
+@media (--desktop-breakpoint) {
+  .desktop-mg-l-none { margin-left: 0 }
+
+  .desktop-pd-x-md {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
   .desktop-pd-y-sm {
     padding-top: var(--space-sm);
     padding-bottom: var(--space-sm);
