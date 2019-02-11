@@ -16,6 +16,6 @@
 
 @media (--desktop-breakpoint) {
   .desktop-flex { display: flex }
-  .desktop-basis-85 { flex-basis: 85% }
-  .desktop-basis-15 { flex-basis: 15% }
+  .desktop-basis-80 { flex-basis: 80% }
+  .desktop-basis-20 { flex-basis: 20% }
 }

@@ -8,7 +8,7 @@ const OccasionsList = ({ heading, headingClassName, occasions = [] }) => {
     <div className="pd-y-md font-grey full-width max-width desktop-flex">
       <h3
         className={classNames(
-          "font-lg bold mg-l-sm mg-r-md pd-b-sm desktop-pd-t-sm desktop-basis-15 desktop-mg-l-none",
+          "font-lg bold mg-l-sm mg-r-md pd-b-sm desktop-pd-t-sm desktop-basis-20 desktop-mg-l-none",
           {
             [headingClassName]: !!headingClassName
           }
@@ -17,7 +17,7 @@ const OccasionsList = ({ heading, headingClassName, occasions = [] }) => {
         {heading}
       </h3>
 
-      <ul className="bg-white shadow desktop-basis-85">
+      <ul className="bg-white shadow desktop-basis-80">
         {occasions.map((occasion, index) => (
           <Occasion
             key={occasion.id}
