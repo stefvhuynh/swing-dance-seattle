@@ -1,23 +1,26 @@
 import React from "react";
-import Icon from "./icon";
+import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Footer = () => (
-  <div className="bg-dark-grey">
+const Footer = ({ className }) => {
+  return (
     <div
-      className={
-        "no-shrink flex justify-space-between align-center max-width " +
-          "margin-auto pd-t-lg pd-b-lg pd-l-md pd-r-md font-white"
-      }
+      className={classNames(
+        "flex justify-between align-center bg-dark-grey font-white font-xs pd-x-sm pd-y-md",
+        className
+      )}
     >
-      <div className="lines-spaced">
-        <div className="font-emphasis font-sm">Seattle Swing Dance</div>
-        <div className="font-xs">revivalrhythmswing@gmail.com</div>
+      <div>
+        <div className="font-emphasis font-sm">Swing Dance Seattle</div>
+        <div>swingdancesct@gmail.com</div>
       </div>
-      <a href="#" className="font-white font-xs">
-        Back to top <Icon name="arrowUp"/>
+
+      <a href="#" className="font-white">
+        Back to Top
+        <FontAwesomeIcon className="mg-l-xs" icon="arrow-up" />
       </a>
     </div>
-  </div>
-);
+  );
+};
 
 export default Footer;

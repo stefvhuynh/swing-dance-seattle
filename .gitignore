@@ -1,8 +1,10 @@
 node_modules/
 public/
 lib/
+.firebase/
 webpack-manifest.json
 firebase.config.js
 .firebaserc
 firebase-debug.log
 cloud-functions-emulator.log
+.DS_Store

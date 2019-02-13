@@ -1,69 +1,46 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Fragment } from "redux-little-router";
-import debounce from "debounce";
-import window from "global/window";
+import { Route, Switch } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faAngleDown,
+  faAngleRight,
+  faArrowUp,
+  faCompass
+} from "@fortawesome/free-solid-svg-icons";
 
 import {
-  ROUTE_ADMIN,
-  ROUTE_HOME,
-  WINDOW_RESIZE_DEBOUNCE_TIME
+  ROUTE_CLASSES,
+  ROUTE_DANCES,
+  ROUTE_EVENTS,
+  ROUTE_HOME
 } from "./constants";
-import { windowResized } from "./redux/actions";
-import AdminPage from "./pages/admin-page";
-import HomePage from "./pages/home-page";
+import ClassesPage from "./pages/classes-page";
+import DancesPage from "./pages/dances-page";
+import EventsPage from "./pages/events-page";
+import Header from "./components/header";
+import NavBar from "./components/nav-bar";
 import Footer from "./components/footer";
 
-class App extends React.Component {
-  static propTypes = {
-    onAppMount: PropTypes.func,
-    onWindowResize: PropTypes.func
-  };
+library.add(faAngleDown, faAngleRight, faArrowUp, faCompass);
 
-  componentDidMount() {
-    window.addEventListener("resize", this.handleWindowResize);
-  }
+const App = () => {
+  return (
+    <div className="full-height flex column">
+      <div className="grow">
+        <Header />
+        <NavBar />
 
-  componentWillUnmount() {
-    this.handleWindowResize.clear();
-    window.removeEventListener("resize", this.handleWindowResize);
-  }
-
-  handleWindowResize = debounce(
-    (event) => {
-      const { onWindowResize } = this.props;
-      if (onWindowResize) {
-        onWindowResize(event.currentTarget.innerWidth);
-      }
-    },
-    WINDOW_RESIZE_DEBOUNCE_TIME
-  );
-
-  onHomePage = (location) => {
-    return location.route !== ROUTE_ADMIN;
-  };
-
-  render() {
-    return (
-      <div className="full-height flex column justify-space-between">
-        <Fragment forRoute={ROUTE_HOME}>
-          <div>
-            <Fragment withConditions={this.onHomePage}>
-              <HomePage/>
-            </Fragment>
-            <Fragment forRoute={ROUTE_ADMIN}><AdminPage/></Fragment>
-          </div>
-        </Fragment>
-
-        <Footer/>
+        <Switch>
+          <Route path={ROUTE_HOME} exact component={ClassesPage} />
+          <Route path={ROUTE_CLASSES} component={ClassesPage} />
+          <Route path={ROUTE_DANCES} component={DancesPage} />
+          <Route path={ROUTE_EVENTS} component={EventsPage} />
+        </Switch>
       </div>
-    );
-  }
-}
 
-const mapDispatchToProps = (dispatch) => ({
-  onWindowResize: (width) => dispatch(windowResized(width))
-});
+      <Footer className="no-shrink mg-t-md" />
+    </div>
+  );
+};
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

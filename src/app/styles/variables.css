@@ -1,5 +1,8 @@
+@custom-media --desktop-breakpoint (width > 767px);
+
 :root {
   --max-width: 1024px;
+  --screen-height: 100vh;
 
   --font-primary: "Noto Sans", sans-serif;
   --font-emphasis: "Lobster", cursive;
@@ -7,20 +10,32 @@
   --font-bold: 700;
   --font-normal: 400;
 
-  --size-xxs: 0.5rem;
-  --size-xs: 0.7rem;
-  --size-sm: 0.85rem;
-  --size-md: 1rem;
-  --size-lg: 1.2rem;
-  --size-xl: 1.75rem;
-  --size-xxl: 2.5rem;
-  --size-xxxl: 4rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 2.5rem;
 
+  --space-char-width: 4px;
+
+  --space-xs: 0.4rem;
+  --space-sm: 0.7rem;
+  --space-md: 1rem;
+  --space-lg: 1.3rem;
+  --space-xl: 1.6rem;
+
+  --border-thin: 1px;
+  --border-thick: 3px;
+
+  --line-height-base: 1.25;
+  --line-height-extra: 1.5;
+
+  --color-transparent: transparent;
   --color-white: #fdfdfd;
   --color-off-white: #f4f4f4;
   --color-black: #191919;
   --color-grey: #666666;
   --color-light-grey: #dddddd;
   --color-dark-grey: #444444;
-  --color-green: #60a060;
+  --color-green: #60a060
 }
