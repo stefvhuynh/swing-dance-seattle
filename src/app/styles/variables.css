@@ -2,6 +2,7 @@
 
 :root {
   --max-width: 1024px;
+  --screen-height: 100vh;
 
   --font-primary: "Noto Sans", sans-serif;
   --font-emphasis: "Lobster", cursive;

@@ -10,8 +10,13 @@
 .basis-65 { flex-basis: 65% }
 .basis-35 { flex-basis: 35% }
 
+.relative { position: relative }
+.absolute { position: absolute }
+.top { top: 0 }
+
 .full-height { height: 100% }
 .full-width { width: 100% }
+.screen-height { height: var(--screen-height) }
 .max-width { max-width: var(--max-width) }
 
 @media (--desktop-breakpoint) {
