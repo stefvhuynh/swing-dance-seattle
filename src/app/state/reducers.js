@@ -4,8 +4,7 @@ import {
   DANCES_REQUESTED,
   DANCES_REQUEST_SUCCEEDED,
   EVENTS_REQUESTED,
-  EVENTS_REQUEST_SUCCEEDED,
-  WINDOW_RESIZED
+  EVENTS_REQUEST_SUCCEEDED
 } from "./types";
 
 const initialState = {
@@ -23,24 +22,6 @@ const initialState = {
     data: [],
     fetched: false,
     fetching: false
-  },
-  ui: {
-    windowWidth: 0
-  }
-};
-
-export const ui = (state = initialState.ui, action) => {
-  const { payload, type } = action;
-
-  switch (type) {
-    case WINDOW_RESIZED: {
-      return state.windowWidth === payload.width
-        ? state
-        : { ...state, windowWidth: payload.width };
-    }
-    default: {
-      return state;
-    }
   }
 };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Loader = ({ threshold = 250 }) => {
+const Loader = ({ threshold = 200 }) => {
   const [showLoader, setShowLoader] = useState(false);
   const timeoutRef = useRef();
 

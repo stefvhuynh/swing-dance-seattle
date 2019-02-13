@@ -60,9 +60,6 @@ export const DANCE_STYLE_MAP = {
   [DANCE_STYLE_JAZZ]: "Solo Jazz"
 };
 
-export const DESKTOP_BREAKPOINT = 767;
-export const WINDOW_RESIZE_DEBOUNCE_TIME = 200;
 export const ONE_HOUR = 3.6e6;
 export const ONE_YEAR = 3.154e10;
-export const LINK_PREFIX = "http";
 export const REDIRECT_STATUS = 301;

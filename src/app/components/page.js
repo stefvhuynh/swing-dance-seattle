@@ -4,8 +4,14 @@ import Loader from "./loader";
 
 const Page = ({ children, loading }) => {
   return (
-    <div className="flex column align-center pd-t-md desktop-pd-x-md">
-      {loading ? <Loader /> : children}
+    <div className="flex column align-center relative pd-t-md desktop-pd-x-md">
+      {loading ? (
+        <div className="absolute screen-height full-width top bg-off-white">
+          <Loader />
+        </div>
+      ) : (
+        children
+      )}
     </div>
   );
 };
