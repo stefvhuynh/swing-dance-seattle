@@ -47,7 +47,6 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-manifest-plugin": "^2.0.4",
-    "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
@@ -60,7 +59,7 @@
     "debounce": "^1.2.0",
     "detect-node": "^2.0.4",
     "firebase": "^5.8.2",
-    "firebase-admin": "^6.5.1",
+    "firebase-admin": "^7.0.0",
     "firebase-functions": "^2.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
