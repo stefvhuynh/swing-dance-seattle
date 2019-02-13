@@ -7,7 +7,7 @@ const nodeExternals = require("webpack-node-externals");
 module.exports = env => ({
   target: "node",
   mode: env === "production" ? "production" : "development",
-  entry: "./src/server.js",
+  entry: ["@babel/polyfill", "./src/server.js"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "lib"),

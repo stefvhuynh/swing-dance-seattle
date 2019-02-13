@@ -17,7 +17,7 @@ module.exports = env => {
     target: "web",
     mode: isDevelopment ? "development" : "production",
     devtool: !isProduction ? "cheap-module-source-map" : undefined,
-    entry: "./src/client.js",
+    entry: ["@babel/polyfill", "./src/client.js"],
     output: {
       filename: isDevelopment ? "bundle.js" : "bundle-[contenthash].js",
       path: path.resolve(__dirname, "public")
