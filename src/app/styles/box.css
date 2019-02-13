@@ -1,16 +1,14 @@
-.border-bottom { border-bottom: 1px solid }
-.border-bottom-thick { border-bottom: 3px solid }
-.border-off-white { border-color: var(--color-off-white) }
-.border-light-grey { border-color: var(--color-light-grey) }
-
 .bg-white { background: var(--color-white) }
 .bg-off-white { background: var(--color-off-white) }
 .bg-green { background: var(--color-green) }
 .bg-dark-grey { background: var(--color-dark-grey) }
 
-.shadow { box-shadow: 0 5px 18px -14px var(--color-black) }
+.opacity-half { opacity: 0.5 }
 
-.opacity-6 { opacity: 0.6 }
-.hover-opacity-8:hover { opacity: 0.8 }
+.border-b-thick { border-bottom: var(--border-thick) solid }
+.border-b-thin { border-bottom: var(--border-thin) solid }
+.border-white { border-color: var(--color-white) }
+.border-light-grey { border-color: var(--color-light-grey) }
+.border-transparent { border-color: var(--color-transparent) }
 
-.pointer { cursor: pointer }
+.shadow { box-shadow: 0 5px 18px -14px var(--color-dark-grey) }

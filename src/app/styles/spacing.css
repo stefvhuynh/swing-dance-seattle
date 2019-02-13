@@ -1,26 +1,56 @@
 /* Margin */
-.mg-t-sm { margin-top: var(--size-sm) }
-.mg-t-md { margin-top: var(--size-md) }
-.mg-t-xxl { margin-top: var(--size-xxl) }
+.mg-t-md { margin-top: var(--space-md) }
+.mg-t-lg { margin-top: var(--space-lg) }
+.mg-t-xl { margin-top: var(--space-xl) }
+.mg-b-xs { margin-bottom: var(--space-xs) }
+.mg-b-sm { margin-bottom: var(--space-sm) }
+.mg-b-md { margin-bottom: var(--space-md) }
 
-.mg-b-xxs { margin-bottom: var(--size-xxs) }
-.mg-b-sm { margin-bottom: var(--size-sm) }
-.mg-b-lg { margin-bottom: var(--size-lg) }
-.mg-b-xl { margin-bottom: var(--size-xl) }
-
-.mg-l-xxs { margin-left: var(--size-xxs) }
+.mg-r-space { margin-right: var(--space-char-width) }
+.mg-r-xs { margin-right: var(--space-xs) }
+.mg-r-md { margin-right: var(--space-md) }
+.mg-l-xs { margin-left: var(--space-xs) }
+.mg-l-sm { margin-left: var(--space-sm) }
 
 /* Padding */
-.pd-t-lg { padding-top: var(--size-lg) }
-.pd-t-xl { padding-top: var(--size-xl) }
+.pd-t-md { padding-top: var(--space-md) }
+.pd-t-xl { padding-top: var(--space-xl) }
+.pd-b-md { padding-bottom: var(--space-md) }
+.pd-b-sm { padding-bottom: var(--space-md) }
 
-.pd-b-lg { padding-bottom: var(--size-lg) }
-.pd-b-xl { padding-bottom: var(--size-xl) }
+.pd-y-xs {
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+}
+.pd-y-sm {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+.pd-y-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+.pd-x-sm {
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+.pd-x-md {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
 
-.pd-l-md { padding-left: var(--size-md) }
+@media (--desktop-breakpoint) {
+  .desktop-mg-l-none { margin-left: 0 }
 
-.pd-r-md { padding-right: var(--size-md) }
-
-.pd-xxs { padding: var(--size-xxs) }
-.pd-sm { padding: var(--size-sm) }
-.pd-md { padding: var(--size-md) }
+  .desktop-pd-x-md {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+  .desktop-pd-y-sm {
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+  .desktop-pd-t-sm {
+    padding-top: var(--space-sm);
+  }
+}
