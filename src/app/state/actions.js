@@ -21,8 +21,7 @@ import {
   EVENTS_REQUESTED,
   EVENTS_REQUEST_SUCCEEDED,
   EVENTS_REQUEST_FAILED,
-  NAVIGATED,
-  WINDOW_RESIZED
+  NAVIGATED
 } from "./types";
 import {
   selectClassesNeedFetching,
@@ -100,8 +99,3 @@ export const navigated = path => (dispatch, getState, getFirebase) => {
       })
     );
 };
-
-export const windowResized = width => ({
-  type: WINDOW_RESIZED,
-  payload: { width }
-});

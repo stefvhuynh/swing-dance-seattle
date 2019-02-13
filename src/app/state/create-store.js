@@ -7,14 +7,13 @@ import {
 import thunk from "redux-thunk";
 import isNode from "detect-node";
 
-import { classes, dances, events, ui } from "./reducers";
+import { classes, dances, events } from "./reducers";
 
 const createStore = (firebaseInstance, initialState) => {
   const rootReducer = combineReducers({
     classes,
     dances,
-    events,
-    ui
+    events
   });
 
   const getFirebase = () => firebaseInstance;

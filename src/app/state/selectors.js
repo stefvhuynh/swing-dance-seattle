@@ -1,6 +1,5 @@
 import { createSelector } from "reselect";
 
-import { DESKTOP_BREAKPOINT } from "../constants";
 import { getOccasionsByDate, getOccasionsByDay } from "../utils";
 
 const createDataNeedsFetchingSelector = (fetchedSelector, fetchingSelector) =>
@@ -48,11 +47,4 @@ export const selectEventsFetching = state => selectEventsState(state).fetching;
 export const selectEventsNeedFetching = createDataNeedsFetchingSelector(
   selectEventsFetched,
   selectEventsFetching
-);
-
-export const selectUiState = state => state.ui;
-export const selectWindowWidth = state => selectUiState(state).windowWidth;
-export const selectIsDesktop = createSelector(
-  selectWindowWidth,
-  windowWidth => windowWidth > DESKTOP_BREAKPOINT
 );
