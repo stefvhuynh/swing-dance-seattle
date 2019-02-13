@@ -43,11 +43,7 @@ const Occasion = ({
     : Fragment;
 
   return (
-    <li
-      className={classNames("pd-x-sm pd-y-sm", {
-        [className]: !!className
-      })}
-    >
+    <li className={classNames("pd-x-sm pd-y-sm", className)}>
       <Wrapper>
         {neighborhood && (
           <div className="uppercase font-sm mg-b-xs">{neighborhood}</div>

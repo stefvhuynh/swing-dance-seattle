@@ -7,7 +7,7 @@ const Footer = ({ className }) => {
     <div
       className={classNames(
         "flex justify-between align-center bg-dark-grey font-white font-xs pd-x-sm pd-y-md",
-        { [className]: !!className }
+        className
       )}
     >
       <div>
