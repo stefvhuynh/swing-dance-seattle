@@ -116,3 +116,9 @@ export const formatDate = (dateString, withSuffix) => {
 
   return `${MONTH_MAP[date.getMonth()]} ${dayOfMonthDisplay}`;
 };
+
+export const formatLink = link => {
+  return link.includes("http://") || link.includes("https://")
+    ? link
+    : `https://${link}`;
+};

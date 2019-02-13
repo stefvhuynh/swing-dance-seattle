@@ -18,7 +18,9 @@ const Header = () => {
 
         <div className="mg-b-xs">
           <a
-            className={classNames("bold font-sm", { underline: showInfo })}
+            className={classNames("bold font-sm font-green", {
+              underline: showInfo
+            })}
             onClick={handleMoreInfoClick}
           >
             <FontAwesomeIcon
@@ -35,9 +37,17 @@ const Header = () => {
             and it will be kept up-to-date to the best of our ability. For the
             most accurate information, click on an event to see the event's
             webpage. If you would like your event added, altered, or removed,
-            send us an <a href="mailto:swingdancesct@gmail.com">email</a>. This
-            is also an open-source project! Check out the project{" "}
-            <a href="https://github.com/stefvhuynh/swing-dance-seattle">here</a>{" "}
+            send us an{" "}
+            <a className="font-green" href="mailto:swingdancesct@gmail.com">
+              email
+            </a>
+            . This is also an open-source project! Check out the project{" "}
+            <a
+              className="font-green"
+              href="https://github.com/stefvhuynh/swing-dance-seattle"
+            >
+              here
+            </a>{" "}
             if you would like to contribute!
           </p>
         )}
