@@ -13,6 +13,7 @@
 .mg-l-sm { margin-left: var(--space-sm) }
 
 /* Padding */
+.pd-t-md { padding-top: var(--space-md) }
 .pd-t-xl { padding-top: var(--space-xl) }
 .pd-b-md { padding-bottom: var(--space-md) }
 .pd-b-sm { padding-bottom: var(--space-md) }
