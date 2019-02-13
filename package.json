@@ -56,7 +56,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
-    "debounce": "^1.2.0",
     "detect-node": "^2.0.4",
     "firebase": "^5.8.2",
     "firebase-admin": "^7.0.0",
