@@ -7,16 +7,21 @@ import Page from "../components/page";
 import OccasionsList from "../components/occasions-list";
 
 const ClassesPage = ({ classes, loading }) => {
+  console.log(classes);
   return (
     <Page loading={loading}>
-      {DAY_MAP.map((day, index) => (
-        <OccasionsList
-          key={index}
-          heading={day}
-          headingClassName="uppercase"
-          occasions={classes[index]}
-        />
-      ))}
+      {DAY_MAP.map(
+        (day, index) =>
+          classes[index] &&
+          classes[index].length > 0 && (
+            <OccasionsList
+              key={index}
+              heading={day}
+              headingClassName="uppercase"
+              occasions={classes[index]}
+            />
+          )
+      )}
     </Page>
   );
 };
