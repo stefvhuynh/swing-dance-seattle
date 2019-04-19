@@ -36,6 +36,7 @@ const Occasion = ({
           target="_blank"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          className="hover-no-underline"
         >
           {children}
         </a>

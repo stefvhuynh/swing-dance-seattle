@@ -16,7 +16,7 @@
 .underline { text-decoration: underline }
 .uppercase { text-transform: uppercase }
 
-.hover-underline:hover { text-decoration: underline }
+.hover-no-underline:hover { text-decoration: none }
 
 .text-center { text-align: center }
 .text-right { text-align: right }

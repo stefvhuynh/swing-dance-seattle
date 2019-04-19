@@ -30,13 +30,13 @@ const NavBar = ({ location, onNavigate = () => {} }) => {
               : pathname === route;
 
           return (
-            <NavLink key={route} to={route}>
+            <NavLink key={route} to={route} className="hover-no-underline">
               <div
                 className={classNames(
                   "pd-y-xs pd-x-sm font-white border-b-thick desktop-pd-y-sm",
                   {
                     "bold border-white": isActive,
-                    "border-transparent opacity-half": !isActive
+                    "border-transparent hover-border-light-grey opacity-half": !isActive
                   }
                 )}
                 onClick={() => onNavigate(route)}
