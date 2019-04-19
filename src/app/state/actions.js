@@ -77,7 +77,7 @@ export const navigated = path => (dispatch, getState, getFirebase) => {
     requestFailedType,
     selectNeedsFetching,
     serialize
-  } = ROUTE_DATA_MAP[path];
+  } = ROUTE_DATA_MAP[path] || {};
 
   if (!fetchData || !selectNeedsFetching(getState())) {
     return Promise.resolve();
