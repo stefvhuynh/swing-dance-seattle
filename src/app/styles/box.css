@@ -11,4 +11,6 @@
 .border-light-grey { border-color: var(--color-light-grey) }
 .border-transparent { border-color: var(--color-transparent) }
 
+.hover-border-light-grey:hover { border-color: var(--color-light-grey) }
+
 .shadow { box-shadow: 0 5px 18px -14px var(--color-dark-grey) }
