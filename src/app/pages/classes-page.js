@@ -7,7 +7,6 @@ import Page from "../components/page";
 import OccasionsList from "../components/occasions-list";
 
 const ClassesPage = ({ classes, loading }) => {
-  console.log(classes);
   return (
     <Page loading={loading}>
       {DAY_MAP.map(

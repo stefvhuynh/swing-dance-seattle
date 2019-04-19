@@ -9,11 +9,20 @@ const Header = () => {
   return (
     <header className="flex justify-center bg-dark-grey font-white pd-t-xl pd-b-md pd-x-md">
       <div className="text-center max-width">
-        <h1 className="font-emphasis font-xl font-white mg-b-sm">
-          Swing Dance Seattle
-        </h1>
+        <h1 className="font-emphasis font-xl">Swing Dance Seattle</h1>
+
+        <h2 className="mg-b-lg">
+          <span className="font-xs italic">Brought to you by </span>
+          <a
+            className="font-green font-emphasis"
+            href="https://salsacontodo.com/swing"
+          >
+            Swing Dance SCT
+          </a>
+        </h2>
+
         <h2 className="mg-b-md lines-spaced">
-          Lindy Hop, Balboa, and Blues in the greater Seattle area
+          A schedule of Lindy Hop, Balboa, and Blues in the greater Seattle area
         </h2>
 
         <div className="mg-b-xs">
