@@ -99,18 +99,22 @@ export const formatDate = (dateString, withSuffix) => {
   let dayOfMonthDisplay = `${dayOfMonth}`;
 
   if (withSuffix) {
-    switch (dayOfMonth % 10) {
-      case 1:
-        dayOfMonthDisplay += "st";
-        break;
-      case 2:
-        dayOfMonthDisplay += "nd";
-        break;
-      case 3:
-        dayOfMonthDisplay += "rd";
-        break;
-      default:
-        dayOfMonthDisplay += "th";
+    if (dayOfMonth > 3 && dayOfMonth < 21) {
+      dayOfMonthDisplay += "th";
+    } else {
+      switch (dayOfMonth % 10) {
+        case 1:
+          dayOfMonthDisplay += "st";
+          break;
+        case 2:
+          dayOfMonthDisplay += "nd";
+          break;
+        case 3:
+          dayOfMonthDisplay += "rd";
+          break;
+        default:
+          dayOfMonthDisplay += "th";
+      }
     }
   }
 

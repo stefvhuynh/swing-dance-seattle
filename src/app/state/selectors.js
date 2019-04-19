@@ -38,10 +38,18 @@ export const selectDancesNeedFetching = createDataNeedsFetchingSelector(
 
 export const selectEventsState = state => state.events;
 export const selectEvents = state => selectEventsState(state).data;
-export const selectEventsByDate = createSelector(
+
+export const selectEventsSortedByDate = createSelector(
   selectEvents,
-  getOccasionsByDate
+  events => {
+    const eventsByDate = getOccasionsByDate(events);
+    const sortedDates = Object.keys(eventsByDate)
+      .slice()
+      .sort();
+    return sortedDates.map(date => eventsByDate[date]);
+  }
 );
+
 export const selectEventsFetched = state => selectEventsState(state).fetched;
 export const selectEventsFetching = state => selectEventsState(state).fetching;
 export const selectEventsNeedFetching = createDataNeedsFetchingSelector(
