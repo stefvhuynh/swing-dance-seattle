@@ -1,6 +1,6 @@
 {
   "name": "swing-dance-seattle",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "description": "Swing and Blues schedule in Seattle",
   "main": "lib/bundle.js",
   "scripts": {
