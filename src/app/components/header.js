@@ -15,7 +15,8 @@ const Header = () => {
           <span className="font-xs italic">Brought to you by </span>
           <a
             className="font-green font-emphasis"
-            href="https://salsacontodo.com/swing"
+            href="https://swingdancesct.com"
+            target="_blank"
           >
             Swing Dance SCT
           </a>
